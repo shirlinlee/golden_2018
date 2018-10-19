@@ -100,12 +100,124 @@
     }
 
 }
+#store_content{
+    padding-top: 135px;
+    min-height: 100vh;
+}
+.map_area {
+    width: 420px;
+    display: inline-block;
+    position: relative;
+    .tawain {
+
+    }
+    div{
+        position: absolute;
+        width: 100px;
+        height: 50px;
+        background-color: rgba(0,0,0,.5);
+        span {
+            img {
+                
+            }
+            &.pin{
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                display: block;
+                width: 40px;
+                height: 52px;
+                background-image: url(../img/pin_01.png);
+                background-size: 30px;
+                margin: 0 auto;
+                
+            }
+        }
+        &.show {
+            .pin {
+                background-image: url(../img/pin_02.png);
+                background-size: 38px;
+                
+            }
+            
+            
+        }
+    }
+    
+    .a_01{
+        top: 0;
+        right: 0;
+        .pin{
+            transform: translate(0, -60%);
+        }
+    }
+    .a_02{
+        height: 70px;
+        width: 120px;
+        top: 0;
+        right: 100px;
+        .pin{
+            transform: translate(-10%, -30%);
+        }
+    }
+    .a_03{
+        height: 90px;
+        width: 240px;
+        top: 50px;
+        right: 95px;
+        .pin{
+            transform: translate(-100%, -30%);
+        }
+
+    }
+    .a_04{
+        height: 90px;
+        width: 220px;
+        top: 95px;
+        left: 0;
+        .pin{
+            transform: translate(-120%, 20%);
+        }
+
+    }
+    .a_05{
+        height: 160px;
+        width: 220px;
+        top: 140px;
+        left: 0;
+        .pin{
+            transform: translate(-110%, 120%);
+        }
+    }
+    .a_06{
+        height: 275px;
+        width: 380px;
+        top: 25px;
+        right: 0;
+        .pin{
+            transform: translate(10%, 190%);
+        }
+
+    }
+    .a_07{
+        top: 40px;
+        left: 10px;
+        width: 50px;
+        height: 30px;
+        .pin{
+            transform: translate(-20%, -80%);
+        }
+
+    }
+
+    
+
+}
+
 .act_wrapper {
     text-align: center;
     display: inline-block;
     width: 100%;
     max-width: 1280px;
-    margin-top: 135px;
     padding:0 40px;
     li {
         color: #fff;

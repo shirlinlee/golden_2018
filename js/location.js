@@ -2,39 +2,35 @@ var app = new Vue({
     el: '#wrappper',
     data: {
         geocoder: null,
-        current_location:'新北市',
+        current_location:'',
         current_area: null,
         notyet: true,
-        search_city: '新北市',
-        search_dist: 0,
+        search_city: '',
+        search_dist: '',
         search_txt:'',
         allAct: [],
         allStore:[],
         allGeoData: []
     },
     updated: function () {
-        console.log(this.search_city);
-       
+        // console.log(this.search_city);
     },
     mounted() {
         this.$nextTick( ()=> {
             this.init();
             this.initialize(); 
             window.addEventListener("keydown", (e)=> {
-                if( e.keyCode === 13  && this.search_txt.trim() !== '') {
+                if( e.keyCode === 13 ) {
                     this.serch();
-
                 }
             })
         })
-
     }, 
     methods:{
         init() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(this.successFunction, this.errorFunction);
             }
-            
         },
         successFunction(position) {
             var lat = position.coords.latitude;
@@ -76,10 +72,12 @@ var app = new Vue({
                         type: "GET",
                         dataType: "json",
                         success: function(Jdata) {
-                            console.log(city.short_name);
+                            console.log(Jdata);
                             $this.allGeoData = Jdata;
+                            city.short_name = '台中市';
                             $this.current_location = city.short_name;
                             $this.search_city = city.short_name;
+                            
                             $this.getArea();
                         },
                         error: function() {
@@ -106,7 +104,9 @@ var app = new Vue({
         },
         getArea() {
             this.allGeoData.filter((el, i)=>{
-                if( el.Activities.length > 0 && el.City === this.current_location) {
+                // console.log(this.current_location, el.City);
+                if( el.City === this.current_location) {
+                    console.log(el);
                     if( this.current_area === null ) {
                         this.current_area = el.Area;
                         this.getAreaAct();
@@ -145,7 +145,7 @@ var app = new Vue({
                 //排列由多到少
                 return parseFloat(b.People) - parseFloat(a.People);
             });
-            console.log(this.allAct);
+            // console.log(this.allAct);
         },
         backgroundFunc(src) {
             return 'url(' + src + ')';
@@ -162,65 +162,58 @@ var app = new Vue({
         serch() {
             
             if( this.search_txt.trim() === '' && this.search_city ==='' &&  this.search_dist ==='' ) {
+                console.log('1');
                 //什麼都沒輸入
                 this.getStore(); 
             
             } else {
                 this.allStore = [];
-
-                if( this.search_city !=='') {
-                    //有輸入縣市
-
-                    if( this.search_dist ==='' && this.search_txt.trim() === '' ) {
-                        //沒輸入區域及地址
-                        
-                        this.allGeoData.filter((item, index, array)=>{
-                            if( item.City === this.search_city ) {
+                var tempt_addr = [];
+                var tempt_city = [];
+                var tempt_dist = [];
+                
+                //有輸入地點text
+                this.allGeoData.filter((item, index)=>{
+                    if( item.Address.indexOf(this.search_txt)> -1) {
+                        //與地址符合
+                        var obj = item;
+                        tempt_addr.push(obj);
+                    } else if ( item.StoreName.indexOf(this.search_txt)> -1){
+                        //與店名符合
+                        var obj = item;
+                        tempt_addr.push(obj);
+                    }
+                    if( index === this.allGeoData.length-1 ) {
+                        //最後
+                        // console.log(tempt_addr);
+                        //有選擇縣市
+                        tempt_addr.filter((el, i)=>{
+                            if( el.City.indexOf(this.search_city) > -1 ) {
                                 //與地址符合
-                                var obj = item;
-                                this.allStore.push(obj);
-                            } else if ( item.StoreName.indexOf(this.search_txt)> -1){
-                                //與店名符合
-                                var obj = item;
-                                this.allStore.push(obj);
-                            }
-                        });
-                    } else if ( this.search_dist !=='' && this.search_txt.trim() === ''){
-                        //有輸入區域 沒地址
+                                var obj = el;
+                                tempt_city.push(obj);
+                            } 
 
-                        this.allGeoData.filter((item, index, array)=>{
-                            if( item.City === this.search_city && item.Dist === this.search_dist) {
-                                //與地址符合
-                                var obj = item;
-                                this.allStore.push(obj);
-                            } else if ( item.StoreName.indexOf(this.search_txt)> -1){
-                                //與店名符合
-                                var obj = item;
-                                this.allStore.push(obj);
+                            if( i ===  tempt_addr.length-1 ) {
+                                // console.log(tempt_city);
+                                //有選擇區域
+                                tempt_city.filter(( ele, n) => {
+                                    if( ele.Dist.indexOf(this.search_dist) > -1 ) {
+                                        //與地址符合
+                                        var obj = ele;
+                                        tempt_dist.push(obj);
+                                    } 
+                                    if( n ===  tempt_city.length-1 ) {
+                                         console.log(tempt_dist);
+                                         this.allStore = tempt_dist;
+                                    }
+                                });
                             }
                         });
                     }
-                }
-                
-                
-                else {
-                    //有輸入地點
-                    this.allGeoData.filter((item, index, array)=>{
-                        if( item.Address.indexOf(this.search_txt)> -1) {
-                            //與地址符合
-                            var obj = item;
-                            this.allStore.push(obj);
-                        } else if ( item.StoreName.indexOf(this.search_txt)> -1){
-                            //與店名符合
-                            var obj = item;
-                            this.allStore.push(obj);
-                        }
-                    });
-                    // console.log(this.allStore);
-                }
+                });
 
             }
-            
             
         }
 

@@ -29,6 +29,7 @@
                             <option value="台北市">台北市</option>
                             <option value="新北市">新北市</option>
                             <option value="宜蘭縣">宜蘭縣</option>
+                            <option value="台中市">台中市</option>
                         </select>
                         <select v-model="search_dist">
                             <option value="">請選擇區域</option>
@@ -45,9 +46,19 @@
                 </div>
             </div>
             <div class="bg_grey W100" id="store_content">
+                <div class="map_area">
+                    <img src="img/map_location.png" width="100%" alt=""> 
+                    <div class="a_06" :class="{'show': current_area === '宜花東' }"><span class="pin"></span></div>
+                    <div class="a_01" :class="{'show': current_area === '大台北' }"><span class="pin"></span></div>
+                    <div class="a_02" :class="{'show': current_area === '桃竹苗' }"><span class="pin"></span></div>
+                    <div class="a_03" :class="{'show': current_area === '中彰投' }"><span class="pin"></span></div>
+                    <div class="a_05" :class="{'show': current_area === '高屏' }"><span class="pin"></span></div>
+                    <div class="a_04" :class="{'show': current_area === '雲嘉南' }"><span class="pin"></span></div>
+                    <div class="a_07" :class="{'show': current_area === '離島' }"><span class="pin"></span></div>
+                </div>
                 <div class="W940">
                     <ul class="act_wrapper">
-                        <li class="bg_green" v-for="(act,index) in allAct" > <!--  v-if="index<3"  -->
+                        <li class="bg_green" v-for="(act,index) in allAct" v-if="index<3"> <!--    -->
                             <div class="img_area" :style="{ backgroundImage: backgroundFunc(act.ImgSrc) }">
                                 <img src="img/act_frame.png" alt="">
                             </div>
