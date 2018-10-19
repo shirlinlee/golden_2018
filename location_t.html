@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>國泰人壽2018 - 據點查詢</title>
+        
+        <script type="text/javascript" src="vendor/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+        
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/location.css" />
+        
+    </head>
+    <body>
+        <div id="wrappper">
+            <div class="bg_green loca_banner W100">
+                <div class="search_area W940">
+                    <img src="img/title_location_01.png" class="title abs" alt="">
+                    <div class="des">
+                        <img src="img/logo.png" alt="" class="logo">
+                        <p class="f_d_grey f18">全台營業據點及精彩活動</p>
+                    </div>
+                    <div class="filter">
+                        <select v-model="search_city">
+                            <option value="0">請選擇縣市</option>
+                            <option value="台北市">台北市</option>
+                            <option value="新北市">新北市</option>
+                            <option value="宜蘭縣">宜蘭縣</option>
+                        </select>
+                        <select v-model="search_dist">
+                            <option value="0">請選擇區域</option>
+                            <option value="">大安區</option>
+                            <option value="">松山區</option>
+                            <option value="">信義區</option>
+                        </select>
+                        <div>
+                            <input type="text" v-model="search_txt">
+                            <a href="javascript:;" class="abs sent" @click="serch()"></a>
+                        </div>
+                    </div>
+                    <img src="img/img_location_01.png" class="people abs" alt="">
+                </div>
+            </div>
+            <div class="bg_grey W100" id="store_content">
+                <div class="W940">
+                    <ul class="act_wrapper">
+                        <li class="bg_green" v-for="(act,index) in allAct" > <!--  v-if="index<3"  -->
+                            <div class="img_area" :style="{ backgroundImage: backgroundFunc(act.ImgSrc) }">
+                                <img src="img/act_frame.png" alt="">
+                            </div>
+                            <div class="title"><h3 class="f_white f19">{{ act.Subject }}</h3></div>
+                            <p class="location f_white f14 icon_bg">{{ act.Location }}</p>
+                            <p class="time f_white f14 icon_bg">{{ act.Date }} {{ timeModify(act.Time) }}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="W940">
+                    <ul class="store_wrapper">
+                        <li class="W100 f_grey" v-for="(store,i) in allStore" ref="i">
+                            <div class="info">
+                                <h4 class="f16 W100">{{ store.StoreName }}</h4>
+                                <p class="location f13 icon_bg">{{ store.Address }}</p>
+                                <p class="phone f13 icon_bg">{{ store.Tel }}</p>
+                                <a href="javascript:;" class="act_btn abs f_green f13 bg_white" @click="seeAct(i)" v-if="store.Activities.length">最新活動</a>
+                                <a href="javascript:;" class="fb_btn bg_green abs" @click="fb_click(store.Fb)"><img src="img/icon_03.png" alt=""></a>
+                            </div>
+                            <div class="bg_green detail" v-if="store.Activities.length">
+                                <div class="img_wrapper abs" :style="{ backgroundImage: backgroundFunc(store.Activities[0].ImgSrc)}"></div>
+                                <h5 class="f_yellow f16 W100">{{ store.Activities[0].Subject }}</h5>
+                                <p class="f_white f13 location icon_bg">{{ store.Activities[0].Location }}</p>
+                                <p class="f_white f13 time icon_bg">{{ store.Activities[0].Date }} {{ timeModify(store.Activities[0].Time) }}</p>
+                            </div>
+                        </li>
+
+                    </ul>                                
+
+                </div>                        
+
+            </div>                
+            
+            
+        </div>
+
+        <!-- <a href="javascript:;">CLCIK</a> -->
+    </body>
+</html>
+
+
+<script type="text/javascript" src="js/location.js"></script>
