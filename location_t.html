@@ -26,16 +26,11 @@
                     <div class="filter">
                         <select v-model="search_city">
                             <option value="">請選擇縣市</option>
-                            <option value="台北市">台北市</option>
-                            <option value="新北市">新北市</option>
-                            <option value="宜蘭縣">宜蘭縣</option>
-                            <option value="台中市">台中市</option>
+                            <option :value="key" v-for="(item, key, index) in select_data">{{ key }}</option>
                         </select>
                         <select v-model="search_dist">
                             <option value="">請選擇區域</option>
-                            <option value="大安區">大安區</option>
-                            <option value="松山區">松山區</option>
-                            <option value="信義區">信義區</option>
+                            <option :value="item" v-for="(item, key, index) in select_data[search_city]">{{ item }}</option>
                         </select>
                         <div>
                             <input type="text" v-model="search_txt">

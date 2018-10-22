@@ -5,6 +5,12 @@ var app = new Vue({
         current_location:'',
         current_area: null,
         notyet: true,
+        select_data: [],
+        list: {
+            '123456789': { name: '選項 1' },
+            '234567890': { name: '選項 2' },
+            '345678901': { name: '選項 3' }
+        },
         search_city: '',
         search_dist: '',
         search_txt:'',
@@ -19,6 +25,8 @@ var app = new Vue({
         this.$nextTick( ()=> {
             this.init();
             this.initialize(); 
+            this.selectInit(); 
+            
             window.addEventListener("keydown", (e)=> {
                 if( e.keyCode === 13 ) {
                     this.serch();
@@ -31,6 +39,22 @@ var app = new Vue({
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(this.successFunction, this.errorFunction);
             }
+        },
+        selectInit() {
+            var $this = this;
+            $.ajax({
+                url: "https://cathay.webgene.com.tw/golden2018/api/dist_list.ashx",
+                type: "GET",
+                dataType: "json",
+                success: function(Jdata) {
+                    $this.select_data = Jdata;
+                    // console.log($this.select_data);
+                    
+                },
+                error: function() {
+                    console.alert("ERROR!!!");
+                }
+            });
         },
         successFunction(position) {
             var lat = position.coords.latitude;
@@ -67,16 +91,19 @@ var app = new Vue({
                     }
                     //得到city 城市名稱
                     // alert(city.short_name)
+
+                    
                     $.ajax({
                         url: "https://cathay.webgene.com.tw/golden2018/api/location.ashx",
                         type: "GET",
                         dataType: "json",
                         success: function(Jdata) {
-                            console.log(Jdata);
+                            // console.log(Jdata);
                             $this.allGeoData = Jdata;
-                            city.short_name = '台中市';
+                            // city.short_name = '台中市';
                             $this.current_location = city.short_name;
                             $this.search_city = city.short_name;
+                            console.log($this.search_city);
                             
                             $this.getArea();
                         },
@@ -106,7 +133,7 @@ var app = new Vue({
             this.allGeoData.filter((el, i)=>{
                 // console.log(this.current_location, el.City);
                 if( el.City === this.current_location) {
-                    console.log(el);
+                    // console.log(el);
                     if( this.current_area === null ) {
                         this.current_area = el.Area;
                         this.getAreaAct();
