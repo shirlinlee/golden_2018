@@ -6,11 +6,6 @@ var app = new Vue({
         current_area: null,
         notyet: true,
         select_data: [],
-        list: {
-            '123456789': { name: '選項 1' },
-            '234567890': { name: '選項 2' },
-            '345678901': { name: '選項 3' }
-        },
         search_city: '',
         search_dist: '',
         search_txt:'',
@@ -91,7 +86,6 @@ var app = new Vue({
                     }
                     //得到city 城市名稱
                     // alert(city.short_name)
-
                     
                     $.ajax({
                         url: "https://cathay.webgene.com.tw/golden2018/api/location.ashx",
@@ -143,18 +137,19 @@ var app = new Vue({
             })
         },
         getStore() {
-            var getAct = this.allGeoData.filter((item, index, array)=>{
+            this.allStore = [];
+            $('.store_wrapper li').removeClass('show');
+            this.allGeoData.filter((item, index, array)=>{
                 if( item.Area === this.current_area) {
                     var obj = item;
                     this.allStore.push(obj);
                 }
             });
-            // console.log(this.allStore);
         },            
         getAreaAct() {
             // console.log(this.current_location);
             //以下抓取最多人數活動
-            var getAct = this.allGeoData.filter((item, index, array)=>{
+            this.allGeoData.filter((item, index, array)=>{
                 if( item.Activities.length > 0 && item.Area === this.current_area) {
                     var obj = item.Activities;
                     Object.keys(obj).map((key)=> {
@@ -182,9 +177,9 @@ var app = new Vue({
         },
         seeAct(index) {
             // console.log(this.$refs);
-            // console.log(this.$refs.i[index]);
             $(this.$refs.i[index]).toggleClass('show');
-
+            // console.log($(this.$refs.i[index]).find('.detail'));
+            $(this.$refs.i[index]).find('.detail').slideToggle('show');
         },
         serch() {
             
@@ -242,6 +237,11 @@ var app = new Vue({
 
             }
             
+        },
+        areaHandler(area) {
+            this.current_area = area;
+            this.search_city = this.search_dist = this.search_txt = '';
+            this.getStore();
         }
 
     }

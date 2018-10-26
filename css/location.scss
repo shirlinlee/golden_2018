@@ -361,6 +361,9 @@
             margin: 15px 0;
             position: relative;
             padding: 0 30px 30px 225px;
+            *{
+                transition: all .4s;
+            }
             .img_wrapper{
                 width: 185px;
                 height: 100%;
@@ -395,9 +398,9 @@
 
         
         &.show {
-            .detail{
-                display: block;
-            }
+            // .detail{
+            //     display: block;
+            // }
             .act_btn {
                 &::after{
                     content: '-';
