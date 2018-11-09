@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, user-scalable=0">
+    <title>加入我們 | 國泰世華</title>
+    <!-- facebook share-->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <!-- favicon-->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- css style-->
+    <link rel="stylesheet" href="css/join.css">
+    <link rel="stylesheet" href="css/vue-datepicker-local.css">
+    <!-- js-->
+    <script src="vendor/ch.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-select/2.5.1/vue-select.js"></script>
+    <script src="vendor/vue-datepicker-local.js"></script>
+  </head>
+  <body>
+    <header></header>
+    <div class="wrap join">
+      <!-- add class '.in'-->
+      <div class="content">
+        <div class="title">
+          <h1> <img src="img/title_joinus.svg"/>
+          </h1>
+          <p class="word">一起做夢想的實踐者，資料送出後我們將派專人盡速與您聯繫</p>
+          <p class="join">先讓我們了解你吧！請填寫基本資料</p>
+        </div>
+        <div class="infoBox">
+          <div class="step1" v-show="step == 1">
+            <div class="inputBox">
+              <div class="item">
+                <div class="name">
+                  <label>姓名</label>
+                  <input v-model="name"/>
+                </div>
+                <div class="birth">
+                  <label>生日</label>
+                  <vue-datepicker-local v-model="birth"></vue-datepicker-local>
+                </div>
+              </div>
+              <div class="item i6">
+                <div class="gender">
+                  <label>性別</label>
+                  <v-select class="gender-select" v-model="gender" :options="genderOptions.list" :max-height="maxHeight" :searchable="false"></v-select>
+                </div>
+                <div class="edu">
+                  <label>學歷</label>
+                  <v-select class="edu-select" v-model="edu" :options="eduOptions.list" :max-height="maxHeight" :searchable="false"></v-select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step2" v-show="step == 2">
+            <div class="inputBox">
+              <div class="item">
+                <div class="place">
+                  <label>希望上班地點</label>
+                  <v-select class="place-select" v-model="place" :options="areaData" label="country" :max-height="maxHeight" :searchable="false"></v-select>
+                </div>
+                <div class="dept">
+                  <label>是否希望指定聯繫單位</label>
+                  <v-select class="dept-select" v-model="dept" :options="availableCities" :disabled="availableCities == &quot;&quot;" :max-height="maxHeight" :reset-on-options-change="true" :searchable="false"></v-select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step3" v-show="step == 3">
+            <div class="inputBox">
+              <div class="item">
+                <div class="phone">
+                  <label>手機</label>
+                  <input text="tel" v-model="phone" maxLength="10"/>
+                </div>
+                <div class="email">
+                  <label>EMAIL</label>
+                  <input text="email" v-model="email"/>
+                </div>
+              </div>
+            </div>
+            <div class="checkBox">
+              <label for="read">本人<a href="" target="_blank">已詳細閱讀</a>下方蒐集、處理及利用個人資料告知暨同意書說明。
+                <input type="checkbox" id="read">
+                <label for="read">是，已詳閱</label>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="progress"> 
+          <div class="btnBox">
+            <div class="btn"><a href="" @click.prevent="next()">{{ (step != 3) ? &quot;下一步&quot; : &quot;送出資料&quot; }}</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="numBox"><span class="now">{{ step }}</span><span class="slash">/</span><span class="totle">3</span></div>
+            <div class="line" :class="{ &quot;step1&quot; : step == 1, &quot;step2&quot; : step == 2, &quot;step3&quot; : step == 3 }">
+              <svg class="bling" width="20" height="15" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <title>bling</title>
+                  <rect fill="none" id="canvas_background" height="17" width="22" y="-1" x="-1"></rect>
+                </g>
+                <g>
+                  <title>Layer 1</title>
+                  <path stroke="#fff43c" transform="rotate(17.083168029785156 3.9378130435943532,9.777226448059084) " d="m0.971301,7.23035c0,0 0,0 0.077052,0c0.077052,0 0.312574,0.152616 0.539366,0.31836c0.943512,0.689534 1.577323,1.072201 2.619777,2.069337c0.63962,0.611815 1.097413,1.093767 2.080411,2.069337c0.235731,0.233949 0.616418,0.636719 0.616418,0.636719l0,0l0,0l0,0" id="svg_5" fill-opacity="null" stroke-opacity="null" stroke-width="2" fill="none"></path>
+                  <path transform="rotate(8.34813404083252 15.593463897705067,9.652233123779297) " d="m17.40587,6.58989c0,0 -0.03327,0.137425 -0.124992,0.312484c-0.290051,0.553585 -0.521624,0.836369 -0.937452,1.499923c-0.285483,0.455556 -0.518899,0.83884 -1.062446,1.687413c-0.289979,0.452709 -0.679363,1.129103 -0.874955,1.499923c-0.300191,0.569127 -0.437477,0.749962 -0.562471,0.999949c0,0 -0.062496,0.124993 -0.062496,0.124993l0,0l0,0l0,0" id="svg_10" fill-opacity="null" stroke-opacity="null" stroke-width="2" stroke="#fff43c" fill="none"></path>
+                  <path d="m9.406282,0.590198c0,0 -0.000001,0.124994 0.062496,0.874955c0.062496,0.749961 0.029453,2.125376 0.062497,3.249833c0.062524,2.127645 0.218734,3.436515 0.249987,5.24973c0.012924,0.74985 0.062497,1.56242 0.062497,1.74991l0,0.124993l0,0l0,0" id="svg_13" fill-opacity="null" stroke-opacity="null" stroke-width="2" stroke="#fff43c" fill="none"></path>
+                </g>
+              </svg><span></span>
+            </div>
+            <div class="imgBox"><img src="img/svg/joinus_circle.svg"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="bundle/join.js"></script>
+  </body>
+</html>

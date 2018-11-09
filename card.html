@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, user-scalable=0">
+    <title>我的夢想名片 | 國泰世華</title>
+    <!-- facebook share-->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <!-- favicon-->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- css style-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/card.css">
+    <!-- js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.1/isMobile.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  </head>
+  <body>
+    <header></header>
+    <div class="wrap card">
+      <!-- add class '.step1Show' -->
+      <!-- add class '.step2Show' -->
+      <!-- add class '.step3Show' -->
+      <div class="content">
+        <div class="share_pic" v-show="false" style="position: absolute; z-index: -9999;">
+          <canvas id="share_canvas" width="600" height="315"></canvas><img src="img/index_bg_05.jpg" id="basic_img" alt="5687"/>
+        </div>
+        <div class="bg1" v-if="step == 1"></div>
+        <div class="bg2" v-if="step != 1"><img class="dot_rt" src="img/dot_1.png"/><img class="dot_rb" src="img/dot_2.png"/><img class="dot_left" src="img/dot_1.png"/>
+        </div>
+        <div class="title">
+          <h1> <img src="img/title_namecard.svg"/>
+          </h1>
+          <p class="word" v-if="step == 1">當現實與理想可以不用再取捨，<span>你未來名片會是什麼樣子？</span></p>
+          <p class="word" v-if="step == 2">如果工作和夢想能同時擁有，<span>你的名片應該長什麼樣？</span></p>
+          <p class="word" v-if="step == 3">工作與夢想，可以不用二選一</p>
+          <p class="join" v-if="step == 3">現在就加入國泰 <span>#讓夢想與工作一起前進</span></p>
+        </div>
+        <div class="step1" v-show="step == 1">
+          <div class="btn"><a href="" @click.prevent="chkFB()"> <span class="icon-ic_f">立即製作</span></a></div>
+        </div>
+        <div class="step2" v-show="step == 2"><img class="right_cloud" src="img/svg/namecard_cloud.svg"/>
+          <div class="cardBox">
+            <div class="left">
+              <div class="imgBox"><img :src="pic"></div><img class="left_cloud" src="img/svg/namecard_cloud.svg"/>
+            </div>
+            <div class="right">
+              <div class="inputBox">
+                <div class="name">
+                  <input type="text" v-model="name" placeholder="姓名"><span class="icon-ic_delete" v-show="name != &quot;&quot;" @click.prevent="name = &quot;&quot;"></span>
+                </div>
+                <div class="dreamBox">
+                  <div class="dream">
+                    <input type="text" v-model="dream" :maxLength="(isRandom) ? &quot;7&quot; : &quot;4&quot;" placeholder="輸入夢想"><span class="icon-ic_delete" v-show="dream != &quot;&quot;" @click.prevent="dream = &quot;&quot;"></span>
+                  </div>
+                  <div class="career" :class="{ &quot;down&quot; : isOpen }" v-if="!isRandom">
+                    <input type="text" v-model="title" @click.prevent="isOpen = !isOpen" readonly>
+                    <ul v-show="isOpen">
+                      <li><a href="" @click.prevent="title = &quot;王者&quot;, isOpen = false">王者</a></li>
+                      <li><a href="" @click.prevent="title = &quot;狂人&quot;, isOpen = false">狂人</a></li>
+                      <li><a href="" @click.prevent="title = &quot;達人&quot;, isOpen = false">達人</a></li>
+                      <li><a href="" @click.prevent="title = &quot;霸主&quot;, isOpen = false">霸主</a></li>
+                      <li><a href="" @click.prevent="title = &quot;扛壩子&quot;, isOpen = false">扛壩子</a></li>
+                      <li><a href="" @click.prevent="title = &quot;無&quot;, isOpen = false">無</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="btnBox"><a class="random" href="" @click.prevent="random()"> <img src="img/svg/ic_random.svg"/><span>夢想神預測</span></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="btn">
+            <div class="hand"><img src="img/namecard_hand.png"/>
+            </div><a href="" @click.prevent="next(3)">看夢想名片</a>
+          </div>
+        </div>
+        <div class="step3" v-show="step == 3">
+          <div class="handBox">
+            <div class="hand">
+              <div class="lefthand">
+                <div class="left">
+                  <div class="main">
+                    <div class="word">
+                      <p class="card_title">高登超級新人王</p>
+                      <p class="email">cathaylife@cathaylife.com</p>
+                    </div>
+                    <div class="logo"><img src="img/namecard_img_golden.png" id="share_logo"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="picture"><img :src="pic"></div>
+                  <div class="name" v-html="finalName"></div>
+                </div>
+              </div>
+              <div class="righthand">
+                <div class="main">
+                  <div class="career" :class="afterWidth">{{ finalDream }}</div>
+                  <div class="email">younggolden@dream.com</div>
+                </div>
+              </div>
+              <div class="btn"><a href="" @click.prevent="shareFB()"> <span class="icon-ic_f">分享結果</span></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="bundle/card.js"></script>
+  </body>
+</html>

@@ -1,0 +1,440 @@
+// all mixins.
+%all-100 {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin h100 {
+    height: 100vh;
+
+    @include m-767 {
+        height: 100%;
+    }
+}
+
+@mixin box-pd {
+    padding-right: 185px;
+
+    @include media(1366px) {
+        padding-right: 160px;
+    }
+
+    @include m-1024 {
+        padding: 0;
+    }
+}
+
+@mixin box-mg {
+    margin-right: 185px;
+
+    @include media(1366px) {
+        margin-right: 160px;
+    }
+
+    @include m-1024 {
+        margin: auto;
+    }
+}
+
+@mixin tab {
+    width: calc(100% - 185px);
+    position: fixed;
+
+    @include media(1366px) {
+        width: calc(100% - 160px);
+    }
+
+    @include m-1024 {
+        width: 100%;
+    }
+}
+
+%shade {
+    box-shadow: 0px 9px 28.42px 0.58px rgba(12, 11, 12, 0.11);
+}
+
+%trans {
+    transition: all .3s ease;
+}
+
+%txt_justify {
+    text-align: justify;
+    text-justify: inter-ideographic;
+}
+
+%center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%v-write {
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+}
+
+%flex-mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%pos-mid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%Y50 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+%X50 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+// constant-width-to-height-ratio
+%square {
+    background: #333;
+    width: 50%;
+    padding-top: 50%;
+}
+
+// Custom text selection
+// ::selection {
+//     background: aquamarine;
+//     color: black;
+// }
+// Hover underline animation
+@mixin hover-underline-animation($color) {
+    display: inline-block;
+    position: relative;
+    color: $color;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $color;
+        transform-origin: center center;
+        transition: transform 0.25s ease-out;
+    }
+
+    &:hover {
+        &:after {
+            transform: scaleX(1);
+            transform-origin: center center;
+        }
+    }
+}
+
+// Disable selection
+%unselectable {
+    user-select: none;
+}
+
+@mixin donut($border, $color, $w, $h) {
+    display: inline-block;
+    border: $border solid rgba(0, 0, 0, 0.25);
+    border-left-color: $color;
+    border-radius: 50%;
+    width: $w;
+    height: $h;
+    animation: donut-spin 1.2s linear infinite;
+}
+
+// gradient-text
+@mixin gradient-text($color1, $color2) {
+    background: -webkit-linear-gradient($color1, $color2);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+// flex box mid
+@mixin flex-mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// flex equal-height box
+@mixin flex-h {
+    display: flex;
+    align-items: stretch;
+}
+
+// img size
+@mixin img_size($image) {
+    width: image-width("../img/#{$image}");
+    height: image-height("../img/#{$image}");
+    background: url("../img/#{$image}") no-repeat;
+}
+
+// circle
+@mixin cir($unit) {
+    width: $unit;
+    height: $unit;
+    border-radius: 100%;
+}
+
+@mixin pos-mid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// full-screen
+@mixin full-screen {
+    width: 100%;
+    min-height: 100%;
+}
+
+// vertical align
+@mixin v-align($h) {
+    &:after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: $h;
+    }
+}
+
+// Jeffery Added
+// header
+@mixin header() {
+    header {
+        position: fixed;
+        width: 100%;
+        height: $headerHeight;
+        background: white;
+        border-bottom: 4px solid #01883f;
+        z-index: 10;
+
+        @include m-767() {
+            height: $m_headerHeight;
+        }
+    }
+}
+
+// btn
+@mixin btn($w, $h, $color, $fontColor, $fontSize) {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    a {
+        display: inline-block;
+        font-size: $fontSize;
+        letter-spacing: 2px;
+        text-align: center;
+        color: $fontColor;
+        width: $w;
+        height: $h;
+        line-height: $h;
+        background-color: $color;
+    }
+}
+
+// input underline and focus animation
+@mixin input-underline($defColor, $actColor) {
+    $normal: $fontSize * 1.0588;
+    $mobile: $fontSize * .95;
+    position: relative;
+    width: 100%;
+
+    input {
+        position: relative;
+        background: transparent;
+        width: 100%;
+        border: none;
+        padding: ($normal * 1.25) 0 ($normal * 1.25) ($normal * 1.25);
+        font-size: $normal;
+        line-height: $normal;
+        color: $defColor;
+        caret-color: $defColor;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $cathay;
+    }
+
+
+    @include m-767() {
+        input {
+            padding: $mobile 0 $mobile $mobile;
+            font-size: $mobile;
+            line-height: $mobile;
+        }
+
+        &:before {
+            height: 1px;
+        }
+    }
+
+    @include m-374() {
+        $mobile_374: $mobile * .85;
+
+        input {
+            padding: $mobile_374 0 $mobile_374 $mobile_374;
+            font-size: $mobile_374;
+            line-height: $mobile_374;
+        }
+    }
+}
+
+@mixin cardShadow {
+    box-shadow: 20.6px 34.3px 39.6px 6.4px rgba(4, 0, 0, 0.34);
+}
+
+@mixin input {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+
+    label {
+        color: white;
+    }
+
+    input {
+        position: relative;
+        background: transparent;
+        width: 100%;
+        border: none;
+        padding: 10px 0;
+        font-size: 18px;
+        line-height: 18px;
+        color: white;
+    }
+
+    span {
+        position: absolute;
+        width: 9px;
+        right: 0;
+        margin: 5px;
+        line-height: 18px;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: white;
+    }
+    
+    @include m-413() {
+        input {
+            padding: 7.5px 40px 7.5px 0;
+            font-size: $fontSize;
+            line-height: $fontSize;
+        }
+    }
+    @include m-374(){
+        input{
+            padding: 5px 0;
+            font-size: $fontSize * .9;
+            line-height: $fontSize * .9;
+        }
+    }
+}
+
+@mixin custom-v-select {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+
+    label {
+        color: white;
+    }
+
+    .v-select {
+        font-size: 18px;
+        line-height: 18px;
+        padding: 3px 0;
+
+        .dropdown-toggle {
+            border: none;
+        }
+
+        .dropdown-menu {
+            min-width: inherit;
+        }
+
+        .vs__selected-options {
+            padding: 0;
+        }
+
+        .selected-tag,
+        .form-control {
+            margin-left: 0;
+            padding-left: 0;
+            color: white;
+        }
+
+        .clear {
+            display: none;
+        }
+
+        .open-indicator:before {
+            border-color: white;
+        }
+
+        &.disabled {
+            .dropdown-toggle {
+                background: none;
+
+                .form-control {
+                    background: none;
+                }
+
+                .vs__actions {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include m-413() {
+        .v-select {
+            padding: 1.5px 0;
+            font-size: $fontSize;
+            line-height: $fontSize;
+        }
+    }
+
+    @include m-374() {
+        .v-select {
+            padding: 1.5px 0;
+            font-size: $fontSize * .9;
+            line-height: $fontSize * .9;
+        }
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: white;
+    }
+}

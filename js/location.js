@@ -11,7 +11,8 @@ var app = new Vue({
         search_txt:'',
         allAct: [],
         allStore:[],
-        allGeoData: []
+        allGeoData: [],
+        showActBanner: false
     },
     updated: function () {
         // console.log(this.search_city);

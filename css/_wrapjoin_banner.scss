@@ -1,0 +1,63 @@
+.content.join_banner {
+    position: relative;
+    width: 100%;
+    height: 362px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: $cathay;
+    background: url(../img/index_bg_05.jpg) center center no-repeat;
+    background-size: cover;
+
+    .box {
+        position: relative;
+        width: 25%;
+
+        .title {
+            width: 100%;
+        }
+
+        .btn {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include btn(100%, 75px, transparent, #fff43c, 20px);
+            margin-top: 28px;
+
+            a {
+                border: 1px solid #fff43c;
+                width: 100%;
+                max-width: 300px;
+                max-height: 75px;
+            }
+        }
+    }
+
+    @include media(1200px) {
+        .box {
+            width: 30%;
+        }
+    }
+
+    @include media(768px) {
+        .box {
+            width: 40%;
+        }
+    }
+
+    @include media(600px) {
+        .box {
+            width: 50%;
+        }
+    }
+
+    @include media(400px) {
+        .box {
+            width: 75%;
+        }
+    }
+}

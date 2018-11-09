@@ -1,0 +1,891 @@
+.wrap.join {
+    width: 100%;
+    height: 100vh;
+    background: $cathay;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    .content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background: url(../img/index_bg_05.jpg) center center no-repeat;
+        background-size: cover;
+
+        .title {
+            text-align: center;
+
+            h1 {
+                width: 384px;
+                margin: 50px auto 40px;
+                opacity: 0;
+                transform: translateY(-50px);
+                transition: opacity .5s ease, transform .5s ease;
+            }
+
+            p {
+                color: white;
+                font-family: 'Noto Sans', sans-serif;
+                font-size: 15px;
+                line-height: 2;
+                letter-spacing: 1.5px;
+
+                &.word {
+                    opacity: 0;
+                    transform: translateY(-50px);
+                    transition: opacity .5s ease .15s, transform .5s ease .15s;
+                }
+
+                &.join {
+                    position: relative;
+                    display: inline-block;
+                    margin-top: 20px;
+                    padding-top: 30px;
+                    font-size: 18px;
+                    z-index: 0;
+                    opacity: 0;
+                    transform: translateY(-50px);
+                    transition: opacity .5s ease .3s, transform .5s ease .3s;
+
+                    &:before {
+                        content: "\201C";
+                        position: absolute;
+                        left: -35px;
+                        top: 5px;
+                        font-family: 'Arial', sans-serif;
+                        font-size: 75px;
+                        line-height: 1;
+                        color: $cathay;
+                    }
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        width: 0%;
+                        height: 12px;
+                        left: 0;
+                        bottom: 3px;
+                        background: $cathay;
+                        z-index: -1;
+                        transition: width .35s ease 1.3s;
+                    }
+                }
+            }
+        }
+
+        .infoBox {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 40px;
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: opacity .5s ease .45s, transform .5s ease .45s;
+            z-index: 5;
+
+            .step1,
+            .step2,
+            .step3 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 40%;
+
+                .inputBox {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+
+                    .item {
+                        width: 100%;
+                        margin: 30px 0 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: row;
+
+                        .name,
+                        .birth,
+                        .phone,
+                        .email {
+                            @include input();
+                        }
+
+                        .birth {
+                            .datepicker {
+                                display: block;
+                                padding: 3px 0;
+                            }
+
+                            .datepicker-popup {
+                                border-radius: 0 0 5px 5px;
+                            }
+
+                            .calendar,
+                            .calendar-head > a {
+                                font-size: 16px;
+                            }
+
+                            .calendar-head > a[class^="calendar-prev"],
+                            .calendar-head > a[class^="calendar-next"] {
+                                font-size: 24px;
+                            }
+
+                            .datepicker-popup,
+                            .calendar-head,
+                            .calendar-body {
+                                width: 100%;
+                            }
+                        }
+
+                        .gender,
+                        .edu,
+                        .place,
+                        .dept {
+                            @include custom-v-select();
+                        }
+                    }
+                }
+            }
+
+            .step1 {
+                .inputBox {
+                    .item {
+                        flex-direction: column;
+
+                        &:first-child {
+                            margin-right: 40px;
+                        }
+                    }
+                }
+            }
+
+            .step2,
+            .step3 {
+                .inputBox {
+                    .item {
+                        & > div {
+                            &:nth-child(2) {
+                                margin-left: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .step3 {
+                .inputBox {
+                    .item {
+                        margin-bottom: 15px;
+                    }
+                }
+
+                .checkBox {
+                    color: white;
+
+                    label {
+                        position: relative;
+                        cursor: pointer;
+
+                        a {
+                            position: relative;
+                            color: white;
+                            line-height: 2.5;
+
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                width: 100%;
+                                height: 1px;
+                                left: 0;
+                                bottom: -5px;
+                                background: white;
+                            }
+                        }
+
+                        label {
+                            $outer: 20px;
+                            $border: 1px;
+                            display: inline-block;
+                            padding-left: $outer + 10px;
+                            margin-left: 30px;
+                            line-height: 2.5;
+                            white-space: pre-wrap;
+                            word-wrap: break-word;
+                            word-break: break-all;
+
+                            &:before,
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                transform: translateY(-50%);
+                                border-radius: 50%;
+                            }
+
+                            &:before {
+                                width: $outer;
+                                height: $outer;
+                                border: $border solid #f7f7f7;
+                            }
+
+                            &:after {
+                                width: $outer;
+                                height: $outer;
+                                left: $border;
+                                background: #fff43c;
+                                opacity: 0;
+                                transform: translateY(-50%) scale(.1);
+                                transition: opacity .1s ease, transform .1s ease;
+                            }
+                        }
+
+                        input[type="checkbox"] {
+                            position: absolute;
+                            top: 0;
+                            left: -9999px;
+                            visibility: hidden;
+
+                            &:checked + label {
+                                &:after {
+                                    transform: translateY(-50%) scale(.3);
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .progress {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Noto Sans', sans-serif;
+            bottom: 42px;
+            color: white;
+
+            .btnBox {
+                @include btn(250px, 70px, transparent, #fff43c, 20px);
+                margin-bottom: 30px;
+                opacity: 0;
+                transform: translateY(-50px);
+                transition: opacity .5s ease .6s, transform .5s ease .6s;
+
+                a {
+                    border: 1px solid #fff43c;
+                }
+            }
+
+            .row {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                opacity: 0;
+                transform: translateY(-50px);
+                transition: opacity .5s ease .9s, transform .5s ease .9s;
+
+                .numBox {
+                    display: flex;
+                    align-items: flex-end;
+                    font-size: 14px;
+                    letter-spacing: 1.3px;
+                    height: 30px;
+
+                    .now {
+                        display: flex;
+                        align-self: flex-start;
+                        color: #fff43c;
+                    }
+
+                    .slash {
+                        display: flex;
+                        align-self: center;
+                        font-size: 9px;
+                    }
+
+                    .total {
+                        display: flex;
+                        align-self: flex-end;
+                    }
+                }
+
+                .line {
+                    position: relative;
+                    width: 170px;
+                    height: 5px;
+                    margin: 0 25px 0 17px;
+                    background-color: white;
+
+                    .bling {
+                        position: absolute;
+                        top: -20px;
+                        left: calc(100% / 3);
+                        transform: translateX(-50%);
+
+                        path {
+                            opacity: 0;
+                        }
+                    }
+
+                    span {
+                        position: absolute;
+                        width: calc(100% / 3);
+                        left: 0;
+                        height: 100%;
+                        background-color: $cathay;
+                        transition: width .4s ease;
+                    }
+
+                    &.step1 {
+                        span {
+                            width: calc(100% / 3);
+                        }
+                    }
+
+                    &.step2 {
+                        .bling {
+                            left: calc(100% / 3 * 2);
+                        }
+
+                        span {
+                            width: calc(100% / 3 * 2);
+                        }
+                    }
+
+                    &.step3 {
+                        .bling {
+                            left: 100%;
+                        }
+
+                        span {
+                            width: 100%;
+                        }
+                    }
+
+                    &.show {
+                        .bling {
+                            path {
+                                stroke-dasharray: 100;
+                                animation-name: run;
+                                animation-duration: .5s;
+                                animation-iteration-count: 1;
+                                animation-delay: .35s;
+                            }
+                        }
+                    }
+
+                    @keyframes run {
+                        0% {
+                            stroke-dashoffset: 0;
+                            opacity: 0;
+                        }
+
+                        25% {
+                            stroke-dashoffset: 0;
+                            opacity: 1;
+                        }
+
+                        75% {
+                            stroke-dashoffset: 100;
+                            opacity: 1;
+                        }
+
+                        100% {
+                            stroke-dashoffset: 100;
+                            opacity: 1;
+                        }
+                    }
+                }
+
+
+                .imgBox {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+
+                    &:before,
+                    &:after {
+                        position: absolute;
+                        left: 51%;
+                        font-size: 14px;
+                        font-weight: 300;
+                        line-height: 55px;
+                        letter-spacing: 1.4px;
+                        transform: translateX(-50%);
+                    }
+
+                    &:before,
+                        {
+                        content: '加入';
+                        top: 0;
+                    }
+
+                    &:after {
+                        content: '高登';
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+
+        // 進場用
+        &.in {
+            .title {
+
+                h1,
+                .word,
+                .join {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                .join {
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .infoBox {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .progress {
+
+                .btnBox,
+                .row {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        // 同意條款的margin
+        @include media(1558px) {
+            & {
+                .infoBox {
+                    .step3 {
+                        .checkBox {
+                            label {
+                                label {
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include media(1366px) {
+            @include media-h(820px) {
+                $scale: 1366 / 1920;
+
+                .title {
+                    h1 {
+                        width: 384px * $scale;
+                        margin: 30px auto 10px;
+                    }
+
+                    p {
+                        &.join {
+                            margin-top: 15px;
+                            padding-top: 10px;
+
+                            &:before {
+                                top: -10px;
+                            }
+                        }
+                    }
+                }
+
+                .infoBox {
+                    margin-top: 10px;
+
+                    .step3 {
+                        .checkBox {
+                            font-size: $fontSize * .85;
+                        }
+                    }
+                }
+
+                .progress {
+                    .btnBox {
+                        a {
+                            width: 250px * $scale;
+                            height: 70px * $scale;
+                            line-height: 70px * $scale;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // ipad
+        @include media(1100px) {
+            .title {
+                h1 {
+                    margin: 30px auto 20px;
+                }
+            }
+
+            .infoBox {
+                margin-top: 10px;
+
+                .step1,
+                .step2,
+                .step3 {
+                    width: 50%;
+                }
+            }
+        }
+
+        // ???
+        @include media(900px) {
+            .title {
+                width: 80%;
+
+                p {
+                    line-height: 1.5;
+
+                    &.join {
+                        margin-top: 10px;
+                        padding-top: 15px;
+                    }
+                }
+            }
+
+            .infoBox {
+                margin-top: 0;
+
+                .step1,
+                .step2,
+                .step3 {
+                    width: 60%;
+                    padding: 0 10px;
+
+                    .inputBox {
+                        .item {
+                            margin: 30px 0 25px;
+                            padding-right: 10px;
+
+                            .name,
+                            .birth,
+                            .phone,
+                            .email {
+                                input {
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .progress {
+                bottom: 22px;
+            }
+        }
+
+        // i6p
+        @include m-767() {
+            .title {
+                h1 {
+                    width: 70%;
+                    margin: 20px auto 10px;
+                }
+
+                p {
+                    &.join {
+                        margin-top: 5px;
+                        padding-top: 5px;
+                        font-size: 16px;
+
+                        &:before {
+                            left: -25px;
+                            top: -5px;
+                            font-size: 55px;
+                        }
+
+                        &:after {
+                            height: 11px;
+                            bottom: 0px;
+                        }
+                    }
+                }
+            }
+
+            .infoBox {
+                margin-top: 20px;
+
+                .step1 {
+
+                    .inputBox {
+                        flex-direction: column;
+
+                        .item {
+                            width: 100%;
+                            margin: 0;
+                            padding: 0;
+
+                            .name,
+                            .birth {
+                                margin: 5px 0;
+                            }
+
+                            &.i6 {
+                                display: flex;
+                                flex-direction: row;
+
+                                .gender {
+                                    margin-right: 5px;
+                                }
+
+                                .edu {
+                                    margin-left: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .step1,
+                .step2,
+                .step3 {
+                    width: 80%;
+                    padding: 0;
+
+                    .inputBox {
+                        .item {
+                            margin-top: 0;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+
+                .step2 {
+                    .inputBox {
+                        margin-top: 30px;
+                    }
+                }
+
+                .step2,
+                .step3 {
+                    .inputBox {
+                        .item {
+                            flex-direction: column;
+
+                            & > div {
+                                &:nth-child(2) {
+                                    margin-left: 0;
+                                }
+                            }
+
+                            .place,
+                            .phone {
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .progress {
+                bottom: 7px;
+                padding-left: 10px;
+
+                .btnBox {
+                    margin-bottom: 15px;
+                }
+
+                .line {
+                    margin-left: 30px;
+                    margin-right: 20px;
+                }
+
+                .imgBox {
+                    transform: scale(.9);
+                }
+            }
+        }
+
+        // i6
+        @include m-413() {
+            .title {
+                h1 {
+                    margin: 15px auto 10px;
+                }
+
+                p {
+                    &.join {
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            .infoBox {
+                margin-top: 20px;
+
+                .step1 {
+                    .inputBox {
+                        .birth {
+                            .datepicker {
+                                input {
+                                    font-size: $fontSize;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .step3 {
+                    .inputBox {
+                        .item {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            .progress {
+                .btnBox {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        // i5
+        @include m-374() {
+            .title {
+                h1 {
+                    width: 60%;
+                    margin: 15px auto 5px;
+                }
+
+                p {
+                    font-size: 14px;
+
+                    &.join {
+                        margin-top: 0;
+                        padding-top: 0;
+                        font-size: 14px;
+
+                        &:before {
+                            left: -20px;
+                            top: -10px;
+                            font-size: 45px;
+                        }
+
+                        &:after {
+                            width: 104%;
+                            height: 11px;
+                            bottom: 0px;
+                        }
+                    }
+                }
+            }
+
+            .infoBox {
+                margin-top: 10px;
+
+                .step1 {
+                    font-size: $fontSize * .9;
+
+                    .inputBox {
+                        .item {
+                            margin-bottom: 0;
+
+                            .birth {
+                                margin-bottom: 0;
+
+                                .datepicker {
+                                    padding: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .step2 {
+                    .inputBox {
+                        margin-top: 20px;
+                    }
+                }
+
+                .step3 {
+                    .inputBox {
+                        .item {
+
+                            .phone,
+                            .email {
+                                margin: 5px 0;
+                            }
+                        }
+                    }
+
+                    .checkBox {
+                        font-size: $fontSize * .775;
+
+                        label {
+                            a {
+                                line-height: 2;
+
+                                &:after {
+                                    bottom: -5px;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .progress {
+                bottom: 2px;
+
+                .btnBox {
+                    bottom: -5px;
+                }
+
+                .row {
+                    .line {
+                        width: 130px;
+                        height: 3px;
+                        margin: 0 10px 0 15px;
+                    }
+
+                    .imgBox {
+                        transform: scale(.7);
+
+                        &:before,
+                        &:after {
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+
+        // iX
+        @include m-ipX() {
+            .infoBox {
+                margin-top: 50px;
+            }
+
+            .progress {
+                .btnBox {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

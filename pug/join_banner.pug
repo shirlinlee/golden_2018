@@ -1,0 +1,37 @@
+extends ./include/layout
+include ./include/mixin
+
+block prepend own_title
+    - var titleWord = '[banner]加入我們'
+    - var company = '國泰世華'
+    
+//-block prepend own_style
+    - var cssArr = ['join_banner']
+    
+block prepend own_js
+    - var jsArr = ['https://code.jquery.com/jquery-3.3.1.min.js']
+
+//-block prepend beforeWrap
+    - var wrapClasses = 'join_banner'
+    
+block prepend afterWrap
+    - var jsArr = []
+    
+block wrapContent
+    // put 'div.content' on banner section per page 
+    // css and js is included inside 
+    .content.join_banner
+        .box
+            .title
+                h1 
+                    +svg('title_joinus')
+            .btn
+                +btn('立即前往')
+        script
+            | $(function(){
+            |     $('.btn').click(function(e){
+            |         e.preventDefault();
+            |         location.href = 'join.html'
+            |     });
+            | });
+        link(rel = 'stylesheet', href = 'css/join_banner.css')

@@ -1,5 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body, html {
+  width: 100%;
+}
+
 .bg_green {
-  background: #00a63a;
+  background: #01883f;
 }
 
 .bg_white {
@@ -23,7 +32,11 @@
 }
 
 .f_green {
-  color: #00a83c;
+  color: #01883f;
+}
+
+.f_grey {
+  color: #333;
 }
 
 .f13 {
@@ -50,19 +63,49 @@
   font-size: 24px;
 }
 
+.f27 {
+  font-size: 27px;
+}
+
+.f40 {
+  font-size: 40px;
+}
+
+.f43 {
+  font-size: 43px;
+}
+
 .abs {
   position: absolute;
+}
+
+.fix {
+  position: fixed;
 }
 
 .W100 {
   width: 100%;
 }
 
-.W940 {
-  max-width: 940px;
+.W50 {
+  width: 50%;
+}
+
+.W1040 {
+  max-width: 1040px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.r50 {
+  border-radius: 50%;
+}
+
+.btn {
+  padding: 30px 100px;
+  display: inline-block;
+  line-height: 1;
 }
 
 .icon_bg {
@@ -78,34 +121,4 @@
 
 *:focus {
   outline: none;
-}
-
-@font-face {
-  font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?juqvgy");
-  src: url("../fonts/icomoon.eot?juqvgy#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?juqvgy") format("truetype"), url("../fonts/icomoon.woff?juqvgy") format("woff"), url("../fonts/icomoon.svg?juqvgy#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-location:before {
-  content: "\e947";
-}
-
-.icon-clock:before {
-  content: "\e94e";
 }

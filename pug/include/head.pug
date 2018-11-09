@@ -1,0 +1,39 @@
+meta(http-equiv = "Content-Type", content = "text/html; charset=utf-8")
+meta(http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1")
+meta(name = "viewport" content = "width=device-width, initial-scale=1, user-scalable=no, user-scalable=0")
+
+block own_title
+    title #{titleWord} | #{company}
+
+// facebook share
+meta(property = 'og:type', content = 'website')
+meta(property = 'og:url', content = '')
+meta(property = 'og:title', content = '')
+meta(property = 'og:description', content = '')
+meta(property = 'og:image', content = '')
+
+// favicon
+link(rel = 'icon', href = 'img/favicon.ico')
+
+// css style
+block own_style
+    - var arr = cssArr || []
+    - var path = 'css/'
+    - var file = '.css'
+    each item in arr
+        - var isCDN = item.indexOf('http') > -1
+        - var src = (isCDN) ? item : path + item + file
+        link(rel = 'stylesheet', href = src)
+
+//- if gt IE 9
+//-script(src = 'vendor/html5shiv.js')
+
+// js
+block own_js
+    - var arr = jsArr || []
+    - var path = 'vendor/'
+    - var file = '.js'
+    each item in arr
+        - var isCDN = item.indexOf('http') > -1
+        - var src = (isCDN) ? item : path + item + file
+        script(src = src)

@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?p5sj14');
+  src:  url('../fonts/icomoon.eot?p5sj14#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?p5sj14') format('truetype'),
+    url('../fonts/icomoon.woff?p5sj14') format('woff'),
+    url('../fonts/icomoon.svg?p5sj14#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-joinus_circle:before {
+  content: "\e900";
+  color: #fff;
+}
+.icon-ic_time:before {
+  content: "\e901";
+}
+.icon-ic_phone:before {
+  content: "\e902";
+}
+.icon-ic_search:before {
+  content: "\e903";
+}
+.icon-ic_fb:before {
+  content: "\e904";
+  color: #01883f;
+}
+.icon-ic_home:before {
+  content: "\e905";
+  color: #01883f;
+}
+.icon-ic_location:before {
+  content: "\e906";
+}
+.icon-dreamlife_arrow:before {
+  content: "\e907";
+  color: #fff;
+}
+.icon-ic_arrow_left:before {
+  content: "\e908";
+  color: #fff;
+}
+.icon-ic_arrow_right:before {
+  content: "\e909";
+  color: #fff;
+}
+.icon-ic_delete:before {
+  content: "\e90a";
+  color: #31a44f;
+}
+.icon-ic_f:before {
+  content: "\e90b";
+  color: #fff;
+}
+.icon-namecard_bg:before {
+  content: "\e90c";
+  color: #fff43c;
+}
+.icon-namecard_cloud:before {
+  content: "\e90d";
+  color: #fff43c;
+}

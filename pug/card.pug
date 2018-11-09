@@ -1,0 +1,101 @@
+extends include/layout
+include include/mixin
+
+block prepend own_title
+    - var titleWord = '我的夢想名片'
+    - var company = '國泰世華'
+    
+block prepend own_style
+    - var cssArr = ['style', 'card']
+    
+block prepend own_js
+    - var jsArr = ['https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.1/isMobile.min.js', 'https://code.jquery.com/jquery-3.3.1.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js']
+
+block prepend beforeWrap
+    - var wrapClasses = 'card'
+    
+block prepend afterWrap
+    - var jsArr = ['card']
+
+    
+block wrapContent
+    // add class '.step1Show' 
+    // add class '.step2Show' 
+    // add class '.step3Show' 
+    .content
+        .share_pic('v-show'='false', style='position: absolute; z-index: -9999;')
+            canvas(id='share_canvas', width='600', height='315')
+            //-換成分享圖的背景
+            +jpg('index_bg_05')(id='basic_img',alt='5687')
+        .bg1('v-if'='step == 1')
+        .bg2('v-if'='step != 1')
+            +png('dot_1')(class='dot_rt')
+            +png('dot_2')(class='dot_rb')
+            +png('dot_1')(class='dot_left')
+        .title
+            h1 
+                +svg('title_namecard')
+            p.word('v-if'='step == 1') 當現實與理想可以不用再取捨，
+                span 你未來名片會是什麼樣子？
+            p.word('v-if'='step == 2') 如果工作和夢想能同時擁有，
+                span 你的名片應該長什麼樣？
+            p.word('v-if'='step == 3') 工作與夢想，可以不用二選一
+            p.join('v-if'='step == 3') 現在就加入國泰 
+                span #讓夢想與工作一起前進
+        .step1(v-show="step == 1")
+            .btn
+                a(href='', '@click.prevent'='chkFB()') 
+                    span.icon-ic_f 立即製作
+        .step2(v-show="step == 2")
+            +svg_in('namecard_cloud')(class='right_cloud')
+            .cardBox
+                .left
+                    .imgBox
+                        img(':src'='pic')
+                    +svg_in('namecard_cloud')(class='left_cloud')
+                .right
+                    .inputBox
+                        .name
+                            input(type="text", 'v-model'='name', placeholder='姓名')
+                            span.icon-ic_delete('v-show'='name != ""', '@click.prevent'='name = ""')
+                        .dreamBox
+                            .dream
+                                input(type="text", 'v-model'='dream', ':maxLength'='(isRandom) ? "7" : "4"', placeholder='輸入夢想')
+                                span.icon-ic_delete('v-show'='dream != ""', '@click.prevent'='dream = ""')
+                            .career(':class'='{ "down" : isOpen }', 'v-if'='!isRandom')
+                                input(type="text", 'v-model'='title', '@click.prevent'='isOpen = !isOpen', readonly)
+                                ul('v-show'='isOpen')
+                                    - var careerList = ['王者', '狂人', '達人', '霸主', '扛壩子', '無']
+                                    each career in careerList
+                                        li
+                                            a(href='', '@click.prevent'='title = "'+career+'", isOpen = false') #{career}
+                        .btnBox
+                            a.random(href='','@click.prevent'='random()') 
+                                +svg_in('ic_random')
+                                span 夢想神預測
+            .btn
+                .hand
+                    +png('namecard_hand')
+                a(href='', '@click.prevent'='next(3)') 看夢想名片
+        .step3(v-show="step == 3")
+            .handBox
+                .hand
+                    .lefthand
+                        .left
+                            .main
+                                .word
+                                    p.card_title 高登超級新人王
+                                    p.email cathaylife@cathaylife.com
+                                .logo
+                                    +png('namecard_img_golden')(id='share_logo')
+                        .right
+                            .picture
+                                img(':src'='pic')
+                            .name('v-html'='finalName')
+                    .righthand
+                        .main
+                            .career(':class'='afterWidth') {{ finalDream }}
+                            .email younggolden@dream.com
+                    .btn
+                        a(href='', '@click.prevent'='shareFB()') 
+                            span.icon-ic_f 分享結果

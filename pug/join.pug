@@ -1,0 +1,91 @@
+extends ./include/layout
+include ./include/mixin
+
+block prepend own_title
+    - var titleWord = '加入我們'
+    - var company = '國泰世華'
+    
+block prepend own_style
+    - var cssArr = ['join', 'vue-datepicker-local']
+    
+block prepend own_js
+    - var jsArr = ['ch.min', 'https://code.jquery.com/jquery-3.3.1.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js', 'https://cdnjs.cloudflare.com/ajax/libs/vue-select/2.5.1/vue-select.js', 'vue-datepicker-local']
+
+block prepend beforeWrap
+    - var wrapClasses = 'join'
+    
+block prepend afterWrap
+    - var jsArr = ['join']
+    
+block wrapContent
+    // add class '.in'
+    .content
+        .title
+            h1 
+                +svg('title_joinus')
+            p.word 一起做夢想的實踐者，資料送出後我們將派專人盡速與您聯繫
+            p.join 先讓我們了解你吧！請填寫基本資料
+        .infoBox
+            .step1('v-show'='step == 1')
+                .inputBox
+                    .item
+                        +input('name', '姓名', false)('v-model'='name')
+                        .birth
+                            label 生日
+                            vue-datepicker-local('v-model'='birth')
+                    .item.i6
+                        .gender
+                            label 性別
+                            v-select(class='gender-select', 'v-model'='gender', ':options'='genderOptions.list', ':max-height'='maxHeight', ':searchable'='false')
+                        .edu
+                            label 學歷
+                            v-select(class='edu-select', 'v-model'='edu', ':options'='eduOptions.list', ':max-height'='maxHeight', ':searchable'='false')
+                //-.btnBox
+                    .btn
+                        +btn('下一步')('@click.prevent'='next(2)')
+            .step2('v-show'='step == 2')
+                .inputBox
+                    .item
+                        .place
+                            label 希望上班地點
+                            v-select(class='place-select', 'v-model'='place', ':options'='areaData', label='country', ':max-height'='maxHeight', ':searchable'='false')
+                        .dept
+                            label 是否希望指定聯繫單位
+                            v-select(class='dept-select', 'v-model'='dept', ':options'='availableCities', ':disabled'='availableCities == ""', ':max-height'='maxHeight', ':reset-on-options-change'='true', ':searchable'='false')
+                //-.btnBox
+                    .btn
+                        +btn('下一步')('@click.prevent'='next(3)')
+            .step3('v-show'='step == 3')
+                .inputBox
+                    .item
+                        +input('phone', '手機', false)(text='tel', 'v-model'='phone', maxLength='10')
+                        +input('email', 'EMAIL', false)(text='email', 'v-model'='email')
+                .checkBox
+                    label(for="read")
+                        | 本人
+                        a(href='', target='_blank') 已詳細閱讀
+                        | 下方蒐集、處理及利用個人資料告知暨同意書說明。
+                        input(type="checkbox", id="read") 
+                        label(for="read") 是，已詳閱
+        .progress 
+            .btnBox
+                .btn
+                    +btn('{{ (step != 3) ? "下一步" : "送出資料" }}')('@click.prevent'='next()')
+            .row
+                .numBox
+                    span.now {{ step }}
+                    span.slash /
+                    span.totle 3
+                .line(':class'='{ "step1" : step == 1, "step2" : step == 2, "step3" : step == 3 }')
+                    svg(width="20", height="15", xmlns="http://www.w3.org/2000/svg", class="bling")
+                        g
+                            title bling
+                            rect(fill="none", id="canvas_background", height="17", width="22", y="-1", x="-1")
+                        g
+                            title Layer 1
+                            path(stroke="#fff43c", transform="rotate(17.083168029785156 3.9378130435943532,9.777226448059084) ", d="m0.971301,7.23035c0,0 0,0 0.077052,0c0.077052,0 0.312574,0.152616 0.539366,0.31836c0.943512,0.689534 1.577323,1.072201 2.619777,2.069337c0.63962,0.611815 1.097413,1.093767 2.080411,2.069337c0.235731,0.233949 0.616418,0.636719 0.616418,0.636719l0,0l0,0l0,0", id="svg_5", fill-opacity="null", stroke-opacity="null", stroke-width="2", fill="none")
+                            path(transform="rotate(8.34813404083252 15.593463897705067,9.652233123779297) ", d="m17.40587,6.58989c0,0 -0.03327,0.137425 -0.124992,0.312484c-0.290051,0.553585 -0.521624,0.836369 -0.937452,1.499923c-0.285483,0.455556 -0.518899,0.83884 -1.062446,1.687413c-0.289979,0.452709 -0.679363,1.129103 -0.874955,1.499923c-0.300191,0.569127 -0.437477,0.749962 -0.562471,0.999949c0,0 -0.062496,0.124993 -0.062496,0.124993l0,0l0,0l0,0", id="svg_10", fill-opacity="null", stroke-opacity="null", stroke-width="2", stroke="#fff43c", fill="none")
+                            path(d="m9.406282,0.590198c0,0 -0.000001,0.124994 0.062496,0.874955c0.062496,0.749961 0.029453,2.125376 0.062497,3.249833c0.062524,2.127645 0.218734,3.436515 0.249987,5.24973c0.012924,0.74985 0.062497,1.56242 0.062497,1.74991l0,0.124993l0,0l0,0", id="svg_13", fill-opacity="null", stroke-opacity="null", stroke-width="2", stroke="#fff43c", fill="none")
+                    span
+                .imgBox
+                    +svg_in('joinus_circle')

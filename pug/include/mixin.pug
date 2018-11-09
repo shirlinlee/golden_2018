@@ -1,0 +1,78 @@
+//- svg
+mixin svg(name)
+	-var path = "img/"
+	-var file = ".svg"
+	img(src=path + name + file)&attributes(attributes)
+    
+//- svg inner
+mixin svg_in(name)
+	-var path = "img/svg/"
+	-var file = ".svg"
+	img(src=path + name + file)&attributes(attributes)
+
+//- img
+mixin png(name)
+	-var path = "img/"
+	-var file = ".png"
+	img(src=path + name + file)&attributes(attributes)
+
+//- jpg
+mixin jpg(name)
+	-var path = "img/"
+	-var file = ".jpg"
+	img(src=path + name + file)&attributes(attributes)
+//- gif
+mixin gif(name)
+	-var path = "img/"
+	-var file = ".gif"
+	img(src=path + name + file)&attributes(attributes)
+
+//- floorTab
+mixin floorTab(floorTabs)
+	each floorTab in floorTabs
+		li
+			a(href="#") #{floorTab}
+
+//- Jeffery added
+//- btn
+mixin btn(word)
+	a(href="")&attributes(attributes) #{word}
+        
+//- two card
+mixin twoCard(step)
+	// add class '.show'
+	.handBox
+		.hand
+			.lefthand
+				if step == 1
+					.realhand
+						img(src="img/hand_01.png")
+				.left
+					.main
+						.word
+							p.title 國泰新人王
+							p.email cathaylife@cathaylife.com
+						.logo
+							+png('card-logo')
+				.right
+					.picture
+						+png('card-newbie')
+					.name 王&nbsp;&nbsp;小明
+			.righthand
+				if step == 1
+					.realhand
+						+png('hand_02')
+				.main
+					.career 街頭撩妹冠軍
+					.email younggolden@dream.com
+			if step == 3
+				+btn('分享結果')
+                
+//- default input
+mixin input(className, word, isSelect)
+	div(class=className)
+		label #{word}
+		input&attributes(attributes)
+		if isSelect == true
+			span
+				+png('join-arrow')

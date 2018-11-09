@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>國泰人壽2018 - 高登計畫</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+        <script type="text/javascript" src="vendor/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/golden.css" />
+
+    </head>
+
+    <body>
+        <div id="wrappper" class="bg_grey W100">
+            <div id="game" class="W1040">
+                <div class="fix draw">
+                    <img src="img/golden/draw_p_01.svg" width="100%" alt="">
+                    <p class="abs w1">找工作前</p>
+                    <p class="abs w2">你夠了解自己嗎？</p>
+                    <p class="abs w3">玩個小測驗吧！</p>
+                </div>
+                
+                <div class="select_area W100" v-for="(q,index) in qes" v-show="index === progress"> 
+                    <h2 class="f_green f24 W100"><font class="abs">Q{{progress+1}}</font>
+                        <span>{{ q.title }}</span>
+                    </h2>
+                    <div class="W50">
+                        <img src="img/golden/option_correct.svg" class="icon" :class="{'choose': 'aws_'+index === true}" @click="choose('aws_'+index, true)" alt="">
+                        <img src="img/golden/draw_p_02.svg" class="draw" alt="">
+                    </div>
+                    <div class="W50">
+                        <img src="img/golden/option_wrong.svg" class="icon" :class="{'choose': 'aws_'+index === false}" @click="choose('aws_'+index, false)" alt="">
+                        <img src="img/golden/draw_p_03.svg" class="draw" alt="">
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="f_green f18 abs">測驗開始</div>
+                    <div class="dash">
+                        <p :class="{'done': progress === 0}"></p>
+                        <p :class="{'done': progress === 1}"></p>
+                        <p :class="{'done': progress === 2}"></p>
+                        <p :class="{'done': progress === 3}"></p>
+                    </div>
+                    <div class="quart f14 bg_green r50 abs">
+                        <span class="f_yellow abs">{{ progress+1 }}</span>
+                        <span class="f_white">4</span>
+                    </div>
+                </div>
+               <a href="javascript:;" class="btn f_green f20">SKIP</a>
+            
+            </div>
+            <div id="result" class="W100 bg_yellow">
+                <h2 class="f_green f40 W100">測驗結果</h2>
+                <div class="analysis W1040">
+                    <div class="bg_green">
+                        <img src="img/golden/draw_p_04.svg" class="people abs" alt="">
+                        <h5 class="f_yellow f27">人格特質分析</h5>
+                        <ul>
+                            <li class="f_white f18" v-for="ch in character">{{ch}}</li>
+                        </ul>
+                    </div>
+                    <div class="bg_white f_grey f18 abs">
+                        {{des}}
+                        <img src="img/golden/draw_p_05.svg" class="people abs" alt="">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div id="intro" class="W100">
+                <h2 class="f_green f40 W100">職務介紹 <font class="f14">Job introduction</font></h2>
+                <div class="W1040">
+                    <div class="bg_green">
+                        <img src="img/golden/img_p_01.png" class="people abs" alt="">
+                        <h5 class="f_yellow f27">SA<br/>業務新秀</h5>
+                        <ul class="f_white f17">
+                            <li>高中職以上學歷，對保險業務工作有興趣</li>
+                            <li>循序漸進的學習發展機會，成為頂尖業務菁英</li>
+                            <li>積極主動學習/樂於與人溝通</li>
+                        </ul>
+                        
+                    </div>
+                    <div class="bg_yellow">
+                            <img src="img/golden/img_p_02.png" class="people abs" alt="">
+                            <h5 class="f_yellow f27">PMA <br>領航儲備主管</h5>
+                            <ul class="f_grey f17">
+                                <li>大學以上學歷，立志朝主管職發展</li>
+                                <li>目標2年內成為業務主管，挑戰年薪150萬 </li>
+                                <li>具創新思維/善於拓展組織與凝聚團隊</li>
+                            </ul>
+                            
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+<script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript" src="js/golden.js"></script>
+

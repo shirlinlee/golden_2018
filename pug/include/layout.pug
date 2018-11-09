@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        include head
+    body
+        //-block trans
+            include trans
+            
+        - var HeaderClasses= [];
+        block beforeHeader
+            header(class=HeaderClasses)
+            
+        - var wrapClasses= [];
+        block beforeWrap
+            .wrap(class=wrapClasses)
+                block wrapContent
+                
+        block afterWrap
+            - var arr = jsArr || [] 
+            - var path = 'bundle/'
+            - var file = '.js'
+            each item in arr
+                - var isCDN = item.indexOf('http') > -1
+                - var src = (isCDN) ? item : path + item + file
+                script(src = src)

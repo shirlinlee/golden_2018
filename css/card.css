@@ -1,0 +1,1560 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,500");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q,
+blockquote {
+  quotes: none;
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+* {
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+img {
+  width: 100%;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.input_focus.trans_bg {
+  display: none;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 700;
+}
+
+h4 {
+  font-weight: 700;
+}
+
+h5 {
+  font-weight: 700;
+}
+
+h6 {
+  font-weight: 700;
+}
+
+.wrap.card {
+  width: 100%;
+  height: 100vh;
+  background: #01aa4f;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.wrap.card .content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  background: #e0e0e0;
+  overflow: hidden;
+  font-size: 1.0625rem;
+}
+
+.wrap.card .content .bg1,
+.wrap.card .content .bg2 {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+
+.wrap.card .content .bg1 {
+  background: url(../img/index_bg_02.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.wrap.card .content .bg2 {
+  background: url(../img/namecard_bg.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.wrap.card .content .bg2 .dot_rt {
+  position: absolute;
+  width: 30%;
+  top: 7%;
+  right: 6%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.wrap.card .content .bg2 .dot_rb {
+  position: absolute;
+  width: 10%;
+  top: 50%;
+  right: 15%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.wrap.card .content .bg2 .dot_left {
+  position: absolute;
+  width: 30%;
+  top: 25%;
+  left: 0%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.wrap.card .content .title {
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.wrap.card .content .title h1 {
+  margin-top: 50px;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: transform .5s ease, opacity .5s ease;
+}
+
+.wrap.card .content .title p {
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center;
+}
+
+.wrap.card .content .title p.word {
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  margin: 20px 0 40px;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: transform .5s ease, opacity .5s ease;
+  transition-delay: .15s;
+}
+
+.wrap.card .content .title p.join {
+  margin-top: -20px;
+}
+
+.wrap.card .content .title p.join span {
+  position: relative;
+  z-index: 0;
+}
+
+.wrap.card .content .title p.join span:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+  height: 12px;
+  background: yellow;
+  left: 0;
+  z-index: -1;
+  transition: width .35s ease;
+}
+
+.wrap.card .content .step1 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap.card .content .step1 .btn {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.wrap.card .content .step1 .btn a {
+  display: inline-block;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: white;
+  width: 300px;
+  height: 75px;
+  line-height: 75px;
+  background-color: #01aa4f;
+}
+
+.wrap.card .content .step1 .btn a .icon-ic_f:before {
+  position: relative;
+  top: 1px;
+  padding-right: 15px;
+}
+
+.wrap.card .content .step2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.wrap.card .content .step2 .cardBox {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 702px;
+  height: 394px;
+  border-radius: 10px;
+  box-shadow: 20.6px 34.3px 39.6px 6.4px rgba(4, 0, 0, 0.34);
+}
+
+.wrap.card .content .step2 .cardBox .left {
+  position: relative;
+  display: flex;
+  flex: 25;
+  background: #01aa4f;
+  border-radius: 10px 0 0 10px;
+  z-index: 1;
+}
+
+.wrap.card .content .step2 .cardBox .left .imgBox {
+  padding: 20%;
+}
+
+.wrap.card .content .step2 .cardBox .left .imgBox img {
+  border-radius: 50%;
+}
+
+.wrap.card .content .step2 .cardBox .left .left_cloud {
+  position: absolute;
+  width: 120%;
+  right: 50%;
+  bottom: 20%;
+  opacity: 0;
+  transform: translateX(150px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.175, 0.885, 0.71, 1.13);
+  transition-delay: .8s;
+}
+
+.wrap.card .content .step2 .cardBox .right {
+  display: flex;
+  flex: 75;
+  flex-direction: column;
+  border-radius: 0 10px 10px 0;
+  background: url(../img/namecard_draw_01.png) bottom right no-repeat;
+  background-size: 60%;
+  background-color: white;
+}
+
+.wrap.card .content .step2 .cardBox .right span.icon-ic_delete {
+  cursor: pointer;
+  z-index: 1;
+}
+
+.wrap.card .content .step2 .cardBox .right span.icon-ic_delete:before {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 22px;
+  transform: translateY(-50%);
+}
+
+.wrap.card .content .step2 .cardBox .right .inputBox {
+  padding: 10% 10% 10%;
+}
+
+.wrap.card .content .step2 .cardBox .right .inputBox .name {
+  margin-bottom: 5%;
+  position: relative;
+  width: 100%;
+}
+
+.wrap.card .content .step2 .cardBox .right .inputBox .name input {
+  position: relative;
+  background: transparent;
+  width: 100%;
+  border: none;
+  padding: 1.40622rem 0 1.40622rem 1.40622rem;
+  font-size: 1.12498rem;
+  line-height: 1.12498rem;
+  color: black;
+  caret-color: black;
+}
+
+.wrap.card .content .step2 .cardBox .right .inputBox .name:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #01aa4f;
+}
+
+@media screen and (max-width: 767px) {
+  .wrap.card .content .step2 .cardBox .right .inputBox .name input {
+    padding: 1.00937rem 0 1.00937rem 1.00937rem;
+    font-size: 1.00937rem;
+    line-height: 1.00937rem;
+  }
+  .wrap.card .content .step2 .cardBox .right .inputBox .name:before {
+    height: 1px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .wrap.card .content .step2 .cardBox .right .inputBox .name input {
+    padding: 0.85797rem 0 0.85797rem 0.85797rem;
+    font-size: 0.85797rem;
+    line-height: 0.85797rem;
+  }
+}
+
+.wrap.card .content .step2 .cardBox .right .dreamBox {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5%;
+}
+
+.wrap.card .content .step2 .cardBox .right .dreamBox .dream {
+  flex: 2;
+  position: relative;
+  width: 100%;
+}
+
+.wrap.card .content .step2 .cardBox .right .dreamBox .dream input {
+  position: relative;
+  background: transparent;
+  width: 100%;
+  border: none;
+  padding: 1.40622rem 0 1.40622rem 1.40622rem;
+  font-size: 1.12498rem;
+  line-height: 1.12498rem;
+  color: black;
+  caret-color: black;
+}
+
+.wrap.card .content .step2 .cardBox .right .dreamBox .dream:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #01aa4f;
+}
+
+@media screen and (max-width: 767px) {
+  .wrap.card .content .step2 .cardBox .right .dreamBox .dream input {
+    padding: 1.00937rem 0 1.00937rem 1.00937rem;
+    font-size: 1.00937rem;
+    line-height: 1.00937rem;
+  }
+  .wrap.card .content .step2 .cardBox .right .dreamBox .dream:before {
+    height: 1px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .wrap.card .content .step2 .cardBox .right .dreamBox .dream input {
+    padding: 0.85797rem 0 0.85797rem 0.85797rem;
+    font-size: 0.85797rem;
+    line-height: 0.85797rem;
+  }
+}
+
+.wrap.card .content .step2 .cardBox .right .dreamBox .career {
+  flex: 1;
+  margin-left: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.wrap.card .content .step2 .cardBox .right .dreamBox .career input {
+  position: relative;
+  background: transparent;
+  width: 100%;
+  border: none;
+  padding: 1.40622rem 0 1.40622rem 1.40622rem;
+  font-size: 1.12498rem;
+  line-height: 1.12498rem;
+  color: black;
+  caret-color: black;
+}
+
+.wrap.card .content .step2 .cardBox .right .dreamBox .career:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #01aa4f;
+}
+
+@media screen and (max-width: 767px) {
+  .wrap.card .content .step2 .cardBox .right .dreamBox .career input {
+    padding: 1.00937rem 0 1.00937rem 1.00937rem;
+    font-size: 1.00937rem;
+    line-height: 1.00937rem;
+  }
+  .wrap.card .content .step2 .cardBox .right .dreamBox .career:before {
+    height: 1px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .wrap.card .content .step2 .cardBox .right .dreamBox .career input {
+    padding: 0.85797rem 0 0.85797rem 0.85797rem;
+    font-size: 0.85797rem;
+    line-height: 0.85797rem;
+  }
+}
+
+.wrap.card .content .step2 .cardBox .right .dreamBox .career:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-width: 8px 8px 0 8px;
+  border-color: #01aa4f transparent transparent transparent;
+}
+
+.wrap.card .content .step2 .cardBox .right .dreamBox .career.down:after {
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent #01aa4f transparent;
+}
+
+.wrap.card .content .step2 .cardBox .right .dreamBox .career ul {
+  position: absolute;
+  width: 100%;
+  max-height: 250px;
+  border: solid 1px #01aa4f;
+  background-color: white;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.0625rem;
+  overflow-y: auto;
+  padding: 5px 0;
+  z-index: 3;
+}
+
+.wrap.card .content .step2 .cardBox .right .dreamBox .career ul li {
+  width: 100%;
+}
+
+.wrap.card .content .step2 .cardBox .right .dreamBox .career ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  color: black;
+}
+
+.wrap.card .content .step2 .cardBox .right .btnBox {
+  width: 100%;
+  height: 39px;
+  line-height: 39px;
+  padding-left: 50px;
+  z-index: 2;
+}
+
+.wrap.card .content .step2 .cardBox .right .btnBox .random {
+  display: flex;
+  font-family: 'Noto Sans', sans-serif;
+  color: #01aa4f;
+}
+
+.wrap.card .content .step2 .cardBox .right .btnBox .random img {
+  width: 39px;
+}
+
+.wrap.card .content .step2 .cardBox .right .btnBox .random span {
+  margin-left: 11px;
+  font-size: 1.00937rem;
+  letter-spacing: 1.5px;
+}
+
+.wrap.card .content .step2 .right_cloud {
+  position: absolute;
+  width: 17.5%;
+  left: 62.5%;
+  top: 10%;
+  transform: translateX(-150px);
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.175, 0.885, 0.71, 1.13);
+  transition-delay: .6s;
+}
+
+.wrap.card .content .step2 .btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.wrap.card .content .step2 .btn a {
+  display: inline-block;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: white;
+  width: 300px;
+  height: 75px;
+  line-height: 75px;
+  background-color: #01aa4f;
+}
+
+.wrap.card .content .step2 .btn a {
+  opacity: 0;
+  transition: opacity .5s ease 1.3s;
+  z-index: 2;
+}
+
+.wrap.card .content .step2 .btn .hand {
+  position: absolute;
+  margin-top: -130px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wrap.card .content .step3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap.card .content .step3 .handBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.wrap.card .content .step3 .handBox .hand {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 75px;
+}
+
+.wrap.card .content .step3 .handBox .hand .lefthand {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 60%;
+  max-width: 512px;
+  max-height: 314px;
+  transform: translate(0, 0);
+  transition: transform .5s ease;
+  border-radius: 10px;
+  z-index: 2;
+  box-shadow: 20.6px 34.3px 39.6px 6.4px rgba(4, 0, 0, 0.34);
+}
+
+.wrap.card .content .step3 .handBox .hand .lefthand .left {
+  display: flex;
+  flex: 70;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px 0 0 10px;
+}
+
+.wrap.card .content .step3 .handBox .hand .lefthand .left .main {
+  position: relative;
+  padding-left: 30px;
+}
+
+.wrap.card .content .step3 .handBox .hand .lefthand .left .main .word {
+  position: absolute;
+  top: 22.5%;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #01aa4f;
+  word-break: keep-all;
+}
+
+.wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .card_title {
+  letter-spacing: 1px;
+  font-size: 1.43438rem;
+}
+
+.wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .email {
+  font-size: 0.85rem;
+  letter-spacing: .6px;
+}
+
+.wrap.card .content .step3 .handBox .hand .lefthand .left .main .logo {
+  position: absolute;
+  bottom: 30px;
+  width: 90px;
+}
+
+.wrap.card .content .step3 .handBox .hand .lefthand .right {
+  position: relative;
+  display: flex;
+  flex: 30;
+  background: rgba(255, 255, 0, 0.8);
+  border-radius: 0 10px 10px 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+  position: absolute;
+  top: 15%;
+  width: 100px;
+  height: 100px;
+}
+
+.wrap.card .content .step3 .handBox .hand .lefthand .right .picture img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.wrap.card .content .step3 .handBox .hand .lefthand .right .name {
+  text-align: center;
+  position: absolute;
+  color: #01aa4f;
+  bottom: 15%;
+  font-size: 1.7425rem;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+}
+
+.wrap.card .content .step3 .handBox .hand .righthand {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+  max-width: 512px;
+  max-height: 314px;
+  background: url(../img/svg/namecard_bg.svg) center center no-repeat;
+  background-size: cover;
+  background-color: #01aa4f;
+  transform: translate(0, 0);
+  transition: transform .5s ease;
+  border-radius: 10px;
+  z-index: 1;
+  box-shadow: 20.6px 34.3px 39.6px 6.4px rgba(4, 0, 0, 0.34);
+}
+
+.wrap.card .content .step3 .handBox .hand .righthand .main {
+  position: relative;
+  width: 100%;
+  top: 27.5%;
+  margin-left: 35px;
+  color: white;
+}
+
+.wrap.card .content .step3 .handBox .hand .righthand .main .career {
+  position: relative;
+  font-size: 1.43438rem;
+  font-family: 'Noto Sans', sans-serif;
+  letter-spacing: 1px;
+  word-break: keep-all;
+}
+
+.wrap.card .content .step3 .handBox .hand .righthand .main .career:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 13px;
+  background-color: yellow;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+}
+
+.wrap.card .content .step3 .handBox .hand .righthand .main .career.word6:after {
+  width: 55%;
+}
+
+.wrap.card .content .step3 .handBox .hand .righthand .main .career.word5:after {
+  width: 60%;
+}
+
+.wrap.card .content .step3 .handBox .hand .righthand .main .career.word4:after {
+  width: 65%;
+}
+
+.wrap.card .content .step3 .handBox .hand .righthand .main .email {
+  font-size: 0.85rem;
+  margin: 10px 0;
+  letter-spacing: .6px;
+  word-break: keep-all;
+}
+
+.wrap.card .content .step3 .handBox .btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  transform: translateY(500%);
+  transition: opacity .65s ease, transform .65s ease;
+  transition-delay: .5s;
+}
+
+.wrap.card .content .step3 .handBox .btn a {
+  display: inline-block;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: white;
+  width: 300px;
+  height: 75px;
+  line-height: 75px;
+  background-color: #01aa4f;
+}
+
+.wrap.card .content .step3 .handBox .btn a .icon-ic_f:before {
+  position: relative;
+  top: 1px;
+  padding-right: 15px;
+  color: #fff43c;
+}
+
+.wrap.card .content .step1 .btn {
+  transform: translateY(-30px);
+  opacity: 0;
+  transition: transform .5s ease .3s, opacity .5s ease .3s;
+}
+
+.wrap.card .content.step1Show .title h1,
+.wrap.card .content.step1Show .title .word {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.wrap.card .content.step1Show .step1 .btn {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.wrap.card .content.step2Show .step2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wrap.card .content.step2Show .step2 .cardBox .left .left_cloud {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wrap.card .content.step2Show .step2 .right_cloud {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.wrap.card .content.step2Show .step2 .btn a {
+  opacity: 1;
+}
+
+.wrap.card .content.step3Show .title p.join span:after {
+  width: 100%;
+}
+
+.wrap.card .content.step3Show .step3 .handBox .hand .lefthand {
+  transform: translate(-40%, -15%);
+}
+
+.wrap.card .content.step3Show .step3 .handBox .hand .righthand {
+  transform: translate(30%, 35%);
+}
+
+.wrap.card .content.step3Show .step3 .handBox .hand .btn {
+  opacity: 1;
+  transform: translateY(650%);
+}
+
+@media screen and (max-width: 1680px) {
+  .wrap.card .content .step3 .handBox .hand .lefthand {
+    max-width: 448px;
+    max-height: 274.75px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .logo {
+    width: 78.75px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+    width: 87.5px;
+    height: 87.5px;
+    top: 13.125%;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .right .name {
+    font-size: 24.5px;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand {
+    max-width: 448px;
+    max-height: 274.75px;
+  }
+  .wrap.card .content .step3 .handBox .hand .btn {
+    transform: translateY(200%);
+  }
+  .wrap.card .content .step3 .handBox.show .hand .btn {
+    transform: translateY(575%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+    transform: translateY(575%);
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .wrap.card .content .title {
+    margin: 0 auto;
+  }
+  .wrap.card .content .title h1 {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .wrap.card .content .title p.word {
+    margin: 10px 0 10px;
+  }
+  .wrap.card .content .title p.join {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  .wrap.card .content .step1 .btn a {
+    width: 213.4375px;
+    height: 53.35938px;
+    line-height: 53.35938px;
+  }
+  .wrap.card .content .step2 .cardBox {
+    width: 499.44375px;
+    height: 280.31458px;
+  }
+  .wrap.card .content .step2 .cardBox .right .inputBox {
+    padding: 5% 10% 4%;
+  }
+  .wrap.card .content .step2 .btn {
+    margin-top: 40px;
+  }
+  .wrap.card .content .step2 .btn a {
+    width: 213.4375px;
+    height: 53.35938px;
+    line-height: 53.35938px;
+    font-size: 16px;
+  }
+  .wrap.card .content .step2 .btn .hand {
+    width: 499.44375px;
+    margin-top: -100px;
+  }
+  .wrap.card .content .step3 .handBox .hand {
+    margin-top: 30px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand {
+    max-width: 364.26667px;
+    max-height: 212.22802px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main {
+    padding-left: 21.34375px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word {
+    top: 17.5%;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .card_title {
+    font-size: 1.22187rem;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .email {
+    font-size: 0.74375rem;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .logo {
+    bottom: 21.34375px;
+    width: 64.03125px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+    width: 71.14583px;
+    height: 71.14583px;
+    top: 10.67188%;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .right .name {
+    font-size: 19.92083px;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand {
+    max-width: 364.26667px;
+    max-height: 212.22802px;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand .main {
+    margin-left: 24.90104px;
+    top: 30%;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand .main .career {
+    font-size: 1.22187rem;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand .main .career:after {
+    height: 12px;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand .main .email {
+    font-size: 0.74375rem;
+    margin: 5px 0;
+  }
+  .wrap.card .content .step3 .handBox .btn {
+    margin-top: 40px;
+  }
+  .wrap.card .content .step3 .handBox .btn a {
+    width: 213.4375px;
+    height: 53.35938px;
+    line-height: 53.35938px;
+    font-size: 16px;
+  }
+  .wrap.card .content .step3 .handBox.show .hand .lefthand {
+    transform: translate(-40%, -10%);
+  }
+  .wrap.card .content .step3 .handBox.show .hand .righthand {
+    transform: translate(30%, 30%);
+  }
+  .wrap.card .content .step3 .handBox.show .hand .btn {
+    transform: translateY(525%);
+  }
+  .wrap.card .content.step2Show .step2 .right_cloud {
+    opacity: 1;
+    transform: translateX(-70px);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .lefthand {
+    transform: translate(-40%, -10%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .righthand {
+    transform: translate(30%, 35%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+    transform: translateY(525%);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .wrap.card .content .title {
+    width: 45%;
+  }
+  .wrap.card .content .title h1 {
+    margin-top: 30px;
+  }
+  .wrap.card .content .title p.word {
+    margin: 10px 0 10px;
+    font-size: 16px;
+  }
+  .wrap.card .content .title p.word span {
+    display: block;
+  }
+  .wrap.card .content .step1 .btn {
+    margin-top: 10px;
+  }
+  .wrap.card .content .step1 .btn a {
+    font-size: 1.0625rem;
+  }
+  .wrap.card .content .step2 {
+    top: 20px;
+  }
+  .wrap.card .content .step2 .cardBox {
+    width: 596.7px;
+    height: 334.9px;
+  }
+  .wrap.card .content .step2 .cardBox .right .inputBox {
+    padding: 7.5% 10% 10%;
+  }
+  .wrap.card .content .step2 .btn {
+    margin-top: 35px;
+  }
+  .wrap.card .content .step2 .btn .hand {
+    margin-top: -106px;
+    width: 596.7px;
+  }
+  .wrap.card .content .step2.step2Show .right_cloud {
+    transform: translateX(80px);
+  }
+  .wrap.card .content .step3 .handBox .hand {
+    margin-top: 40px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand {
+    width: 35%;
+    height: 45%;
+    max-height: 225px;
+    border-radius: 5px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left {
+    border-radius: 5px 0 0 5px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .logo {
+    width: 70px;
+    bottom: 20px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .right {
+    border-radius: 0 5px 5px 0;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+    top: 8%;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand {
+    width: 35%;
+    height: 45%;
+    max-height: 225px;
+    border-radius: 5px;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand .main {
+    margin-left: 20px;
+    top: 27.5%;
+  }
+  .wrap.card .content .step3 .handBox .hand .btn {
+    width: 55%;
+    height: 60px;
+    font-size: 16px;
+    line-height: 60px;
+    transform: translateY(100%);
+  }
+  .wrap.card .content.step2Show .step2 .right_cloud {
+    opacity: 1;
+    transform: translateX(80px);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .lefthand {
+    transform: translate(-40%, -10%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .righthand {
+    transform: translate(30%, 40%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+    transform: translateY(500%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .wrap.card .content .bg1 {
+    background: url(../img/namecard_bg_m1.jpg) center center no-repeat;
+    background-size: cover;
+  }
+  .wrap.card .content .bg2 {
+    background: url(../img/namecard_bg_m2.jpg) center center no-repeat;
+    background-size: cover;
+  }
+  .wrap.card .content .bg2 .dot_rt,
+  .wrap.card .content .bg2 .dot_rb,
+  .wrap.card .content .bg2 .dot_left {
+    display: none;
+  }
+  .wrap.card .content .title {
+    width: 85%;
+  }
+  .wrap.card .content .title h1 {
+    margin-top: 20px;
+  }
+  .wrap.card .content .title p.word {
+    margin: 5px 0 10px;
+  }
+  .wrap.card .content .step1 {
+    padding-top: 10%;
+  }
+  .wrap.card .content .step1 .btn a {
+    width: 55%;
+    height: 60px;
+    font-size: 16px;
+    line-height: 60px;
+  }
+  .wrap.card .content .step2 .cardBox {
+    flex: 5;
+    flex-direction: column;
+    width: 90%;
+    border-radius: 30px;
+  }
+  .wrap.card .content .step2 .cardBox .left {
+    flex: 20;
+    border-radius: 30px 30px 0 0;
+  }
+  .wrap.card .content .step2 .cardBox .left .imgBox {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0;
+  }
+  .wrap.card .content .step2 .cardBox .left .imgBox img {
+    width: 20%;
+    margin-bottom: -6.66667%;
+  }
+  .wrap.card .content .step2 .cardBox .left .left_cloud {
+    display: none;
+  }
+  .wrap.card .content .step2 .cardBox .right {
+    flex: 80;
+    border-radius: 0 0 30px 30px;
+  }
+  .wrap.card .content .step2 .cardBox .right .dreamBox {
+    margin-bottom: 1%;
+  }
+  .wrap.card .content .step2 .cardBox .right .dreamBox .career ul {
+    font-size: 14px;
+  }
+  .wrap.card .content .step2 .cardBox .right .btnBox {
+    padding-left: 0px;
+  }
+  .wrap.card .content .step2 .cardBox .right .btnBox .random {
+    margin-top: 25px;
+    font-size: 14px;
+  }
+  .wrap.card .content .step2 .btn {
+    flex: 2;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .wrap.card .content .step2 .btn a {
+    transition-delay: .85s;
+  }
+  .wrap.card .content .step2 .btn .hand {
+    margin-top: -65px;
+    width: 90%;
+  }
+  .wrap.card .content .step2 .right_cloud {
+    display: none;
+  }
+  .wrap.card .content .step3 .handBox .hand {
+    margin-top: 50px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand {
+    width: 80%;
+    max-width: 375px;
+    height: 40%;
+    min-height: 180px;
+    border-radius: 5px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left {
+    border-radius: 5px 0 0 5px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .card_title {
+    font-size: 1.11563rem;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .logo {
+    bottom: 15px;
+    width: 60px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .right {
+    border-radius: 0 5px 5px 0;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+    width: 85px;
+    height: 85px;
+    padding: 10px;
+    top: 8%;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand {
+    width: 80%;
+    max-width: 375px;
+    height: 40%;
+    min-height: 180px;
+    border-radius: 5px;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand .main {
+    margin-left: 15px;
+    top: 25%;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand .main .career {
+    font-size: 1.11563rem;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand .main .career:after {
+    height: 8px;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand .main .email {
+    margin: 5px 0;
+  }
+  .wrap.card .content .step3 .handBox .hand .btn {
+    width: 100%;
+    transform: translateY(100%);
+  }
+  .wrap.card .content .step3 .handBox.show .hand .lefthand {
+    transform: translate(-7%, -18%);
+  }
+  .wrap.card .content .step3 .handBox.show .hand .righthand {
+    transform: translate(9%, 40%);
+  }
+  .wrap.card .content .step3 .handBox.show .hand .btn {
+    transform: translateY(450%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .lefthand {
+    transform: translate(-7%, -18%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .righthand {
+    transform: translate(9%, 40%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+    transform: translateY(450%);
+  }
+}
+
+@media screen and (max-width: 413px) {
+  .wrap.card .content .title p.word {
+    margin: 5px 0 5px;
+  }
+  .wrap.card .content .title p.join span {
+    width: 65%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+  }
+  .wrap.card .content .title p.join span:after {
+    text-align: left;
+    bottom: -2px;
+  }
+  .wrap.card .content .step2 .cardBox {
+    flex: 8;
+  }
+  .wrap.card .content .step2 .cardBox .right .inputBox {
+    padding-top: 4%;
+  }
+  .wrap.card .content .step2 .cardBox .right .inputBox .random {
+    margin-top: 20px;
+  }
+  .wrap.card .content .step2 .btn {
+    flex: 3.5;
+  }
+  .wrap.card .content .step2 .btn .hand {
+    margin-top: -60px;
+  }
+  .wrap.card .content .step3 .handBox .hand {
+    margin-top: 35px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+    margin-bottom: 65%;
+    top: 6%;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .right .name {
+    font-size: 1.0625rem;
+  }
+  .wrap.card .content .step3 .handBox .hand .btn {
+    width: 100%;
+    transform: translateY(100%);
+  }
+  .wrap.card .content .step3 .handBox.show .hand .btn {
+    transform: translateY(400%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+    transform: translateY(400%);
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .wrap.card .content .title {
+    width: 70%;
+  }
+  .wrap.card .content .title h1 {
+    margin-top: 15px;
+  }
+  .wrap.card .content .title p.word {
+    font-size: 13px;
+    margin: 5px 0 0;
+  }
+  .wrap.card .content .title p.join {
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: -10px;
+  }
+  .wrap.card .content .step1 .btn a {
+    width: 55%;
+    height: 60px;
+    font-size: 16px;
+    line-height: 60px;
+  }
+  .wrap.card .content .step2 .cardBox {
+    flex: 2;
+    flex-direction: column;
+    width: 90%;
+  }
+  .wrap.card .content .step2 .cardBox .left {
+    flex: 20;
+  }
+  .wrap.card .content .step2 .cardBox .left .imgBox {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0;
+  }
+  .wrap.card .content .step2 .cardBox .left .imgBox img {
+    width: 20%;
+    margin-bottom: -6.66667%;
+  }
+  .wrap.card .content .step2 .cardBox .right {
+    flex: 80;
+  }
+  .wrap.card .content .step2 .cardBox .right .inputBox {
+    padding: 2% 7%;
+  }
+  .wrap.card .content .step2 .cardBox .right .dreamBox {
+    margin-bottom: 1%;
+  }
+  .wrap.card .content .step2 .cardBox .right .btnBox .random {
+    margin-top: 10px;
+  }
+  .wrap.card .content .step2 .cardBox .right .btnBox .random img {
+    width: 30px;
+  }
+  .wrap.card .content .step2 .cardBox .right .btnBox .random span {
+    font-size: 14px;
+  }
+  .wrap.card .content .step2 .btn {
+    flex: 1;
+    margin-top: 20px;
+  }
+  .wrap.card .content .step2 .btn .hand {
+    margin-top: -54px;
+  }
+  .wrap.card .content .step3 .handBox .hand {
+    top: 20px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand {
+    width: 80%;
+    height: 40%;
+    max-height: 150px;
+    min-height: inherit;
+    border-radius: 5px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left {
+    border-radius: 5px 0 0 5px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main {
+    padding-left: 15px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word {
+    top: 20px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .card_title {
+    font-size: 14px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .email {
+    font-size: 10px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .logo {
+    bottom: 15px;
+    width: 50px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .right {
+    border-radius: 0 5px 5px 0;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+    width: 75px;
+    height: 75px;
+    padding: 10px;
+    top: 3.23438%;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand .right .name {
+    font-size: 0.90312rem;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand {
+    width: 80%;
+    height: 40%;
+    max-height: 150px;
+    min-height: inherit;
+    border-radius: 5px;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand .main {
+    margin-left: 15px;
+    top: 30%;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand .main .career {
+    font-size: 14px;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand .main .career:after {
+    height: 8px;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand .main .email {
+    font-size: 10px;
+    margin: 5px 0;
+  }
+  .wrap.card .content .step3 .handBox .hand .btn {
+    transform: translateY(100%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .lefthand {
+    transform: translate(-7%, -18%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .righthand {
+    transform: translate(9%, 35%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+    transform: translateY(300%);
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .wrap.card .content .step2 .cardBox {
+    flex: initial;
+    width: 95%;
+  }
+  .wrap.card .content .step2 .btn {
+    flex: initial;
+    margin-top: 40px;
+  }
+  .wrap.card .content .step2 .btn .hand {
+    width: 120%;
+    margin-top: -94px;
+  }
+  .wrap.card .content .step3 .handBox .hand .lefthand {
+    width: 85%;
+    height: 200px;
+  }
+  .wrap.card .content .step3 .handBox .hand .righthand {
+    width: 85%;
+    height: 200px;
+  }
+  .wrap.card .content .step3 .handBox .hand .btn {
+    width: 100%;
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .lefthand {
+    transform: translate(-6%, -7%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .righthand {
+    transform: translate(6%, 48%);
+  }
+  .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+    transform: translateY(485%);
+  }
+}

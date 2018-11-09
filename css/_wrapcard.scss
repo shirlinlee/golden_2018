@@ -1,0 +1,1628 @@
+.wrap.card {
+    width: 100%;
+    height: 100vh;
+    background: $cathay;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    .content {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        background: #e0e0e0;
+        overflow: hidden;
+        font-size: $fontSize;
+
+        .bg1,
+        .bg2 {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .bg1 {
+            background: url(../img/index_bg_02.jpg) center center no-repeat;
+            background-size: cover;
+        }
+
+        .bg2 {
+            background: url(../img/namecard_bg.jpg) center center no-repeat;
+            background-size: cover;
+
+            .dot_rt {
+                position: absolute;
+                width: 30%;
+                top: 7%;
+                right: 6%;
+                pointer-events: none;
+                z-index: 5;
+            }
+
+            .dot_rb {
+                position: absolute;
+                width: 10%;
+                top: 50%;
+                right: 15%;
+                pointer-events: none;
+                z-index: 5;
+            }
+
+            .dot_left {
+                position: absolute;
+                width: 30%;
+                top: 25%;
+                left: 0%;
+                pointer-events: none;
+                z-index: 5;
+            }
+        }
+
+        .title {
+            margin: 0 auto;
+            z-index: 1;
+
+            h1 {
+                margin-top: 50px;
+                opacity: 0;
+                transform: translateY(-30px);
+                transition: transform .5s ease, opacity .5s ease;
+            }
+
+            p {
+                font-family: 'Noto Sans', sans-serif;
+                text-align: center;
+
+                &.word {
+                    line-height: 1.5;
+                    letter-spacing: 1.5px;
+                    margin: 20px 0 40px;
+                    opacity: 0;
+                    transform: translateY(-30px);
+                    transition: transform .5s ease, opacity .5s ease;
+                    transition-delay: .15s;
+                }
+
+                &.join {
+                    margin-top: -20px;
+                    //margin-bottom: 20px;
+                    //display: none;
+
+                    span {
+                        position: relative;
+                        z-index: 0;
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            width: 0%;
+                            height: 12px;
+                            background: yellow;
+                            left: 0;
+                            z-index: -1;
+                            transition: width .35s ease;
+                        }
+                    }
+                }
+            }
+        }
+
+        .step1 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .btn {
+                display: flex;
+                justify-content: center;
+                @include btn($btnWidth, $btnHeight, $cathay, white, 20px);
+
+                a {
+                    .icon-ic_f {
+                        &:before {
+                            position: relative;
+                            top: 1px;
+                            padding-right: 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .step2 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 1s ease, transform 1s ease;
+            //display: none;
+
+            .cardBox {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                width: 702px;
+                height: 394px;
+                border-radius: 10px;
+                @include cardShadow();
+
+                .left {
+                    position: relative;
+                    display: flex;
+                    flex: 25;
+                    background: $cathay;
+                    border-radius: 10px 0 0 10px;
+                    z-index: 1;
+
+                    .imgBox {
+                        padding: 20%;
+
+                        img {
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .left_cloud {
+                        position: absolute;
+                        width: 120%;
+                        right: 50%;
+                        bottom: 20%;
+                        opacity: 0;
+                        transform: translateX(150px);
+                        transition: opacity .7s ease, transform .7s cubic-bezier(0.175, 0.885, 0.710, 1.130);
+                        transition-delay: .8s;
+                    }
+                }
+
+                .right {
+                    display: flex;
+                    flex: 75;
+                    flex-direction: column;
+                    border-radius: 0 10px 10px 0;
+                    background: url(../img/namecard_draw_01.png) bottom right no-repeat;
+                    background-size: 60%;
+                    background-color: white;
+
+                    span.icon-ic_delete {
+                        cursor: pointer;
+                        z-index: 1;
+
+                        &:before {
+                            position: absolute;
+                            top: 50%;
+                            right: 0;
+                            font-size: 22px;
+                            transform: translateY(-50%);
+                        }
+                    }
+
+                    .inputBox {
+                        padding: 10% 10% 10%;
+
+                        .name {
+                            margin-bottom: 5%;
+                            @include input-underline(black, #999999);
+                        }
+                    }
+
+                    .dreamBox {
+                        display: flex;
+                        flex-direction: row;
+                        margin-bottom: 5%;
+
+                        .dream {
+                            flex: 2;
+                            @include input-underline(black, #999999);
+                        }
+
+                        .career {
+                            flex: 1;
+                            margin-left: 10px;
+                            @include input-underline(black, #999999);
+
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                width: 0;
+                                height: 0;
+                                top: 50%;
+                                right: 0;
+                                transform: translateY(-50%);
+                                border-style: solid;
+                                border-width: 8px 8px 0 8px;
+                                border-color: $cathay transparent transparent transparent;
+                            }
+
+                            &.down {
+                                &:after {
+                                    border-width: 0 8px 8px 8px;
+                                    border-color: transparent transparent $cathay transparent;
+                                }
+                            }
+
+                            ul {
+                                position: absolute;
+                                width: 100%;
+                                max-height: 250px;
+                                border: solid 1px $cathay;
+                                background-color: white;
+                                font-family: 'Noto Sans', sans-serif;
+                                font-size: $fontSize;
+                                overflow-y: auto;
+                                padding: 5px 0;
+                                z-index: 3;
+                                //display: none;
+
+                                li {
+                                    width: 100%;
+
+                                    a {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        padding: 10px 0;
+                                        color: black;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .btnBox {
+                        width: 100%;
+                        height: 39px;
+                        line-height: 39px;
+                        padding-left: 50px;
+                        z-index: 2;
+
+                        .random {
+                            display: flex;
+                            font-family: 'Noto Sans', sans-serif;
+                            color: $cathay;
+
+                            img {
+                                width: 39px;
+                            }
+
+                            span {
+                                margin-left: 11px;
+                                font-size: $fontSize * 0.95;
+                                letter-spacing: 1.5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right_cloud {
+                position: absolute;
+                width: 17.5%;
+                left: 62.5%;
+                top: 10%;
+                transform: translateX(-150px);
+                opacity: 0;
+                transition: opacity .7s ease, transform .7s cubic-bezier(0.175, 0.885, 0.710, 1.130);
+                transition-delay: .6s;
+            }
+
+            .btn {
+                @include btn($btnWidth, $btnHeight, $cathay, white, 20px);
+                margin-top: 50px;
+
+                a {
+                    opacity: 0;
+                    transition: opacity .5s ease 1.3s;
+                    z-index: 2;
+                }
+
+                .hand {
+                    position: absolute;
+                    margin-top: -130px;
+                    pointer-events: none;
+                    z-index: 1;
+                }
+            }
+        }
+
+        .step3 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .handBox {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: flex;
+
+                .hand {
+                    position: relative;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 75px;
+
+                    .lefthand {
+                        position: absolute;
+                        display: flex;
+                        width: 100%;
+                        height: 60%;
+                        max-width: $cardWidth;
+                        max-height: $cardHeight;
+                        transform: translate(0, 0);
+                        transition: transform .5s ease;
+                        border-radius: 10px;
+                        z-index: 2;
+                        @include cardShadow();
+
+                        .left {
+                            display: flex;
+                            flex: 70;
+                            background: rgba(255, 255, 255, .8);
+                            border-radius: 10px 0 0 10px;
+
+                            .main {
+                                position: relative;
+                                padding-left: 30px;
+
+                                .word {
+                                    position: absolute;
+                                    top: 22.5%;
+                                    font-weight: 500;
+                                    line-height: 1.3;
+                                    color: $cathay;
+                                    word-break: keep-all;
+
+                                    .card_title {
+                                        letter-spacing: 1px;
+                                        font-size: $fontSize * 1.35;
+                                    }
+
+                                    .email {
+                                        font-size: $fontSize * 0.8;
+                                        letter-spacing: .6px;
+                                    }
+                                }
+
+                                .logo {
+                                    position: absolute;
+                                    bottom: 30px;
+                                    width: 90px;
+                                }
+                            }
+                        }
+
+                        .right {
+                            position: relative;
+                            display: flex;
+                            flex: 30;
+                            background: rgba(255, 255, 0, .8);
+                            border-radius: 0 10px 10px 0;
+                            flex-direction: column;
+                            align-items: center;
+
+                            .picture {
+                                position: absolute;
+                                top: 15%;
+                                width: 100px;
+                                height: 100px;
+
+                                img {
+                                    border-radius: 50%;
+                                    overflow: hidden;
+                                }
+                            }
+
+                            .name {
+                                text-align: center;
+                                position: absolute;
+                                color: $cathay;
+                                bottom: 15%;
+                                font-size: $fontSize * 1.64;
+                                font-weight: 500;
+                                letter-spacing: 1.4px;
+                            }
+                        }
+                    }
+
+                    .righthand {
+                        position: absolute;
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        height: 60%;
+                        max-width: $cardWidth;
+                        max-height: $cardHeight;
+                        background: url(../img/svg/namecard_bg.svg) center center no-repeat;
+                        background-size: cover;
+                        background-color: $cathay;
+                        transform: translate(0, 0);
+                        transition: transform .5s ease;
+                        border-radius: 10px;
+                        z-index: 1;
+                        @include cardShadow();
+
+                        .main {
+                            position: relative;
+                            width: 100%;
+                            top: 27.5%;
+                            margin-left: 35px;
+                            color: white;
+
+                            .career {
+                                position: relative;
+                                font-size: $fontSize * 1.35;
+                                font-family: 'Noto Sans', sans-serif;
+                                letter-spacing: 1px;
+                                word-break: keep-all;
+
+                                &:after {
+                                    content: '';
+                                    position: absolute;
+                                    width: 50%;
+                                    height: 13px;
+                                    background-color: yellow;
+                                    top: 50%;
+                                    right: 0;
+                                    transform: translate(0, -50%);
+                                }
+
+                                &.word6 {
+                                    &:after {
+                                        width: 55%;
+                                    }
+                                }
+
+                                &.word5 {
+                                    &:after {
+                                        width: 60%;
+                                    }
+                                }
+
+                                &.word4 {
+                                    &:after {
+                                        width: 65%;
+                                    }
+                                }
+                            }
+
+                            .email {
+                                font-size: $fontSize * 0.8;
+                                margin: 10px 0;
+                                letter-spacing: .6px;
+                                word-break: keep-all;
+                            }
+                        }
+                    }
+                }
+
+                .btn {
+                    @include btn($btnWidth, $btnHeight, $cathay, white, 20px);
+                    position: absolute;
+                    opacity: 0;
+                    transform: translateY(500%);
+                    transition: opacity .65s ease, transform .65s ease;
+                    transition-delay: .5s;
+
+                    a {
+                        .icon-ic_f {
+                            &:before {
+                                position: relative;
+                                top: 1px;
+                                padding-right: 15px;
+                                color: #fff43c;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .step1 .btn {
+            transform: translateY(-30px);
+            opacity: 0;
+            transition: transform .5s ease .3s, opacity .5s ease .3s;
+        }
+
+        // step1進場用class
+        &.step1Show {
+            .title {
+
+                h1,
+                .word {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            .step1 .btn {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        // step2進場用class
+        &.step2Show {
+            .step2 {
+                opacity: 1;
+                transform: translateY(0);
+
+                .cardBox {
+                    .left {
+                        .left_cloud {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                }
+
+                .right_cloud {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+
+                .btn {
+                    a {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        // step3進場用class
+        &.step3Show {
+            .title {
+                p {
+                    &.join {
+                        span {
+                            &:after {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .step3 {
+                .handBox {
+                    .hand {
+                        .lefthand {
+                            transform: translate(-40%, -15%);
+                        }
+
+                        .righthand {
+                            transform: translate(30%, 35%);
+                        }
+
+                        .btn {
+                            opacity: 1;
+                            transform: translateY(650%);
+                        }
+                    }
+                }
+            }
+        }
+
+        //@include media-min(1024px) {
+        //min-height: 768px;
+        //}
+
+        @include pc-1680() {
+            $scale: .875;
+
+            .step3 {
+                .handBox {
+                    .hand {
+                        .lefthand {
+                            max-width: $cardWidth * $scale;
+                            max-height: $cardHeight * $scale;
+
+                            .left {
+                                .main {
+
+                                    .logo {
+                                        width: 90px * $scale;
+                                    }
+                                }
+                            }
+
+                            .right {
+                                .picture {
+                                    width: 100px * $scale;
+                                    height: 100px * $scale;
+                                    top: 15% * $scale;
+                                }
+
+                                .name {
+                                    font-size: 28px * $scale;
+                                }
+                            }
+                        }
+
+                        .righthand {
+                            max-width: $cardWidth * $scale;
+                            max-height: $cardHeight * $scale;
+                        }
+
+                        .btn {
+                            transform: translateY(200%);
+                        }
+                    }
+
+                    &.show {
+                        .hand {
+                            .btn {
+                                transform: translateY(575%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.step3Show {
+                .step3 {
+                    .handBox {
+                        .hand {
+                            .btn {
+                                transform: translateY(575%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include media(1366px) {
+            $scale: 1366 / 1920;
+
+            .title {
+                margin: 0 auto;
+
+                h1 {
+                    width: 85%;
+                    margin: 0 auto;
+                    margin-top: 20px;
+                }
+
+                p {
+                    &.word {
+                        margin: 10px 0 10px;
+                    }
+
+                    &.join {
+                        margin-top: 0;
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+
+            .step1 {
+                .btn {
+                    a {
+                        width: $btnWidth * $scale;
+                        height: $btnHeight * $scale;
+                        line-height: $btnHeight * $scale;
+                    }
+                }
+            }
+
+            .step2 {
+                .cardBox {
+                    width: 702px * $scale;
+                    height: 394px * $scale;
+
+                    .right {
+                        .inputBox {
+                            padding: 5% 10% 4%;
+                        }
+                    }
+                }
+
+                .btn {
+                    margin-top: 40px;
+
+                    a {
+                        width: $btnWidth * $scale;
+                        height: $btnHeight * $scale;
+                        line-height: $btnHeight * $scale;
+                        font-size: 16px;
+                    }
+
+                    .hand {
+                        width: 702px * $scale;
+                        margin-top: -100px;
+                    }
+                }
+            }
+
+            .step3 {
+                .handBox {
+                    .hand {
+                        margin-top: 30px;
+
+                        .lefthand {
+                            max-width: $cardWidth * $scale;
+                            max-height: $cardHeight * $scale * .95;
+
+                            .left {
+
+                                .main {
+                                    padding-left: 30px * $scale;
+
+                                    .word {
+                                        top: 17.5%;
+
+                                        .card_title {
+                                            font-size: $fontSize * 1.15;
+                                        }
+
+                                        .email {
+                                            font-size: $fontSize * .7;
+                                        }
+                                    }
+
+                                    .logo {
+                                        bottom: 30px * $scale;
+                                        width: 90px * $scale;
+                                    }
+                                }
+                            }
+
+                            .right {
+                                .picture {
+                                    width: 100px * $scale;
+                                    height: 100px * $scale;
+                                    top: 15% * $scale;
+                                }
+
+                                .name {
+                                    font-size: 28px * $scale;
+                                }
+                            }
+                        }
+
+                        .righthand {
+                            max-width: $cardWidth * $scale;
+                            max-height: $cardHeight * $scale * .95;
+
+                            .main {
+                                margin-left: 35px * $scale;
+                                top: 30%;
+
+                                .career {
+                                    font-size: $fontSize * 1.15;
+
+                                    &:after {
+                                        height: 12px;
+                                    }
+                                }
+
+                                .email {
+                                    font-size: $fontSize * .7;
+                                    margin: 5px 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .btn {
+                        margin-top: 40px;
+
+                        a {
+                            width: $btnWidth * $scale;
+                            height: $btnHeight * $scale;
+                            line-height: $btnHeight * $scale;
+                            font-size: 16px;
+                        }
+                    }
+
+                    &.show {
+                        .hand {
+                            .lefthand {
+                                transform: translate(-40%, -10%);
+                            }
+
+                            .righthand {
+                                transform: translate(30%, 30%);
+                            }
+
+                            .btn {
+                                transform: translateY(525%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.step2Show {
+                .step2 {
+                    .right_cloud {
+                        opacity: 1;
+                        transform: translateX(-70px);
+                    }
+                }
+            }
+
+            &.step3Show {
+                .step3 {
+                    .handBox {
+                        .hand {
+                            .lefthand {
+                                transform: translate(-40%, -10%);
+                            }
+
+                            .righthand {
+                                transform: translate(30%, 35%);
+                            }
+
+                            .btn {
+                                transform: translateY(525%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // ipad
+        @include m-1024() {
+            $scale: 1024 / 1920;
+
+            .title {
+                width: 45%;
+
+                h1 {
+                    margin-top: 30px;
+                }
+
+                p {
+                    &.word {
+                        margin: 10px 0 10px;
+                        font-size: 16px;
+
+                        span {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .step1 {
+                .btn {
+                    margin-top: 10px;
+
+                    a {
+                        font-size: $fontSize;
+                    }
+                }
+            }
+
+            .step2 {
+                top: 20px;
+
+                .cardBox {
+                    width: 702px * .85;
+                    height: 394px * .85;
+
+
+
+                    .right {
+                        .inputBox {
+                            padding: 7.5% 10% 10%;
+                        }
+                    }
+                }
+
+                .btn {
+                    margin-top: 35px;
+
+                    .hand {
+                        margin-top: -106px;
+                        width: 702px * .85;
+                    }
+                }
+
+                &.step2Show {
+                    .right_cloud {
+                        transform: translateX(80px);
+                    }
+                }
+            }
+
+            .step3 {
+                .handBox {
+                    .hand {
+                        margin-top: 40px;
+
+                        .lefthand {
+                            width: 35%;
+                            height: 45%;
+                            max-height: 225px;
+                            border-radius: 5px;
+
+                            .left {
+                                border-radius: 5px 0 0 5px;
+
+                                .main {
+
+                                    .logo {
+                                        width: 70px;
+                                        bottom: 20px;
+                                    }
+                                }
+                            }
+
+                            .right {
+                                border-radius: 0 5px 5px 0;
+
+                                .picture {
+                                    width: 90px;
+                                    height: 90px;
+                                    padding: 10px;
+                                    top: 15% * $scale;
+                                }
+                            }
+                        }
+
+                        .righthand {
+                            width: 35%;
+                            height: 45%;
+                            max-height: 225px;
+                            border-radius: 5px;
+
+                            .main {
+                                margin-left: 20px;
+                                top: 27.5%;
+                            }
+                        }
+
+                        .btn {
+                            width: 55%;
+                            height: 60px;
+                            font-size: 16px;
+                            line-height: 60px;
+                            transform: translateY(100%);
+                        }
+                    }
+                }
+            }
+
+            &.step2Show {
+                .step2 {
+                    .right_cloud {
+                        opacity: 1;
+                        transform: translateX(80px);
+                    }
+                }
+            }
+
+            &.step3Show {
+                .step3 {
+                    .handBox {
+                        .hand {
+                            .lefthand {
+                                transform: translate(-40%, -10%);
+                            }
+
+                            .righthand {
+                                transform: translate(30%, 40%);
+                            }
+
+                            .btn {
+                                transform: translateY(500%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // i6p
+        @include m-767() {
+            $scale: 1024 / 1920;
+
+            .bg1 {
+                background: url(../img/namecard_bg_m1.jpg) center center no-repeat;
+                background-size: cover;
+            }
+
+            .bg2 {
+                background: url(../img/namecard_bg_m2.jpg) center center no-repeat;
+                background-size: cover;
+
+                .dot_rt,
+                .dot_rb,
+                .dot_left {
+                    display: none;
+                }
+            }
+
+            .title {
+                width: 85%;
+
+                h1 {
+                    margin-top: 20px;
+                }
+
+                p {
+                    &.word {
+                        margin: 5px 0 10px;
+                    }
+                }
+            }
+
+            .step1 {
+                padding-top: 10%;
+
+                .btn {
+                    a {
+                        width: 55%;
+                        height: 60px;
+                        font-size: 16px;
+                        line-height: 60px;
+                    }
+                }
+            }
+
+            .step2 {
+                .cardBox {
+                    flex: 5;
+                    flex-direction: column;
+                    width: 90%;
+                    border-radius: 30px;
+
+                    .left {
+                        flex: 20;
+                        border-radius: 30px 30px 0 0;
+
+                        .imgBox {
+                            display: flex;
+                            justify-content: center;
+                            align-items: flex-end;
+                            width: 100%;
+                            padding: 0;
+
+                            img {
+                                $imgSize: 20%;
+                                width: $imgSize;
+                                margin-bottom: -($imgSize / 3);
+                            }
+                        }
+
+                        .left_cloud {
+                            display: none;
+                        }
+                    }
+
+                    .right {
+                        flex: 80;
+                        border-radius: 0 0 30px 30px;
+
+                        .dreamBox {
+                            margin-bottom: 1%;
+
+                            .career {
+                                ul {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+
+                        .btnBox {
+                            padding-left: 0px;
+
+                            .random {
+                                margin-top: 25px;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+
+                .btn {
+                    flex: 2;
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+
+                    a {
+                        transition-delay: .85s;
+                    }
+
+                    .hand {
+                        margin-top: -65px;
+                        width: 90%;
+                    }
+                }
+
+                .right_cloud {
+                    display: none;
+                }
+            }
+
+            .step3 {
+                .handBox {
+                    .hand {
+                        margin-top: 50px;
+
+                        .lefthand {
+                            width: 80%;
+                            max-width: 375px;
+                            height: 40%;
+                            min-height: 180px;
+                            border-radius: 5px;
+
+                            .left {
+                                border-radius: 5px 0 0 5px;
+
+                                .main {
+
+                                    .word {
+
+                                        .card_title {
+                                            font-size: $fontSize * 1.05;
+                                        }
+                                    }
+
+                                    .logo {
+                                        bottom: 15px;
+                                        width: 60px;
+                                    }
+                                }
+                            }
+
+                            .right {
+                                border-radius: 0 5px 5px 0;
+
+                                .picture {
+                                    width: 85px;
+                                    height: 85px;
+                                    padding: 10px;
+                                    top: 15% * $scale;
+                                }
+                            }
+                        }
+
+                        .righthand {
+                            width: 80%;
+                            max-width: 375px;
+                            height: 40%;
+                            min-height: 180px;
+                            border-radius: 5px;
+
+                            .main {
+                                margin-left: 15px;
+                                top: 25%;
+
+                                .career {
+                                    font-size: $fontSize * 1.05;
+
+                                    &:after {
+                                        height: 8px;
+                                    }
+                                }
+
+                                .email {
+                                    margin: 5px 0;
+                                }
+                            }
+                        }
+
+                        .btn {
+                            width: 100%;
+                            transform: translateY(100%);
+                        }
+                    }
+
+                    &.show {
+                        .hand {
+                            .lefthand {
+                                transform: translate(-7%, -18%);
+                            }
+
+                            .righthand {
+                                transform: translate(9%, 40%);
+                            }
+
+                            .btn {
+                                transform: translateY(450%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.step3Show {
+                .step3 {
+                    .handBox {
+                        .hand {
+                            .lefthand {
+                                transform: translate(-7%, -18%);
+                            }
+
+                            .righthand {
+                                transform: translate(9%, 40%);
+                            }
+
+                            .btn {
+                                transform: translateY(450%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // i6
+        @include m-413() {
+            $scale: 768 / 1920;
+
+            .title {
+                p {
+                    &.word {
+                        margin: 5px 0 5px;
+                    }
+
+                    &.join {
+                        span {
+                            width: 65%;
+                            display: block;
+                            margin: 0 auto;
+                            margin-top: 5px;
+
+                            &:after {
+                                text-align: left;
+                                bottom: -2px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .step2 {
+                .cardBox {
+                    flex: 8;
+
+                    .right {
+                        .inputBox {
+                            padding-top: 4%;
+
+                            .random {
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+                }
+
+                .btn {
+                    flex: 3.5;
+
+                    .hand {
+                        margin-top: -60px;
+                    }
+                }
+            }
+
+            .step3 {
+                .handBox {
+                    .hand {
+                        margin-top: 35px;
+
+                        .lefthand {
+
+                            .right {
+                                .picture {
+                                    margin-bottom: 65%;
+                                    top: 15% * $scale;
+                                }
+
+                                .name {
+                                    font-size: $fontSize;
+                                }
+                            }
+                        }
+
+                        .btn {
+                            width: 100%;
+                            transform: translateY(100%);
+                        }
+                    }
+
+                    &.show {
+                        .hand {
+                            .btn {
+                                transform: translateY(400%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.step3Show {
+                .step3 {
+                    .handBox {
+                        .hand {
+                            .btn {
+                                transform: translateY(400%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // i5
+        @include m-374() {
+            $scale: 414 / 1920;
+
+            .title {
+                width: 70%;
+
+                h1 {
+                    margin-top: 15px;
+                }
+
+                p {
+                    &.word {
+                        font-size: 13px;
+                        margin: 5px 0 0;
+                    }
+
+                    &.join {
+                        font-size: 13px;
+                        margin-top: 0;
+                        margin-bottom: -10px;
+
+
+                    }
+                }
+            }
+
+            .step1 {
+                .btn {
+                    a {
+                        width: 55%;
+                        height: 60px;
+                        font-size: 16px;
+                        line-height: 60px;
+                    }
+                }
+            }
+
+            .step2 {
+                .cardBox {
+                    flex: 2;
+                    flex-direction: column;
+                    width: 90%;
+
+                    .left {
+                        flex: 20;
+
+                        .imgBox {
+                            display: flex;
+                            justify-content: center;
+                            align-items: flex-end;
+                            width: 100%;
+                            padding: 0;
+
+                            img {
+                                $imgSize: 20%;
+                                width: $imgSize;
+                                margin-bottom: -($imgSize / 3);
+                            }
+                        }
+                    }
+
+                    .right {
+                        flex: 80;
+
+                        .inputBox {
+                            padding: 2% 7%;
+                        }
+
+                        .dreamBox {
+                            margin-bottom: 1%;
+                        }
+
+                        .btnBox {
+                            .random {
+                                margin-top: 10px;
+
+                                img {
+                                    width: 30px;
+                                }
+
+                                span {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .btn {
+                    flex: 1;
+                    margin-top: 20px;
+
+                    .hand {
+                        margin-top: -54px;
+                    }
+                }
+            }
+
+            .step3 {
+                .handBox {
+                    .hand {
+                        top: 20px;
+
+                        .lefthand {
+                            width: 80%;
+                            height: 40%;
+                            max-height: 150px;
+                            min-height: inherit;
+                            border-radius: 5px;
+
+                            .left {
+                                border-radius: 5px 0 0 5px;
+
+                                .main {
+                                    padding-left: 15px;
+
+                                    .word {
+                                        top: 20px;
+
+                                        .card_title {
+                                            font-size: 14px;
+                                        }
+
+                                        .email {
+                                            font-size: 10px;
+                                        }
+                                    }
+
+                                    .logo {
+                                        bottom: 15px;
+                                        width: 50px;
+                                    }
+                                }
+                            }
+
+                            .right {
+                                border-radius: 0 5px 5px 0;
+
+                                .picture {
+                                    width: 75px;
+                                    height: 75px;
+                                    padding: 10px;
+                                    top: 15% * $scale;
+                                }
+
+                                .name {
+                                    font-size: $fontSize * .85;
+                                }
+                            }
+                        }
+
+                        .righthand {
+                            width: 80%;
+                            height: 40%;
+                            max-height: 150px;
+                            min-height: inherit;
+                            border-radius: 5px;
+
+                            .main {
+                                margin-left: 15px;
+                                top: 30%;
+
+                                .career {
+                                    font-size: 14px;
+
+                                    &:after {
+                                        height: 8px;
+                                    }
+                                }
+
+                                .email {
+                                    font-size: 10px;
+                                    margin: 5px 0;
+                                }
+                            }
+                        }
+
+                        .btn {
+                            transform: translateY(100%);
+                        }
+                    }
+                }
+            }
+
+            &.step3Show {
+                .step3 {
+                    .handBox {
+                        .hand {
+                            .lefthand {
+                                transform: translate(-7%, -18%);
+                            }
+
+                            .righthand {
+                                transform: translate(9%, 35%);
+                            }
+
+                            .btn {
+                                transform: translateY(300%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // iX
+        @include m-ipX() {
+            .step2 {
+                .cardBox {
+                    flex: initial;
+                    width: 95%;
+                }
+
+                .btn {
+                    flex: initial;
+                    margin-top: 40px;
+
+                    .hand {
+                        width: 120%;
+                        margin-top: -94px;
+                    }
+                }
+            }
+
+            .step3 {
+                .handBox {
+                    .hand {
+                        .lefthand {
+                            width: 85%;
+                            height: 200px;
+                        }
+
+                        .righthand {
+                            width: 85%;
+                            height: 200px;
+                        }
+
+                        .btn {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            &.step3Show {
+                .step3 {
+                    .handBox {
+                        .hand {
+                            .lefthand {
+                                transform: translate(-6%, -7%);
+                            }
+
+                            .righthand {
+                                transform: translate(6%, 48%);
+                            }
+
+                            .btn {
+                                transform: translateY(485%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
