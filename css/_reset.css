@@ -78,51 +78,51 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    font-size: 100%;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
 html {
-    line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 caption,
 th,
 td {
-    text-align: left;
-    font-weight: normal;
-    vertical-align: middle;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
 }
 
 q,
 blockquote {
-    quotes: none;
+  quotes: none;
 }
 
 q:before,
 q:after,
 blockquote:before,
 blockquote:after {
-    content: "";
-    content: none;
+  content: "";
+  content: none;
 }
 
 a img {
-    border: none;
+  border: none;
 }
 
 article,
@@ -138,28 +138,25 @@ menu,
 nav,
 section,
 summary {
-    display: block;
+  display: block;
 }
 
 * {
-    text-decoration: none;
-    outline: none;
-    box-sizing: border-box;
-    -webkit-touch-callout: none;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
-img{
-    max-width: 100%;
+img {
+  max-width: 100%;
 }
 
-
-// VUE USE
-[v-cloak]{
-    display: none;
+[v-cloak] {
+  display: none;
 }
 
-// android input use
 .input_focus.trans_bg {
-    display: none;
+  display: none;
 }

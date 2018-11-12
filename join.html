@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="css/join.css">
     <link rel="stylesheet" href="css/vue-datepicker-local.css">
     <!-- js-->
-    <script src="vendor/ch.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-select/2.5.1/vue-select.js"></script>
-    <script src="vendor/vue-datepicker-local.js"></script>
+        <script src="vendor/ch.min.js?v=1541744378643"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js?v=1541744378643"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js?v=1541744378643"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-select/2.5.1/vue-select.js?v=1541744378643"></script>
+        <script src="vendor/vue-datepicker-local.js?v=1541744378643"></script>
   </head>
   <body>
     <header></header>
@@ -29,7 +29,7 @@
       <!-- add class '.in'-->
       <div class="content">
         <div class="title">
-          <h1> <img src="img/title_joinus.svg"/>
+          <h1> <img src="img/title_joinus.svg">
           </h1>
           <p class="word">一起做夢想的實踐者，資料送出後我們將派專人盡速與您聯繫</p>
           <p class="join">先讓我們了解你吧！請填寫基本資料</p>
@@ -38,10 +38,10 @@
           <div class="step1" v-show="step == 1">
             <div class="inputBox">
               <div class="item">
-                <div class="name">
-                  <label>姓名</label>
-                  <input v-model="name"/>
-                </div>
+                    <div class="name">
+                      <label>姓名</label>
+                      <input v-model="name">
+                    </div>
                 <div class="birth">
                   <label>生日</label>
                   <vue-datepicker-local v-model="birth"></vue-datepicker-local>
@@ -76,14 +76,14 @@
           <div class="step3" v-show="step == 3">
             <div class="inputBox">
               <div class="item">
-                <div class="phone">
-                  <label>手機</label>
-                  <input text="tel" v-model="phone" maxLength="10"/>
-                </div>
-                <div class="email">
-                  <label>EMAIL</label>
-                  <input text="email" v-model="email"/>
-                </div>
+                    <div class="phone">
+                      <label>手機</label>
+                      <input text="tel" v-model="phone" maxLength="10">
+                    </div>
+                    <div class="email">
+                      <label>EMAIL</label>
+                      <input text="email" v-model="email">
+                    </div>
               </div>
             </div>
             <div class="checkBox">
@@ -115,12 +115,12 @@
                 </g>
               </svg><span></span>
             </div>
-            <div class="imgBox"><img src="img/svg/joinus_circle.svg"/>
+            <div class="imgBox"><img src="img/svg/joinus_circle.svg">
             </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="bundle/join.js"></script>
+        <script src="bundle/join.js?v=1541744378644"></script>
   </body>
 </html>

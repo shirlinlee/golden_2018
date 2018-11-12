@@ -144,7 +144,7 @@ summary {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
 
 img {
-  width: 100%; }
+  max-width: 100%; }
 
 [v-cloak] {
   display: none; }
@@ -360,6 +360,8 @@ h6 {
   height: 100vh;
   background: #01aa4f;
   font-family: 'Source Sans Pro', sans-serif; }
+  .wrap.join img {
+    width: 100%; }
   .wrap.join .content {
     position: relative;
     display: -webkit-box;

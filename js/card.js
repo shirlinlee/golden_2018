@@ -8,7 +8,8 @@ if (location.hostname != '192.168.123.30' && location.hostname != '127.0.0.1') {
         fjs.parentNode.insertBefore(js, fjs);
         window.fbAsyncInit = function () {
             FB.init({
-                appId: '1321251921305484', // 需改成測試 or 正式站ID
+                appId: '206986350200776',  //測試用
+                // appId: '897392467315481',  //正式站
                 xfbml: true,
                 version: 'v3.1',
             });
@@ -78,10 +79,15 @@ if (location.hostname != '192.168.123.30' && location.hostname != '127.0.0.1') {
         mounted() {
             window.onload = () => {
                 // 首頁連場效果做在scroll上
-                this.ctrlScroll();
+                // this.ctrlScroll();
 
                 // 如果從首頁登入過來，則step == 2做進場效果
-                if (this.step == 2) {
+                if(this.step == 1 && this.fbID ==='' ) {
+                    setTimeout(() => {
+                        document.querySelector('.wrap.card .content').classList.add('step1Show');
+                    }, 500);
+                }
+                else if (this.step == 2) {
                     setTimeout(() => {
                         document.querySelector('.wrap.card .content').classList.add('step2Show');
                     }, 500);
@@ -114,6 +120,7 @@ if (location.hostname != '192.168.123.30' && location.hostname != '127.0.0.1') {
                     this.drawCanvas(function(){
                         // 接ajax先做分享圖拿網址
                         // ajax response >> this.share_url
+                        
                         console.log('done');
                     });
                 }
@@ -248,7 +255,7 @@ if (location.hostname != '192.168.123.30' && location.hostname != '127.0.0.1') {
                                         console.log(response);
                                         this.fbID = response.id;
                                         this.name = response.name;
-                                        this.name = response.email;
+                                        this.email = response.email;
                                         this.pic = 'https://graph.facebook.com/' + response.id + '/picture?type=large';
                                         this.step = 2;
 
@@ -266,6 +273,7 @@ if (location.hostname != '192.168.123.30' && location.hostname != '127.0.0.1') {
                     );
                 } else {
                     // 測試用
+                    
                     this.fbID = '1969571996469866';
                     this.name = '紀術部';
                     this.email = 'technic@webgene.com.tw';

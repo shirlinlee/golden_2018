@@ -27,6 +27,13 @@ mixin gif(name)
 	-var file = ".gif"
 	img(src=path + name + file)&attributes(attributes)
 
+mixin js(item)
+	- var time = new Date().getTime()
+	- var isCDN = item.indexOf('http') > -1
+	- var src = (isCDN) ? item : path + item + file
+	- var v = '?v='+time;
+	script(src = src+v)
+
 //- floorTab
 mixin floorTab(floorTabs)
 	each floorTab in floorTabs

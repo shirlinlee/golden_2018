@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/card.css">
     <!-- js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.1/isMobile.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.1/isMobile.min.js?v=1541744378465"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js?v=1541744378465"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js?v=1541744378465"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js?v=1541744378465"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js?v=1541744378465"></script>
   </head>
   <body>
     <header></header>
@@ -31,13 +31,13 @@
       <!-- add class '.step3Show' -->
       <div class="content">
         <div class="share_pic" v-show="false" style="position: absolute; z-index: -9999;">
-          <canvas id="share_canvas" width="600" height="315"></canvas><img src="img/index_bg_05.jpg" id="basic_img" alt="5687"/>
+          <canvas id="share_canvas" width="600" height="315"></canvas><img src="img/index_bg_05.jpg" id="basic_img" alt="5687">
         </div>
         <div class="bg1" v-if="step == 1"></div>
-        <div class="bg2" v-if="step != 1"><img class="dot_rt" src="img/dot_1.png"/><img class="dot_rb" src="img/dot_2.png"/><img class="dot_left" src="img/dot_1.png"/>
+        <div class="bg2" v-if="step != 1"><img class="dot_rt" src="img/dot_1.png"><img class="dot_rb" src="img/dot_2.png"><img class="dot_left" src="img/dot_1.png">
         </div>
         <div class="title">
-          <h1> <img src="img/title_namecard.svg"/>
+          <h1> <img src="img/title_namecard.svg">
           </h1>
           <p class="word" v-if="step == 1">當現實與理想可以不用再取捨，<span>你未來名片會是什麼樣子？</span></p>
           <p class="word" v-if="step == 2">如果工作和夢想能同時擁有，<span>你的名片應該長什麼樣？</span></p>
@@ -47,10 +47,10 @@
         <div class="step1" v-show="step == 1">
           <div class="btn"><a href="" @click.prevent="chkFB()"> <span class="icon-ic_f">立即製作</span></a></div>
         </div>
-        <div class="step2" v-show="step == 2"><img class="right_cloud" src="img/svg/namecard_cloud.svg"/>
+        <div class="step2" v-show="step == 2"><img class="right_cloud" src="img/svg/namecard_cloud.svg">
           <div class="cardBox">
             <div class="left">
-              <div class="imgBox"><img :src="pic"></div><img class="left_cloud" src="img/svg/namecard_cloud.svg"/>
+              <div class="imgBox"><img :src="pic"></div><img class="left_cloud" src="img/svg/namecard_cloud.svg">
             </div>
             <div class="right">
               <div class="inputBox">
@@ -73,12 +73,12 @@
                     </ul>
                   </div>
                 </div>
-                <div class="btnBox"><a class="random" href="" @click.prevent="random()"> <img src="img/svg/ic_random.svg"/><span>夢想神預測</span></a></div>
+                <div class="btnBox"><a class="random" href="" @click.prevent="random()"> <img src="img/svg/ic_random.svg"><span>夢想神預測</span></a></div>
               </div>
             </div>
           </div>
           <div class="btn">
-            <div class="hand"><img src="img/namecard_hand.png"/>
+            <div class="hand"><img src="img/namecard_hand.png">
             </div><a href="" @click.prevent="next(3)">看夢想名片</a>
           </div>
         </div>
@@ -92,7 +92,7 @@
                       <p class="card_title">高登超級新人王</p>
                       <p class="email">cathaylife@cathaylife.com</p>
                     </div>
-                    <div class="logo"><img src="img/namecard_img_golden.png" id="share_logo"/>
+                    <div class="logo"><img src="img/namecard_img_golden.png" id="share_logo">
                     </div>
                   </div>
                 </div>
@@ -113,6 +113,6 @@
         </div>
       </div>
     </div>
-    <script src="bundle/card.js"></script>
+        <script src="bundle/card.js?v=1541744378466"></script>
   </body>
 </html>

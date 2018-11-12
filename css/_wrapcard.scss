@@ -1,4 +1,7 @@
 .wrap.card {
+    img {
+        width: 100%;
+    }
     width: 100%;
     height: 100vh;
     background: $cathay;
@@ -118,6 +121,7 @@
             .btn {
                 display: flex;
                 justify-content: center;
+                
                 @include btn($btnWidth, $btnHeight, $cathay, white, 20px);
 
                 a {
