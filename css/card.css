@@ -18,14 +18,14 @@ h5 {
 h6 {
   font-weight: 700; }
 
-.wrap.card {
+.card {
   width: 100%;
   height: 100vh;
   background: #01aa4f;
   font-family: 'Source Sans Pro', sans-serif; }
-  .wrap.card img {
+  .card img {
     width: 100%; }
-  .wrap.card .content {
+  .card .content {
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -41,42 +41,42 @@ h6 {
     background: #e0e0e0;
     overflow: hidden;
     font-size: 1.0625rem; }
-    .wrap.card .content .bg1,
-    .wrap.card .content .bg2 {
+    .card .content .bg1,
+    .card .content .bg2 {
       position: absolute;
       width: 100%;
       height: 100vh; }
-    .wrap.card .content .bg1 {
+    .card .content .bg1 {
       background: url(../img/index_bg_02.jpg) center center no-repeat;
       background-size: cover; }
-    .wrap.card .content .bg2 {
+    .card .content .bg2 {
       background: url(../img/namecard_bg.jpg) center center no-repeat;
       background-size: cover; }
-      .wrap.card .content .bg2 .dot_rt {
+      .card .content .bg2 .dot_rt {
         position: absolute;
         width: 30%;
         top: 7%;
         right: 6%;
         pointer-events: none;
         z-index: 5; }
-      .wrap.card .content .bg2 .dot_rb {
+      .card .content .bg2 .dot_rb {
         position: absolute;
         width: 10%;
         top: 50%;
         right: 15%;
         pointer-events: none;
         z-index: 5; }
-      .wrap.card .content .bg2 .dot_left {
+      .card .content .bg2 .dot_left {
         position: absolute;
         width: 30%;
         top: 25%;
         left: 0%;
         pointer-events: none;
         z-index: 5; }
-    .wrap.card .content .title {
+    .card .content .title {
       margin: 0 auto;
       z-index: 1; }
-      .wrap.card .content .title h1 {
+      .card .content .title h1 {
         margin-top: 50px;
         opacity: 0;
         -webkit-transform: translateY(-30px);
@@ -87,10 +87,10 @@ h6 {
         -o-transition: transform .5s ease, opacity .5s ease;
         transition: transform .5s ease, opacity .5s ease;
         transition: transform .5s ease, opacity .5s ease, -webkit-transform .5s ease; }
-      .wrap.card .content .title p {
+      .card .content .title p {
         font-family: 'Noto Sans', sans-serif;
         text-align: center; }
-        .wrap.card .content .title p.word {
+        .card .content .title p.word {
           line-height: 1.5;
           letter-spacing: 1.5px;
           margin: 20px 0 40px;
@@ -106,12 +106,12 @@ h6 {
           -webkit-transition-delay: .15s;
           -o-transition-delay: .15s;
           transition-delay: .15s; }
-        .wrap.card .content .title p.join {
+        .card .content .title p.join {
           margin-top: -20px; }
-          .wrap.card .content .title p.join span {
+          .card .content .title p.join span {
             position: relative;
             z-index: 0; }
-            .wrap.card .content .title p.join span:after {
+            .card .content .title p.join span:after {
               content: '';
               position: absolute;
               bottom: 0;
@@ -123,7 +123,7 @@ h6 {
               -webkit-transition: width .35s ease;
               -o-transition: width .35s ease;
               transition: width .35s ease; }
-    .wrap.card .content .step1 {
+    .card .content .step1 {
       position: relative;
       width: 100%;
       height: 100%;
@@ -136,7 +136,7 @@ h6 {
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column; }
-      .wrap.card .content .step1 .btn {
+      .card .content .step1 .btn {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -149,7 +149,7 @@ h6 {
         display: flex;
         justify-content: center;
         width: 100%; }
-        .wrap.card .content .step1 .btn a {
+        .card .content .step1 .btn a {
           display: inline-block;
           font-size: 20px;
           letter-spacing: 2px;
@@ -159,11 +159,11 @@ h6 {
           height: 75px;
           line-height: 75px;
           background-color: #01aa4f; }
-        .wrap.card .content .step1 .btn a .icon-ic_f:before {
+        .card .content .step1 .btn a .icon-ic_f:before {
           position: relative;
           top: 1px;
           padding-right: 15px; }
-    .wrap.card .content .step2 {
+    .card .content .step2 {
       position: relative;
       width: 100%;
       height: 100%;
@@ -189,7 +189,7 @@ h6 {
       -o-transition: opacity 1s ease, transform 1s ease;
       transition: opacity 1s ease, transform 1s ease;
       transition: opacity 1s ease, transform 1s ease, -webkit-transform 1s ease; }
-      .wrap.card .content .step2 .cardBox {
+      .card .content .step2 .cardBox {
         position: relative;
         display: -webkit-box;
         display: -webkit-flex;
@@ -205,7 +205,7 @@ h6 {
         border-radius: 10px;
         -webkit-box-shadow: 20.6px 34.3px 39.6px 6.4px rgba(4, 0, 0, 0.34);
         box-shadow: 20.6px 34.3px 39.6px 6.4px rgba(4, 0, 0, 0.34); }
-        .wrap.card .content .step2 .cardBox .left {
+        .card .content .step2 .cardBox .left {
           position: relative;
           display: -webkit-box;
           display: -webkit-flex;
@@ -218,11 +218,11 @@ h6 {
           background: #01aa4f;
           border-radius: 10px 0 0 10px;
           z-index: 1; }
-          .wrap.card .content .step2 .cardBox .left .imgBox {
+          .card .content .step2 .cardBox .left .imgBox {
             padding: 20%; }
-            .wrap.card .content .step2 .cardBox .left .imgBox img {
+            .card .content .step2 .cardBox .left .imgBox img {
               border-radius: 50%; }
-          .wrap.card .content .step2 .cardBox .left .left_cloud {
+          .card .content .step2 .cardBox .left .left_cloud {
             position: absolute;
             width: 120%;
             right: 50%;
@@ -239,7 +239,7 @@ h6 {
             -webkit-transition-delay: .8s;
             -o-transition-delay: .8s;
             transition-delay: .8s; }
-        .wrap.card .content .step2 .cardBox .right {
+        .card .content .step2 .cardBox .right {
           display: -webkit-box;
           display: -webkit-flex;
           display: -ms-flexbox;
@@ -257,10 +257,10 @@ h6 {
           background: url(../img/namecard_draw_01.png) bottom right no-repeat;
           background-size: 60%;
           background-color: white; }
-          .wrap.card .content .step2 .cardBox .right span.icon-ic_delete {
+          .card .content .step2 .cardBox .right span.icon-ic_delete {
             cursor: pointer;
             z-index: 1; }
-            .wrap.card .content .step2 .cardBox .right span.icon-ic_delete:before {
+            .card .content .step2 .cardBox .right span.icon-ic_delete:before {
               position: absolute;
               top: 50%;
               right: 0;
@@ -268,13 +268,13 @@ h6 {
               -webkit-transform: translateY(-50%);
               -ms-transform: translateY(-50%);
               transform: translateY(-50%); }
-          .wrap.card .content .step2 .cardBox .right .inputBox {
+          .card .content .step2 .cardBox .right .inputBox {
             padding: 10% 10% 10%; }
-            .wrap.card .content .step2 .cardBox .right .inputBox .name {
+            .card .content .step2 .cardBox .right .inputBox .name {
               margin-bottom: 5%;
               position: relative;
               width: 100%; }
-              .wrap.card .content .step2 .cardBox .right .inputBox .name input {
+              .card .content .step2 .cardBox .right .inputBox .name input {
                 position: relative;
                 background: transparent;
                 width: 100%;
@@ -284,7 +284,7 @@ h6 {
                 line-height: 1.12498rem;
                 color: black;
                 caret-color: black; }
-              .wrap.card .content .step2 .cardBox .right .inputBox .name:before {
+              .card .content .step2 .cardBox .right .inputBox .name:before {
                 content: '';
                 position: absolute;
                 bottom: 0;
@@ -292,18 +292,18 @@ h6 {
                 height: 2px;
                 background-color: #01aa4f; }
               @media screen and (max-width: 767px) {
-                .wrap.card .content .step2 .cardBox .right .inputBox .name input {
+                .card .content .step2 .cardBox .right .inputBox .name input {
                   padding: 1.00937rem 0 1.00937rem 1.00937rem;
                   font-size: 1.00937rem;
                   line-height: 1.00937rem; }
-                .wrap.card .content .step2 .cardBox .right .inputBox .name:before {
+                .card .content .step2 .cardBox .right .inputBox .name:before {
                   height: 1px; } }
               @media screen and (max-width: 374px) {
-                .wrap.card .content .step2 .cardBox .right .inputBox .name input {
+                .card .content .step2 .cardBox .right .inputBox .name input {
                   padding: 0.85797rem 0 0.85797rem 0.85797rem;
                   font-size: 0.85797rem;
                   line-height: 0.85797rem; } }
-          .wrap.card .content .step2 .cardBox .right .dreamBox {
+          .card .content .step2 .cardBox .right .dreamBox {
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
@@ -314,14 +314,14 @@ h6 {
             -ms-flex-direction: row;
             flex-direction: row;
             margin-bottom: 5%; }
-            .wrap.card .content .step2 .cardBox .right .dreamBox .dream {
+            .card .content .step2 .cardBox .right .dreamBox .dream {
               -webkit-box-flex: 2;
               -webkit-flex: 2;
               -ms-flex: 2;
               flex: 2;
               position: relative;
               width: 100%; }
-              .wrap.card .content .step2 .cardBox .right .dreamBox .dream input {
+              .card .content .step2 .cardBox .right .dreamBox .dream input {
                 position: relative;
                 background: transparent;
                 width: 100%;
@@ -331,7 +331,7 @@ h6 {
                 line-height: 1.12498rem;
                 color: black;
                 caret-color: black; }
-              .wrap.card .content .step2 .cardBox .right .dreamBox .dream:before {
+              .card .content .step2 .cardBox .right .dreamBox .dream:before {
                 content: '';
                 position: absolute;
                 bottom: 0;
@@ -339,18 +339,18 @@ h6 {
                 height: 2px;
                 background-color: #01aa4f; }
               @media screen and (max-width: 767px) {
-                .wrap.card .content .step2 .cardBox .right .dreamBox .dream input {
+                .card .content .step2 .cardBox .right .dreamBox .dream input {
                   padding: 1.00937rem 0 1.00937rem 1.00937rem;
                   font-size: 1.00937rem;
                   line-height: 1.00937rem; }
-                .wrap.card .content .step2 .cardBox .right .dreamBox .dream:before {
+                .card .content .step2 .cardBox .right .dreamBox .dream:before {
                   height: 1px; } }
               @media screen and (max-width: 374px) {
-                .wrap.card .content .step2 .cardBox .right .dreamBox .dream input {
+                .card .content .step2 .cardBox .right .dreamBox .dream input {
                   padding: 0.85797rem 0 0.85797rem 0.85797rem;
                   font-size: 0.85797rem;
                   line-height: 0.85797rem; } }
-            .wrap.card .content .step2 .cardBox .right .dreamBox .career {
+            .card .content .step2 .cardBox .right .dreamBox .career {
               -webkit-box-flex: 1;
               -webkit-flex: 1;
               -ms-flex: 1;
@@ -358,7 +358,7 @@ h6 {
               margin-left: 10px;
               position: relative;
               width: 100%; }
-              .wrap.card .content .step2 .cardBox .right .dreamBox .career input {
+              .card .content .step2 .cardBox .right .dreamBox .career input {
                 position: relative;
                 background: transparent;
                 width: 100%;
@@ -368,7 +368,7 @@ h6 {
                 line-height: 1.12498rem;
                 color: black;
                 caret-color: black; }
-              .wrap.card .content .step2 .cardBox .right .dreamBox .career:before {
+              .card .content .step2 .cardBox .right .dreamBox .career:before {
                 content: '';
                 position: absolute;
                 bottom: 0;
@@ -376,18 +376,18 @@ h6 {
                 height: 2px;
                 background-color: #01aa4f; }
               @media screen and (max-width: 767px) {
-                .wrap.card .content .step2 .cardBox .right .dreamBox .career input {
+                .card .content .step2 .cardBox .right .dreamBox .career input {
                   padding: 1.00937rem 0 1.00937rem 1.00937rem;
                   font-size: 1.00937rem;
                   line-height: 1.00937rem; }
-                .wrap.card .content .step2 .cardBox .right .dreamBox .career:before {
+                .card .content .step2 .cardBox .right .dreamBox .career:before {
                   height: 1px; } }
               @media screen and (max-width: 374px) {
-                .wrap.card .content .step2 .cardBox .right .dreamBox .career input {
+                .card .content .step2 .cardBox .right .dreamBox .career input {
                   padding: 0.85797rem 0 0.85797rem 0.85797rem;
                   font-size: 0.85797rem;
                   line-height: 0.85797rem; } }
-              .wrap.card .content .step2 .cardBox .right .dreamBox .career:after {
+              .card .content .step2 .cardBox .right .dreamBox .career:after {
                 content: '';
                 position: absolute;
                 width: 0;
@@ -400,10 +400,10 @@ h6 {
                 border-style: solid;
                 border-width: 8px 8px 0 8px;
                 border-color: #01aa4f transparent transparent transparent; }
-              .wrap.card .content .step2 .cardBox .right .dreamBox .career.down:after {
+              .card .content .step2 .cardBox .right .dreamBox .career.down:after {
                 border-width: 0 8px 8px 8px;
                 border-color: transparent transparent #01aa4f transparent; }
-              .wrap.card .content .step2 .cardBox .right .dreamBox .career ul {
+              .card .content .step2 .cardBox .right .dreamBox .career ul {
                 position: absolute;
                 width: 100%;
                 max-height: 250px;
@@ -414,9 +414,9 @@ h6 {
                 overflow-y: auto;
                 padding: 5px 0;
                 z-index: 3; }
-                .wrap.card .content .step2 .cardBox .right .dreamBox .career ul li {
+                .card .content .step2 .cardBox .right .dreamBox .career ul li {
                   width: 100%; }
-                  .wrap.card .content .step2 .cardBox .right .dreamBox .career ul li a {
+                  .card .content .step2 .cardBox .right .dreamBox .career ul li a {
                     display: -webkit-box;
                     display: -webkit-flex;
                     display: -ms-flexbox;
@@ -432,26 +432,26 @@ h6 {
                     align-items: center;
                     padding: 10px 0;
                     color: black; }
-          .wrap.card .content .step2 .cardBox .right .btnBox {
+          .card .content .step2 .cardBox .right .btnBox {
             width: 100%;
             height: 39px;
             line-height: 39px;
             padding-left: 50px;
             z-index: 2; }
-            .wrap.card .content .step2 .cardBox .right .btnBox .random {
+            .card .content .step2 .cardBox .right .btnBox .random {
               display: -webkit-box;
               display: -webkit-flex;
               display: -ms-flexbox;
               display: flex;
               font-family: 'Noto Sans', sans-serif;
               color: #01aa4f; }
-              .wrap.card .content .step2 .cardBox .right .btnBox .random img {
+              .card .content .step2 .cardBox .right .btnBox .random img {
                 width: 39px; }
-              .wrap.card .content .step2 .cardBox .right .btnBox .random span {
+              .card .content .step2 .cardBox .right .btnBox .random span {
                 margin-left: 11px;
                 font-size: 1.00937rem;
                 letter-spacing: 1.5px; }
-      .wrap.card .content .step2 .right_cloud {
+      .card .content .step2 .right_cloud {
         position: absolute;
         width: 17.5%;
         left: 62.5%;
@@ -468,7 +468,7 @@ h6 {
         -webkit-transition-delay: .6s;
         -o-transition-delay: .6s;
         transition-delay: .6s; }
-      .wrap.card .content .step2 .btn {
+      .card .content .step2 .btn {
         position: relative;
         display: -webkit-box;
         display: -webkit-flex;
@@ -480,7 +480,7 @@ h6 {
         justify-content: center;
         width: 100%;
         margin-top: 50px; }
-        .wrap.card .content .step2 .btn a {
+        .card .content .step2 .btn a {
           display: inline-block;
           font-size: 20px;
           letter-spacing: 2px;
@@ -490,18 +490,18 @@ h6 {
           height: 75px;
           line-height: 75px;
           background-color: #01aa4f; }
-        .wrap.card .content .step2 .btn a {
+        .card .content .step2 .btn a {
           opacity: 0;
           -webkit-transition: opacity .5s ease 1.3s;
           -o-transition: opacity .5s ease 1.3s;
           transition: opacity .5s ease 1.3s;
           z-index: 2; }
-        .wrap.card .content .step2 .btn .hand {
+        .card .content .step2 .btn .hand {
           position: absolute;
           margin-top: -130px;
           pointer-events: none;
           z-index: 1; }
-    .wrap.card .content .step3 {
+    .card .content .step3 {
       position: relative;
       width: 100%;
       height: 100%;
@@ -514,7 +514,7 @@ h6 {
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column; }
-      .wrap.card .content .step3 .handBox {
+      .card .content .step3 .handBox {
         position: relative;
         width: 100%;
         height: 100%;
@@ -522,7 +522,7 @@ h6 {
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex; }
-        .wrap.card .content .step3 .handBox .hand {
+        .card .content .step3 .handBox .hand {
           position: relative;
           width: 100%;
           display: -webkit-box;
@@ -534,7 +534,7 @@ h6 {
           -ms-flex-pack: center;
           justify-content: center;
           margin-top: 75px; }
-          .wrap.card .content .step3 .handBox .hand .lefthand {
+          .card .content .step3 .handBox .hand .lefthand {
             position: absolute;
             display: -webkit-box;
             display: -webkit-flex;
@@ -556,7 +556,7 @@ h6 {
             z-index: 2;
             -webkit-box-shadow: 20.6px 34.3px 39.6px 6.4px rgba(4, 0, 0, 0.34);
             box-shadow: 20.6px 34.3px 39.6px 6.4px rgba(4, 0, 0, 0.34); }
-            .wrap.card .content .step3 .handBox .hand .lefthand .left {
+            .card .content .step3 .handBox .hand .lefthand .left {
               display: -webkit-box;
               display: -webkit-flex;
               display: -ms-flexbox;
@@ -567,27 +567,27 @@ h6 {
               flex: 70;
               background: rgba(255, 255, 255, 0.8);
               border-radius: 10px 0 0 10px; }
-              .wrap.card .content .step3 .handBox .hand .lefthand .left .main {
+              .card .content .step3 .handBox .hand .lefthand .left .main {
                 position: relative;
                 padding-left: 30px; }
-                .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word {
+                .card .content .step3 .handBox .hand .lefthand .left .main .word {
                   position: absolute;
                   top: 22.5%;
                   font-weight: 500;
                   line-height: 1.3;
                   color: #01aa4f;
                   word-break: keep-all; }
-                  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .card_title {
+                  .card .content .step3 .handBox .hand .lefthand .left .main .word .card_title {
                     letter-spacing: 1px;
                     font-size: 1.43438rem; }
-                  .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .email {
+                  .card .content .step3 .handBox .hand .lefthand .left .main .word .email {
                     font-size: 0.85rem;
                     letter-spacing: .6px; }
-                .wrap.card .content .step3 .handBox .hand .lefthand .left .main .logo {
+                .card .content .step3 .handBox .hand .lefthand .left .main .logo {
                   position: absolute;
                   bottom: 30px;
                   width: 90px; }
-            .wrap.card .content .step3 .handBox .hand .lefthand .right {
+            .card .content .step3 .handBox .hand .lefthand .right {
               position: relative;
               display: -webkit-box;
               display: -webkit-flex;
@@ -608,15 +608,15 @@ h6 {
               -webkit-align-items: center;
               -ms-flex-align: center;
               align-items: center; }
-              .wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+              .card .content .step3 .handBox .hand .lefthand .right .picture {
                 position: absolute;
                 top: 15%;
                 width: 100px;
                 height: 100px; }
-                .wrap.card .content .step3 .handBox .hand .lefthand .right .picture img {
+                .card .content .step3 .handBox .hand .lefthand .right .picture img {
                   border-radius: 50%;
                   overflow: hidden; }
-              .wrap.card .content .step3 .handBox .hand .lefthand .right .name {
+              .card .content .step3 .handBox .hand .lefthand .right .name {
                 text-align: center;
                 position: absolute;
                 color: #01aa4f;
@@ -624,7 +624,7 @@ h6 {
                 font-size: 1.7425rem;
                 font-weight: 500;
                 letter-spacing: 1.4px; }
-          .wrap.card .content .step3 .handBox .hand .righthand {
+          .card .content .step3 .handBox .hand .righthand {
             position: absolute;
             display: -webkit-box;
             display: -webkit-flex;
@@ -653,19 +653,19 @@ h6 {
             z-index: 1;
             -webkit-box-shadow: 20.6px 34.3px 39.6px 6.4px rgba(4, 0, 0, 0.34);
             box-shadow: 20.6px 34.3px 39.6px 6.4px rgba(4, 0, 0, 0.34); }
-            .wrap.card .content .step3 .handBox .hand .righthand .main {
+            .card .content .step3 .handBox .hand .righthand .main {
               position: relative;
               width: 100%;
               top: 27.5%;
               margin-left: 35px;
               color: white; }
-              .wrap.card .content .step3 .handBox .hand .righthand .main .career {
+              .card .content .step3 .handBox .hand .righthand .main .career {
                 position: relative;
                 font-size: 1.43438rem;
                 font-family: 'Noto Sans', sans-serif;
                 letter-spacing: 1px;
                 word-break: keep-all; }
-                .wrap.card .content .step3 .handBox .hand .righthand .main .career:after {
+                .card .content .step3 .handBox .hand .righthand .main .career:after {
                   content: '';
                   position: absolute;
                   width: 50%;
@@ -676,18 +676,18 @@ h6 {
                   -webkit-transform: translate(0, -50%);
                   -ms-transform: translate(0, -50%);
                   transform: translate(0, -50%); }
-                .wrap.card .content .step3 .handBox .hand .righthand .main .career.word6:after {
+                .card .content .step3 .handBox .hand .righthand .main .career.word6:after {
                   width: 55%; }
-                .wrap.card .content .step3 .handBox .hand .righthand .main .career.word5:after {
+                .card .content .step3 .handBox .hand .righthand .main .career.word5:after {
                   width: 60%; }
-                .wrap.card .content .step3 .handBox .hand .righthand .main .career.word4:after {
+                .card .content .step3 .handBox .hand .righthand .main .career.word4:after {
                   width: 65%; }
-              .wrap.card .content .step3 .handBox .hand .righthand .main .email {
+              .card .content .step3 .handBox .hand .righthand .main .email {
                 font-size: 0.85rem;
                 margin: 10px 0;
                 letter-spacing: .6px;
                 word-break: keep-all; }
-        .wrap.card .content .step3 .handBox .btn {
+        .card .content .step3 .handBox .btn {
           position: relative;
           display: -webkit-box;
           display: -webkit-flex;
@@ -711,7 +711,7 @@ h6 {
           -webkit-transition-delay: .5s;
           -o-transition-delay: .5s;
           transition-delay: .5s; }
-          .wrap.card .content .step3 .handBox .btn a {
+          .card .content .step3 .handBox .btn a {
             display: inline-block;
             font-size: 20px;
             letter-spacing: 2px;
@@ -721,12 +721,12 @@ h6 {
             height: 75px;
             line-height: 75px;
             background-color: #01aa4f; }
-          .wrap.card .content .step3 .handBox .btn a .icon-ic_f:before {
+          .card .content .step3 .handBox .btn a .icon-ic_f:before {
             position: relative;
             top: 1px;
             padding-right: 15px;
             color: #fff43c; }
-    .wrap.card .content .step1 .btn {
+    .card .content .step1 .btn {
       -webkit-transform: translateY(-30px);
       -ms-transform: translateY(-30px);
       transform: translateY(-30px);
@@ -736,236 +736,236 @@ h6 {
       -o-transition: transform .5s ease .3s, opacity .5s ease .3s;
       transition: transform .5s ease .3s, opacity .5s ease .3s;
       transition: transform .5s ease .3s, opacity .5s ease .3s, -webkit-transform .5s ease .3s; }
-    .wrap.card .content.step1Show .title h1,
-    .wrap.card .content.step1Show .title .word {
+    .card .content.step1Show .title h1,
+    .card .content.step1Show .title .word {
       -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
       transform: translateY(0);
       opacity: 1; }
-    .wrap.card .content.step1Show .step1 .btn {
+    .card .content.step1Show .step1 .btn {
       -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
       transform: translateY(0);
       opacity: 1; }
-    .wrap.card .content.step2Show .step2 {
+    .card .content.step2Show .step2 {
       opacity: 1;
       -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
       transform: translateY(0); }
-      .wrap.card .content.step2Show .step2 .cardBox .left .left_cloud {
+      .card .content.step2Show .step2 .cardBox .left .left_cloud {
         opacity: 1;
         -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
         transform: translateY(0); }
-      .wrap.card .content.step2Show .step2 .right_cloud {
+      .card .content.step2Show .step2 .right_cloud {
         opacity: 1;
         -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
         transform: translateX(0); }
-      .wrap.card .content.step2Show .step2 .btn a {
+      .card .content.step2Show .step2 .btn a {
         opacity: 1; }
-    .wrap.card .content.step3Show .title p.join span:after {
+    .card .content.step3Show .title p.join span:after {
       width: 100%; }
-    .wrap.card .content.step3Show .step3 .handBox .hand .lefthand {
+    .card .content.step3Show .step3 .handBox .hand .lefthand {
       -webkit-transform: translate(-40%, -15%);
       -ms-transform: translate(-40%, -15%);
       transform: translate(-40%, -15%); }
-    .wrap.card .content.step3Show .step3 .handBox .hand .righthand {
+    .card .content.step3Show .step3 .handBox .hand .righthand {
       -webkit-transform: translate(30%, 35%);
       -ms-transform: translate(30%, 35%);
       transform: translate(30%, 35%); }
-    .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+    .card .content.step3Show .step3 .handBox .hand .btn {
       opacity: 1;
       -webkit-transform: translateY(650%);
       -ms-transform: translateY(650%);
       transform: translateY(650%); }
     @media screen and (max-width: 1680px) {
-      .wrap.card .content .step3 .handBox .hand .lefthand {
+      .card .content .step3 .handBox .hand .lefthand {
         max-width: 448px;
         max-height: 274.75px; }
-        .wrap.card .content .step3 .handBox .hand .lefthand .left .main .logo {
+        .card .content .step3 .handBox .hand .lefthand .left .main .logo {
           width: 78.75px; }
-        .wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+        .card .content .step3 .handBox .hand .lefthand .right .picture {
           width: 87.5px;
           height: 87.5px;
           top: 13.125%; }
-        .wrap.card .content .step3 .handBox .hand .lefthand .right .name {
+        .card .content .step3 .handBox .hand .lefthand .right .name {
           font-size: 24.5px; }
-      .wrap.card .content .step3 .handBox .hand .righthand {
+      .card .content .step3 .handBox .hand .righthand {
         max-width: 448px;
         max-height: 274.75px; }
-      .wrap.card .content .step3 .handBox .hand .btn {
+      .card .content .step3 .handBox .hand .btn {
         -webkit-transform: translateY(200%);
         -ms-transform: translateY(200%);
         transform: translateY(200%); }
-      .wrap.card .content .step3 .handBox.show .hand .btn {
+      .card .content .step3 .handBox.show .hand .btn {
         -webkit-transform: translateY(575%);
         -ms-transform: translateY(575%);
         transform: translateY(575%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+      .card .content.step3Show .step3 .handBox .hand .btn {
         -webkit-transform: translateY(575%);
         -ms-transform: translateY(575%);
         transform: translateY(575%); } }
     @media screen and (max-width: 1366px) {
-      .wrap.card .content .title {
+      .card .content .title {
         margin: 0 auto; }
-        .wrap.card .content .title h1 {
+        .card .content .title h1 {
           width: 85%;
           margin: 0 auto;
           margin-top: 20px; }
-        .wrap.card .content .title p.word {
+        .card .content .title p.word {
           margin: 10px 0 10px; }
-        .wrap.card .content .title p.join {
+        .card .content .title p.join {
           margin-top: 0;
           margin-bottom: 15px; }
-      .wrap.card .content .step1 .btn a {
+      .card .content .step1 .btn a {
         width: 213.4375px;
         height: 53.35938px;
         line-height: 53.35938px; }
-      .wrap.card .content .step2 .cardBox {
+      .card .content .step2 .cardBox {
         width: 499.44375px;
         height: 280.31458px; }
-        .wrap.card .content .step2 .cardBox .right .inputBox {
+        .card .content .step2 .cardBox .right .inputBox {
           padding: 5% 10% 4%; }
-      .wrap.card .content .step2 .btn {
+      .card .content .step2 .btn {
         margin-top: 40px; }
-        .wrap.card .content .step2 .btn a {
+        .card .content .step2 .btn a {
           width: 213.4375px;
           height: 53.35938px;
           line-height: 53.35938px;
           font-size: 16px; }
-        .wrap.card .content .step2 .btn .hand {
+        .card .content .step2 .btn .hand {
           width: 499.44375px;
           margin-top: -100px; }
-      .wrap.card .content .step3 .handBox .hand {
+      .card .content .step3 .handBox .hand {
         margin-top: 30px; }
-        .wrap.card .content .step3 .handBox .hand .lefthand {
+        .card .content .step3 .handBox .hand .lefthand {
           max-width: 364.26667px;
           max-height: 212.22802px; }
-          .wrap.card .content .step3 .handBox .hand .lefthand .left .main {
+          .card .content .step3 .handBox .hand .lefthand .left .main {
             padding-left: 21.34375px; }
-            .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word {
+            .card .content .step3 .handBox .hand .lefthand .left .main .word {
               top: 17.5%; }
-              .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .card_title {
+              .card .content .step3 .handBox .hand .lefthand .left .main .word .card_title {
                 font-size: 1.22187rem; }
-              .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .email {
+              .card .content .step3 .handBox .hand .lefthand .left .main .word .email {
                 font-size: 0.74375rem; }
-            .wrap.card .content .step3 .handBox .hand .lefthand .left .main .logo {
+            .card .content .step3 .handBox .hand .lefthand .left .main .logo {
               bottom: 21.34375px;
               width: 64.03125px; }
-          .wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+          .card .content .step3 .handBox .hand .lefthand .right .picture {
             width: 71.14583px;
             height: 71.14583px;
             top: 10.67188%; }
-          .wrap.card .content .step3 .handBox .hand .lefthand .right .name {
+          .card .content .step3 .handBox .hand .lefthand .right .name {
             font-size: 19.92083px; }
-        .wrap.card .content .step3 .handBox .hand .righthand {
+        .card .content .step3 .handBox .hand .righthand {
           max-width: 364.26667px;
           max-height: 212.22802px; }
-          .wrap.card .content .step3 .handBox .hand .righthand .main {
+          .card .content .step3 .handBox .hand .righthand .main {
             margin-left: 24.90104px;
             top: 30%; }
-            .wrap.card .content .step3 .handBox .hand .righthand .main .career {
+            .card .content .step3 .handBox .hand .righthand .main .career {
               font-size: 1.22187rem; }
-              .wrap.card .content .step3 .handBox .hand .righthand .main .career:after {
+              .card .content .step3 .handBox .hand .righthand .main .career:after {
                 height: 12px; }
-            .wrap.card .content .step3 .handBox .hand .righthand .main .email {
+            .card .content .step3 .handBox .hand .righthand .main .email {
               font-size: 0.74375rem;
               margin: 5px 0; }
-      .wrap.card .content .step3 .handBox .btn {
+      .card .content .step3 .handBox .btn {
         margin-top: 40px; }
-        .wrap.card .content .step3 .handBox .btn a {
+        .card .content .step3 .handBox .btn a {
           width: 213.4375px;
           height: 53.35938px;
           line-height: 53.35938px;
           font-size: 16px; }
-      .wrap.card .content .step3 .handBox.show .hand .lefthand {
+      .card .content .step3 .handBox.show .hand .lefthand {
         -webkit-transform: translate(-40%, -10%);
         -ms-transform: translate(-40%, -10%);
         transform: translate(-40%, -10%); }
-      .wrap.card .content .step3 .handBox.show .hand .righthand {
+      .card .content .step3 .handBox.show .hand .righthand {
         -webkit-transform: translate(30%, 30%);
         -ms-transform: translate(30%, 30%);
         transform: translate(30%, 30%); }
-      .wrap.card .content .step3 .handBox.show .hand .btn {
+      .card .content .step3 .handBox.show .hand .btn {
         -webkit-transform: translateY(525%);
         -ms-transform: translateY(525%);
         transform: translateY(525%); }
-      .wrap.card .content.step2Show .step2 .right_cloud {
+      .card .content.step2Show .step2 .right_cloud {
         opacity: 1;
         -webkit-transform: translateX(-70px);
         -ms-transform: translateX(-70px);
         transform: translateX(-70px); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .lefthand {
+      .card .content.step3Show .step3 .handBox .hand .lefthand {
         -webkit-transform: translate(-40%, -10%);
         -ms-transform: translate(-40%, -10%);
         transform: translate(-40%, -10%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .righthand {
+      .card .content.step3Show .step3 .handBox .hand .righthand {
         -webkit-transform: translate(30%, 35%);
         -ms-transform: translate(30%, 35%);
         transform: translate(30%, 35%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+      .card .content.step3Show .step3 .handBox .hand .btn {
         -webkit-transform: translateY(525%);
         -ms-transform: translateY(525%);
         transform: translateY(525%); } }
     @media screen and (max-width: 1024px) {
-      .wrap.card .content .title {
+      .card .content .title {
         width: 45%; }
-        .wrap.card .content .title h1 {
+        .card .content .title h1 {
           margin-top: 30px; }
-        .wrap.card .content .title p.word {
+        .card .content .title p.word {
           margin: 10px 0 10px;
           font-size: 16px; }
-          .wrap.card .content .title p.word span {
+          .card .content .title p.word span {
             display: block; }
-      .wrap.card .content .step1 .btn {
+      .card .content .step1 .btn {
         margin-top: 10px; }
-        .wrap.card .content .step1 .btn a {
+        .card .content .step1 .btn a {
           font-size: 1.0625rem; }
-      .wrap.card .content .step2 {
+      .card .content .step2 {
         top: 20px; }
-        .wrap.card .content .step2 .cardBox {
+        .card .content .step2 .cardBox {
           width: 596.7px;
           height: 334.9px; }
-          .wrap.card .content .step2 .cardBox .right .inputBox {
+          .card .content .step2 .cardBox .right .inputBox {
             padding: 7.5% 10% 10%; }
-        .wrap.card .content .step2 .btn {
+        .card .content .step2 .btn {
           margin-top: 35px; }
-          .wrap.card .content .step2 .btn .hand {
+          .card .content .step2 .btn .hand {
             margin-top: -106px;
             width: 596.7px; }
-        .wrap.card .content .step2.step2Show .right_cloud {
+        .card .content .step2.step2Show .right_cloud {
           -webkit-transform: translateX(80px);
           -ms-transform: translateX(80px);
           transform: translateX(80px); }
-      .wrap.card .content .step3 .handBox .hand {
+      .card .content .step3 .handBox .hand {
         margin-top: 40px; }
-        .wrap.card .content .step3 .handBox .hand .lefthand {
+        .card .content .step3 .handBox .hand .lefthand {
           width: 35%;
           height: 45%;
           max-height: 225px;
           border-radius: 5px; }
-          .wrap.card .content .step3 .handBox .hand .lefthand .left {
+          .card .content .step3 .handBox .hand .lefthand .left {
             border-radius: 5px 0 0 5px; }
-            .wrap.card .content .step3 .handBox .hand .lefthand .left .main .logo {
+            .card .content .step3 .handBox .hand .lefthand .left .main .logo {
               width: 70px;
               bottom: 20px; }
-          .wrap.card .content .step3 .handBox .hand .lefthand .right {
+          .card .content .step3 .handBox .hand .lefthand .right {
             border-radius: 0 5px 5px 0; }
-            .wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+            .card .content .step3 .handBox .hand .lefthand .right .picture {
               width: 90px;
               height: 90px;
               padding: 10px;
               top: 8%; }
-        .wrap.card .content .step3 .handBox .hand .righthand {
+        .card .content .step3 .handBox .hand .righthand {
           width: 35%;
           height: 45%;
           max-height: 225px;
           border-radius: 5px; }
-          .wrap.card .content .step3 .handBox .hand .righthand .main {
+          .card .content .step3 .handBox .hand .righthand .main {
             margin-left: 20px;
             top: 27.5%; }
-        .wrap.card .content .step3 .handBox .hand .btn {
+        .card .content .step3 .handBox .hand .btn {
           width: 55%;
           height: 60px;
           font-size: 16px;
@@ -973,48 +973,48 @@ h6 {
           -webkit-transform: translateY(100%);
           -ms-transform: translateY(100%);
           transform: translateY(100%); }
-      .wrap.card .content.step2Show .step2 .right_cloud {
+      .card .content.step2Show .step2 .right_cloud {
         opacity: 1;
         -webkit-transform: translateX(80px);
         -ms-transform: translateX(80px);
         transform: translateX(80px); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .lefthand {
+      .card .content.step3Show .step3 .handBox .hand .lefthand {
         -webkit-transform: translate(-40%, -10%);
         -ms-transform: translate(-40%, -10%);
         transform: translate(-40%, -10%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .righthand {
+      .card .content.step3Show .step3 .handBox .hand .righthand {
         -webkit-transform: translate(30%, 40%);
         -ms-transform: translate(30%, 40%);
         transform: translate(30%, 40%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+      .card .content.step3Show .step3 .handBox .hand .btn {
         -webkit-transform: translateY(500%);
         -ms-transform: translateY(500%);
         transform: translateY(500%); } }
     @media screen and (max-width: 767px) {
-      .wrap.card .content .bg1 {
+      .card .content .bg1 {
         background: url(../img/namecard_bg_m1.jpg) center center no-repeat;
         background-size: cover; }
-      .wrap.card .content .bg2 {
+      .card .content .bg2 {
         background: url(../img/namecard_bg_m2.jpg) center center no-repeat;
         background-size: cover; }
-        .wrap.card .content .bg2 .dot_rt,
-        .wrap.card .content .bg2 .dot_rb,
-        .wrap.card .content .bg2 .dot_left {
+        .card .content .bg2 .dot_rt,
+        .card .content .bg2 .dot_rb,
+        .card .content .bg2 .dot_left {
           display: none; }
-      .wrap.card .content .title {
+      .card .content .title {
         width: 85%; }
-        .wrap.card .content .title h1 {
+        .card .content .title h1 {
           margin-top: 20px; }
-        .wrap.card .content .title p.word {
+        .card .content .title p.word {
           margin: 5px 0 10px; }
-      .wrap.card .content .step1 {
+      .card .content .step1 {
         padding-top: 10%; }
-        .wrap.card .content .step1 .btn a {
+        .card .content .step1 .btn a {
           width: 55%;
           height: 60px;
           font-size: 16px;
           line-height: 60px; }
-      .wrap.card .content .step2 .cardBox {
+      .card .content .step2 .cardBox {
         -webkit-box-flex: 5;
         -webkit-flex: 5;
         -ms-flex: 5;
@@ -1026,13 +1026,13 @@ h6 {
         flex-direction: column;
         width: 90%;
         border-radius: 30px; }
-        .wrap.card .content .step2 .cardBox .left {
+        .card .content .step2 .cardBox .left {
           -webkit-box-flex: 20;
           -webkit-flex: 20;
           -ms-flex: 20;
           flex: 20;
           border-radius: 30px 30px 0 0; }
-          .wrap.card .content .step2 .cardBox .left .imgBox {
+          .card .content .step2 .cardBox .left .imgBox {
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
@@ -1047,173 +1047,173 @@ h6 {
             align-items: flex-end;
             width: 100%;
             padding: 0; }
-            .wrap.card .content .step2 .cardBox .left .imgBox img {
+            .card .content .step2 .cardBox .left .imgBox img {
               width: 20%;
               margin-bottom: -6.66667%; }
-          .wrap.card .content .step2 .cardBox .left .left_cloud {
+          .card .content .step2 .cardBox .left .left_cloud {
             display: none; }
-        .wrap.card .content .step2 .cardBox .right {
+        .card .content .step2 .cardBox .right {
           -webkit-box-flex: 80;
           -webkit-flex: 80;
           -ms-flex: 80;
           flex: 80;
           border-radius: 0 0 30px 30px; }
-          .wrap.card .content .step2 .cardBox .right .dreamBox {
+          .card .content .step2 .cardBox .right .dreamBox {
             margin-bottom: 1%; }
-            .wrap.card .content .step2 .cardBox .right .dreamBox .career ul {
+            .card .content .step2 .cardBox .right .dreamBox .career ul {
               font-size: 14px; }
-          .wrap.card .content .step2 .cardBox .right .btnBox {
+          .card .content .step2 .cardBox .right .btnBox {
             padding-left: 0px; }
-            .wrap.card .content .step2 .cardBox .right .btnBox .random {
+            .card .content .step2 .cardBox .right .btnBox .random {
               margin-top: 25px;
               font-size: 14px; }
-      .wrap.card .content .step2 .btn {
+      .card .content .step2 .btn {
         -webkit-box-flex: 2;
         -webkit-flex: 2;
         -ms-flex: 2;
         flex: 2;
         margin-top: 20px;
         margin-bottom: 30px; }
-        .wrap.card .content .step2 .btn a {
+        .card .content .step2 .btn a {
           -webkit-transition-delay: .85s;
           -o-transition-delay: .85s;
           transition-delay: .85s; }
-        .wrap.card .content .step2 .btn .hand {
+        .card .content .step2 .btn .hand {
           margin-top: -65px;
           width: 90%; }
-      .wrap.card .content .step2 .right_cloud {
+      .card .content .step2 .right_cloud {
         display: none; }
-      .wrap.card .content .step3 .handBox .hand {
+      .card .content .step3 .handBox .hand {
         margin-top: 50px; }
-        .wrap.card .content .step3 .handBox .hand .lefthand {
+        .card .content .step3 .handBox .hand .lefthand {
           width: 80%;
           max-width: 375px;
           height: 40%;
           min-height: 180px;
           border-radius: 5px; }
-          .wrap.card .content .step3 .handBox .hand .lefthand .left {
+          .card .content .step3 .handBox .hand .lefthand .left {
             border-radius: 5px 0 0 5px; }
-            .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .card_title {
+            .card .content .step3 .handBox .hand .lefthand .left .main .word .card_title {
               font-size: 1.11563rem; }
-            .wrap.card .content .step3 .handBox .hand .lefthand .left .main .logo {
+            .card .content .step3 .handBox .hand .lefthand .left .main .logo {
               bottom: 15px;
               width: 60px; }
-          .wrap.card .content .step3 .handBox .hand .lefthand .right {
+          .card .content .step3 .handBox .hand .lefthand .right {
             border-radius: 0 5px 5px 0; }
-            .wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+            .card .content .step3 .handBox .hand .lefthand .right .picture {
               width: 85px;
               height: 85px;
               padding: 10px;
               top: 8%; }
-        .wrap.card .content .step3 .handBox .hand .righthand {
+        .card .content .step3 .handBox .hand .righthand {
           width: 80%;
           max-width: 375px;
           height: 40%;
           min-height: 180px;
           border-radius: 5px; }
-          .wrap.card .content .step3 .handBox .hand .righthand .main {
+          .card .content .step3 .handBox .hand .righthand .main {
             margin-left: 15px;
             top: 25%; }
-            .wrap.card .content .step3 .handBox .hand .righthand .main .career {
+            .card .content .step3 .handBox .hand .righthand .main .career {
               font-size: 1.11563rem; }
-              .wrap.card .content .step3 .handBox .hand .righthand .main .career:after {
+              .card .content .step3 .handBox .hand .righthand .main .career:after {
                 height: 8px; }
-            .wrap.card .content .step3 .handBox .hand .righthand .main .email {
+            .card .content .step3 .handBox .hand .righthand .main .email {
               margin: 5px 0; }
-        .wrap.card .content .step3 .handBox .hand .btn {
+        .card .content .step3 .handBox .hand .btn {
           width: 100%;
           -webkit-transform: translateY(100%);
           -ms-transform: translateY(100%);
           transform: translateY(100%); }
-      .wrap.card .content .step3 .handBox.show .hand .lefthand {
+      .card .content .step3 .handBox.show .hand .lefthand {
         -webkit-transform: translate(-7%, -18%);
         -ms-transform: translate(-7%, -18%);
         transform: translate(-7%, -18%); }
-      .wrap.card .content .step3 .handBox.show .hand .righthand {
+      .card .content .step3 .handBox.show .hand .righthand {
         -webkit-transform: translate(9%, 40%);
         -ms-transform: translate(9%, 40%);
         transform: translate(9%, 40%); }
-      .wrap.card .content .step3 .handBox.show .hand .btn {
+      .card .content .step3 .handBox.show .hand .btn {
         -webkit-transform: translateY(450%);
         -ms-transform: translateY(450%);
         transform: translateY(450%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .lefthand {
+      .card .content.step3Show .step3 .handBox .hand .lefthand {
         -webkit-transform: translate(-7%, -18%);
         -ms-transform: translate(-7%, -18%);
         transform: translate(-7%, -18%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .righthand {
+      .card .content.step3Show .step3 .handBox .hand .righthand {
         -webkit-transform: translate(9%, 40%);
         -ms-transform: translate(9%, 40%);
         transform: translate(9%, 40%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+      .card .content.step3Show .step3 .handBox .hand .btn {
         -webkit-transform: translateY(450%);
         -ms-transform: translateY(450%);
         transform: translateY(450%); } }
     @media screen and (max-width: 413px) {
-      .wrap.card .content .title p.word {
+      .card .content .title p.word {
         margin: 5px 0 5px; }
-      .wrap.card .content .title p.join span {
+      .card .content .title p.join span {
         width: 65%;
         display: block;
         margin: 0 auto;
         margin-top: 5px; }
-        .wrap.card .content .title p.join span:after {
+        .card .content .title p.join span:after {
           text-align: left;
           bottom: -2px; }
-      .wrap.card .content .step2 .cardBox {
+      .card .content .step2 .cardBox {
         -webkit-box-flex: 8;
         -webkit-flex: 8;
         -ms-flex: 8;
         flex: 8; }
-        .wrap.card .content .step2 .cardBox .right .inputBox {
+        .card .content .step2 .cardBox .right .inputBox {
           padding-top: 4%; }
-          .wrap.card .content .step2 .cardBox .right .inputBox .random {
+          .card .content .step2 .cardBox .right .inputBox .random {
             margin-top: 20px; }
-      .wrap.card .content .step2 .btn {
+      .card .content .step2 .btn {
         -webkit-box-flex: 3.5;
         -webkit-flex: 3.5;
         -ms-flex: 3.5;
         flex: 3.5; }
-        .wrap.card .content .step2 .btn .hand {
+        .card .content .step2 .btn .hand {
           margin-top: -60px; }
-      .wrap.card .content .step3 .handBox .hand {
+      .card .content .step3 .handBox .hand {
         margin-top: 35px; }
-        .wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+        .card .content .step3 .handBox .hand .lefthand .right .picture {
           margin-bottom: 65%;
           top: 6%; }
-        .wrap.card .content .step3 .handBox .hand .lefthand .right .name {
+        .card .content .step3 .handBox .hand .lefthand .right .name {
           font-size: 1.0625rem; }
-        .wrap.card .content .step3 .handBox .hand .btn {
+        .card .content .step3 .handBox .hand .btn {
           width: 100%;
           -webkit-transform: translateY(100%);
           -ms-transform: translateY(100%);
           transform: translateY(100%); }
-      .wrap.card .content .step3 .handBox.show .hand .btn {
+      .card .content .step3 .handBox.show .hand .btn {
         -webkit-transform: translateY(400%);
         -ms-transform: translateY(400%);
         transform: translateY(400%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+      .card .content.step3Show .step3 .handBox .hand .btn {
         -webkit-transform: translateY(400%);
         -ms-transform: translateY(400%);
         transform: translateY(400%); } }
     @media screen and (max-width: 374px) {
-      .wrap.card .content .title {
+      .card .content .title {
         width: 70%; }
-        .wrap.card .content .title h1 {
+        .card .content .title h1 {
           margin-top: 15px; }
-        .wrap.card .content .title p.word {
+        .card .content .title p.word {
           font-size: 13px;
           margin: 5px 0 0; }
-        .wrap.card .content .title p.join {
+        .card .content .title p.join {
           font-size: 13px;
           margin-top: 0;
           margin-bottom: -10px; }
-      .wrap.card .content .step1 .btn a {
+      .card .content .step1 .btn a {
         width: 55%;
         height: 60px;
         font-size: 16px;
         line-height: 60px; }
-      .wrap.card .content .step2 .cardBox {
+      .card .content .step2 .cardBox {
         -webkit-box-flex: 2;
         -webkit-flex: 2;
         -ms-flex: 2;
@@ -1224,12 +1224,12 @@ h6 {
         -ms-flex-direction: column;
         flex-direction: column;
         width: 90%; }
-        .wrap.card .content .step2 .cardBox .left {
+        .card .content .step2 .cardBox .left {
           -webkit-box-flex: 20;
           -webkit-flex: 20;
           -ms-flex: 20;
           flex: 20; }
-          .wrap.card .content .step2 .cardBox .left .imgBox {
+          .card .content .step2 .cardBox .left .imgBox {
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
@@ -1244,127 +1244,132 @@ h6 {
             align-items: flex-end;
             width: 100%;
             padding: 0; }
-            .wrap.card .content .step2 .cardBox .left .imgBox img {
+            .card .content .step2 .cardBox .left .imgBox img {
               width: 20%;
               margin-bottom: -6.66667%; }
-        .wrap.card .content .step2 .cardBox .right {
+        .card .content .step2 .cardBox .right {
           -webkit-box-flex: 80;
           -webkit-flex: 80;
           -ms-flex: 80;
           flex: 80; }
-          .wrap.card .content .step2 .cardBox .right .inputBox {
+          .card .content .step2 .cardBox .right .inputBox {
             padding: 2% 7%; }
-          .wrap.card .content .step2 .cardBox .right .dreamBox {
+          .card .content .step2 .cardBox .right .dreamBox {
             margin-bottom: 1%; }
-          .wrap.card .content .step2 .cardBox .right .btnBox .random {
+          .card .content .step2 .cardBox .right .btnBox .random {
             margin-top: 10px; }
-            .wrap.card .content .step2 .cardBox .right .btnBox .random img {
+            .card .content .step2 .cardBox .right .btnBox .random img {
               width: 30px; }
-            .wrap.card .content .step2 .cardBox .right .btnBox .random span {
+            .card .content .step2 .cardBox .right .btnBox .random span {
               font-size: 14px; }
-      .wrap.card .content .step2 .btn {
+      .card .content .step2 .btn {
         -webkit-box-flex: 1;
         -webkit-flex: 1;
         -ms-flex: 1;
         flex: 1;
         margin-top: 20px; }
-        .wrap.card .content .step2 .btn .hand {
+        .card .content .step2 .btn .hand {
           margin-top: -54px; }
-      .wrap.card .content .step3 .handBox .hand {
+      .card .content .step3 .handBox .hand {
         top: 20px; }
-        .wrap.card .content .step3 .handBox .hand .lefthand {
+        .card .content .step3 .handBox .hand .lefthand {
           width: 80%;
           height: 40%;
           max-height: 150px;
           min-height: inherit;
           border-radius: 5px; }
-          .wrap.card .content .step3 .handBox .hand .lefthand .left {
+          .card .content .step3 .handBox .hand .lefthand .left {
             border-radius: 5px 0 0 5px; }
-            .wrap.card .content .step3 .handBox .hand .lefthand .left .main {
+            .card .content .step3 .handBox .hand .lefthand .left .main {
               padding-left: 15px; }
-              .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word {
+              .card .content .step3 .handBox .hand .lefthand .left .main .word {
                 top: 20px; }
-                .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .card_title {
+                .card .content .step3 .handBox .hand .lefthand .left .main .word .card_title {
                   font-size: 14px; }
-                .wrap.card .content .step3 .handBox .hand .lefthand .left .main .word .email {
+                .card .content .step3 .handBox .hand .lefthand .left .main .word .email {
                   font-size: 10px; }
-              .wrap.card .content .step3 .handBox .hand .lefthand .left .main .logo {
+              .card .content .step3 .handBox .hand .lefthand .left .main .logo {
                 bottom: 15px;
                 width: 50px; }
-          .wrap.card .content .step3 .handBox .hand .lefthand .right {
+          .card .content .step3 .handBox .hand .lefthand .right {
             border-radius: 0 5px 5px 0; }
-            .wrap.card .content .step3 .handBox .hand .lefthand .right .picture {
+            .card .content .step3 .handBox .hand .lefthand .right .picture {
               width: 75px;
               height: 75px;
               padding: 10px;
               top: 3.23438%; }
-            .wrap.card .content .step3 .handBox .hand .lefthand .right .name {
+            .card .content .step3 .handBox .hand .lefthand .right .name {
               font-size: 0.90312rem; }
-        .wrap.card .content .step3 .handBox .hand .righthand {
+        .card .content .step3 .handBox .hand .righthand {
           width: 80%;
           height: 40%;
           max-height: 150px;
           min-height: inherit;
           border-radius: 5px; }
-          .wrap.card .content .step3 .handBox .hand .righthand .main {
+          .card .content .step3 .handBox .hand .righthand .main {
             margin-left: 15px;
             top: 30%; }
-            .wrap.card .content .step3 .handBox .hand .righthand .main .career {
+            .card .content .step3 .handBox .hand .righthand .main .career {
               font-size: 14px; }
-              .wrap.card .content .step3 .handBox .hand .righthand .main .career:after {
+              .card .content .step3 .handBox .hand .righthand .main .career:after {
                 height: 8px; }
-            .wrap.card .content .step3 .handBox .hand .righthand .main .email {
+            .card .content .step3 .handBox .hand .righthand .main .email {
               font-size: 10px;
               margin: 5px 0; }
-        .wrap.card .content .step3 .handBox .hand .btn {
+        .card .content .step3 .handBox .hand .btn {
           -webkit-transform: translateY(100%);
           -ms-transform: translateY(100%);
           transform: translateY(100%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .lefthand {
+      .card .content.step3Show .step3 .handBox .hand .lefthand {
         -webkit-transform: translate(-7%, -18%);
         -ms-transform: translate(-7%, -18%);
         transform: translate(-7%, -18%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .righthand {
+      .card .content.step3Show .step3 .handBox .hand .righthand {
         -webkit-transform: translate(9%, 35%);
         -ms-transform: translate(9%, 35%);
         transform: translate(9%, 35%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+      .card .content.step3Show .step3 .handBox .hand .btn {
         -webkit-transform: translateY(300%);
         -ms-transform: translateY(300%);
         transform: translateY(300%); } }
     @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-      .wrap.card .content .step2 .cardBox {
+      .card .content .step2 .cardBox {
         -webkit-box-flex: initial;
         -webkit-flex: initial;
         -ms-flex: initial;
         flex: initial;
         width: 95%; }
-      .wrap.card .content .step2 .btn {
+      .card .content .step2 .btn {
         -webkit-box-flex: initial;
         -webkit-flex: initial;
         -ms-flex: initial;
         flex: initial;
         margin-top: 40px; }
-        .wrap.card .content .step2 .btn .hand {
+        .card .content .step2 .btn .hand {
           width: 120%;
           margin-top: -94px; }
-      .wrap.card .content .step3 .handBox .hand .lefthand {
+      .card .content .step3 .handBox .hand .lefthand {
         width: 85%;
         height: 200px; }
-      .wrap.card .content .step3 .handBox .hand .righthand {
+      .card .content .step3 .handBox .hand .righthand {
         width: 85%;
         height: 200px; }
-      .wrap.card .content .step3 .handBox .hand .btn {
+      .card .content .step3 .handBox .hand .btn {
         width: 100%; }
-      .wrap.card .content.step3Show .step3 .handBox .hand .lefthand {
+      .card .content.step3Show .step3 .handBox .hand .lefthand {
         -webkit-transform: translate(-6%, -7%);
         -ms-transform: translate(-6%, -7%);
         transform: translate(-6%, -7%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .righthand {
+      .card .content.step3Show .step3 .handBox .hand .righthand {
         -webkit-transform: translate(6%, 48%);
         -ms-transform: translate(6%, 48%);
         transform: translate(6%, 48%); }
-      .wrap.card .content.step3Show .step3 .handBox .hand .btn {
+      .card .content.step3Show .step3 .handBox .hand .btn {
         -webkit-transform: translateY(485%);
         -ms-transform: translateY(485%);
         transform: translateY(485%); } }
+
+form .share_pic img {
+  width: inherit;
+  opacity: 0;
+  position: absolute; }

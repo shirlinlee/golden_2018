@@ -970,7 +970,7 @@ h6 {
               transform: translateY(-50%) scale(0.3);
               opacity: 1; }
     .wrap.join .content .progress {
-      position: fixed;
+      position: absolute;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;

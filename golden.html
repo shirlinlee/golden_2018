@@ -7,6 +7,10 @@
         <title>國泰人壽2018 - 高登計畫</title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
         <script type="text/javascript" src="vendor/jquery-3.3.1.min.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129178589-1"></script>
+        <script type="text/javascript" src="js/init.js"></script>
+        
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/golden.css" />
@@ -16,7 +20,7 @@
     <body>
         <div id="wrappper" class="bg_grey W100">
             <div id="game" class="W1040">
-                <div class="fix draw">
+                <div class="abs draw">
                     <img src="img/golden/draw_p_01.svg" width="100%" alt="">
                     <p class="abs w1">找工作前</p>
                     <p class="abs w2">你夠了解自己嗎？</p>
@@ -49,11 +53,12 @@
                         <span class="f_white">4</span>
                     </div>
                 </div>
-               <a href="javascript:;" class="btn f_green f20">SKIP</a>
+               <a href="javascript:;" class="btn f_green f20" @click="scrollHandler('intro')">SKIP</a>
             
             </div>
-            <div id="result" class="W100 bg_yellow">
-                <h2 class="f_green f40 W100">測驗結果</h2>
+            
+            <div id="result" class="W100 bg_yellow" v-show="getResult">
+                <h2 class="title f_green f40 W100">測驗結果</h2>
                 <div class="analysis W1040">
                     <div class="bg_green">
                         <img src="img/golden/draw_p_04.svg" class="people abs" alt="">
@@ -71,10 +76,13 @@
             </div>
 
             <div id="intro" class="W100">
-                <h2 class="f_green f40 W100">職務介紹 <font class="f14">Job introduction</font></h2>
+                <h2 class="title f_green f40">職務介紹<font class="f14">Job Introduction</font></h2>
                 <div class="W1040">
                     <div class="bg_green">
-                        <img src="img/golden/img_p_01.png" class="people abs" alt="">
+                        <div class="people abs">
+                            <img src="img/golden/img_p_01.png" width="100%" alt="">
+                        </div>
+                        
                         <h5 class="f_yellow f27">SA<br/>業務新秀</h5>
                         <ul class="f_white f17">
                             <li>高中職以上學歷，對保險業務工作有興趣</li>
@@ -84,7 +92,9 @@
                         
                     </div>
                     <div class="bg_yellow">
-                            <img src="img/golden/img_p_02.png" class="people abs" alt="">
+                            <div class="people abs">
+                                <img src="img/golden/img_p_02.png" width="100%" alt="">
+                            </div>
                             <h5 class="f_yellow f27">PMA <br>領航儲備主管</h5>
                             <ul class="f_grey f17">
                                 <li>大學以上學歷，立志朝主管職發展</li>
@@ -96,10 +106,301 @@
                     </div>
                 </div>
             </div>
+
+            <div id="career" class="W100 f_grey">
+                <h2 class="title f_green f40">職涯規劃<font class="f14">Career Planning</font></h2>
+                <div class="W1040">
+                    <div class="W50 sa">
+                        <div class="people">
+                            <img src="img/golden/img_p_03.png" alt="" width="100%">
+                            <div class="des abs">
+                                <h3 class="f30 f_green">SA<br>業務新秀</h3>
+                                <p class="f17 f_grey">提供新鮮人循序漸進的學習機會，<br>穩健往頂尖業務邁進！</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <img src="img/golden/ic_planning_01.svg" alt="">
+                                    <font>2年培育期</font>
+                                    <span class="f17">零經驗也不用怕</span>
+                            </li>
+                            <li>
+                                <img src="img/golden/ic_planning_02.svg" alt="">
+                                    <font>1年財務補助</font>
+                                    <span class="f17">讓你無後顧之憂</span>
+                            </li>
+                            <li>
+                                <img src="img/golden/ic_planning_03.svg" alt="">
+                                    <font>無壓力學習環境</font>
+                                    <span class="f17">量身打造挑戰目標！</span>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <div class="W50 pma">
+                            <div class="people">
+                                <img src="img/golden/img_p_04.png" alt="" width="96%">
+                                <div class="des abs">
+                                    <h3 class="f30 f_green">PMA<br>領航儲備主管</h3>
+                                    <p class="f17 f_grey">帶領團隊，突破自我，挑戰百萬年薪！<br>成為未來壽險業務儲備幹部最佳路徑!</p>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <img src="img/golden/ic_planning_04.svg" alt="">
+                                    <span class="f17">
+                                        <font>業務員</font>
+                                        提供2年培育&財務補助<br>組織財補*無上限</span>
+                                    <h6 class="abs bg_green f_white opa_4">第一年</h6>
+                                </li>
+                                <li>
+                                    <img src="img/golden/ic_planning_05.svg" alt="">
+                                        <font>實習主管</font>
+                                        <span class="f17">快速晉升主管 重點培育為業務主管</span>
+                                        <h6 class="abs bg_green f_white opa_7">第二年</h6>    
+                                </li>
+                                <li>
+                                    <img src="img/golden/ic_planning_06.svg" alt="">
+                                        <font>業務主管</font>
+                                        <span class="f17">挑戰目標年薪 主管職年薪上看150萬</span>
+                                        <h6 class="abs bg_green f_white">第三年
+                                            <img src="img/golden/ic_crown.svg" alt="" class="abs">
+                                        </h6>
+                                </li>
+                            </ul>
+                    </div>
+                    
+                </div>
+                <div class="W1040">
+                    <a href="#" class="btn f_white" download>下載懶人包</a>
+                </div>
+            </div>
+
+            <div id="training" class="W100 bg_yellow f_grey">
+                <h2 class="title f_green f40">培訓內容<font class="f14">training content</font></h2>
+                <div class="W1040">
+                    <img src="img/golden/draw_p_06.svg" class="people abs p1" alt="">
+                    <img src="img/golden/draw_p_07.svg" class="people abs p2" alt="">
+                    
+                    <div class="content bg_white">
+                        <div class="tab_area">
+                            <p class="tab">
+                                <span class="abs f22 f_white">SA業務新秀</span>    
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 108.5 35.3" style="enable-background:new 0 0 108.5 35.3;" xml:space="preserve">
+                                <polygon class="st0" points="108.1,25.9 54.1,34.8 0,25.9 0,0 108.1,0 "/></svg>
+
+                            </p>
+                            <p class="tab">
+                                <span class="abs f22 f_green">PMA領航儲備主管</span>
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 108.5 35.3" style="enable-background:new 0 0 108.5 35.3;" xml:space="preserve">
+                                <polygon class="st1" points="108.1,25.9 54.1,34.8 0,25.9 0,0 108.1,0 "/>
+                                </svg>
+                            </p>
+                        </div>
+                        <div class="detail">
+                            <ul>
+                                <li class="f16">
+                                    <font class="f_green f18">五大面向專業技巧</font>(銷售技巧/行銷資源/客戶服務/商品教育/事務管理)</li>
+                                <li><img src="img/golden/ic_check.svg" alt=""></li>
+                                <li><img src="img/golden/ic_check.svg" alt=""></li>
+                            </ul>
+                            <ul>
+                                <li class="f16">
+                                    <font class="f_green f18">隨時都能自我加值</font>超過5000堂線上學習資源</li>
+                                <li><img src="img/golden/ic_check.svg" alt=""></li>
+                                <li>
+                                    <img src="img/golden/ic_check.svg" alt="">
+                                </li>
+                                <div class="plus abs bg_yellow">
+                                    <h5 class="f18">主管培育+增員課程</h5>
+                                    <p class="f14">JSM管理輔導職能<br>ECT組織發展淬煉</p>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="bottom_info abs W100">
+                            <div >
+                                <img src="img/golden/img_p_05.png" class="abs" alt="">
+                                <p class="f_green f16">提供專屬課程，黃金三個月內快速累積五大面向專業技巧！</p>
+
+                            </div>
+                            <div>
+                                <img src="img/golden/img_p_06.png" class="abs" alt="">
+                                <p class="f_green f16">為期2年儲備主管培育課程同步開啟業務與主管職能學習</p>
+                            </div>
+                        </div>
+
+                    </div> 
+
+                </div>
+
+            </div>   
+            
+            <div id="promotion" class="W100 f_grey">
+                <h2 class="title f_green f40">升遷路徑<font class="f14">promotion path</font></h2>
+                <div class="W900 f_grey">
+                    <div class="bg_yellow f_green f19 abs">
+                        <img src="img/golden/draw_p_06.svg" class="people abs" alt="">
+                        當自己的
+                        <span class="f30">老闆</span>
+                    </div>
+                    <div class="buble_main ani_1 po1 bg_green f_white">
+                        <h5 class="f_yellow f19">壽險顧問</h5>
+                        <h6>專注於業務行銷與<br>客戶管理</h6>
+                        <p class="salary">年收入</p>
+                        <p class="amount">約80萬</p>
+                        <img src="img/golden/ic_arrow.svg" class="a1" alt="">
+                        <img src="img/golden/ic_arrow.svg" class="a2" alt="">
+
+                    </div>
+                    <div class="buble ani_2 po2">
+                        <h5 class="f_green f19">基層業務主管</h5>
+                        <h6>管理數名壽險顧問<br>輔導其銷售技巧</h6>
+                        <p class="salary">年收入</p>
+                        <p class="amount f_green">約200萬</p>
+                        <img src="img/golden/ic_arrow.svg" class="a1" alt="">
+                    </div>
+                    <div class="buble ani_3 po3">
+                        <h5 class="f_green f19">通訊處經理</h5>
+                        <h6>帶領基層主管與壽險顧問<br>掌握通訊處發展</h6>
+                        <p class="salary">年收入</p>
+                        <p class="amount f_green">約230萬</p>
+                        <img src="img/golden/ic_arrow.svg" class="a1" alt="">
+                    </div>
+                    <div class="buble ani_4 po4">
+                        <h5 class="f_green f19">區部協理</h5>
+                        <h6>帶領數個通訊處 <br>籌劃區域性政策<br>領導組織發展</h6>
+                        <p class="salary">年收入</p>
+                        <p class="amount f_green">約300萬</p>
+                    </div>
+
+                    <div class="buble ani_2 po5">
+                        <h5 class="f_green f19">資深壽險顧問</h5>
+                        <h6>專業並永續地經營這份<br>屬於自己的壽險事業</h6>
+                        <p class="salary">年收入</p>
+                        <p class="amount">
+                            <img src="img/golden/ic_planning_02.svg" alt="">
+                            <img src="img/golden/ic_planning_02.svg" alt="">
+                            <img src="img/golden/ic_planning_02.svg" alt="">
+
+                        </p>
+                        <img src="img/golden/ic_arrow.svg" class="a1" alt="">
+                    </div>
+                    <div class="buble ani_3 po6">
+                        <h5 class="f_green f19">資深壽險顧問
+                            <img src="img/golden/ic_crown.svg" alt="" class="abs">
+                        </h5>
+                        <h6>成為保險業菁英，以<br>高標準自我期許追求<br>MDRT、高峰會員資格為榮</h6>
+                        <p class="salary">年收入</p>
+                        <p class="amount">
+                            <img src="img/golden/ic_planning_02.svg" alt="">
+                            <img src="img/golden/ic_planning_02.svg" alt="">
+                            <img src="img/golden/ic_planning_02.svg" alt="">
+                            <img src="img/golden/ic_planning_02.svg" alt="">
+                            <img src="img/golden/ic_planning_02.svg" alt="">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="jion_" class="bg_white">
+                <h5 class="f_grey f19">
+                    加入國泰，夢想即刻開始<br>
+                    聽聽學長姊怎麼說
+                </h5>
+                <ul class="W1040 video_wrap">
+                    <li class="v1">
+                        <p class="f_white abs f27">職場新鮮人。</p>
+                        <span class="abs f_white">第一年就進高峰會 深植客戶心</span>
+                    </li>
+                    <li class="v2">
+                        <p class="f_white abs f27">轉職再出發。</p>
+                        <span class="abs f_white">餐飲業轉職 代表用心經營人生</span>
+                    </li>
+                    <li class="v3">
+                        <p class="f_white abs f27">職場新鮮人。</p>
+                        <span class="abs f_white">第一年就進高峰會 深植客戶心</span>
+                    </li>
+                    
+                </ul>
+                    
+
+            </div>
+
+            <div id="resource" class="W100 bg_white">
+                <h2 class="title f_green f40">集團資源<font class="f14">Group resources</font></h2>
+                <div class="W1040">
+                    <div class="column c1">
+                        <img src="img/img_game_07.jpg" class="abs left" alt="">
+                        <p class="text abs f30">
+                            <span class="bg_green f_yellow">業務資源</span>
+                            <span class="bg_green f_yellow">不e樣</span>
+                        </p>
+                        <div class="bg_yellow">
+                            <ul class="f_grey">
+                                <img src="img/golden/ic_resource_01.svg" class="abs" alt="">
+                                <li>服務件：超過860萬保戶，豐富客群資源。</li>
+                                <li>職域經營：整合集團優勢的職域經營開發模式。</li>
+                                <li>整合行銷：信用卡、行動支付、證券......</li>
+                            </ul>
+                            <ul>
+                                <img src="img/golden/ic_resource_02.svg" class="abs" alt="">
+                                <li>行動保險服務平台：多項專利認證，透過行動工具提升服務效率。</li>
+                                <li>Cathay Box：活動管理秘書，智慧管理客戶資訊。</li>
+                                <li>國泰 APP 市集：超過 20 支 APP 業務支援利器。</li>
+                            </ul>
+                            <ul>
+                                <img src="img/golden/ic_resource_03.svg" class="abs" alt="">
+                                <li>虛實整合：獨家新人培訓＋超過5000堂網路課程，快速累積實戰力。</li>
+                                <li>在職培育：專業證照輔導，領先業界，為台灣首家CFP企業訓練機構。</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="column c2">
+                        <img src="img/img_game_08.jpg" class="abs right" alt="">
+                        <p class="text abs f30">
+                            <span class="bg_yellow f_green">五星福利</span>
+                            <span class="bg_yellow f_green"> hen幸福</span>
+                        </p>
+                        <div class="bg_green">
+                            <ul>
+                                <img src="img/golden/ic_resource_04.svg" class="abs" alt="">
+                                <li class="f_yellow f18">保障型</li>
+                                <li class="f_white f15">勞健保、團保、員工意外險、退休金</li>
+                            </ul>
+                            <ul>
+                                <img src="img/golden/ic_resource_05.svg" class="abs" alt="">
+                                <li class="f_yellow f18">服務型</li>
+                                <li class="f_white f15">特約商店優惠、 關係企業資源共享</li>
+                            </ul>
+                            <ul>
+                                <img src="img/golden/ic_resource_06.svg" class="abs" alt="">
+                                <li class="f_yellow f18">發展型</li>
+                                <li class="f_white f15">內外部教育訓練、 專業證照考試補助與獎勵</li>
+                            </ul>
+                            <ul>
+                                <img src="img/golden/ic_resource_07.svg" class="abs" alt="">
+                                <li class="f_yellow f18">康樂型</li>
+                                <li class="f_white f15">員工旅遊、家庭日、 登山健行、趣味競賽、歌唱大賽、忘年會</li>
+                            </ul>
+                            <ul>
+                                <img src="img/golden/ic_resource_08.svg" class="abs" alt="">
+                                <li class="f_yellow f18">經濟型</li>
+                                <li class="f_white f15">業務競賽獎勵、年終獎金、 中秋/端午代金、婚喪補助、子女教育補助、生日禮物</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </div>
         </div>
 
     </body>
 </html>
-<script type="text/javascript" src="js/init.js"></script>
 <script type="text/javascript" src="js/golden.js"></script>
 

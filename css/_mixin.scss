@@ -4,6 +4,24 @@
     height: 100%;
 }
 
+@mixin bg-cover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+// btn
+@mixin triangle {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+
+}
+
 @mixin h100 {
     height: 100vh;
 
@@ -227,6 +245,17 @@
         }
     }
 }
+@mixin sqaur($size) {
+    width: $size+px;
+    height: $size+px;
+}
+@mixin arrow($l, $t, $left, $top, $rotate, $flip){
+    position: absolute;
+    left: $l;
+    top: $t;
+    transform: translate($left,$top) rotate($rotate+deg) rotateY($flip+deg);
+    
+}
 
 // btn
 @mixin btn($w, $h, $color, $fontColor, $fontSize) {
@@ -438,3 +467,5 @@
         background-color: white;
     }
 }
+
+

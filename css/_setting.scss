@@ -21,7 +21,7 @@ body, html{
 }
 
 .bg_yellow {
-  background-color: #fff654;
+  background-color: #fff43c;
 }
 
 .f_white{
@@ -29,7 +29,7 @@ body, html{
 }
 
 .f_yellow{
-  color: #fff654;
+  color: #fff43c;
 }
 
 .f_green{
@@ -60,12 +60,20 @@ body, html{
   font-size: 19px;
 }
 
+.f22{
+  font-size: 22px;
+}
+
 .f24{
   font-size: 24px;
 }
 
 .f27{
   font-size: 27px;
+}
+
+.f30{
+  font-size: 30px;
 }
 
 .f40{
@@ -98,8 +106,15 @@ body, html{
   width: 100%;
   margin-left: auto;
   margin-right: auto; 
-  
 }
+
+.W900 {
+  max-width: 900px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
 .r50{
   border-radius: 50%;
 }
@@ -108,6 +123,25 @@ body, html{
   padding: 30px 100px;
   display: inline-block;
   line-height: 1;
+}
+
+.title{
+  margin-bottom: 105px;
+  position: relative;
+  display: inline-block;
+  padding: 0 25px;
+  @media only screen and (max-width: 1024px)  {
+    margin-bottom: 65px;
+  }
+  @media only screen and (max-width: 516px)  {
+    // margin-bottom: 65px;
+  
+  }
+  font{
+    display: block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
 }
 
 .icon_bg{

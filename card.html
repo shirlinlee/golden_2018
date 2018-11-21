@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/card.css">
     <!-- js-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.1/isMobile.min.js?v=1541744378465"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js?v=1541744378465"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js?v=1541744378465"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js?v=1541744378465"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js?v=1541744378465"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.1/isMobile.min.js?v=1542338978748"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js?v=1542338978748"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js?v=1542338978748"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js?v=1542338978748"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js?v=1542338978748"></script>
   </head>
   <body>
     <header></header>
@@ -31,7 +31,7 @@
       <!-- add class '.step3Show' -->
       <div class="content">
         <div class="share_pic" v-show="false" style="position: absolute; z-index: -9999;">
-          <canvas id="share_canvas" width="600" height="315"></canvas><img src="img/index_bg_05.jpg" id="basic_img" alt="5687">
+          <canvas id="share_canvas" width="600" height="315"></canvas><img src="img/share.png" id="basic_img" alt="5687" width="600" height="315"><img v-bind:src="pic" id="user_img">
         </div>
         <div class="bg1" v-if="step == 1"></div>
         <div class="bg2" v-if="step != 1"><img class="dot_rt" src="img/dot_1.png"><img class="dot_rb" src="img/dot_2.png"><img class="dot_left" src="img/dot_1.png">
@@ -113,6 +113,6 @@
         </div>
       </div>
     </div>
-        <script src="bundle/card.js?v=1541744378466"></script>
+        <script src="bundle/card.js?v=1542338978749"></script>
   </body>
 </html>

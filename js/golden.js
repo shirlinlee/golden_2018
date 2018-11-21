@@ -1,3 +1,4 @@
+// console.log(domain);
 var app = new Vue({
     el: '#wrappper',
     data: {
@@ -18,6 +19,7 @@ var app = new Vue({
         b:0,
         des:'',
         character:[],
+        getResult: false,
         
     },
     computed: {
@@ -112,14 +114,18 @@ var app = new Vue({
                 } else {
                     this.des="你是樂觀積極派，喜歡和人互動，做事有條理，深得朋友信任，加入高登計畫，能讓你找到更多志同道合夥伴，一同實現夢想。";
                 }
-                
-                console.log(this.des);
+                this.getResult = true;
+                // console.log(this.des);
                 this.$body.animate({scrollTop:$('#result').offset().top});
                 return;
             }
             this.progress = this.progress+1;
             
         },
+        scrollHandler(el) {
+            $(window)
+            this.$body.animate({scrollTop: $('#'+el).offset().top}, 500);
+        }
        
         
 

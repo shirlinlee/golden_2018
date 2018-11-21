@@ -2,7 +2,7 @@ var app = new Vue({
     el: '#wrappper',
     data: {
         geocoder: null,
-        current_location:'',
+        current_location:null,
         current_area: null,
         notyet: true,
         select_data: [],
@@ -12,16 +12,28 @@ var app = new Vue({
         allAct: [],
         allStore:[],
         allGeoData: [],
-        showActBanner: false
+        showActBanner: false,
+        actBannerTitle: '',
+        actBannerDes: '',
+        actBannerPic: '',
+
     },
-    updated: function () {
-        // console.log(this.search_city);
+    watch: {
+        search_city: function (val) {
+            // console.log(val);
+            this.search_dist = this.search_txt = '';
+
+        }
     },
     mounted() {
+        console.log('mounted');
+
         this.$nextTick( ()=> {
             this.init();
             this.initialize(); 
             this.selectInit(); 
+            this.bannerInit(); 
+
             
             window.addEventListener("keydown", (e)=> {
                 if( e.keyCode === 13 ) {
@@ -39,13 +51,28 @@ var app = new Vue({
         selectInit() {
             var $this = this;
             $.ajax({
-                url: "https://cathay.webgene.com.tw/golden2018/api/dist_list.ashx",
+                url: domain+"/golden/api/dist_list.ashx",
                 type: "GET",
                 dataType: "json",
                 success: function(Jdata) {
                     $this.select_data = Jdata;
-                    // console.log($this.select_data);
-                    
+                },
+                error: function() {
+                    console.alert("ERROR!!!");
+                }
+            });
+        },
+        bannerInit() {
+            var $this = this;
+            var v = new Date().getTime();
+            $.ajax({
+                url: domain+"/golden/api/get_store_banner.ashx",
+                type: "GET",
+                dataType: "json",
+                success: function(Jdata) {
+                    $this.actBannerTitle = Jdata.title;
+                    $this.actBannerDes = Jdata.con;
+                    $this.actBannerPic = domain + '/golden/pic/store/banner.jpg?v='+ v;
                 },
                 error: function() {
                     console.alert("ERROR!!!");
@@ -55,17 +82,21 @@ var app = new Vue({
         successFunction(position) {
             var lat = position.coords.latitude;
             var lng = position.coords.longitude;
-            this.codeLatLng(lat, lng)
+            this.codeLatLng(lat, lng);
         },
         errorFunction(){
             console.error("Geocoder failed");
+            this.callApi('台北市');
+            
         },
         initialize() {
             geocoder = new google.maps.Geocoder();
         },
         codeLatLng(lat, lng) {
+            console.log('取得位置',lat, lng);
             var latlng = new google.maps.LatLng(lat, lng);
             var $this = this;
+   
             geocoder.geocode({'latLng': latlng}, (results, status)=> {
                 if (status == google.maps.GeocoderStatus.OK) {
                 // console.log(results)
@@ -86,34 +117,39 @@ var app = new Vue({
                         }
                     }
                     //得到city 城市名稱
-                    // alert(city.short_name)
-                    
-                    $.ajax({
-                        url: "https://cathay.webgene.com.tw/golden2018/api/location.ashx",
-                        type: "GET",
-                        dataType: "json",
-                        success: function(Jdata) {
-                            // console.log(Jdata);
-                            $this.allGeoData = Jdata;
-                            // city.short_name = '台中市';
-                            $this.current_location = city.short_name;
-                            $this.search_city = city.short_name;
-                            console.log($this.search_city);
-                            
-                            $this.getArea();
-                        },
-                        error: function() {
-                            console.alert("ERROR!!!");
-                        }
-                    });
-                
+                    $this.callApi(city.short_name);
+
                     } else {
                         console.alert("No results found");
+                        $this.callApi('台北市');
+
                     }
                 } else {
                     console.error("Geocoder failed due to: " + status);
+                    $this.callApi('台北市');
+
+
                 }
             });
+        },
+        callApi(city){
+            var $this = this;
+            $.ajax({
+                url: domain+ "/golden/api/location.ashx",
+                type: "GET",
+                dataType: "json",
+                success: function(Jdata) {
+                    // console.log(Jdata);
+                    $this.allGeoData = Jdata;
+                    $this.current_location = city;
+                    $this.search_city = city;
+                    $this.getArea();
+                },
+                error: function() {
+                    console.alert("ERROR!!!");
+                }
+            });
+        
         },
         timeModify(time){
             // console.log(time);
@@ -131,6 +167,7 @@ var app = new Vue({
                     // console.log(el);
                     if( this.current_area === null ) {
                         this.current_area = el.Area;
+                        console.log(this.current_area);
                         this.getAreaAct();
                         this.getStore();
                     } 
@@ -168,7 +205,6 @@ var app = new Vue({
                 //排列由多到少
                 return parseFloat(b.People) - parseFloat(a.People);
             });
-            // console.log(this.allAct);
         },
         backgroundFunc(src) {
             return 'url(' + src + ')';
@@ -185,7 +221,6 @@ var app = new Vue({
         serch() {
             
             if( this.search_txt.trim() === '' && this.search_city ==='' &&  this.search_dist ==='' ) {
-                console.log('1');
                 //什麼都沒輸入
                 this.getStore(); 
             

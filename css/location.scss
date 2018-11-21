@@ -22,6 +22,7 @@
             max-width: 295px;
             top: 0;
             transform: translate(-24%, -31%) rotate(-10deg);
+            position: absolute;
         }
         div{
             text-align: center;
@@ -497,7 +498,7 @@
 #act_banner {
     top: 50vh;
     right: 0;
-    transform: translate(100%,-40%);
+    transform: translate(100%,-50%);
     transition: transform .4s;
     position: fixed;
     z-index: 50;

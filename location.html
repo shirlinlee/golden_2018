@@ -7,7 +7,10 @@
         <title>國泰人壽2018 - 據點查詢</title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
         <script type="text/javascript" src="vendor/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0QBQvYTsaYvoCWLkyA_AOqQHDrEDDJ3E" type="text/javascript"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129178589-1"></script>
+        <script type="text/javascript" src="js/init.js"></script>
         
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/style.css" />
@@ -41,7 +44,7 @@
                             <a href="javascript:;" class="abs sent" @click="serch()"></a>
                         </div>
                     </div>
-                    <img src="img/img_location_01.png" class="people abs" alt="">
+                    <!-- <img src="img/img_location_01.png" class="people abs" alt=""> -->
                 </div>
             </div>
             <div class="bg_grey W100" id="store_content">
@@ -107,11 +110,11 @@
                     <span class="f_yellow f18">熱門活動</span>
                 </div>
                 <div class="img_wrapper">
-                    <img src="img/img_game_08.jpg" width="100%" alt="">
+                    <img :src="actBannerPic" width="100%" alt="">
                 </div>
                 <div class="bg_yellow abs">
-                    <h6 class="f_green f19">國泰達人爭霸賽</h6>
-                    <span class="f14">社群玩咖94你，熱烈開跑！ <br/>快去喜愛達人的粉專支持他，讓他感受你的愛!</span>
+                    <h6 class="f_green f19">{{ actBannerTitle }}</h6>
+                    <span class="f14">{{ actBannerDes }}</span>
                 </div>
             </div>  
             <div class="black_cover" :class="{'show':showActBanner}" @click="showActBanner=false"></div>             

@@ -26,7 +26,9 @@ block wrapContent
         .share_pic('v-show'='false', style='position: absolute; z-index: -9999;')
             canvas(id='share_canvas', width='600', height='315')
             //-換成分享圖的背景
-            +jpg('index_bg_05')(id='basic_img',alt='5687')
+            +png('share')(id='basic_img',alt='5687',width='600',height='315')
+            img(v-bind:src="pic",id='user_img')
+            
         .bg1('v-if'='step == 1')
         .bg2('v-if'='step != 1')
             +png('dot_1')(class='dot_rt')

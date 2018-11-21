@@ -41,7 +41,7 @@
         },
         beforeMount: function () {
             // 先從後端取上班地點及單位
-            $.get('https://cathay.webgene.com.tw/golden2018/api/store_list.ashx', (result) => {
+            $.get( domain+ '/golden/api/store_list.ashx', (result) => {
                 $.each(result, (key, obj) => {
                     // 整理下拉所需的資料進 areaData
                     this.areaData.push({
@@ -65,6 +65,7 @@
 
                 // 先清空錯誤訊息
                 this.chkmsg = [];
+                
 
                 // 資料驗証規則寫在這
                 if (this.step == 1) {
@@ -87,6 +88,7 @@
                         this.step = 2;
                     } else {
                         // 開 popup 提示訊息
+                        console.log(this.chkmsg);
                         return;
                     }
 
@@ -104,6 +106,7 @@
                         this.step = 3;
                     } else {
                         // 開 popup 提示訊息
+                        console.log(this.chkmsg);
                         return;
                     }
                 } else if (this.step == 3) {
@@ -132,15 +135,34 @@
                     if (!read) {
                         this.chkmsg.push('請同意相關規定');
                     }
+                   
 
                     if (this.chkmsg.length == 0) {
                         // this.step = 1;
 
                         // AJAX 送資料
+                        $.ajax({
+                            type: 'POST',
+                            url: domain+ '/golden/api/post_join.ashx',
+                            data: { 
+                                'name': this.name,
+                                'sex':this.gender,
+                                'email':this.email,
+                                'phone':this.phone,
+                                'birthday':this.birth,
+                                'education':this.edu,
+                                'work_place':this.place,
+                                'store':this.dept
+                            },
+                            complete: function(res){
+                                console.log(res);
+                            }
+                        });
                         
 
                     } else {
                         // 開 popup 提示訊息
+                        console.log(this.chkmsg);
                         return;
                     }
                 }

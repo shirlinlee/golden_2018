@@ -1,4 +1,4 @@
-.wrap.card {
+.card {
     img {
         width: 100%;
     }
@@ -1630,3 +1630,12 @@
         }
     }
 }
+
+form .share_pic{
+    img{
+        width: inherit;
+        opacity: 0;
+        position: absolute;
+    }
+}
+
