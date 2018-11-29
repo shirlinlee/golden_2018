@@ -7,8 +7,16 @@ body, html {
   width: 100%;
 }
 
+.pc {
+  display: inline-block;
+}
+
+.mb {
+  display: none;
+}
+
 .bg_green {
-  background: #01883f;
+  background: #00a83c;
 }
 
 .bg_white {
@@ -136,6 +144,12 @@ body, html {
   }
 }
 
+@media only screen and (max-width: 516px) {
+  .title {
+    margin-bottom: 55px;
+  }
+}
+
 .title font {
   display: block;
   letter-spacing: 1px;
@@ -155,4 +169,70 @@ body, html {
 
 *:focus {
   outline: none;
+}
+
+@media only screen and (max-width: 516px) {
+  .pc {
+    display: none;
+  }
+  .mb {
+    display: inline-block;
+  }
+  .W50 {
+    width: 100%;
+  }
+  .f13 {
+    font-size: 12px;
+  }
+  .f14 {
+    font-size: 13px;
+  }
+  .f16 {
+    font-size: 15px;
+  }
+  .f18 {
+    font-size: 17px;
+  }
+  .f19 {
+    font-size: 18px;
+  }
+  .f22 {
+    font-size: 20px;
+  }
+  .f24 {
+    font-size: 22px;
+  }
+  .f27 {
+    font-size: 25px;
+  }
+  .f30 {
+    font-size: 28px;
+  }
+  .f40 {
+    font-size: 35px;
+  }
+  .f43 {
+    font-size: 39px;
+  }
+  .btn {
+    padding: 20px 70px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .f24 {
+    font-size: 21px;
+  }
+  .f27 {
+    font-size: 23px;
+  }
+  .f30 {
+    font-size: 25px;
+  }
+  .f40 {
+    font-size: 33px;
+  }
+  .f43 {
+    font-size: 37px;
+  }
 }

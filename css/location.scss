@@ -1,13 +1,137 @@
 @import "setting.scss";
+#wrapper>div{
+    padding-left: 15px;
+    padding-right: 15px;
+    &#act_banner {
+        top: 50vh;
+        right: 0;
+        transform: translate(100%,-50%);
+        transition: transform .4s;
+        position: fixed;
+        z-index: 50;
+        width: 90%;
+        max-width: 650px;
+        overflow: visible;
+        padding: 40px 60px 40px 40px;
+        @media only screen and (max-width: 1024px)  {
+            max-width: 550px;
+        }
+        @media only screen and (max-width: 516px)  {
+            max-width: 270px;
+            padding: 20px ;
+
+        }
+        .flag{
+            left: -50px;
+            width: 50px;
+            border-top-left-radius: 30px;
+            height: 190px;
+            z-index: 555;
+            cursor: pointer;
+            @media only screen and (max-width: 516px)  {
+                width: 40px;
+                height: 160px;
+                left: -40px;
+            
+            }
+            img{
+                top: -12px;
+                left: -8px;
+                width: 43px;
+            }
+            span {
+                width: 18px;
+                display: inline-block;
+                padding-top: 20px;
+                padding: 39px 20px 0;
+                @media only screen and (max-width: 516px)  {
+                    padding: 39px 12px 0;
+
+                }
+    
+            }
+        }
+        .img_wrapper{
+            width: 100%;
+            max-height: 350px;
+            overflow: hidden;
+            @media only screen and (max-width: 1024px)  {
+                max-height: 300px;
+    
+            }
+            @media only screen and (max-width: 516px)  {
+                max-height: 250px;
+            
+            }
+    
+        }
+        .bg_yellow{
+            width: 60%;
+            border-top-right-radius: 30px;
+            right: 30px;
+            bottom: 25px;
+            padding: 20px 30px ;
+            @media only screen and (max-width: 516px)  {
+                width: 70%;
+                right: 10px;
+                bottom: 10px;
+                padding: 15px 20px ;
+
+            }
+            h6::after{
+                content: "";
+                display: block;
+                width: 35px;
+                height: 5px;
+                background-color: #00a83c;
+                margin: 15px 0;
+                @media only screen and (max-width: 516px)  {
+                    margin: 10px 0;
+
+                }
+                
+            }
+    
+        }
+        &.show{
+            transform: translate(0,-50%);
+        }
+    }
+    
+    &.black_cover {
+        background-color: rgba(0,0,0,.4);
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        z-index: -1;
+        transition: all .4s;
+        opacity: 0;
+        
+        &.show {
+            opacity: 1;
+            z-index: 20;
+        }
+    }
+}
+
 .loca_banner {
     height: 205px;
     padding-top: 85px;
+    @media only screen and (max-width: 516px)  {
+        padding-top: 70px;
+    
+    }
     .search_area {
         position: relative;
         height: 195px;
         overflow: visible;
         padding: 50px 0;
         z-index: 10;
+        @media only screen and (max-width: 516px)  {
+            padding: 30px 0;
+            height: inherit;
+        }
         &::before{
             content: '';
             background-color: #fff654;
@@ -23,6 +147,11 @@
             top: 0;
             transform: translate(-24%, -31%) rotate(-10deg);
             position: absolute;
+            @media only screen and (max-width: 1024px)  {
+                transform: translate(-5%, -38%) rotate(-10deg);
+            }
+            
+            
         }
         div{
             text-align: center;
@@ -36,6 +165,10 @@
                 width: 130px;
                 display: inline-block;
                 margin-top: -5px;
+                @media only screen and (max-width: 516px)  {
+                    width: 85px;
+
+                }
             }
             p {
                 display: inline-block;
@@ -44,9 +177,25 @@
                 letter-spacing: 2px;
                 padding-left: 20px;
                 margin-left: 20px;
+                @media only screen and (max-width: 516px)  {
+                    padding-left: 10px;
+                    margin-left: 10px;
+                    letter-spacing: 0;
+
+                }    
+                @media only screen and (max-width: 375px)  {
+                    font-size: 14px;
+                }
             }
             &.filter {
                 margin-top: 20px;
+                @media only screen and (max-width: 516px)  {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    background-color: #fff654;
+                    padding-bottom: 30px;
+                
+                }
                 *{
                     -webkit-appearance: none;
                     border: none;
@@ -58,12 +207,18 @@
                     margin: 10px 8px;
                     background-repeat: no-repeat;
                     display: inline-block;
-                    
+                    @media only screen and (max-width: 516px)  {
+                        margin: 10px 0;
+                    }
                 }
                 .select_wrapper{
                     width: 20%;
                     max-width: 145px; 
                     display: inline-block;
+                    @media only screen and (max-width: 516px)  {
+                        width: 95%;
+                        max-width: 95%;
+                    }
                     &::after{
                         content: "";
                         position: absolute;
@@ -77,8 +232,9 @@
 
                     }
                     select {
-                        width: 100%;
+                       width: 100%;
                        border-bottom: 1px solid #000;
+                        
                     }
                 }
                 
@@ -88,6 +244,10 @@
                     max-width: 260px;
                     display: inline-block;
                     height: inherit;
+                    @media only screen and (max-width: 516px)  {
+                        width: 95%;
+                        max-width: 95%;
+                    }
                     a{
                         right: 0;
                         width: 40px;
@@ -115,6 +275,7 @@
             right: 0;
             bottom: 0;
             transform: translate(40%, 10%);
+            
         }
 
     }
@@ -133,6 +294,11 @@
         bottom:0;
         left: 0;
         width: 280px;
+        @media only screen and (max-width: 1024px)  {
+            width: 200px;
+            
+        }
+        
     }
 
     // text-align: center;
@@ -297,12 +463,37 @@
     }
 }
 
+.mb_scroll{
+    @media only screen and (max-width: 516px)  {
+        overflow: scroll;
+        width: 100%;
+        &:after{
+            content: "";
+            display: block;
+            width: 70px;
+            height: 350px;
+            position: absolute;
+            background-image: linear-gradient(-90deg, #f2f2f2, rgba(255, 255, 255, 0));
+            top: 120px;
+            right: 0;
+            z-index: 15;
+        }
+    }
+}
+
 .act_wrapper {
     text-align: center;
     display: inline-block;
-    width: 100%;
+    min-width: 100%;
     max-width: 1280px;
     padding:0 40px;
+    @media only screen and (max-width: 1024px) {
+        padding: 15px 0 10px;
+    }
+    @media only screen and (max-width: 516px)  {
+        padding: 30px 0 10px;
+    
+    }
     li {
         color: #fff;
         line-height: 20px;
@@ -314,7 +505,11 @@
         padding-bottom: 30px;
         margin-bottom: 40px;
         text-align: left;
-        
+        @media only screen and (max-width: 516px)  {
+            width: 180px;
+            margin: 0 20px 0 0;
+
+        }
         .img_area {
             background-position: center;
             background-size: cover;
@@ -326,6 +521,7 @@
         .title {
             position: relative;
             padding: 20px 25px 25px;
+            margin: 0;
             h3{
                 line-height: 30px;
                 height: 30px;
@@ -374,24 +570,44 @@
         border-bottom: 1px solid #d4d4d4;
         padding: 30px 20px;
         position: relative;
+        @media only screen and (max-width: 516px)  {
+            padding: 20px 0;
+            
+        }
         .info{
             padding-right: 200px;
+            @media only screen and (max-width: 516px)  {
+                padding-right:0;
+
+            }
         }
         h4{
             margin: 0 0 10px;
         }
         p{
             position: relative;
-            line-height: 14px;
+            line-height: 16px;
             display: inline-block;
             padding: 0 15px 0 17px;
             background-size: 12px;
             margin-right: 15px;
+            @media only screen and (max-width: 516px)  {
+                width: 100%;
+                font-size: 14px;
+                margin-bottom: 5px;
+                line-height: 1.5;
+
+            }
+            
             span{
                 position: absolute;
                 color: #00a63a;
                 left: 0;
                 top: 0;
+                @media only screen and (max-width: 516px)  {
+                    top: 3px;
+
+                }
             }
         }
         .act_btn{
@@ -403,6 +619,17 @@
             top: 40px;
             text-align: center;
             overflow: hidden;
+            @media only screen and (max-width: 516px)  {
+                position: relative;
+                width: 100%;
+                top: 0;
+                right: 0;
+                margin: 15px 0;
+                display: block;
+                text-align: left;
+                font-size: 14px;
+                padding-left: 15px;
+            }
             &:hover {
                 color: #00a83c;
                 text-decoration: none;
@@ -419,9 +646,15 @@
             }
             &::after{
                 content: '+';
+                font-weight: bold;
                 padding: 0 2px;
                 width: 5px;
                 display: inline-block;
+                @media only screen and (max-width: 516px)  {
+                    position: absolute;
+                    right: 20px;
+                    font-size: 17px;
+                }
             }
         }
         .fb_btn{
@@ -431,6 +664,14 @@
             height: 40px;
             text-align: center;
             border-radius: 50%;
+            z-index: 25;
+            @media only screen and (max-width: 516px)  {
+                width: 30px;
+                height: 30px;
+                top: 15px;
+                right: 0px;
+
+            }
             // img{
             //     width: 7px;
             // }
@@ -443,6 +684,13 @@
             margin: 15px 0;
             position: relative;
             padding: 0 30px 30px 225px;
+            @media only screen and (max-width: 516px)  {
+                padding: 0 10px 15px 155px;
+            }
+            @media only screen and (max-width: 516px)  {
+                padding: 0 10px 15px 135px;
+
+            }
             *{
                 transition: all .4s;
             }
@@ -452,11 +700,21 @@
                 left: 0;
                 background-position: center;
                 background-size: cover;
+                @media only screen and (max-width: 516px)  {
+                    width: 135px;
+                }
+                @media only screen and (max-width: 516px)  {
+                    width: 115px;
+                }                
             }
             h5{
                 padding: 30px 0 30px;
                 letter-spacing: 2px;
                 position: relative;
+                @media only screen and (max-width: 516px)  {
+                    padding: 10px 0 30px;
+                
+                }
                 &::after{
                     content: '';
                     position: absolute;
@@ -469,11 +727,24 @@
             }
             p{
                 margin-top: 12px;
+                margin-bottom: 0;
                 span{
                     position: absolute;
                     color: #fff654;
                     left: 0;
                     top: 0;
+                    @media only screen and (max-width: 516px)  {
+                        top: 3px;
+    
+                    }
+                }
+                &.location{
+                    @media only screen and (max-width: 516px)  {
+                        max-height: 42px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        margin-bottom: 0;
+                    }
                 }
             }
         }
@@ -495,76 +766,3 @@
 
 }
 
-#act_banner {
-    top: 50vh;
-    right: 0;
-    transform: translate(100%,-50%);
-    transition: transform .4s;
-    position: fixed;
-    z-index: 50;
-    width: 90%;
-    max-width: 650px;
-    overflow: visible;
-    padding: 40px 60px 40px 40px;
-    .flag{
-        left: -50px;
-        width: 50px;
-        border-top-left-radius: 30px;
-        height: 190px;
-        cursor: pointer;
-        img{
-            top: -12px;
-            left: -8px;
-            width: 43px;
-        }
-        span {
-            width: 18px;
-            display: inline-block;
-            padding-top: 20px;
-            padding: 39px 20px 0;
-
-        }
-    }
-    .img_wrapper{
-        width: 100%;
-        max-height: 350px;
-        overflow: hidden;
-
-    }
-    .bg_yellow{
-        width: 60%;
-        border-top-right-radius: 30px;
-        right: 30px;
-        bottom: 25px;
-        padding: 20px 30px ;
-        h6::after{
-            content: "";
-            display: block;
-            width: 35px;
-            height: 5px;
-            background-color: #00a83c;
-            margin: 15px 0;
-            
-        }
-
-    }
-    &.show{
-        transform: translate(0,-50%);
-    }
-}
-
-.black_cover {
-    background-color: rgba(0,0,0,.4);
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    z-index: -1;
-    transition: all .4s;
-    opacity: 0;
-    
-    &.show {
-        opacity: 1;
-        z-index: 20;
-    }
-}

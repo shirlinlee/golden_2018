@@ -358,33 +358,39 @@ h6 {
 .wrap.join {
   width: 100%;
   height: 100vh;
-  background: #01aa4f;
   font-family: 'Source Sans Pro', sans-serif; }
   .wrap.join img {
     width: 100%; }
   .wrap.join .content {
-    position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: inline-block;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
     width: 100%;
-    height: 100vh;
-    background: url(../img/index_bg_05.jpg) center center no-repeat;
+    max-width: 750px;
+    padding-bottom: 250px;
     background-size: cover; }
-    .wrap.join .content .title {
-      text-align: center; }
-      .wrap.join .content .title h1 {
-        width: 384px;
+    @media only screen and (max-width: 516px) {
+      .wrap.join .content {
+        padding-bottom: 180px; } }
+    @media only screen and (max-width: 320px) {
+      .wrap.join .content {
+        padding-bottom: 140px; } }
+    .wrap.join .content .title_join {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      padding-left: 20px;
+      padding-right: 20px; }
+      .wrap.join .content .title_join h1 {
+        width: 375px;
         margin: 50px auto 40px;
         opacity: 0;
         -webkit-transform: translateY(-50px);
@@ -395,13 +401,13 @@ h6 {
         -o-transition: opacity .5s ease, transform .5s ease;
         transition: opacity .5s ease, transform .5s ease;
         transition: opacity .5s ease, transform .5s ease, -webkit-transform .5s ease; }
-      .wrap.join .content .title p {
+      .wrap.join .content .title_join p {
         color: white;
         font-family: 'Noto Sans', sans-serif;
         font-size: 15px;
         line-height: 2;
         letter-spacing: 1.5px; }
-        .wrap.join .content .title p.word {
+        .wrap.join .content .title_join p.word {
           opacity: 0;
           -webkit-transform: translateY(-50px);
           -ms-transform: translateY(-50px);
@@ -411,7 +417,7 @@ h6 {
           -o-transition: opacity .5s ease .15s, transform .5s ease .15s;
           transition: opacity .5s ease .15s, transform .5s ease .15s;
           transition: opacity .5s ease .15s, transform .5s ease .15s, -webkit-transform .5s ease .15s; }
-        .wrap.join .content .title p.join {
+        .wrap.join .content .title_join p.join {
           position: relative;
           display: inline-block;
           margin-top: 20px;
@@ -427,7 +433,7 @@ h6 {
           -o-transition: opacity .5s ease .3s, transform .5s ease .3s;
           transition: opacity .5s ease .3s, transform .5s ease .3s;
           transition: opacity .5s ease .3s, transform .5s ease .3s, -webkit-transform .5s ease .3s; }
-          .wrap.join .content .title p.join:before {
+          .wrap.join .content .title_join p.join:before {
             content: "\201C";
             position: absolute;
             left: -35px;
@@ -436,7 +442,7 @@ h6 {
             font-size: 75px;
             line-height: 1;
             color: #01aa4f; }
-          .wrap.join .content .title p.join:after {
+          .wrap.join .content .title_join p.join:after {
             content: '';
             position: absolute;
             width: 0%;
@@ -486,7 +492,7 @@ h6 {
         -webkit-align-items: center;
         -ms-flex-align: center;
         align-items: center;
-        width: 40%; }
+        width: 100%; }
         .wrap.join .content .infoBox .step1 .inputBox,
         .wrap.join .content .infoBox .step2 .inputBox,
         .wrap.join .content .infoBox .step3 .inputBox {
@@ -908,7 +914,9 @@ h6 {
       .wrap.join .content .infoBox .step3 .inputBox .item {
         margin-bottom: 15px; }
       .wrap.join .content .infoBox .step3 .checkBox {
-        color: white; }
+        color: white;
+        width: 100%;
+        text-align: left; }
         .wrap.join .content .infoBox .step3 .checkBox label {
           position: relative;
           cursor: pointer; }
@@ -925,7 +933,7 @@ h6 {
               bottom: -5px;
               background: white; }
           .wrap.join .content .infoBox .step3 .checkBox label label {
-            display: inline-block;
+            display: block;
             padding-left: 30px;
             margin-left: 30px;
             line-height: 2.5;
@@ -971,10 +979,11 @@ h6 {
               opacity: 1; }
     .wrap.join .content .progress {
       position: absolute;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
+      bottom: 0;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -webkit-flex-direction: column;
@@ -1162,7 +1171,8 @@ h6 {
           -webkit-box-pack: center;
           -webkit-justify-content: center;
           -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+          width: 80px; }
           .wrap.join .content .progress .row .imgBox:before, .wrap.join .content .progress .row .imgBox:after {
             position: absolute;
             left: 51%;
@@ -1179,14 +1189,14 @@ h6 {
           .wrap.join .content .progress .row .imgBox:after {
             content: '高登';
             bottom: 0; }
-    .wrap.join .content.in .title h1,
-    .wrap.join .content.in .title .word,
-    .wrap.join .content.in .title .join {
+    .wrap.join .content.in .title_join h1,
+    .wrap.join .content.in .title_join .word,
+    .wrap.join .content.in .title_join .join {
       opacity: 1;
       -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
       transform: translateY(0); }
-    .wrap.join .content.in .title .join:after {
+    .wrap.join .content.in .title_join .join:after {
       width: 100%; }
     .wrap.join .content.in .infoBox {
       opacity: 1;
@@ -1204,13 +1214,13 @@ h6 {
         margin-left: 0; } }
 
 @media screen and (max-width: 1366px) and (max-height: 820px) {
-  .wrap.join .content .title h1 {
+  .wrap.join .content .title_join h1 {
     width: 273.2px;
     margin: 30px auto 10px; }
-  .wrap.join .content .title p.join {
+  .wrap.join .content .title_join p.join {
     margin-top: 15px;
     padding-top: 10px; }
-    .wrap.join .content .title p.join:before {
+    .wrap.join .content .title_join p.join:before {
       top: -10px; }
   .wrap.join .content .infoBox {
     margin-top: 10px; }
@@ -1222,28 +1232,25 @@ h6 {
     line-height: 49.80208px;
     font-size: 16px; } }
     @media screen and (max-width: 1100px) {
-      .wrap.join .content .title h1 {
+      .wrap.join .content .title_join h1 {
         margin: 30px auto 20px; }
       .wrap.join .content .infoBox {
         margin-top: 10px; }
         .wrap.join .content .infoBox .step1,
         .wrap.join .content .infoBox .step2,
         .wrap.join .content .infoBox .step3 {
-          width: 50%; } }
+          width: 90%; } }
     @media screen and (max-width: 900px) {
-      .wrap.join .content .title {
-        width: 80%; }
-        .wrap.join .content .title p {
-          line-height: 1.5; }
-          .wrap.join .content .title p.join {
-            margin-top: 10px;
-            padding-top: 15px; }
+      .wrap.join .content .title_join p {
+        line-height: 1.5; }
+        .wrap.join .content .title_join p.join {
+          margin-top: 10px;
+          padding-top: 15px; }
       .wrap.join .content .infoBox {
         margin-top: 0; }
         .wrap.join .content .infoBox .step1,
         .wrap.join .content .infoBox .step2,
         .wrap.join .content .infoBox .step3 {
-          width: 60%;
           padding: 0 10px; }
           .wrap.join .content .infoBox .step1 .inputBox .item,
           .wrap.join .content .infoBox .step2 .inputBox .item,
@@ -1266,18 +1273,18 @@ h6 {
       .wrap.join .content .progress {
         bottom: 22px; } }
     @media screen and (max-width: 767px) {
-      .wrap.join .content .title h1 {
+      .wrap.join .content .title_join h1 {
         width: 70%;
         margin: 20px auto 10px; }
-      .wrap.join .content .title p.join {
+      .wrap.join .content .title_join p.join {
         margin-top: 5px;
         padding-top: 5px;
         font-size: 16px; }
-        .wrap.join .content .title p.join:before {
+        .wrap.join .content .title_join p.join:before {
           left: -25px;
           top: -5px;
           font-size: 55px; }
-        .wrap.join .content .title p.join:after {
+        .wrap.join .content .title_join p.join:after {
           height: 11px;
           bottom: 0px; }
       .wrap.join .content .infoBox {
@@ -1294,7 +1301,7 @@ h6 {
             padding: 0; }
             .wrap.join .content .infoBox .step1 .inputBox .item .name,
             .wrap.join .content .infoBox .step1 .inputBox .item .birth {
-              margin: 5px 0; }
+              margin: 5px 0 10px; }
             .wrap.join .content .infoBox .step1 .inputBox .item.i6 {
               display: -webkit-box;
               display: -webkit-flex;
@@ -1312,7 +1319,6 @@ h6 {
         .wrap.join .content .infoBox .step1,
         .wrap.join .content .infoBox .step2,
         .wrap.join .content .infoBox .step3 {
-          width: 80%;
           padding: 0; }
           .wrap.join .content .infoBox .step1 .inputBox .item,
           .wrap.join .content .infoBox .step2 .inputBox .item,
@@ -1349,9 +1355,9 @@ h6 {
           -ms-transform: scale(0.9);
           transform: scale(0.9); } }
     @media screen and (max-width: 413px) {
-      .wrap.join .content .title h1 {
+      .wrap.join .content .title_join h1 {
         margin: 15px auto 10px; }
-      .wrap.join .content .title p.join {
+      .wrap.join .content .title_join p.join {
         margin-top: 0; }
       .wrap.join .content .infoBox {
         margin-top: 20px; }
@@ -1362,20 +1368,20 @@ h6 {
       .wrap.join .content .progress .btnBox {
         margin-bottom: 0; } }
     @media screen and (max-width: 374px) {
-      .wrap.join .content .title h1 {
-        width: 60%;
+      .wrap.join .content .title_join h1 {
+        width: 50%;
         margin: 15px auto 5px; }
-      .wrap.join .content .title p {
+      .wrap.join .content .title_join p {
         font-size: 14px; }
-        .wrap.join .content .title p.join {
+        .wrap.join .content .title_join p.join {
           margin-top: 0;
           padding-top: 0;
           font-size: 14px; }
-          .wrap.join .content .title p.join:before {
+          .wrap.join .content .title_join p.join:before {
             left: -20px;
             top: -10px;
             font-size: 45px; }
-          .wrap.join .content .title p.join:after {
+          .wrap.join .content .title_join p.join:after {
             width: 104%;
             height: 11px;
             bottom: 0px; }
@@ -1393,7 +1399,7 @@ h6 {
           margin-top: 20px; }
         .wrap.join .content .infoBox .step3 .inputBox .item .phone,
         .wrap.join .content .infoBox .step3 .inputBox .item .email {
-          margin: 5px 0; }
+          margin: 5px 0 15px; }
         .wrap.join .content .infoBox .step3 .checkBox {
           font-size: 0.82344rem; }
           .wrap.join .content .infoBox .step3 .checkBox label a {

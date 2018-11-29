@@ -15,12 +15,12 @@ block prepend beforeWrap
     - var wrapClasses = 'join'
     
 block prepend afterWrap
-    - var jsArr = ['join']
+    - var jsArr = ['init','join']
     
 block wrapContent
     // add class '.in'
     .content
-        .title
+        .title_join
             h1 
                 +svg('title_joinus')
             p.word 一起做夢想的實踐者，資料送出後我們將派專人盡速與您聯繫

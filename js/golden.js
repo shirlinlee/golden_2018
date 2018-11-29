@@ -1,6 +1,6 @@
 // console.log(domain);
 var app = new Vue({
-    el: '#wrappper',
+    el: '#wrapper',
     data: {
         $body: null,
         aws_0: null,
@@ -20,6 +20,8 @@ var app = new Vue({
         des:'',
         character:[],
         getResult: false,
+        wow: null,
+        wow_buble: null
         
     },
     computed: {
@@ -36,9 +38,33 @@ var app = new Vue({
             this.init();
   
         })
+        gtag('config', 'UA-129178589-1', {
+            'page_title': '高登計畫',
+            'page_path': '/golden'
+        });
     }, 
     methods:{
         init() {
+            this.wow = new WOW({
+                boxClass:     'wow',      // animated element css class (default is wow)
+                animateClass: 'animated', // animation css class (default is animated)
+                duration: '.3s',
+                callback:     function(box) {
+                    // console.log(box);
+                    $(box).addClass('show');
+                },
+            scrollContainer: null // optional scroll container selector, otherwise use window
+            });
+            this.wow.init();
+
+            // this.wow_buble = new WOW({
+            //     boxClass:     'wow_b',      // animated element css class (default is wow)
+            //     animateClass: 'animated', // animation css class (default is animated)
+            //     callback:     function(box) {
+            //     },
+            // scrollContainer: null // optional scroll container selector, otherwise use window
+            // });
+            // this.wow_buble.init();
   
         },
         pushItem(el){
@@ -70,6 +96,7 @@ var app = new Vue({
                 }
                 this.a = this.a+1;
                 this.b = this.b+1;
+                gtag('event', 'click', { event_category:'golden_click', event_action: 'go_golden_qa1' });
                 
 
             }  else if( qes === "aws_1") {
@@ -81,6 +108,8 @@ var app = new Vue({
                     this.pushItem('沉著穩重');
                     this.b = this.b+1;
                 }
+                gtag('event', 'click', { event_category:'golden_click', event_action: 'go_golden_qa2' });
+
                 
             } else if( qes === "aws_2") {
                 if(ans) {
@@ -91,6 +120,8 @@ var app = new Vue({
                     this.pushItem('重視合作');
                     this.b = this.b+1;
                 }
+                gtag('event', 'click', { event_category:'golden_click', event_action: 'go_golden_qa3' });
+
 
             }
             else if( qes === "aws_3" ) {
@@ -104,6 +135,7 @@ var app = new Vue({
                 }
                 this.a = this.a+1;
                 this.b = this.b+1;
+                gtag('event', 'click', { event_category:'golden_click', event_action: 'go_golden_qa4' });
 
 
                 if( this.a > this.b ) {
@@ -114,17 +146,35 @@ var app = new Vue({
                 } else {
                     this.des="你是樂觀積極派，喜歡和人互動，做事有條理，深得朋友信任，加入高登計畫，能讓你找到更多志同道合夥伴，一同實現夢想。";
                 }
+
                 this.getResult = true;
-                // console.log(this.des);
-                this.$body.animate({scrollTop:$('#result').offset().top});
+                setTimeout(()=>{
+                    this.$body.animate({scrollTop:$('#result').offset().top});
+                },20);     
+
+                
                 return;
             }
+
             this.progress = this.progress+1;
             
         },
-        scrollHandler(el) {
-            $(window)
+        scrollHandler(el, gaEle) {
+            gtag('event', 'click', { event_category:'golden_click', event_action: 'go_golden_'+ gaEle });
             this.$body.animate({scrollTop: $('#'+el).offset().top}, 500);
+        },
+        seeVideo(id, gaEle) {
+            gtag('event', 'click', { event_category:'golden_click', event_action: 'go_golden_'+ gaEle });
+            //開影片
+            $('.story-videoBox').addClass('open');
+            var newID = 'KdeBI-QUH2k';
+            $('.videoBox').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + newID + '?autoplay=1" frameborder="0"></iframe>');
+
+            $('.videoBox-close').on('click', function () {
+                $('.story-videoBox').removeClass('open');
+                $('.videoBox').html('');
+            });
+
         }
        
         

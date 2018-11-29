@@ -12,6 +12,7 @@ gtag('js', new Date());
 
 
 if (location.hostname != '192.168.123.30' && location.hostname != '127.0.0.1') {
+    console.log('fb init');
     (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
@@ -32,6 +33,9 @@ if (location.hostname != '192.168.123.30' && location.hostname != '127.0.0.1') {
 
 
 $(function(){
+    //增加版本號
+    $('.version').html(new Date())
+
     //如果非首頁，增加boay的padding
     var isIndex = $('#fullpage').length;
     if(isIndex === 0) $('body').addClass('paddingTop');
@@ -40,59 +44,65 @@ $(function(){
     $('button').on('click',function(e){
         e.preventDefault();
     })
-    
+
     $('.btn').click(function(e){
         e.preventDefault();
         location.href = '#join';
     });
 
-    //選單-國泰icon
-    $('nav .logo').on('click',function(e){
-        e.preventDefault();
-        location.href = '/golden/#Plan';
-    })
-    
-
-    //手機版選單按鈕
+    //手機版選單icon或選單內的字 開合手機版選單
     $('.nav-icon, .nav-page a').on('click', function(e) {
-       
-
         e.preventDefault();
-
-         gtag('event', 'click', { event_category:  'nav_click', event_action: 'hamberger_btn' });
         $('body').toggleClass('menu-open');
         $('.nav-page').slideToggle();
     });
 
-    //點選單的字 收合手機版選單
-    // $('.nav-page a').on('click', function() {
-    //     $('body').toggleClass('menu-open');
-    //     $('.nav-page').slideToggle();
-    // });
+    $(window).on('load',function(){
+        //console.log('loaded');
+        $('.loading').fadeOut();
+    })
+
 })
 
 
+//ga
 function page(change, now, page){
 
-    
-    gtag('event', 'click', { event_category:  now+'_click', event_action: page+'_btn' });
+    //    gtag('event', 'click', { event_category:  now+'_click', event_action: page+'_btn' });
 
-
-    // gtag('event', 'click', { event_category:  'index_click', event_action: 'go_story_btn' });
-
-
-    console.log('gtag', now+'_click', page+'_btn');
-    
-    if(change === 'nodirect'){
-        location.href = '#'+page;
-    } else {
-
-        if(now === 'nav'){
-            location.href = '/golden/#'+page;
-            return;
+    if(now === 'menu'){
+        //                console.log('gtag', now+'_click', now+'_'+page);
+        gtag('event', 'click', { event_category:  now+'_click', event_action: now+'_'+page });
+        if(change === 'nodirect'){
+            if(page === 'logo' || page === 'home'){
+                location.href = '#golden';
+            } else if(page === 'fb'){
+                location.href = 'https://www.cathaybk.com.tw/cathaybk/';
+            } else{
+                location.href = '#'+page;
+            }
+        } else if(change === 'direct'){
+            if(page === 'logo' || page === 'home'){
+                location.href = '/golden/#golden';
+            } else if(page === 'fb'){
+                location.href = 'https://www.cathaybk.com.tw/cathaybk/';
+            } else{
+                location.href = '/golden/#'+page;
+            }
+        } 
+    } else if(now === 'index'){
+        if(change === 'video'){
+            //            console.log('gtag', now+'_click', 'go_'+page+'_cancel');
+            gtag('event', 'click', { event_category:  now+'_click', event_action: 'go_'+page+'_cancel' });
+        } else {
+            //            console.log('gtag', now+'_click', 'go_'+page+'_page');  
+            gtag('event', 'click', { event_category:  now+'_click', event_action: 'go_'+page+'_page' });
+            if(change === 'direct'){
+                location.href = '/golden/'+page;
+            }
         }
-        location.href = '/golden/'+page;
-        
+    } else if(now === 'bar'){
+        location.href = '#'+page;
     }
-    
+
 }

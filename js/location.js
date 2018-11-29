@@ -1,5 +1,5 @@
 var app = new Vue({
-    el: '#wrappper',
+    el: '#wrapper',
     data: {
         geocoder: null,
         current_location:null,
@@ -16,30 +16,62 @@ var app = new Vue({
         actBannerTitle: '',
         actBannerDes: '',
         actBannerPic: '',
+        from_index: false,
+        actNumber: 2
 
+    },
+    computed: {
+        slideWidth(){
+            //寬180px marginRight 20
+            return this.actNumber*( 180+20 ) +'px';
+        }
     },
     watch: {
         search_city: function (val) {
-            // console.log(val);
-            this.search_dist = this.search_txt = '';
+            //來自首頁的更新不用歸零
+            if( !this.notyet ) {
+                this.search_dist = this.search_txt = '';
+                
+            }
+        }
+    },
+    beforeMount() {
+        if ( this.getParameterByName('city').length !== 0 || this.getParameterByName('dist').length !== 0 || this.getParameterByName('txt').length !== 0) {
+            this.search_city = this.getParameterByName('city');
+            this.search_dist = this.getParameterByName('dist');
+            this.search_txt = this.getParameterByName('txt');
+            
+            this.callApi(this.search_city);
 
+            this.from_index = true;
+            window.history.pushState({}, document.title, "/golden/location");
         }
     },
     mounted() {
-        console.log('mounted');
+        //檢查網址是否從首頁來
+
 
         this.$nextTick( ()=> {
-            this.init();
-            this.initialize(); 
+            if(!this.from_index) {
+               this.init();
+               this.initialize();  
+            } 
+            
             this.selectInit(); 
             this.bannerInit(); 
-
             
             window.addEventListener("keydown", (e)=> {
-                if( e.keyCode === 13 ) {
+                // console.log(e);
+               
+                if( e.keyCode === 13 ) { 
+                    e.preventDefault();
                     this.serch();
                 }
             })
+            gtag('config', 'UA-129178589-1', {
+                'page_title': '全台夢想據點',
+                'page_path': '/location'
+            });
         })
     }, 
     methods:{
@@ -47,6 +79,8 @@ var app = new Vue({
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(this.successFunction, this.errorFunction);
             }
+            this.callApi('台北市');
+
         },
         selectInit() {
             var $this = this;
@@ -86,11 +120,11 @@ var app = new Vue({
         },
         errorFunction(){
             console.error("Geocoder failed");
-            this.callApi('台北市');
+
             
         },
         initialize() {
-            geocoder = new google.maps.Geocoder();
+            if (typeof google != 'undefined') geocoder = new google.maps.Geocoder();
         },
         codeLatLng(lat, lng) {
             console.log('取得位置',lat, lng);
@@ -121,14 +155,9 @@ var app = new Vue({
 
                     } else {
                         console.alert("No results found");
-                        $this.callApi('台北市');
-
                     }
                 } else {
                     console.error("Geocoder failed due to: " + status);
-                    $this.callApi('台北市');
-
-
                 }
             });
         },
@@ -139,7 +168,6 @@ var app = new Vue({
                 type: "GET",
                 dataType: "json",
                 success: function(Jdata) {
-                    // console.log(Jdata);
                     $this.allGeoData = Jdata;
                     $this.current_location = city;
                     $this.search_city = city;
@@ -167,7 +195,6 @@ var app = new Vue({
                     // console.log(el);
                     if( this.current_area === null ) {
                         this.current_area = el.Area;
-                        console.log(this.current_area);
                         this.getAreaAct();
                         this.getStore();
                     } 
@@ -178,11 +205,45 @@ var app = new Vue({
             this.allStore = [];
             $('.store_wrapper li').removeClass('show');
             this.allGeoData.filter((item, index, array)=>{
+                // console.log(item.Area, item.City);
                 if( item.Area === this.current_area) {
-                    var obj = item;
-                    this.allStore.push(obj);
+                    if(!this.from_index){
+                        var obj = item;
+                        this.allStore.push(obj);
+                    } else {
+
+                        if( item.City === this.search_city ) {
+                            if( this.search_dist ) {
+                                // 還有有dist
+                                if( item.Dist === this.search_dist ) {
+                                    if( this.search_txt ) {
+                                        //還有有地址
+                                        if( item.Address.indexOf(this.search_txt) > -1  ){
+   
+                                            var obj = item;
+                                            this.allStore.push(obj);
+                                        }
+                                    } else { 
+                                        var obj = item;
+                                        this.allStore.push(obj);
+                                    }
+                                }
+                            } else {
+                                // 只有city
+                                var obj = item;
+                                this.allStore.push(obj);
+                            }
+                        }
+                    }
                 }
             });
+            if(this.allStore.length == 0){
+                swal({
+                    text: '搜尋沒有結果哦！',
+                    confirmButtonColor: '#00a83c',
+                });
+            }
+            this.notyet = false;
         },            
         getAreaAct() {
             // console.log(this.current_location);
@@ -205,21 +266,39 @@ var app = new Vue({
                 //排列由多到少
                 return parseFloat(b.People) - parseFloat(a.People);
             });
+
+
+            if (domain === "" ) {
+                this.actNumber = (this.allAct.length>=3) ? 3 : this.allAct.length;
+            }
+
+            // console.log(this.actNumber);
         },
         backgroundFunc(src) {
             return 'url(' + src + ')';
         },
-        fb_click(addr) {
+        fb_click(addr, gaEle) {
+            // console.log('location_click','fb_btn_'+ gaEle );
+            gtag('event', 'click', { event_category:'location_click', event_action: 'fb_btn_'+ gaEle });
             window.open(addr);
         },
-        seeAct(index) {
+        seeAct(index, gaEle) {
+            // console.log('location_click','see_act_btn_'+ gaEle );
+            gtag('event', 'click', { event_category:'location_click', event_action: 'see_act_btn_'+ gaEle });
+
             // console.log(this.$refs);
             $(this.$refs.i[index]).toggleClass('show');
             // console.log($(this.$refs.i[index]).find('.detail'));
             $(this.$refs.i[index]).find('.detail').slideToggle('show');
         },
+        hot_act(addr, gaEle){
+            // console.log('location_click','go_act'+ gaEle );
+            gtag('event', 'click', { event_category:'location_click', event_action: 'go_act'+ gaEle });
+            window.open(addr);
+        },
         serch() {
-            
+            gtag('event', 'click', { event_category:'location_click', event_action: 'go_location_search' });
+
             if( this.search_txt.trim() === '' && this.search_city ==='' &&  this.search_dist ==='' ) {
                 //什麼都沒輸入
                 this.getStore(); 
@@ -270,14 +349,32 @@ var app = new Vue({
                         });
                     }
                 });
+                // console.log(this.allStore.length);
+                if(this.allStore.length == 0){
+                    swal({
+                        text: '搜尋沒有結果哦！',
+                        confirmButtonColor: '#00a83c',
+                    });
+                }
 
             }
             
+        },
+        index_search(){
+            gtag('event', 'click', { event_category:'index_click', event_action: 'go_location_page' });
+            window.location="/golden/location?city="+this.search_city+"&dist="+this.search_dist+"&txt="+this.search_txt;
+
         },
         areaHandler(area) {
             this.current_area = area;
             this.search_city = this.search_dist = this.search_txt = '';
             this.getStore();
+        },
+        getParameterByName(name){
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         }
 
     }

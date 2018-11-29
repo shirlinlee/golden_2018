@@ -4,24 +4,38 @@
     }
     width: 100%;
     height: 100vh;
-    background: $cathay;
     font-family: 'Source Sans Pro', sans-serif;
+    // background: url(../img/index_bg_05.jpg) center center no-repeat;
 
     .content {
-        position: relative;
-        display: flex;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
         align-items: center;
-        flex-direction: column;
+        // flex-direction: column;
         width: 100%;
-        height: 100vh;
-        background: url(../img/index_bg_05.jpg) center center no-repeat;
+        max-width: 750px;
+        padding-bottom: 250px;
         background-size: cover;
+        @media only screen and (max-width: 516px)  {
+            padding-bottom: 180px;
+        }
+        @media only screen and (max-width: 320px)  {
+            padding-bottom: 140px;
+        }
 
-        .title {
+
+        .title_join {
+            margin-left: auto;
+            margin-right: auto;
             text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
 
             h1 {
-                width: 384px;
+                width: 375px;
                 margin: 50px auto 40px;
                 opacity: 0;
                 transform: translateY(-50px);
@@ -95,7 +109,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                width: 40%;
+                width: 100%;
 
                 .inputBox {
                     display: flex;
@@ -188,6 +202,8 @@
 
                 .checkBox {
                     color: white;
+                    width: 100%;
+                    text-align: left;
 
                     label {
                         position: relative;
@@ -212,7 +228,7 @@
                         label {
                             $outer: 20px;
                             $border: 1px;
-                            display: inline-block;
+                            display: block;
                             padding-left: $outer + 10px;
                             margin-left: 30px;
                             line-height: 2.5;
@@ -267,7 +283,9 @@
 
         .progress {
             position: absolute;
-            display: flex;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%,0);
             flex-direction: column;
             align-items: center;
             font-family: 'Noto Sans', sans-serif;
@@ -412,6 +430,7 @@
                     position: relative;
                     display: flex;
                     justify-content: center;
+                    width: 80px;
 
                     &:before,
                     &:after {
@@ -440,7 +459,7 @@
 
         // 進場用
         &.in {
-            .title {
+            .title_join {
 
                 h1,
                 .word,
@@ -492,7 +511,7 @@
             @include media-h(820px) {
                 $scale: 1366 / 1920;
 
-                .title {
+                .title_join {
                     h1 {
                         width: 384px * $scale;
                         margin: 30px auto 10px;
@@ -535,7 +554,7 @@
 
         // ipad
         @include media(1100px) {
-            .title {
+            .title_join {
                 h1 {
                     margin: 30px auto 20px;
                 }
@@ -547,15 +566,15 @@
                 .step1,
                 .step2,
                 .step3 {
-                    width: 50%;
+                    width: 90%;
                 }
             }
         }
 
         // ???
         @include media(900px) {
-            .title {
-                width: 80%;
+            .title_join {
+                // width: 80%;
 
                 p {
                     line-height: 1.5;
@@ -573,7 +592,7 @@
                 .step1,
                 .step2,
                 .step3 {
-                    width: 60%;
+                    // width: 60%;
                     padding: 0 10px;
 
                     .inputBox {
@@ -601,7 +620,7 @@
 
         // i6p
         @include m-767() {
-            .title {
+            .title_join {
                 h1 {
                     width: 70%;
                     margin: 20px auto 10px;
@@ -642,7 +661,7 @@
 
                             .name,
                             .birth {
-                                margin: 5px 0;
+                                margin: 5px 0 10px;
                             }
 
                             &.i6 {
@@ -664,7 +683,7 @@
                 .step1,
                 .step2,
                 .step3 {
-                    width: 80%;
+                    // width: 80%;
                     padding: 0;
 
                     .inputBox {
@@ -723,7 +742,7 @@
 
         // i6
         @include m-413() {
-            .title {
+            .title_join {
                 h1 {
                     margin: 15px auto 10px;
                 }
@@ -734,6 +753,7 @@
                     }
                 }
             }
+        
 
             .infoBox {
                 margin-top: 20px;
@@ -768,9 +788,9 @@
 
         // i5
         @include m-374() {
-            .title {
+            .title_join {
                 h1 {
-                    width: 60%;
+                    width: 50%;
                     margin: 15px auto 5px;
                 }
 
@@ -830,7 +850,7 @@
 
                             .phone,
                             .email {
-                                margin: 5px 0;
+                                margin: 5px 0 15px;
                             }
                         }
                     }

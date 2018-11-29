@@ -77,6 +77,11 @@
                     }, 500);
                 }
             }
+
+            gtag('config', 'UA-129178589-1', {
+                'page_title': '我的夢想名片',
+                'page_path': '/card'
+            });
         },
         methods: {
             getuserImg(){
@@ -146,10 +151,10 @@
                 this.step = step;
                 this.$nextTick(() => {
                     if (step == 3) {
-                        setTimeout(() => {
+                        // setTimeout(() => {
                             document.querySelector('.wrap.card .content').classList.add('step3Show');
                             document.querySelector('.title .join').classList.add('show');
-                        }, 250);
+                        // }, 250);
                     }
                 });
             },
@@ -250,6 +255,7 @@
             },
             shareFB() {
                 // 測試環境跳過FB分享
+                gtag('event', 'click', { event_category:'card_click', event_action: 'go_card_share' });
                 if (location.hostname != '192.168.123.30' && location.hostname != '127.0.0.1') {
                     FB.ui({
                         method: 'share',
@@ -257,8 +263,8 @@
                         display: 'popup',
                         hashtag: '#斜槓人生在走兩張名片要有'
                     }, (response) => {
-                        console.log('fb_share',response);
-
+                        //有分享才紀錄
+                        if( response !== undefined)  gtag('event', 'click', { event_category:'card_click', event_action: 'go_card_post' });
                     });
                 }
             },
@@ -282,6 +288,8 @@
                                         this.email = response.email;
                                         this.pic = 'https://graph.facebook.com/' + response.id + '/picture?type=large';
                                         this.step = 2;
+
+                                        gtag('event', 'click', { event_category:'card_click', event_action: 'go_card_authorize' });
 
                                         setTimeout(() => {
                                             document.querySelector('.wrap.card .content').classList.add('step2Show');

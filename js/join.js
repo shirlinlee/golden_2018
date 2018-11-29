@@ -72,16 +72,16 @@
 
                     // 姓名、性別、生日、學歷的驗証規則
                     if (!CH.checktxt(this.name)) {
-                        this.chkmsg.push('請輸入姓名');
+                        this.chkmsg.push('姓名');
                     }
                     if (!CH.checktxt(this.gender)) {
-                        this.chkmsg.push('請選擇性別');
+                        this.chkmsg.push('性別');
                     }
                     if (this.birth == '') {
-                        this.chkmsg.push('請選擇生日');
+                        this.chkmsg.push('生日');
                     }
                     if (!CH.checktxt(this.edu)) {
-                        this.chkmsg.push('請選擇學歷');
+                        this.chkmsg.push('學歷');
                     }
 
                     if (this.chkmsg.length == 0) {
@@ -89,6 +89,11 @@
                     } else {
                         // 開 popup 提示訊息
                         console.log(this.chkmsg);
+                        swal({
+                            text: this.chkmsg+'為必填欄位',
+                            type: 'error',
+                            confirmButtonColor: '#00a83c',
+                        });
                         return;
                     }
 
@@ -96,10 +101,10 @@
 
                     // 希望上班地方、是否希望指定聯繫單位
                     if (this.place == '') {
-                        this.chkmsg.push('請選擇希望上班地點');
+                        this.chkmsg.push('希望上班地點');
                     }
                     if (this.dept == null) {
-                        this.chkmsg.push('請選擇希望指定聯繫單位');
+                        this.chkmsg.push('希望指定聯繫單位');
                     }
 
                     if (this.chkmsg.length == 0) {
@@ -107,6 +112,11 @@
                     } else {
                         // 開 popup 提示訊息
                         console.log(this.chkmsg);
+                        swal({
+                            text: this.chkmsg+'為必填欄位',
+                            type: 'error',
+                            confirmButtonColor: '#00a83c',
+                        });
                         return;
                     }
                 } else if (this.step == 3) {
@@ -125,21 +135,25 @@
                     var read = document.querySelector('#read').checked;
 
                     if (!CH.isValidCell(this.phone)) {
-                        this.chkmsg.push('請輸入手機十碼');
+                        this.chkmsg.push('手機十碼');
                     }
 
                     if (!CH.isValidMail(this.email)) {
-                        this.chkmsg.push('請輸入EMAIL');
+                        this.chkmsg.push('EMAIL');
                     }
 
                     if (!read) {
-                        this.chkmsg.push('請同意相關規定');
+                        this.chkmsg.push('同意相關規定');
                     }
                    
 
                     if (this.chkmsg.length == 0) {
                         // this.step = 1;
 
+                        console.log(
+                           this.place.country,
+                           this.birthday
+                        );
                         // AJAX 送資料
                         $.ajax({
                             type: 'POST',
@@ -149,13 +163,18 @@
                                 'sex':this.gender,
                                 'email':this.email,
                                 'phone':this.phone,
-                                'birthday':this.birth,
+                                'birthday':this.birthday,
                                 'education':this.edu,
-                                'work_place':this.place,
+                                'work_place':this.place.country,
                                 'store':this.dept
                             },
                             complete: function(res){
                                 console.log(res);
+                                swal({
+                                    text: '您的資料已成功送出',
+                                    type: 'success',
+                                    confirmButtonColor: '#00a83c',
+                                });
                             }
                         });
                         
@@ -163,6 +182,11 @@
                     } else {
                         // 開 popup 提示訊息
                         console.log(this.chkmsg);
+                        swal({
+                            text: this.chkmsg+'為必填欄位',
+                            type: 'error',
+                            confirmButtonColor: '#00a83c',
+                        });
                         return;
                     }
                 }
