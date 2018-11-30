@@ -1,4 +1,15 @@
+.item label{
+    display: inline-block;
+    transform: translate(0, 150%);
+    transition: all .4s;
+    transform-origin: 0 0;
+
+    &.typed{
+        transform: translate(0, 0) scale(.9);
+    }
+}
 .wrap.join {
+    // background: #999;
     img {
         width: 100%;
     }
@@ -86,7 +97,7 @@
                         bottom: 3px;
                         background: $cathay;
                         z-index: -1;
-                        transition: width .35s ease 1.3s;
+                        transition: width .35s ease .3s;
                     }
                 }
             }
@@ -468,11 +479,6 @@
                     transform: translateY(0);
                 }
 
-                .join {
-                    &:after {
-                        width: 100%;
-                    }
-                }
             }
 
             .infoBox {

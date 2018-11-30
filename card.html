@@ -15,13 +15,15 @@
     <link rel="icon" href="img/favicon.ico">
     <!-- css style-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/init.css">
     <link rel="stylesheet" href="css/card.css">
     <!-- js-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.1/isMobile.min.js?v=1542338978748"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js?v=1542338978748"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js?v=1542338978748"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js?v=1542338978748"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js?v=1542338978748"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.1/isMobile.min.js?v=1543573754002"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js?v=1543573754002"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js?v=1543573754002"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js?v=1543573754002"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js?v=1543573754002"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=UA-129178589-1?v=1543573754002"></script>
   </head>
   <body>
     <header></header>
@@ -31,7 +33,7 @@
       <!-- add class '.step3Show' -->
       <div class="content">
         <div class="share_pic" v-show="false" style="position: absolute; z-index: -9999;">
-          <canvas id="share_canvas" width="600" height="315"></canvas><img src="img/share.png" id="basic_img" alt="5687" width="600" height="315"><img v-bind:src="pic" id="user_img">
+          <canvas id="share_canvas" width="600" height="315"></canvas><img src="img/share.png" id="basic_img" alt="5687" width="600" height="315"><img v-bind:src="pic_for_canvas" id="user_img">
         </div>
         <div class="bg1" v-if="step == 1"></div>
         <div class="bg2" v-if="step != 1"><img class="dot_rt" src="img/dot_1.png"><img class="dot_rb" src="img/dot_2.png"><img class="dot_left" src="img/dot_1.png">
@@ -39,16 +41,16 @@
         <div class="title">
           <h1> <img src="img/title_namecard.svg">
           </h1>
-          <p class="word" v-if="step == 1">當現實與理想可以不用再取捨，<span>你未來名片會是什麼樣子？</span></p>
-          <p class="word" v-if="step == 2">如果工作和夢想能同時擁有，<span>你的名片應該長什麼樣？</span></p>
-          <p class="word" v-if="step == 3">工作與夢想，可以不用二選一</p>
-          <p class="join" v-if="step == 3">現在就加入國泰 <span>#讓夢想與工作一起前進</span></p>
+          <p class="word" v-if="step == 1"> <span>當現實與理想可以不用再取捨，</span><span>你未來名片會是什麼樣子？</span></p>
+          <p class="word" v-if="step == 2"><span>如果工作和夢想能同時擁有，</span><span>你的名片應該長什麼樣？</span></p>
+          <p class="word" v-if="step == 3"> <span>工作與夢想，可以不用二選一</span></p>
+          <p class="join" v-if="step == 3"> <span>現在就加入國泰 </span><span>#讓夢想與工作一起前進</span></p>
         </div>
         <div class="step1" v-show="step == 1">
-          <div class="btn"><a href="" @click.prevent="chkFB()"> <span class="icon-ic_f">立即製作</span></a></div>
+          <div class="btn"><a class="button" href="" @click.prevent="chkFB()"> <font><span class="icon-ic_f">立即製作</span></font></a></div>
         </div>
-        <div class="step2" v-show="step == 2"><img class="right_cloud" src="img/svg/namecard_cloud.svg">
-          <div class="cardBox">
+        <div class="step2" v-show="step == 2">
+          <div class="cardBox"><img class="right_cloud" src="img/svg/namecard_cloud.svg">
             <div class="left">
               <div class="imgBox"><img :src="pic"></div><img class="left_cloud" src="img/svg/namecard_cloud.svg">
             </div>
@@ -79,7 +81,7 @@
           </div>
           <div class="btn">
             <div class="hand"><img src="img/namecard_hand.png">
-            </div><a href="" @click.prevent="next(3)">看夢想名片</a>
+            </div><a class="button" href="" @click.prevent="next(3)"> <font>看夢想名片</font></a>
           </div>
         </div>
         <div class="step3" v-show="step == 3">
@@ -107,12 +109,13 @@
                   <div class="email">younggolden@dream.com</div>
                 </div>
               </div>
-              <div class="btn"><a href="" @click.prevent="shareFB()"> <span class="icon-ic_f">分享結果</span></a></div>
+              <div class="btn"><a class="button" href="" @click.prevent="shareFB()"> <font><span class="icon-ic_f">分享結果</span></font></a></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-        <script src="bundle/card.js?v=1542338978749"></script>
+        <script src="bundle/init.js?v=1543573754003"></script>
+        <script src="bundle/card.js?v=1543573754003"></script>
   </body>
 </html>

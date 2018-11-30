@@ -5,6 +5,7 @@
     text-align: center;
     padding: 0;
     position: relative;
+    overflow: hidden;
    
     >div{
         padding-left:15px;
@@ -220,10 +221,8 @@
                 }
             }
         }
-
     }
     .btn{
-        border: solid 1px #01883f;
         float: none;
         clear: both;
     }
@@ -1083,9 +1082,13 @@
     @include bg-cover;
     
     @media only screen and (max-width: 1024px)  {
-        padding: 170px 0 90px;
+        padding: 150px 0 90px;
         overflow: visible;
         background-position: 25%;
+    }
+    @media only screen and (max-width: 516px)  {
+        padding: 150px 0 0;
+    
     }
     >div{
         position: relative;
@@ -1105,28 +1108,33 @@
         height: 140px;
         z-index: 90;
         .ani_5{
-            transform: scale(0);
-            opacity: 0;
+           
             transition: all .4s 1.5s;
             width: 140px;
             height: 140px;
             border-radius: 50%; 
-            padding: 35px 0;
+            padding: 35px 0; 
+            @media only screen and (min-width: 517px)  {
+                transform: scale(0);
+                opacity: 0;
+            }
+            @media only screen and (max-width: 516px)  {
+                padding: 45px 0 0 15px;
+            }
         }
        
         @media only screen and (max-width: 1024px)  {
+            
+            left: 50px;
+            top: 0px;
+        }
+        @media only screen and (max-width: 516px)  {
             padding: 130px 0 0 50px;
             width: 240px;
             height: 240px;
             left: 50%;
             top: -325px;
             transform: translate(-50%, -50%);
-        }
-        @media only screen and (max-width: 516px)  {
-            padding: 100px 0 0 20px;
-            width: 190px;
-            height: 190px;
-            top: -305px;
         }
         // letter-spacing: 1px;
         img{
@@ -1135,10 +1143,11 @@
             left: 0;
             transform: translate(-65%, -50%);
             @media only screen and (max-width: 1024px)  {
-                transform: translate(-15%, -30%);
-        
+                transform: translate(-50%, -45%);
+                width: 70px;
             }
-            @media only screen and (max-width: 1024px)  {
+            @media only screen and (max-width: 516px)  {
+                transform: translate(30%, 5%);
                 width: 70px;
         
             }
@@ -1341,8 +1350,10 @@
         }
        
     }
+
     
-    div.W900.show{
+   
+    div.W900 .show{
         @media only screen and (min-width: 517px)  {
             .buble, .buble_main, .ani_5{
                 opacity: 1;
@@ -1352,25 +1363,54 @@
             }
         }
         
+        
     }
 
 }
 
 #wrapper {
+    @media only screen and (min-width: 517px)  {
+        .buble_main{
+            opacity: 1;
+        }
+    }
     @media only screen and (max-width: 516px)  {
         .buble, .buble_main{
+            
             position: relative;
             transform: none;
             bottom: inherit;
             left: inherit;
-            margin: 0 auto 30px; 
+            margin-left: auto;
+            margin-right: auto; 
+            >img{
+                opacity: 0;
+            }
+
         }
-    #promotion{
-        .a1{
-            width: 30px;
-            @include arrow(50%, 0, -50%, -80%, 0, 0);
+        .buble{
+            height: 0;
+            // padding: 0;
         }
-    }
+        .buble_main{
+            opacity: 1;
+            margin-bottom: 110px;
+        }
+
+        #promotion{
+            .a1{
+                width: 30px;
+                @include arrow(50%, 0, -50%, -80%, 0, 0);
+            }
+        }
+
+        div.W900 .show{
+            .buble{
+                height: inherit;
+                opacity: 1;
+                
+            }
+        }
         
 
     }

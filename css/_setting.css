@@ -125,12 +125,6 @@ body, html {
   border-radius: 50%;
 }
 
-.btn {
-  padding: 30px 100px;
-  display: inline-block;
-  line-height: 1;
-}
-
 .title {
   margin-bottom: 105px;
   position: relative;
@@ -213,9 +207,6 @@ body, html {
   }
   .f43 {
     font-size: 39px;
-  }
-  .btn {
-    padding: 20px 70px;
   }
 }
 

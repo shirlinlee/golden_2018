@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="css/join.css">
     <link rel="stylesheet" href="css/vue-datepicker-local.css">
     <!-- js-->
-        <script src="vendor/ch.min.js?v=1543308508846"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js?v=1543308508846"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js?v=1543308508846"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-select/2.5.1/vue-select.js?v=1543308508846"></script>
-        <script src="vendor/vue-datepicker-local.js?v=1543308508846"></script>
+        <script src="vendor/ch.min.js?v=1543576064107"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js?v=1543576064107"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js?v=1543576064107"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-select/2.5.1/vue-select.js?v=1543576064107"></script>
+        <script src="vendor/vue-datepicker-local.js?v=1543576064107"></script>
   </head>
   <body>
     <header></header>
@@ -38,22 +38,22 @@
           <div class="step1" v-show="step == 1">
             <div class="inputBox">
               <div class="item">
-                    <div class="name">
-                      <label>姓名</label>
-                      <input v-model="name">
-                    </div>
+                <div class="name">
+                  <label :class="{'typed':name !== ''||isFocus ==='name'}">姓名</label>
+                  <input v-model="name" @focus="labelF('name')" @blur="labelB('name')">
+                </div>
                 <div class="birth">
-                  <label>生日</label>
+                  <label :class="{'typed':birth !== ''}">生日</label>
                   <vue-datepicker-local v-model="birth"></vue-datepicker-local>
                 </div>
               </div>
               <div class="item i6">
                 <div class="gender">
-                  <label>性別</label>
+                  <label :class="{'typed':gender !== ''}">性別</label>
                   <v-select class="gender-select" v-model="gender" :options="genderOptions.list" :max-height="maxHeight" :searchable="false"></v-select>
                 </div>
                 <div class="edu">
-                  <label>學歷</label>
+                  <label :class="{'typed':edu !== ''}">學歷</label>
                   <v-select class="edu-select" v-model="edu" :options="eduOptions.list" :max-height="maxHeight" :searchable="false"></v-select>
                 </div>
               </div>
@@ -63,11 +63,11 @@
             <div class="inputBox">
               <div class="item">
                 <div class="place">
-                  <label>希望上班地點</label>
+                  <label :class="{'typed':place !== ''}">希望上班地點</label>
                   <v-select class="place-select" v-model="place" :options="areaData" label="country" :max-height="maxHeight" :searchable="false"></v-select>
                 </div>
                 <div class="dept">
-                  <label>是否希望指定聯繫單位</label>
+                  <label :class="{'typed':dept !== null}">是否希望指定聯繫單位</label>
                   <v-select class="dept-select" v-model="dept" :options="availableCities" :disabled="availableCities == &quot;&quot;" :max-height="maxHeight" :reset-on-options-change="true" :searchable="false"></v-select>
                 </div>
               </div>
@@ -76,14 +76,14 @@
           <div class="step3" v-show="step == 3">
             <div class="inputBox">
               <div class="item">
-                    <div class="phone">
-                      <label>手機</label>
-                      <input text="tel" v-model="phone" maxLength="10">
-                    </div>
-                    <div class="email">
-                      <label>EMAIL</label>
-                      <input text="email" v-model="email">
-                    </div>
+                <div class="phone">
+                  <label :class="{'typed':phone !== ''||isFocus ==='phone'}">手機</label>
+                  <input text="tel" v-model="phone" maxLength="10" @focus="labelF('phone')" @blur="labelB('phone')">
+                </div>
+                <div class="email">
+                  <label :class="{'typed':email !== ''||isFocus ==='email'}">email</label>
+                  <input text="email" v-model="email" @focus="labelF('email')" @blur="labelB('email')">
+                </div>
               </div>
             </div>
             <div class="checkBox">
@@ -121,7 +121,7 @@
         </div>
       </div>
     </div>
-        <script src="bundle/init.js?v=1543308508847"></script>
-        <script src="bundle/join.js?v=1543308508847"></script>
+        <script src="bundle/init.js?v=1543576064108"></script>
+        <script src="bundle/join.js?v=1543576064108"></script>
   </body>
 </html>

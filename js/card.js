@@ -60,7 +60,7 @@
             });
         },
         mounted() {
-            window.onload = () => {
+            this.$nextTick( ()=> {
                 // 首頁連場效果做在scroll上
                 // this.ctrlScroll();
 
@@ -72,11 +72,13 @@
                 }
                 else if (this.step == 2) {
                     setTimeout(() => {
-                        document.querySelector('.wrap.card .content').classList.add('step2Show');
+                        document.querySelector('.wrap.card .content').classList.add('step2Show','step1Show');
+                        // document.querySelector('.wrap.card .content').classList.add('step1Show');
+
                         this.getuserImg();
                     }, 500);
                 }
-            }
+            })
 
             gtag('config', 'UA-129178589-1', {
                 'page_title': '我的夢想名片',
@@ -151,10 +153,10 @@
                 this.step = step;
                 this.$nextTick(() => {
                     if (step == 3) {
-                        // setTimeout(() => {
+                        setTimeout(() => {
                             document.querySelector('.wrap.card .content').classList.add('step3Show');
                             document.querySelector('.title .join').classList.add('show');
-                        // }, 250);
+                        }, 450);
                     }
                 });
             },

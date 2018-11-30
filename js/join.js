@@ -22,6 +22,7 @@
             areaData: [],
             maxHeight: '250px',
             chkmsg: [],
+            isFocus:''
         },
         computed: {
             availableCities() {
@@ -58,6 +59,7 @@
         },
         methods: {
             next() {
+                console.log(this.dept);
                 // 下一步都寫這在
 
                 // 進度條特效 out
@@ -217,6 +219,12 @@
                     };
                 };
             },
+            labelF(ele){
+                this.isFocus = ele;
+            },
+            labelB(ele){
+                this.isFocus = '';
+            }
         },
         destroyed: function () {
             window.removeEventListener('orientationchange', this.avoidAnriod);

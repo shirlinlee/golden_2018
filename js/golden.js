@@ -36,7 +36,6 @@ var app = new Vue({
         this.$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
         this.$nextTick( ()=> {
             this.init();
-  
         })
         gtag('config', 'UA-129178589-1', {
             'page_title': '高登計畫',

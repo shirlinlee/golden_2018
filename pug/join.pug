@@ -29,16 +29,18 @@ block wrapContent
             .step1('v-show'='step == 1')
                 .inputBox
                     .item
-                        +input('name', '姓名', false)('v-model'='name')
+                        .name
+                            label(:class="{'typed':name !== ''||isFocus ==='name'}") 姓名
+                            input('v-model'='name', @focus="labelF('name')", @blur="labelB('name')")
                         .birth
-                            label 生日
+                            label(:class="{'typed':birth !== ''}") 生日
                             vue-datepicker-local('v-model'='birth')
                     .item.i6
                         .gender
-                            label 性別
+                            label(:class="{'typed':gender !== ''}") 性別
                             v-select(class='gender-select', 'v-model'='gender', ':options'='genderOptions.list', ':max-height'='maxHeight', ':searchable'='false')
                         .edu
-                            label 學歷
+                            label(:class="{'typed':edu !== ''}") 學歷
                             v-select(class='edu-select', 'v-model'='edu', ':options'='eduOptions.list', ':max-height'='maxHeight', ':searchable'='false')
                 //-.btnBox
                     .btn
@@ -47,10 +49,10 @@ block wrapContent
                 .inputBox
                     .item
                         .place
-                            label 希望上班地點
+                            label(:class="{'typed':place !== ''}") 希望上班地點
                             v-select(class='place-select', 'v-model'='place', ':options'='areaData', label='country', ':max-height'='maxHeight', ':searchable'='false')
                         .dept
-                            label 是否希望指定聯繫單位
+                            label(:class="{'typed':dept !== null}") 是否希望指定聯繫單位
                             v-select(class='dept-select', 'v-model'='dept', ':options'='availableCities', ':disabled'='availableCities == ""', ':max-height'='maxHeight', ':reset-on-options-change'='true', ':searchable'='false')
                 //-.btnBox
                     .btn
@@ -58,8 +60,13 @@ block wrapContent
             .step3('v-show'='step == 3')
                 .inputBox
                     .item
-                        +input('phone', '手機', false)(text='tel', 'v-model'='phone', maxLength='10')
-                        +input('email', 'EMAIL', false)(text='email', 'v-model'='email')
+                        .phone
+                            label(:class="{'typed':phone !== ''||isFocus ==='phone'}") 手機
+                            input(text='tel', 'v-model'='phone', maxLength='10', @focus="labelF('phone')", @blur="labelB('phone')")
+                        .email
+                            label(:class="{'typed':email !== ''||isFocus ==='email'}") email
+                            input(text='email', 'v-model'='email', @focus="labelF('email')", @blur="labelB('email')")
+                        
                 .checkBox
                     label(for="read")
                         | 本人

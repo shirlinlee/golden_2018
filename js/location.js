@@ -18,7 +18,6 @@ var app = new Vue({
         actBannerPic: '',
         from_index: false,
         actNumber: 2
-
     },
     computed: {
         slideWidth(){

@@ -19,6 +19,9 @@
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     font-weight: normal;
+    font-family: 'NotoSans'; 
+    margin: 0;
+    padding: 0;
 }
 
 .paddingTop{
@@ -303,6 +306,66 @@ footer .footer_right span:nth-child(4) {
     margin-left: 25px;
 }
 
+/* 按鈕全樣式 */
+
+.button {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 75px;
+    text-align: center;
+    font-family: 'NotoSans';
+    font-size: 18px;
+    line-height: 75px;
+    letter-spacing: 1.8px;
+    font-weight: 300;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.button font{
+    position: relative;
+    z-index: 5;
+    transition: all 0.5s ease-in-out 0s;
+
+}
+.button:after {
+    content: "";
+    content: "";
+    width: 0px;
+    height: 100%;
+    background-color: #fff43c;
+    position: absolute;
+    top: 0px;
+    left: -50%;
+    z-index: 0;
+    transform: skew(50deg);
+    transform-origin: left top 0px;
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.button.green_line{
+    border: solid 1px #01883f;
+}
+.button.green_line:after {
+    background-color: #01883f;
+}
+@media screen and (min-width: 769px){
+    body .button:hover:after {
+        width: 150%;
+        height: 100%;
+    }
+    .button:hover *,.button:hover *:before {
+        color: #01aa4f;
+    }
+    .button.green_line:hover font {
+        color: #fff;
+    }
+}
+
+
 
 @media only screen and (max-width: 1200px) {
     body nav {
@@ -418,6 +481,7 @@ footer .footer_right span:nth-child(4) {
     }
 
     .nav-page li a {
+        font-family: 'NotoSans';
         list-style-type: none;
         color: #ffffff;
         font-size: 30px;
@@ -465,12 +529,13 @@ footer .footer_right span:nth-child(4) {
 /* ipad */
 @media only screen and (max-width: 768px) {
 
-    .button {
+    /* 小萬關>過大啦～ */
+    /* .button {
         width: 400px;
         height: 100px;
         font-size: 30px;
         letter-spacing: 3px;
-    }
+    } */
 
 
     body footer {
@@ -657,90 +722,10 @@ footer .footer_right span:nth-child(4) {
 }
 
 
-/* 每頁最下方加入我們 */
-
 /* android input use */
 .input_focus.trans_bg {
     display: none;
 }
-
-.content.join_banner {
-    position: relative;
-    width: 100%;
-    height: 362px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    font-family: 'Source Sans Pro', sans-serif;
-    background: #01aa4f;
-    background: url(../img/index_bg_05.jpg) center center no-repeat;
-    background-size: cover;
-}
-
-.content.join_banner .box {
-    position: relative;
-    width: 25%;
-}
-
-.content.join_banner .box .join_title {
-    width: 100%;
-}
-
-.content.join_banner .box .join_btn {
-    width: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 28px;
-}
-
-.content.join_banner .box .join_btn a {
-    display: inline-block;
-    font-size: 20px;
-    letter-spacing: 2px;
-    text-align: center;
-    color: #fff43c;
-    width: 100%;
-    height: 75px;
-    line-height: 75px;
-    background-color: transparent;
-}
-
-.content.join_banner .box .join_btn a {
-    border: 1px solid #fff43c;
-    width: 100%;
-    max-width: 300px;
-    max-height: 75px;
-}
-
-
 
 /**  sweet alert CSS  **/
 .swal2-popup{
@@ -756,7 +741,7 @@ footer .footer_right span:nth-child(4) {
     padding: 20px 0;
 }
 
-
+/* 每頁最下方加入我們 */
 /**  join banner CSS  **/
 .content.join_banner {
     position: relative;
@@ -794,27 +779,7 @@ footer .footer_right span:nth-child(4) {
 .content.join_banner .box .join_title {
     width: 100%; 
 }
-.content.join_banner .box .join_btn {
-    width: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 28px; 
-}
-.content.join_banner .box .join_btn a {
+/* .content.join_banner .box .join_btn a {
     display: inline-block;
     font-size: 20px;
     letter-spacing: 2px;
@@ -824,12 +789,11 @@ footer .footer_right span:nth-child(4) {
     height: 75px;
     line-height: 75px;
     background-color: transparent; 
-}
-.content.join_banner .box .join_btn a {
+} */
+.content.join_banner .box a {
+    margin: 20px auto 40px;
     border: 1px solid #fff43c;
-    width: 100%;
-    max-width: 300px;
-    max-height: 75px; 
+    color: #fff43c;
 }
 
 @media screen and (max-width: 1200px) {
