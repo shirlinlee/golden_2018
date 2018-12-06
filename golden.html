@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/animate.css" />
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/init.css" />
         <link rel="stylesheet" href="css/golden.css" />
 
     </head>
@@ -29,6 +30,10 @@
                 <p class="abs w3 wow fadeIn" data-wow-delay=".6s" data-wow-duration=".3s" >玩個小測驗吧！</p>
             </div>
             <div id="game" class="W1040">
+                <img src="img/dot_1.png" class="abs dot dot1" alt="">
+                <img src="img/dot_1.png" class="abs dot dot2" alt="">
+
+                    
                 <div class="select_area W100" v-for="(q,index) in qes" v-show="index === progress"> 
                     <h2 class="f_green f24 W100"><font class="abs">Q{{progress+1}}</font>
                         <span>{{ q.title }}</span>
@@ -55,7 +60,7 @@
                         <span class="f_white">4</span>
                     </div>
                 </div>
-               <a href="javascript:;" class="btn f_green f20" @click="scrollHandler('intro','skip')">SKIP</a>
+                <a href="javascript:;" class="btn f_green f20 button green_line" @click="scrollHandler('intro','skip')"><font>SKIP</font></a>
             
             </div>
             
@@ -70,14 +75,15 @@
                         </ul>
                     </div>
                     <div class="bg_white f_grey f18 abs" :class="{'hide': !getResult}">
-                        {{des}}
+                        <p>{{des}}</p>
                         <img src="img/golden/draw_p_05.svg" class="people abs" alt="">
-                        
+                        <img src="img/golden/splash_yellow_triple.svg" class="tiangle abs">
                     </div>
                 </div>
             </div>
-
+    
             <div id="intro" class="W100">
+                <img src="img/dot_2.png" class="abs dot dot1" alt="">
                 <h2 class="title f_green f40 wow fadeIn">職務介紹<font class="f14">Job Introduction</font></h2>
                 <div class="W1040">
                     <div class="bg_green wow fadeIn" data-wow-delay=".2s">
@@ -104,12 +110,15 @@
                                 <li>具創新思維/善於拓展組織與凝聚團隊</li>
                             </ul>
                             
-                       
+                        
                     </div>
                 </div>
             </div>
-
+    
             <div id="career" class="W100 f_grey">
+                <img src="img/dot_1.png" class="abs dot dot1" alt="">
+                <img src="img/dot_2.png" class="abs dot dot2" alt="">
+
                 <h2 class="title f_green f40 wow fadeIn">職涯規劃<font class="f14">Career Planning</font></h2>
                 <div class="W1040">
                     <div class="W50 sa">
@@ -173,26 +182,30 @@
                     </div>
                 </div>
                 <div class="W1040">
-                    <a href="https://drive.google.com/file/d/1Aj4yvtIlkPAxIctQAbTJjB0DOZCao1ld/view" class="btn f_white" download onclick="gtag('event', 'click', { event_category:'golden_click', event_action: 'go_goden_downloadlazy' });">下載懶人包</a>
+                    <a href="https://drive.google.com/file/d/1Aj4yvtIlkPAxIctQAbTJjB0DOZCao1ld/view" class="btn button f_white" download onclick="gtag('event', 'click', { event_category:'golden_click', event_action: 'go_goden_downloadlazy' });">
+                        <font>下載懶人包</font>
+                    </a>
                 </div>
             </div>
-
+    
             <div id="training" class="W100 bg_yellow f_grey">
+                <img src="img/dot_1.png" class="abs dot dot1" alt="">
+
                 <h2 class="title f_green f40 wow fadeIn">培訓內容<font class="f14">training content</font></h2>
                 <div class="W1040">
                     <img src="img/golden/draw_p_06.svg" class="people abs p1" alt="">
                     <img src="img/golden/draw_p_07.svg" class="people abs p2" alt="">
                     
                     <div class="content">
-                        <div class="tab_area bg_white wow fadeIn">
-                            <p class="tab">
+                        <div class="tab_area bg_white">
+                            <p class="tab wow fadeIn">
                                 <span class="abs f22 f_white">SA業務新秀</span>    
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 viewBox="0 0 108.5 35.3" style="enable-background:new 0 0 108.5 35.3;" xml:space="preserve">
                                 <polygon class="st0" points="108.1,25.9 54.1,34.8 0,25.9 0,0 108.1,0 "/></svg>
-
+    
                             </p>
-                            <p class="tab">
+                            <p class="tab wow fadeIn">
                                 <span class="abs f22 f_green">PMA領航儲備主管</span>
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 viewBox="0 0 108.5 35.3" style="enable-background:new 0 0 108.5 35.3;" xml:space="preserve">
@@ -200,122 +213,125 @@
                                 </svg>
                             </p>
                         </div>
-                        <div class="detail bg_white" >
-                            <ul class="wow fadeIn" data-wow-delay=".2s">
-                                <li class="f16">
-                                    <font class="f_green f18">五大面向專業技巧</font>(銷售技巧/行銷資源/客戶服務/商品教育/事務管理)</li>
-                                <li class="pc"><img src="img/golden/ic_check.svg" alt=""></li>
-                                <li class="pc"><img src="img/golden/ic_check.svg" alt=""></li>
-                            </ul>
-                            <ul class="wow fadeIn" data-wow-delay=".4s">
-                                <li class="f16">
-                                    <font class="f_green f18">隨時都能自我加值</font>超過5000堂線上學習資源</li>
-                                <li class="pc"><img src="img/golden/ic_check.svg" alt=""></li>
-                                <li class="pc">
-                                    <img src="img/golden/ic_check.svg" alt="">
-                                </li>
-                                <div class="plus abs bg_yellow wow fadeIn" data-wow-delay=".6s">
-                                    <h5 class="f18">主管培育+增員課程</h5>
-                                    <p class="f14">JSM管理輔導職能<br>ECT組織發展淬煉</p>
-                                </div>
-                            </ul>
+                        <div class="detail_wrap">
+                            <div class="detail bg_white" >
+                                <ul class="wow fadeIn" data-wow-delay=".2s">
+                                    <li class="f16">
+                                        <font class="f_green f18">五大面向專業技巧</font>(銷售技巧/行銷資源/客戶服務/商品教育/事務管理)</li>
+                                    <li class="pc"><img src="img/golden/ic_check.svg" alt=""></li>
+                                    <li class="pc"><img src="img/golden/ic_check.svg" alt=""></li>
+                                </ul>
+                                <ul class="wow fadeIn" data-wow-delay=".4s">
+                                    <li class="f16">
+                                        <font class="f_green f18">隨時都能自我加值</font>超過5000堂線上學習資源</li>
+                                    <li class="pc"><img src="img/golden/ic_check.svg" alt=""></li>
+                                    <li class="pc">
+                                        <img src="img/golden/ic_check.svg" alt="">
+                                    </li>
+                                    <div class="plus abs bg_yellow wow fadeIn" data-wow-delay=".6s">
+                                        <h5 class="f18">主管培育+增員課程</h5>
+                                        <p class="f14">JSM管理輔導職能<br>ECT組織發展淬煉</p>
+                                    </div>
+                                </ul>
+                                <img src="img/golden/splash_green_triple.svg" class="tiangle abs t1">
+                                <img src="img/golden/splash_green_triple.svg" class="tiangle abs t2">
+                            </div>
                         </div>
                         <div class="bottom_info W100">
                             <div >
                                 <img src="img/golden/img_p_05.png" class="abs" alt="">
                                 <p class="f_green f16">提供專屬課程，黃金三個月內快速累積五大面向專業技巧！</p>
-
+    
                             </div>
                             <div>
                                 <img src="img/golden/img_p_06.png" class="abs" alt="">
                                 <p class="f_green f16">為期2年儲備主管培育課程同步開啟業務與主管職能學習</p>
                             </div>
                         </div>
-
+    
                     </div> 
-
+    
                 </div>
-
+    
             </div>   
             
             <div id="promotion" class="W100 f_grey">
+                <img src="img/dot_1.png" class="abs dot dot1" alt="">
                 <h2 class="title f_green f40 wow fadeIn">升遷路徑<font class="f14">promotion path</font></h2>
-                <div class="W900 f_grey">
-                    <div class="f_green f19 abs wow fadeIn" data-wow-duration=".4s" data-wow-delay=".2s">
-                        <div class="bg_yellow ani_5">
-                            <img src="img/golden/draw_p_06.svg" class="people abs" alt="">
-                            當自己的
-                            <span class="f30">老闆</span>
+                <div class="promote_wrapper W100">
+                    <div class="W900 f_grey">
+                        <div class="f_green f19 abs wow fadeIn" data-wow-duration=".4s" data-wow-delay=".2s">
+                            <div class="bg_yellow ani_5">
+                                <img src="img/golden/draw_p_06.svg" class="people abs" alt="">
+                                當自己的
+                                <span class="f30">老闆</span>
+                            </div>
+                            
                         </div>
-                        
-                    </div>
-
-                    <!-- SA  -->
-                    <div class="sa wow fadeIn" data-wow-duration=".2s" data-wow-delay=".2s">
-                        <div class="buble ani_4 po4">
-                            <span><img src="img/golden/draw_p_08.svg" alt="" ></span>
-                            <h5 class="f_green f19">邁向更高階專業經理人</h5>
-                            <h6>(區部協理、區部副總...)</h6>
+        
+                        <!-- SA  -->
+                        <div class="sa wow fadeIn" data-wow-duration=".2s" data-wow-delay=".2s">
+                            <div class="buble mb_hide ani_4 po4">
+                                <span><img src="img/golden/draw_p_08.svg" alt="" ></span>
+                                <h5 class="f_green f19">邁向更高階專業經理人</h5>
+                                <h6>(區部協理、區部副總...)</h6>
+                            </div>
+                            <div class="buble mb_hide ani_3 po3">
+                                <h5 class="f_green f19">通訊處經理</h5>
+                                <h6>帶領基層主管與壽險顧問<br>掌握通訊處發展</h6>
+                                <p class="salary">年收入</p>
+                                <p class="amount f_green f16">約250~400萬</p>
+                                <div class="a1"> <img src="img/golden/ic_arrow.svg" alt=""></div>
+                            </div>
+        
+                            <div class="buble mb_hide ani_2 po2">
+                                <h5 class="f_green f19">基層業務主管</h5>
+                                <h6>管理數名壽險顧問<br>輔導其銷售技巧</h6>
+                                <p class="salary">年收入</p>
+                                <p class="amount f_green f16">約120~270萬</p>
+                                <div class="a1"> <img src="img/golden/ic_arrow.svg" alt=""></div>
+                            </div>
                         </div>
-
-                        <div class="buble ani_3 po3">
-                            <h5 class="f_green f19">通訊處經理</h5>
-                            <h6>帶領基層主管與壽險顧問<br>掌握通訊處發展</h6>
+                        <div class="buble_main ani_1 po1 bg_green f_white">
+                            <h5 class="f_yellow f19">壽險顧問</h5>
+                            <h6>專注於業務行銷與<br>客戶管理</h6>
                             <p class="salary">年收入</p>
-                            <p class="amount f_green">約250~400萬</p>
-                            <img src="img/golden/ic_arrow.svg" class="a1" alt="">
+                            <p class="amount">約45~120萬</p>
+                            <div class="a1"> <img src="img/golden/ic_arrow.svg" alt=""></div>
+                            <div class="a2 pc"> <img src="img/golden/ic_arrow.svg" alt=""></div>
                         </div>
-
-                        <div class="buble ani_2 po2">
-                            <h5 class="f_green f19">基層業務主管</h5>
-                            <h6>管理數名壽險顧問<br>輔導其銷售技巧</h6>
+                        <!--  PMA  -->
+                        <div class="pma wow fadeIn" data-wow-duration=".2s" data-wow-delay=".2s">
+                            <div class="buble mb_hide ani_3 po6">
+                                <h5 class="f_green f19">頂尖壽險顧問
+                                    <img src="img/golden/ic_crown.svg" alt="" class="abs">
+                                </h5>
+                                <h6>成為保險業菁英，以<br>高標準自我期許追求<br>MDRT、高峰會員資格為榮</h6>
+                                <p class="salary">年收入</p>
+                                <p class="amount f_green f16">約350萬以上</p>
+                            </div>
+        
+                            <div class="buble mb_hide ani_2 po5">
+                                <h5 class="f_green f19">資深壽險顧問</h5>
+                                <h6>專業並永續地經營這份<br>屬於自己的壽險事業</h6>
+                                <p class="salary">年收入</p>
+                                <p class="amount f_green f16">約110~220萬</p>
+                                <div class="a1"> <img src="img/golden/ic_arrow.svg" alt=""></div>
+                            </div>
+                        </div>
+        
+                        <div class="buble_main ani_1 po1 bg_green f_white mb">
+                            <h5 class="f_yellow f19">壽險顧問</h5>
+                            <h6>專注於業務行銷與<br>客戶管理</h6>
                             <p class="salary">年收入</p>
-                            <p class="amount f_green">約120~270萬</p>
-                            <img src="img/golden/ic_arrow.svg" class="a1" alt="">
+                            <p class="amount">約45~120萬</p>
+                            <div class="a1"> <img src="img/golden/ic_arrow.svg" alt=""></div>
+                            <img src="img/golden/ic_arrow.svg" alt="" class="a2 pc">
                         </div>
                     </div>
-                    <div class="buble_main ani_1 po1 bg_green f_white">
-                        <h5 class="f_yellow f19">壽險顧問</h5>
-                        <h6>專注於業務行銷與<br>客戶管理</h6>
-                        <p class="salary">年收入</p>
-                        <p class="amount">約45~120萬</p>
-                        <img src="img/golden/ic_arrow.svg" class="a1" alt="">
-                        <img src="img/golden/ic_arrow.svg" class="a2 pc" alt="">
-                    </div>
-                    
-
-                     <!--  PMA  -->
-                    <div class="pma wow fadeIn" data-wow-duration=".2s" data-wow-delay=".2s">
-                        <div class="buble ani_3 po6">
-                            <h5 class="f_green f19">頂尖壽險顧問
-                                <img src="img/golden/ic_crown.svg" alt="" class="abs">
-                            </h5>
-                            <h6>成為保險業菁英，以<br>高標準自我期許追求<br>MDRT、高峰會員資格為榮</h6>
-                            <p class="salary">年收入</p>
-                            <p class="amount f_green">約350萬以上</p>
-                        </div>
-
-                        <div class="buble ani_2 po5">
-                            <h5 class="f_green f19">資深壽險顧問</h5>
-                            <h6>專業並永續地經營這份<br>屬於自己的壽險事業</h6>
-                            <p class="salary">年收入</p>
-                            <p class="amount f_green">約110~220萬</p>
-                            <img src="img/golden/ic_arrow.svg" class="a1" alt="">
-                        </div>
-                    </div>
-
-                    <div class="buble_main ani_1 po1 bg_green f_white mb">
-                        <h5 class="f_yellow f19">壽險顧問</h5>
-                        <h6>專注於業務行銷與<br>客戶管理</h6>
-                        <p class="salary">年收入</p>
-                        <p class="amount">約45~120萬</p>
-                        <img src="img/golden/ic_arrow.svg" class="a1" alt="">
-                        <img src="img/golden/ic_arrow.svg" class="a2 pc" alt="">
-                    </div>
-
                 </div>
             </div>
-
+    
             <div id="jion_" class="bg_white">
                 <h5 class="f_grey f19 wow fadeIn">
                     加入國泰，夢想即刻開始<br>
@@ -334,13 +350,14 @@
                         <p class="f_white abs f27">職場新鮮人。</p>
                         <span class="abs f_white">第一年就進高峰會 深植客戶心</span>
                     </li>
-                    
                 </ul>
-                    
-
             </div>
-
+    
             <div id="resource" class="W100 bg_white">
+                <img src="img/dot_1.png" class="abs dot dot1" alt="">
+                <img src="img/dot_1.png" class="abs dot dot2" alt="">
+                <img src="img/dot_2.png" class="abs dot dot3" alt="">
+
                 <h2 class="title f_green f40 wow fadeIn">集團資源<font class="f14">Group resources</font></h2>
                 <div class="W1040">
                     <div class="column c1 wow fadeIn" data-wow-delay=".2s">
@@ -368,7 +385,6 @@
                                 <li>在職培育：專業證照輔導，領先業界，為台灣首家CFP企業訓練機構。</li>
                             </ul>
                         </div>
-
                     </div>
                     <div class="column c2 wow fadeIn" data-wow-delay=".4s">
                         <img src="img/img_game_08.jpg" class="abs right" alt="">
@@ -403,11 +419,8 @@
                                 <li class="f_white f15">業務競賽獎勵、年終獎金、 中秋/端午代金、婚喪補助、子女教育補助、生日禮物</li>
                             </ul>
                         </div>
-                        
                     </div>
-
                 </div>
-
             </div>
         </div>
 

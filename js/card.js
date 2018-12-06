@@ -21,6 +21,7 @@
             },
             random_num: 0,
             canvas: null,
+            
         },
         computed: {
             finalName() {

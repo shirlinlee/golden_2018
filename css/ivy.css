@@ -1,0 +1,254 @@
+*{
+	-webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling:touch;
+}
+/*據點*/
+.loca_banner .search_area div.filter .select_wrapper::after{
+	border-width: 8px 6px 0 6px;
+	right: 5px;
+}
+#wrapper > div#act_banner .bg_yellow .f_green{
+	font-weight: bold;
+}
+.loca_banner .search_area div p{
+	font-weight: bold;
+}
+.act_wrapper li .title h3{
+	font-weight: bold;
+}
+#wrapper > div#act_banner .flag span{
+	font-weight: bold;
+}
+.store_wrapper li h4{
+	font-weight: bold;
+}
+.store_wrapper li .act_btn{
+	font-weight: bold;
+}
+#store_content .title_act{
+	font-weight: bold;
+}
+.store_wrapper li .detail h5{
+	font-weight: bold;
+}
+.store_wrapper li p{
+	padding-right: 10px;
+}
+.loca_banner .search_area div.filter .input_wrapper input{
+	background-position: 99% 20%;
+}
+/*高登計畫*/
+#game h2 span{
+	font-weight: bold;
+}
+#intro li{
+	font-weight: 400;
+}
+#promotion .buble h5, #promotion .buble_main h5{
+	font-weight: bold;
+}
+#promotion .buble, #promotion .buble_main{
+	border: #008944 1px solid;
+}
+#resource .column li.f_yellow{
+	font-weight: bold;
+}
+#training ul li.f16 .f_green{
+	font-weight: bold;
+}
+#training .tab_area .tab span{
+	font-weight: bold;
+}
+#promotion .buble, #promotion .bg_green{
+	
+}
+/*夢想故事*/
+.main2 .picdiv p:nth-child(1){
+
+}
+
+/*=================Desktop=================*/
+@media screen and (min-width: 1024px){
+	/*夢想故事*/
+	.paddingTop{
+		padding-top: 74px;
+	}
+	.main2 .picdiv p:nth-child(1){
+		font-weight: 700;
+    	font-size: 1.9em;
+    	left: 30px;
+    	top: 25px;
+	}
+	.main2 .picdiv p:nth-child(2){
+		font-weight: 500;
+		top: 63px;
+		left: 30px;
+		font-size: 1.1em;
+	}
+	.main2 .picdiv p:nth-child(3){
+		font-weight: 500;
+		left: 30px;
+	}
+	.main2 .picdiv:before{
+		background-color: rgba(0,0,0, 1);
+    	opacity: 0.3;
+	}
+	.main2 .picdiv .hovered .inside span{
+		font-size: 18px;
+	}
+	.main2 .picdiv .hovered .inside img{
+		transform: scale(1.3);
+	}
+	.main1 .intro .intro2 .inword p:nth-child(2){
+		margin-top: 0;
+	}
+	.main1 .intro .intro2 .inword p:nth-child(3){
+		margin-top: 10px;
+    	margin-left: 6px;
+	}
+	.main1 .intro .intro2 .inword p:nth-child(4){
+		margin-top: 10px;
+	}
+	/*夢想故事 內頁*/
+	.main3 .btnright, .btnleft{
+		top: calc((100% - 280px) / 2);
+	}
+	/*.main3 .rectbig .intro2 .inword p:nth-child(1) {
+		font-weight: 400;
+	}*/
+	/*.main3 .rectbig .intro2 img{
+		margin-left: 7%;
+	}
+	.main3 .rectbig .intro2 .inword{
+		width: 50%;
+    	margin-left: 5%;
+	}*/
+	.main4 .sec2 .cendiv .story h1, .main4 .sec3 .cendiv .story h1{
+		margin-bottom: 25px;
+	}
+	/*.main3 .rectbig .intro2 .inword p:nth-child(3){
+		margin-top: 0;
+	}*/
+	/*.main3 .rectbig .intro2 .inword p:nth-child(5){
+		font-size: 22px;
+	}*/
+	/*.main3 .rectbig .intro2 .inword p:nth-child(4){
+		margin-top: 45%;
+   		margin-left: 2%;
+	}*/
+	/*首頁*/
+	.filter .input_wrapper input::-webkit-input-placeholder {
+		color: #333;
+	}
+	.filter .input_wrapper input::-moz-placeholder {
+		color: #333;
+	}
+	.filter .input_wrapper input:-ms-input-placeholder {
+		color: #333;
+	}
+	.filter .select_wrapper::after{
+		border-width: 8px 6px 0 6px;
+		right: 3px;
+	}
+	.location-box .title{
+		margin-bottom: -70px;
+    	max-height: 140px;
+    	transform: rotate(-5deg);
+	}
+	.filter .select_wrapper select{
+		color: #333;
+	}
+	/*高登計畫*/	
+	#jion_ li p{
+		top: 20px;
+    	left: 30px;
+    	font-weight: bold;
+	}
+	#jion_{
+		padding: 120px 0 40px 0;
+	}
+	#resource .column ul img{
+		transform: scale(1) translate(0, -50%);
+	}
+	#resource .column li{
+		padding-left: 100px;
+	}
+	#resource .column li:before{
+		left: 83px;
+	}
+	#resource .column.c1 div{
+		padding-left: 24%;
+	}
+	
+	#resource .column > div{
+		padding: 45px 50px;
+	}
+	
+	#career{
+		padding: 50px 0 110px;
+	}
+	#career .W50 li font{
+		font-size: 18px;
+	}
+	#training ul .plus h5{
+		font-weight: bold;
+	}
+	/*營業據點*/
+	.store_wrapper li{
+		padding: 40px 20px;
+	}
+	.store_wrapper li .act_btn, .store_wrapper li .fb_btn{
+		top: 52px;
+	}
+	.loca_banner .search_area .title{
+		max-width: 340px;
+	}
+	
+}
+/*=================Notebook=========================*/
+@media screen and (min-width: 771px) and (max-width: 1440px){
+	/*夢想故事 內頁*/
+	.main3 .btnright, .btnleft{
+		top: calc((100% - 160px) / 2);
+	}
+}
+/*=================Mobile=================*/
+@media screen and (max-width: 770px){
+/*	.main3 .darkbottom .word span#mainti:nth-child(2){
+		font-weight: bold;
+	}*/
+	.main3 .darkbottom .word span:nth-child(2){
+		margin-left: 30px;
+	}
+}
+@media only screen and (max-width: 516px){
+	.loca_banner .search_area div p{
+		font-size: 14px;
+		/*letter-spacing: 1px;*/
+	}
+	.loca_banner .search_area div .logo{
+		width: 95px;
+		margin-top: -3px;
+	}
+	#wrapper #store_content{
+		/*padding-right: 30px;
+		padding-left: 30px;*/
+	}
+	.store_wrapper li{
+		padding: 30px 10px;
+	}
+	.store_wrapper li .fb_btn{
+		top: 30px;
+		right: 13px;
+	}
+	.store_wrapper li .act_btn{
+		margin-bottom: 6px;
+	}
+	.loca_banner .search_area{
+		height: 210px;
+		padding: 30px 15px;
+	}
+	.loca_banner .search_area div.filter .input_wrapper{
+		margin-top: 0px;
+	}
+}

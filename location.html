@@ -14,6 +14,7 @@
         
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/init.css" />
         <link rel="stylesheet" href="css/location.css" />
         
     </head>
@@ -29,7 +30,7 @@
                 </div>
                 <div class="bg_yellow abs"  onclick="gtag('event', 'click', { event_category:'location_click', event_action: 'go_act_hot_banner'});">
                     <h6 class="f_green f19">{{ actBannerTitle }}</h6>
-                    <span class="f14">{{ actBannerDes }}</span>
+                    <span class="f16">{{ actBannerDes }}</span>
                 </div>
             </div> 
             <div class="bg_green loca_banner W100">
@@ -57,90 +58,98 @@
                             <a href="javascript:;" class="abs sent" @click="serch()"></a>
                         </div>
                     </div>
+                    <img src="img/golden/draw_p_03.svg" alt=""  class="people abs">
                     <!-- <img src="img/img_location_01.png" class="people abs" alt=""> -->
                 </div>
             </div>
             <div class="bg_grey W100" id="store_content">
-                
-                <div class="W1040 mb_scroll" >
-                    <div class="map_area">
-                        <div class="a_06" :class="{'show': current_area === '宜花東' }"><img src="img/map/map_area_06.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_06_hover.png" width="100%" class="green" alt=""></div>
-                        <div class="a_01" :class="{'show': current_area === '大台北' }"><img src="img/map/map_area_01.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_01_hover.png" width="100%" class="green" alt=""></div>
-                        <div class="a_02" :class="{'show': current_area === '桃竹苗' }"><img src="img/map/map_area_02.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_02_hover.png" width="100%" class="green" alt=""></div>
-                        <div class="a_03" :class="{'show': current_area === '中彰投' }"><img src="img/map/map_area_03.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_03_hover.png" width="100%" class="green" alt=""></div>
-                        <div class="a_05" :class="{'show': current_area === '高屏' }"><img src="img/map/map_area_05.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_05_hover.png" width="100%" class="green" alt=""></div>
-                        <div class="a_04" :class="{'show': current_area === '雲嘉南' }"><img src="img/map/map_area_04.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_04_hover.png" width="100%" class="green" alt=""></div>
-                        <div class="a_07" :class="{'show': current_area === '離島' }"><img src="img/map/map_area_07.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_07_hover.png" width="100%" class="green" alt=""></div>
-                        <img src="img/map/map_line.png" class="line" width="100%" alt=""> 
-                        <!-- <img src="img/map_location.png" class="line" width="100%" alt="">  -->
-                        
-                        <span class="pin_01" :class="{'show': current_area === '大台北' }" @click="areaHandler('大台北')"></span>
-                        <span class="pin_02" :class="{'show': current_area === '桃竹苗' }" @click="areaHandler('桃竹苗')"></span>
-                        <span class="pin_03" :class="{'show': current_area === '中彰投' }" @click="areaHandler('中彰投')"></span>
-                        <span class="pin_04" :class="{'show': current_area === '雲嘉南' }" @click="areaHandler('雲嘉南')"></span>
-                        <span class="pin_05" :class="{'show': current_area === '高屏' }" @click="areaHandler('高屏')"></span>
-                        <span class="pin_06" :class="{'show': current_area === '宜花東' }" @click="areaHandler('宜花東')"></span>
-                        <span class="pin_07" :class="{'show': current_area === '離島' }" @click="areaHandler('離島')"></span>
+                <div class="W1040 sec1">
+                    <div class="W900">
+                        <div class="map_area">
+                            <div class="a_06" :class="{'show': current_area === '宜花東' }"><img src="img/map/map_area_06.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_06_hover.png" width="100%" class="green" alt=""></div>
+                            <div class="a_01" :class="{'show': current_area === '大台北' }"><img src="img/map/map_area_01.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_01_hover.png" width="100%" class="green" alt=""></div>
+                            <div class="a_02" :class="{'show': current_area === '桃竹苗' }"><img src="img/map/map_area_02.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_02_hover.png" width="100%" class="green" alt=""></div>
+                            <div class="a_03" :class="{'show': current_area === '中彰投' }"><img src="img/map/map_area_03.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_03_hover.png" width="100%" class="green" alt=""></div>
+                            <div class="a_05" :class="{'show': current_area === '高屏' }"><img src="img/map/map_area_05.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_05_hover.png" width="100%" class="green" alt=""></div>
+                            <div class="a_04" :class="{'show': current_area === '雲嘉南' }"><img src="img/map/map_area_04.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_04_hover.png" width="100%" class="green" alt=""></div>
+                            <div class="a_07" :class="{'show': current_area === '離島' }"><img src="img/map/map_area_07.png" width="100%" class="yellow" alt=""><img src="img/map/map_area_07_hover.png" width="100%" class="green" alt=""></div>
+                            <img src="img/map/map_line.png" class="line" width="100%" alt=""> 
+                            <!-- <img src="img/map_location.png" class="line" width="100%" alt="">  -->
+                            
+                            <span class="pin_01" :class="{'show': current_area === '大台北' }" @click="areaHandler('大台北')"></span>
+                            <span class="pin_02" :class="{'show': current_area === '桃竹苗' }" @click="areaHandler('桃竹苗')"></span>
+                            <span class="pin_03" :class="{'show': current_area === '中彰投' }" @click="areaHandler('中彰投')"></span>
+                            <span class="pin_04" :class="{'show': current_area === '雲嘉南' }" @click="areaHandler('雲嘉南')"></span>
+                            <span class="pin_05" :class="{'show': current_area === '高屏' }" @click="areaHandler('高屏')"></span>
+                            <span class="pin_06" :class="{'show': current_area === '宜花東' }" @click="areaHandler('宜花東')"></span>
+                            <span class="pin_07" :class="{'show': current_area === '離島' }" @click="areaHandler('離島')"></span>
+                        </div>
+                        <h5 class="f_green f24 title_act Noto_Black"><img src="img/svg/store_like.svg"/>推薦活動</h5>
                     </div>
-                    <ul class="act_wrapper" :style="{width: slideWidth}">
-                        <li class="bg_green" v-for="(act,index) in allAct" @click="hot_act('網址',index+1)" v-if=" index<3 && domain===''"> <!--    -->
-                            <div class="img_area" :style="{ backgroundImage: backgroundFunc(act.ImgSrc) }">
-                                <img src="img/act_frame.png" alt="">
-                            </div>
-                            <div class="title"><h3 class="f_white f19">{{ act.Subject }}</h3></div>
-                            <p class="location f_white f14 icon_bg"><span class="icon-ic_location"></span>{{ act.Location }}</p>
-                            <p class="time f_white f14 icon_bg"><span class="icon-ic_time"></span>{{ act.Date }} {{ timeModify(act.Time) }}</p>
-                        </li>
+                    <div class="W900 mb_scroll">
                         
-                        <!--  塞測試資料   -->
-                        <li class="bg_green" v-for="(act,index) in actNumber" @click="hot_act('網址',index+1)" v-if="domain!==''"> 
-                            <div class="img_area" style="background-image:url(img/img_game_07.jpg)">
-                                <img src="img/act_frame.png" alt="">
-                            </div>
-                            <div class="title"><h3 class="f_white f19">北海岸淨灘</h3></div>
-                            <p class="location f_white f14 icon_bg"><span class="icon-ic_location"></span>基隆北海岸基隆北海岸基隆北海岸基隆北海岸基隆北海岸</p>
-                            <p class="time f_white f14 icon_bg"><span class="icon-ic_time"></span>6/27 早上9點</p>
-                        </li>
-                       
-                    </ul>
-                </div>
-                <div class="W1040">
-                    <ul class="store_wrapper">
-                        <li class="W100 f_grey" v-for="(store,i) in allStore" ref="i">
-                            <div class="info">
-                                <h4 class="f16 W100">{{ store.StoreName }}</h4>
-                                <p class="location f13 icon_bg"><span class="icon-ic_location"></span>{{ store.Address }}</p>
-                                <p class="phone f13 icon_bg"><span class="icon-ic_phone"></span>{{ store.Tel }}</p>
-                                <a href="javascript:;" class="act_btn abs f_green f13 bg_white" @click="seeAct(i, store.StoreName)" v-if="store.Activities.length && domain===''">最新活動</a>
-                                <a href="javascript:;" class="act_btn abs f_green f13 bg_white" @click="seeAct(i, store.StoreName )" v-if="domain!==''">最新活動</a>
-
-                                <a href="javascript:;" class="fb_btn bg_yellow abs" @click="fb_click(store.Fb, store.StoreName)"><img src="img/svg/ic_fb.svg" width="100%" alt=""></a>
-                            </div>
-                            <div class="bg_green detail" v-if="store.Activities.length && domain===''">
-                                <div class="img_wrapper abs" :style="{ backgroundImage: backgroundFunc(store.Activities[0].ImgSrc)}"></div>
-                                <h5 class="f_yellow f16 W100">{{ store.Activities[0].Subject }}</h5>
-                                <p class="f_white f13 location icon_bg"><span class="icon-ic_location"></span>{{ store.Activities[0].Location }}</p>
-                                <p class="f_white f13 time icon_bg"><span class="icon-ic_time"></span>{{ store.Activities[0].Date }} {{ timeModify(store.Activities[0].Time) }}</p>
-                            </div>
+                        <ul class="act_wrapper" :style="{width: slideWidth}">
+                            <li class="bg_green" v-for="(act,index) in allAct" @click="hot_act('網址',index+1)" v-if=" index<3 && domain===''"> <!--    -->
+                                <div class="img_area">
+                                    <img src="img/act_frame.png" :style="{ backgroundImage: backgroundFunc(act.ImgSrc) }" alt="">
+                                </div>
+                                <div class="title"><h3 class="f_white f19">{{ act.Subject }}</h3></div>
+                                <p class="location f_white f16 icon_bg"><span class="icon-ic_location"></span>{{ act.Location }}</p>
+                                <p class="time f_white f16 icon_bg"><span class="icon-ic_time"></span>{{ act.Date }} {{ timeModify(act.Time) }}</p>
+                            </li>
+                            
                             <!--  塞測試資料   -->
-                            <div class="bg_green detail" v-if="domain!==''">
-                                <div class="img_wrapper abs" style="background-image:url(img/img_game_07.jpg)"></div>
-                                <h5 class="f_yellow f16 W100">北海岸淨灘</h5>
-                                <p class="f_white f13 location icon_bg"><span class="icon-ic_location"></span>基隆北海岸基隆北海岸基隆北海岸基隆北海岸基隆北海岸</p>
-                                <p class="f_white f13 time icon_bg"><span class="icon-ic_time"></span>6/27 早上9點</p>
-                            </div>
-                        </li>
+                            <li class="bg_green" v-for="(act,index) in actNumber" @click="hot_act('網址',index+1)" v-if="domain!==''"> 
+                                <div class="img_area">
+                                    <img src="img/act_frame.png" style="background-image:url(img/img_game_07.jpg)" alt="">
+                                </div>
+                                <div class="title"><h3 class="f_white f19">北海岸淨灘</h3></div>
+                                <p class="location f_white f16 icon_bg"><span class="icon-ic_location"></span>基隆北海岸基隆北海岸基隆北海岸基隆北海岸基隆北海岸</p>
+                                <p class="time f_white f16 icon_bg"><span class="icon-ic_time"></span>6/27 早上9點</p>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                </div>   
+                <div class="W1040">
+                    <div class="W900">
+                        <ul class="store_wrapper">
+                            <li class="W100 f_grey" v-for="(store,i) in allStore" ref="i">
+                                <div class="info">
+                                    <h4 class="f18 W100">{{ store.StoreName }}</h4>
+                                    <p class="location f16 icon_bg"><span class="icon-ic_location"></span>{{ store.Address }}</p>
+                                    <p class="phone f16 icon_bg"><span class="icon-ic_phone"></span>{{ store.Tel }}</p>
+                                    <a href="javascript:;" class="act_btn abs f_green f16 bg_white" @click="seeAct(i, store.StoreName)" v-if="store.Activities.length && domain===''">最新活動</a>
+                                    <a href="javascript:;" class="act_btn abs f_green f16 bg_white" @click="seeAct(i, store.StoreName )" v-if="domain!==''">最新活動</a>
 
-                    </ul>                                
+                                    <a href="javascript:;" class="fb_btn bg_yellow abs" @click="fb_click(store.Fb, store.StoreName)"><img src="img/svg/ic_fb.svg" width="100%" alt=""></a>
+                                </div>
+                                <div class="bg_green detail" v-if="store.Activities.length && domain===''">
+                                    <div class="img_wrapper abs" :style="{ backgroundImage: backgroundFunc(store.Activities[0].ImgSrc)}"></div>
+                                    <h5 class="f_yellow f18 W100">{{ store.Activities[0].Subject }}</h5>
+                                    <p class="f_white f16 location icon_bg"><span class="icon-ic_location"></span>{{ store.Activities[0].Location }}</p>
+                                    <p class="f_white f16 time icon_bg"><span class="icon-ic_time"></span>{{ store.Activities[0].Date }} {{ timeModify(store.Activities[0].Time) }}</p>
+                                </div>
+                                <!--  塞測試資料   -->
+                                <div class="bg_green detail" v-if="domain!==''">
+                                    <div class="img_wrapper abs" style="background-image:url(img/img_game_07.jpg)"></div>
+                                    <h5 class="f_yellow f18 W100">北海岸淨灘</h5>
+                                    <p class="f_white f16 location icon_bg"><span class="icon-ic_location"></span>基隆北海岸基隆北海岸基隆北海岸基隆北海岸基隆北海岸</p>
+                                    <p class="f_white f16 time icon_bg"><span class="icon-ic_time"></span>6/27 早上9點</p>
+                                </div>
+                            </li>
 
-                </div> 
+                        </ul>                                
+
+                    </div> 
+                </div>
                 <img src="img/store_draw_01.svg" class="abs people" alt="">                       
 
             </div> 
              
             <div class="black_cover" :class="{'show':showActBanner}" @click="showActBanner=false"></div>             
             
-            
+            <a href="javascript:;" @click="goTop" class="go_top" :class="{'hide': isHide}"></a>    
         </div>
 
         <!-- <a href="javascript:;">CLCIK</a> -->

@@ -30,6 +30,8 @@
 }
 .icon-ic_time:before {
   content: "\e901";
+  font-size: 14px;
+  padding-left: 1px;
 }
 .icon-ic_phone:before {
   content: "\e902";

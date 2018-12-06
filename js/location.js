@@ -1,6 +1,8 @@
 var app = new Vue({
     el: '#wrapper',
     data: {
+        $body: null,
+        isHide: false,
         geocoder: null,
         current_location:null,
         current_area: null,
@@ -17,7 +19,7 @@ var app = new Vue({
         actBannerDes: '',
         actBannerPic: '',
         from_index: false,
-        actNumber: 2
+        actNumber: 3
     },
     computed: {
         slideWidth(){
@@ -48,7 +50,7 @@ var app = new Vue({
     },
     mounted() {
         //檢查網址是否從首頁來
-
+        this.$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 
         this.$nextTick( ()=> {
             if(!this.from_index) {
@@ -61,12 +63,21 @@ var app = new Vue({
             
             window.addEventListener("keydown", (e)=> {
                 // console.log(e);
-               
                 if( e.keyCode === 13 ) { 
                     e.preventDefault();
                     this.serch();
                 }
             })
+            window.addEventListener("scroll", (e)=> {
+                if(!this.isHide) {
+                    var scrollVal =  $(window).scrollTop();
+                    this.isHide = true;
+                    setTimeout(()=> {
+                        this.isHide = false;
+                    },500)
+                }
+            });
+
             gtag('config', 'UA-129178589-1', {
                 'page_title': '全台夢想據點',
                 'page_path': '/location'
@@ -236,12 +247,12 @@ var app = new Vue({
                     }
                 }
             });
-            if(this.allStore.length == 0){
-                swal({
-                    text: '搜尋沒有結果哦！',
-                    confirmButtonColor: '#00a83c',
-                });
-            }
+            // if(this.allStore.length == 0){
+            //     swal({
+            //         text: '搜尋沒有結果哦！',
+            //         confirmButtonColor: '#00a83c',
+            //     });
+            // }
             this.notyet = false;
         },            
         getAreaAct() {
@@ -374,6 +385,9 @@ var app = new Vue({
             var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
                 results = regex.exec(location.search);
             return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        },
+        goTop() {
+            this.$body.animate({scrollTop: 0}, 800);
         }
 
     }

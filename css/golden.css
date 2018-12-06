@@ -183,7 +183,7 @@ body, html {
     font-size: 13px;
   }
   .f16 {
-    font-size: 15px;
+    font-size: 14px;
   }
   .f18 {
     font-size: 17px;
@@ -229,6 +229,25 @@ body, html {
   }
 }
 
+@font-face {
+  font-family: 'RobotoBold';
+  src: url(../fonts/Roboto-Bold.ttf);
+}
+
+h2 {
+  font-weight: bold;
+}
+
+h2 font {
+  font-weight: bold;
+}
+
+.dot {
+  z-index: 0;
+  width: 35%;
+  max-width: 500px;
+}
+
 #wrapper {
   text-align: center;
   padding: 0;
@@ -270,23 +289,24 @@ body, html {
 
 #wrapper > .draw {
   top: 60px;
-  left: -40px;
+  left: -55px;
   width: 20%;
-  max-width: 140px;
-  font-size: 16px;
+  max-width: 150px;
   white-space: nowrap;
 }
 
 @media only screen and (max-width: 516px) {
   #wrapper > .draw {
-    left: 40%;
+    left: 35%;
     margin-left: -50px;
+    min-width: 90px;
   }
 }
 
 @media only screen and (max-width: 516px) {
   #wrapper > .draw img {
     transform: rotate(-25deg) translate(-10px, -20px);
+    min-width: 80px;
   }
 }
 
@@ -319,6 +339,18 @@ body, html {
   }
 }
 
+#game .dot1 {
+  right: 0;
+  top: 15%;
+  transform: translate(50%, -50%) rotate(0deg);
+}
+
+#game .dot2 {
+  left: 0;
+  top: 66%;
+  transform: translate(-96%, -50%) rotate(261deg);
+}
+
 #game h2 {
   letter-spacing: 2.4px;
   position: relative;
@@ -326,12 +358,14 @@ body, html {
 
 #game h2 span {
   position: relative;
+  font-weight: bold;
 }
 
 #game h2 font {
-  font-family: Roboto;
+  font-family: 'RobotoBold';
+  font-weight: 800;
   color: #eeeded;
-  font-size: 110px;
+  font-size: 115px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -352,6 +386,13 @@ body, html {
   }
 }
 
+@media only screen and (min-width: 769px) {
+  #game .select_area .W50:hover .icon {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+}
+
 #game .select_area .icon {
   display: block;
   margin: 60px auto;
@@ -360,6 +401,7 @@ body, html {
   height: 125px;
   opacity: .3;
   filter: grayscale(100%);
+  transition: all .4s;
 }
 
 @media only screen and (max-width: 516px) {
@@ -377,18 +419,13 @@ body, html {
   }
 }
 
-#game .select_area .icon:hover {
-  filter: grayscale(0);
-  opacity: 1;
-}
-
 #game .select_area .icon.choose {
   filter: grayscale(0);
   opacity: 1;
 }
 
 #game .select_area .draw {
-  max-width: 100%;
+  max-width: 214px;
   display: block;
   margin: 40px auto 0;
 }
@@ -532,14 +569,15 @@ body, html {
   transition: opacity .5s .4s;
 }
 
-#result:before {
+#result:after {
   content: '';
   position: absolute;
+  display: block;
+  height: 75px;
+  width: 1px;
   top: 0;
   left: 50%;
-  transform: translate(-50%, -35px);
-  height: 70px;
-  width: 1px;
+  transform: translate(0, -50%);
   background-color: #01883f;
 }
 
@@ -589,6 +627,10 @@ body, html {
   #result .analysis .bg_green ul, #result .analysis .bg_green h5 {
     padding-left: 32%;
   }
+}
+
+#result .analysis .bg_green h5 {
+  font-weight: bold;
 }
 
 #result .analysis .bg_green h5:after {
@@ -642,7 +684,7 @@ body, html {
   }
 }
 
-#result .analysis .bg_white:after {
+#result .analysis .bg_white p:after {
   content: '“';
   font-size: 100px;
   color: #01883f;
@@ -655,11 +697,34 @@ body, html {
 }
 
 @media only screen and (max-width: 516px) {
-  #result .analysis .bg_white:after {
+  #result .analysis .bg_white p:after {
     font-size: 65px;
     top: 16px;
     left: 16px;
   }
+}
+
+#result .analysis .bg_white:after, #result .analysis .bg_white:before {
+  content: '';
+  position: absolute;
+  display: block;
+  background-size: 24px;
+  background-image: url(../img/golden/splash_yellow.svg);
+  z-index: 1;
+}
+
+#result .analysis .bg_white:after {
+  height: 7px;
+  left: 10px;
+  width: 100%;
+  bottom: -7px;
+}
+
+#result .analysis .bg_white:before {
+  height: 100%;
+  right: -7px;
+  width: 7px;
+  top: 15px;
 }
 
 #result .analysis .bg_white .people {
@@ -668,6 +733,7 @@ body, html {
   right: 0;
   transform: translate(60%, 45%);
   max-width: 170px;
+  z-index: 6;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -697,6 +763,13 @@ body, html {
   }
 }
 
+#result .analysis .bg_white .tiangle {
+  bottom: 0px;
+  right: 30%;
+  transform: translate(0, 100%);
+  z-index: 6;
+}
+
 #result .analysis li {
   line-height: 44px;
   margin-bottom: 15px;
@@ -721,14 +794,14 @@ body, html {
 
 #result.hide {
   height: 0;
-  opacity: 0;
   padding: 0;
 }
 
 #intro {
+  position: relative;
   overflow: hidden;
   background-color: #fff;
-  padding: 100px 0 110px;
+  padding: 100px 0 70px;
   display: inline-block;
 }
 
@@ -736,6 +809,12 @@ body, html {
   #intro {
     padding: 100px 0 0;
   }
+}
+
+#intro .dot1 {
+  right: 0;
+  top: 100px;
+  max-width: 150px;
 }
 
 #intro .people {
@@ -774,6 +853,7 @@ body, html {
 
 #intro .bg_green h5 {
   line-height: 1.3;
+  font-weight: bold;
 }
 
 #intro .bg_green h5:after {
@@ -830,6 +910,8 @@ body, html {
 
 #intro .bg_yellow h5 {
   color: #01883f;
+  line-height: 1.3;
+  font-weight: bold;
 }
 
 #intro .bg_yellow h5:after {
@@ -882,6 +964,7 @@ body, html {
 }
 
 #career {
+  position: relative;
   overflow: hidden;
   background-color: #fff;
   padding: 100px 0 110px;
@@ -892,6 +975,23 @@ body, html {
   #career {
     padding: 90px 0 60px;
   }
+}
+
+#career .title {
+  margin-bottom: 80px;
+}
+
+#career .dot1 {
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -40%);
+}
+
+#career .dot2 {
+  max-width: 150px;
+  left: 0;
+  bottom: 10%;
+  transform: rotate(50deg);
 }
 
 #career > .W1040 {
@@ -971,7 +1071,8 @@ body, html {
 }
 
 #career .W50 .des h3 {
-  line-height: 1.1;
+  line-height: 1.2;
+  font-weight: bold;
   padding-bottom: 10px;
   letter-spacing: 3px;
   position: relative;
@@ -1118,6 +1219,9 @@ body, html {
 }
 
 @media only screen and (max-width: 516px) {
+  #career .W50.sa .people {
+    padding-bottom: 30px;
+  }
   #career .W50.sa .people img {
     max-width: 120px;
     margin-left: -5%;
@@ -1146,7 +1250,7 @@ body, html {
 
 @media only screen and (max-width: 516px) {
   #career .W50.pma {
-    margin-top: 50px;
+    margin-top: 10px;
   }
 }
 
@@ -1241,6 +1345,7 @@ body, html {
 }
 
 #training {
+  position: relative;
   overflow: hidden;
   padding: 120px 0;
 }
@@ -1249,6 +1354,18 @@ body, html {
   #training {
     padding: 120px 0;
   }
+}
+
+@media only screen and (max-width: 516px) {
+  #training {
+    padding: 80px 0;
+  }
+}
+
+#training .dot1 {
+  left: 0;
+  top: 25%;
+  transform: translate(-50%, -50%) rotate(-90deg);
 }
 
 #training h2.title:before {
@@ -1284,9 +1401,9 @@ body, html {
 #training .W1040 .p2 {
   width: 20%;
   max-width: 290px;
-  bottom: -50px;
+  bottom: 0;
   right: 0;
-  transform: translate(60%, -10%);
+  transform: translate(60%, -33%);
 }
 
 #training .content {
@@ -1358,15 +1475,69 @@ body, html {
   stroke-miterlimit: 10;
 }
 
+#training .detail_wrap {
+  position: relative;
+}
+
+#training .detail_wrap:after {
+  content: '';
+  position: absolute;
+  display: block;
+  background-color: #fff43c;
+  width: 20px;
+  height: 15px;
+  right: -27px;
+  bottom: -15px;
+  z-index: 5;
+}
+
 #training .detail {
   vertical-align: -webkit-baseline-middle;
   padding: 25px 5% 105px 25px;
+  position: relative;
 }
 
 @media only screen and (max-width: 516px) {
   #training .detail {
     padding: 5px 5% 135px 25px;
   }
+}
+
+#training .detail:after, #training .detail:before {
+  content: '';
+  position: absolute;
+  display: block;
+  background-size: 24px;
+  background-image: url(../img/golden/splash_green.svg);
+  z-index: 1;
+}
+
+#training .detail:after {
+  height: 7px;
+  left: 15px;
+  width: 100%;
+  bottom: -7px;
+}
+
+#training .detail:before {
+  height: 110%;
+  right: -7px;
+  width: 7px;
+  top: -10%;
+}
+
+#training .detail .tiangle {
+  width: 80px;
+  bottom: -22px;
+  z-index: 5;
+}
+
+#training .detail .t1 {
+  left: 45%;
+}
+
+#training .detail .t2 {
+  left: 75%;
 }
 
 #training ul {
@@ -1530,8 +1701,8 @@ body, html {
 }
 
 #promotion {
+  position: relative;
   padding: 80px 0 90px;
-  overflow: hidden;
   background-image: url(../img/golden/img_bg_resource.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -1552,19 +1723,25 @@ body, html {
   }
 }
 
-#promotion > div {
+#promotion .dot1 {
+  right: 0;
+  top: 0;
+  transform: translate(57%, -19%) rotate(100deg);
+}
+
+#promotion .W900 {
   position: relative;
   height: 550px;
 }
 
 @media only screen and (max-width: 1024px) {
-  #promotion > div {
+  #promotion .W900 {
     height: 690px;
   }
 }
 
 @media only screen and (max-width: 516px) {
-  #promotion > div {
+  #promotion .W900 {
     height: inherit;
   }
 }
@@ -1655,7 +1832,7 @@ body, html {
   padding: 25px 0;
   line-height: 1.4;
   opacity: 0;
-  transition: opacity .4s;
+  transition: all .4s;
 }
 
 #promotion .buble.ani_1, #promotion .buble_main.ani_1 {
@@ -1674,9 +1851,13 @@ body, html {
   transition-delay: 1.2s;
 }
 
-#promotion .buble > img, #promotion .buble_main > img {
+#promotion .buble > div, #promotion .buble_main > div {
   width: 35px;
   z-index: 10;
+}
+
+#promotion .buble > div img, #promotion .buble_main > div img {
+  width: 100%;
 }
 
 #promotion .buble h5, #promotion .buble_main h5 {
@@ -1699,7 +1880,7 @@ body, html {
 }
 
 #promotion .buble .salary, #promotion .buble_main .salary {
-  margin: 12px auto 8px;
+  margin: 12px auto 4px;
   position: relative;
   font-size: 13px;
   display: inline-block;
@@ -1744,6 +1925,30 @@ body, html {
   margin: 2px -2px;
 }
 
+@keyframes route1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes route2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-12deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 #promotion .po1 {
   width: 195px;
   height: 195px;
@@ -1755,14 +1960,24 @@ body, html {
   position: absolute;
   left: 50%;
   top: 0;
-  transform: translate(-20%, -80%) rotate(45deg) rotateY(0deg);
+  transform: translate(-20%, -80%) rotate(36deg) rotateY(0deg);
+}
+
+#promotion .po1 .a1 img {
+  animation: route1 1.5s infinite;
+  transform-origin: 140% 45%;
 }
 
 #promotion .po1 .a2 {
   position: absolute;
   left: 100%;
   top: 50%;
-  transform: translate(10%, -40%) rotate(75deg) rotateY(180deg);
+  transform: translate(20%, -30%) rotate(82deg) rotateY(180deg);
+}
+
+#promotion .po1 .a2 img {
+  animation: route1 1.5s infinite;
+  transform-origin: 125% 50%;
 }
 
 #promotion .po1 .salary {
@@ -1795,7 +2010,7 @@ body, html {
   position: absolute;
   left: 110%;
   top: 10%;
-  transform: translate(-30%, -50%) rotate(70deg) rotateY(0deg);
+  transform: translate(-30%, -68%) rotate(68deg) rotateY(0deg);
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1805,6 +2020,11 @@ body, html {
     top: 5%;
     transform: translate(-30%, -50%) rotate(50deg) rotateY(0deg);
   }
+}
+
+#promotion .po2 .a1 img {
+  animation: route1 1.5s infinite;
+  transform-origin: 140% 45%;
 }
 
 #promotion .po3 {
@@ -1839,6 +2059,11 @@ body, html {
     top: 15%;
     transform: translate(-10%, -80%) rotate(70deg) rotateY(0deg);
   }
+}
+
+#promotion .po3 .a1 img {
+  animation: route1 1.5s infinite;
+  transform-origin: 140% 45%;
 }
 
 #promotion .po4 {
@@ -1895,6 +2120,11 @@ body, html {
   }
 }
 
+#promotion .po5 .a1 img {
+  animation: route2 1.5s infinite;
+  transform-origin: 140% 45%;
+}
+
 #promotion .po6 {
   width: 260px;
   height: 260px;
@@ -1925,19 +2155,24 @@ body, html {
 }
 
 @media only screen and (max-width: 516px) {
+  #wrapper .W900 div {
+    transition: all .4s;
+    opacity: 1;
+  }
   #wrapper .buble, #wrapper .buble_main {
     position: relative;
     transform: none;
     bottom: inherit;
     left: inherit;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 30px;
   }
   #wrapper .buble > img, #wrapper .buble_main > img {
     opacity: 0;
   }
-  #wrapper .buble {
+  #wrapper .buble.mb_hide {
     height: 0;
+    margin: 0;
+    opacity: 0;
   }
   #wrapper .buble_main {
     opacity: 1;
@@ -1951,7 +2186,6 @@ body, html {
     transform: translate(-50%, -80%) rotate(0deg) rotateY(0deg);
   }
   #wrapper div.W900 .show .buble {
-    height: inherit;
     opacity: 1;
   }
 }
@@ -1964,6 +2198,12 @@ body, html {
 @media only screen and (max-width: 1024px) {
   #jion_ {
     padding: 120px 0 60px;
+  }
+}
+
+@media only screen and (max-width: 516px) {
+  #jion_ {
+    padding: 80px 0 0;
   }
 }
 
@@ -2053,9 +2293,11 @@ body, html {
   opacity: 0;
 }
 
-#jion_ li:hover:before {
-  opacity: 1;
-  cursor: pointer;
+@media only screen and (min-width: 769px) {
+  #jion_ li:hover:before {
+    opacity: 1;
+    cursor: pointer;
+  }
 }
 
 #jion_ li p {
@@ -2107,6 +2349,27 @@ body, html {
   #resource {
     padding-bottom: 0;
   }
+}
+
+#resource .dot1 {
+  right: 0;
+  top: 0;
+  transform: translate(38%, -85%) rotate(-15deg);
+}
+
+#resource .dot2 {
+  right: 0;
+  bottom: 30%;
+  transform: translate(68%, -85%) rotate(-15deg);
+}
+
+#resource .dot3 {
+  left: 0;
+  max-width: 150px;
+  top: 22%;
+  -webkit-transform: translate(38%, -30%) rotate(0deg);
+  -ms-transform: translate(38%, -30%) rotate(0deg);
+  transform: translate(-18%, -20%) rotate(105deg);
 }
 
 #resource .column {
@@ -2255,7 +2518,10 @@ body, html {
 
 @media only screen and (max-width: 516px) {
   #resource .column.c2 li {
-    padding-left: 65px;
+    padding-left: 55px;
+  }
+  #resource .column.c2 li:before {
+    display: none;
   }
 }
 

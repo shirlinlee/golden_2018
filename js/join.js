@@ -22,7 +22,8 @@
             areaData: [],
             maxHeight: '250px',
             chkmsg: [],
-            isFocus:''
+            isFocus:'',
+            isDone: false
         },
         computed: {
             availableCities() {
@@ -156,6 +157,8 @@
                            this.place.country,
                            this.birthday
                         );
+
+                        var $this = this;
                         // AJAX 送資料
                         $.ajax({
                             type: 'POST',
@@ -176,6 +179,20 @@
                                     text: '您的資料已成功送出',
                                     type: 'success',
                                     confirmButtonColor: '#00a83c',
+                                }).then((result)=> { 
+                                    $this.isDone = true;
+                                    $this.step =1;
+
+                                    $this.name='';
+                                    $this.gender='';
+                                    $this.email='';
+                                    $this.phone='';
+                                    $this.birth='';
+                                    $this.edu='';
+                                    $this.place='';
+                                    $this.dept='';
+                                    $this.chkmsg=[];
+
                                 });
                             }
                         });

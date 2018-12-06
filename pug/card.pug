@@ -6,7 +6,7 @@ block prepend own_title
     - var company = '國泰世華'
     
 block prepend own_style
-    - var cssArr = ['style','init', 'card']
+    - var cssArr = ['style','init', 'card','ivy']
     
 block prepend own_js
     - var jsArr = ['https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.1/isMobile.min.js', 'https://code.jquery.com/jquery-3.3.1.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js','https://www.googletagmanager.com/gtag/js?id=UA-129178589-1']
@@ -37,16 +37,12 @@ block wrapContent
         .title
             h1 
                 +svg('title_namecard')
-            p.word('v-if'='step == 1') 
-                span 當現實與理想可以不用再取捨，
-                span 你未來名片會是什麼樣子？
-            p.word('v-if'='step == 2')
-                span 如果工作和夢想能同時擁有，
-                span 你的名片應該長什麼樣？
-            p.word('v-if'='step == 3') 
-                span 工作與夢想，可以不用二選一
-            p.join('v-if'='step == 3') 
-                span 現在就加入國泰 
+            p.word('v-if'='step == 1') 當現實與理想可以不用再取捨，你未來名片會是什麼樣子？
+                 
+               
+            p.word('v-if'='step == 2') 如果工作和夢想能同時擁有，你的名片應該長什麼樣？
+            p.word('v-if'='step == 3') 工作與夢想，可以不用二選一
+            p.join('v-if'='step == 3') 現在就加入國泰 
                 span #讓夢想與工作一起前進
         .step1(v-show="step == 1")
             .btn

@@ -49,8 +49,10 @@ var app = new Vue({
                 animateClass: 'animated', // animation css class (default is animated)
                 duration: '.3s',
                 callback:     function(box) {
-                    // console.log(box);
+                    console.log(box);
                     $(box).addClass('show');
+                    $(box).find('.buble').removeClass('mb_hide');
+
                 },
             scrollContainer: null // optional scroll container selector, otherwise use window
             });
