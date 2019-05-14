@@ -170,191 +170,6 @@ h5 {
 h6 {
   font-weight: 700; }
 
-.trans_bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  display: none; }
-  .trans_bg img {
-    margin: 0 auto; }
-
-.trans_ipad {
-  display: none; }
-
-.trans_iphone {
-  display: none; }
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .trans_bg {
-    display: block; }
-  .trans_ipad {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: black; }
-    .trans_ipad .trans_center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center; }
-      .trans_ipad .trans_center img {
-        width: 50%; }
-      .trans_ipad .trans_center p {
-        text-align: center;
-        font-size: 1.8rem;
-        color: #FFF;
-        line-height: 1.5; } }
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
-  .trans_bg {
-    display: block; }
-  .trans_iphone {
-    display: block;
-    position: relative;
-    font-size: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    position: absolute;
-    background-color: black; }
-    .trans_iphone .trans_center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center; }
-      .trans_iphone .trans_center img {
-        width: 35%; }
-      .trans_iphone .trans_center p {
-        text-align: center;
-        font-size: 1rem;
-        color: #FFF;
-        line-height: 2rem;
-        padding-top: 1rem; } }
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
-  .trans_bg {
-    display: block; }
-  .trans_iphone {
-    display: block;
-    position: relative;
-    font-size: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    position: absolute;
-    background-color: black; }
-    .trans_iphone .trans_center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center; }
-      .trans_iphone .trans_center img {
-        width: 35%; }
-      .trans_iphone .trans_center p {
-        text-align: center;
-        font-size: 1.4rem;
-        color: #FFF;
-        line-height: 1.5;
-        padding-top: 1rem; } }
-
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
-  .trans_bg {
-    display: block; }
-  .trans_iphone {
-    display: block;
-    position: relative;
-    font-size: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    position: absolute;
-    background-color: black; }
-    .trans_iphone .trans_center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center; }
-      .trans_iphone .trans_center img {
-        width: 35%; }
-      .trans_iphone .trans_center p {
-        text-align: center;
-        font-size: 1.2rem;
-        color: #FFF;
-        line-height: 1.5;
-        padding-top: 1.3rem; } }
-
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
-  .trans_bg {
-    display: block; }
-  .trans_iphone {
-    display: block;
-    position: relative;
-    font-size: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    position: absolute;
-    background-color: black; }
-    .trans_iphone .trans_center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center; }
-      .trans_iphone .trans_center img {
-        width: 35%; }
-      .trans_iphone .trans_center p {
-        text-align: center;
-        font-size: 1.2rem;
-        color: #FFF;
-        line-height: 1.5; } }
-
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
-  .trans_bg {
-    display: block; }
-  .trans_iphone {
-    display: block;
-    position: relative;
-    font-size: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    position: absolute;
-    background-color: black; }
-    .trans_iphone .trans_center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center; }
-      .trans_iphone .trans_center img {
-        width: 35%; }
-      .trans_iphone .trans_center p {
-        text-align: center;
-        font-size: 1.2rem;
-        color: #FFF;
-        line-height: 1.5; } }
-
 .item label {
   display: inline-block;
   -webkit-transform: translate(0, 150%);
@@ -369,7 +184,8 @@ h6 {
   .item label.typed {
     -webkit-transform: translate(0, 0) scale(0.9);
     -ms-transform: translate(0, 0) scale(0.9);
-    transform: translate(0, 0) scale(0.9); }
+    transform: translate(0, 0) scale(0.9);
+    opacity: .6; }
 
 .wrap.join {
   width: 100%;
@@ -378,6 +194,7 @@ h6 {
   .wrap.join img {
     width: 100%; }
   .wrap.join .content {
+    z-index: 5;
     position: absolute;
     top: 55%;
     left: 50%;
@@ -391,11 +208,15 @@ h6 {
     align-items: center;
     width: 100%;
     max-width: 750px;
-    padding-bottom: 250px;
+    padding-bottom: 230px;
     background-size: cover; }
     @media only screen and (max-width: 516px) {
       .wrap.join .content {
-        padding-bottom: 180px; } }
+        top: 52%; } }
+    @media only screen and (max-width: 414px) {
+      .wrap.join .content {
+        padding-bottom: 180px;
+        top: 49%; } }
     @media only screen and (max-width: 320px) {
       .wrap.join .content {
         padding-bottom: 140px; } }
@@ -406,7 +227,8 @@ h6 {
       padding-left: 20px;
       padding-right: 20px; }
       .wrap.join .content .title_join h1 {
-        width: 355px;
+        width: 100%;
+        max-width: 355px;
         margin: 50px auto 30px;
         opacity: 0;
         -webkit-transform: translateY(-50px);
@@ -417,9 +239,13 @@ h6 {
         -o-transition: opacity .5s ease, transform .5s ease;
         transition: opacity .5s ease, transform .5s ease;
         transition: opacity .5s ease, transform .5s ease, -webkit-transform .5s ease; }
+        @media only screen and (max-width: 1440px) {
+          .wrap.join .content .title_join h1 {
+            max-width: 325px;
+            margin: 40px auto 20px; } }
       .wrap.join .content .title_join p {
         color: white;
-        font-family: 'Noto Sans', sans-serif;
+        font-family: 'Noto Sans',Microsoft JhengHei, sans-serif;
         font-size: 16px;
         line-height: 2;
         letter-spacing: 1.5px; }
@@ -492,6 +318,9 @@ h6 {
       transition: opacity .5s ease .45s, transform .5s ease .45s;
       transition: opacity .5s ease .45s, transform .5s ease .45s, -webkit-transform .5s ease .45s;
       z-index: 5; }
+      @media only screen and (max-width: 1440px) {
+        .wrap.join .content .infoBox {
+          margin-top: 20px; } }
       .wrap.join .content .infoBox .step1,
       .wrap.join .content .infoBox .step2,
       .wrap.join .content .infoBox .step3 {
@@ -949,9 +778,9 @@ h6 {
               bottom: -5px;
               background: white; }
           .wrap.join .content .infoBox .step3 .checkBox label label {
-            display: block;
+            display: inline-block;
             padding-left: 30px;
-            margin-left: 30px;
+            margin-left: 20px;
             line-height: 2.5;
             white-space: pre-wrap;
             word-wrap: break-word;
@@ -1009,42 +838,13 @@ h6 {
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center;
-      font-family: 'Noto Sans', sans-serif;
+      font-family: 'Noto Sans',Microsoft JhengHei, sans-serif;
       bottom: 42px;
       color: white; }
-      .wrap.join .content .progress .btnBox {
-        position: relative;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 30px;
-        opacity: 0;
-        -webkit-transform: translateY(-50px);
-        -ms-transform: translateY(-50px);
-        transform: translateY(-50px);
-        -webkit-transition: opacity .5s ease .6s, -webkit-transform .5s ease .6s;
-        transition: opacity .5s ease .6s, -webkit-transform .5s ease .6s;
-        -o-transition: opacity .5s ease .6s, transform .5s ease .6s;
-        transition: opacity .5s ease .6s, transform .5s ease .6s;
-        transition: opacity .5s ease .6s, transform .5s ease .6s, -webkit-transform .5s ease .6s; }
-        .wrap.join .content .progress .btnBox a {
-          display: inline-block;
-          font-size: 20px;
-          letter-spacing: 2px;
-          text-align: center;
-          color: #fff43c;
-          width: 250px;
-          height: 70px;
-          line-height: 70px;
-          background-color: transparent; }
-        .wrap.join .content .progress .btnBox a {
-          border: 1px solid #fff43c; }
+      .wrap.join .content .progress .button {
+        color: #fff43c;
+        border: 1px solid #fff43c;
+        margin-bottom: 15px; }
       .wrap.join .content .progress .row {
         display: -webkit-box;
         display: -webkit-flex;
@@ -1248,7 +1048,7 @@ h6 {
       -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
       transform: translateY(0); }
-    .wrap.join .content.in .progress .btnBox,
+    .wrap.join .content.in .progress .button,
     .wrap.join .content.in .progress .row {
       opacity: 1;
       -webkit-transform: translateY(0);
@@ -1256,7 +1056,7 @@ h6 {
       transform: translateY(0); }
     @media screen and (max-width: 1558px) {
       .wrap.join .content .infoBox .step3 .checkBox label label {
-        margin-left: 0; } }
+        margin-left: 10px; } }
 
 @media screen and (max-width: 1366px) and (max-height: 820px) {
   .wrap.join .content .title_join h1 {
@@ -1270,12 +1070,7 @@ h6 {
   .wrap.join .content .infoBox {
     margin-top: 10px; }
     .wrap.join .content .infoBox .step3 .checkBox {
-      font-size: 0.90312rem; }
-  .wrap.join .content .progress .btnBox a {
-    width: 177.86458px;
-    height: 49.80208px;
-    line-height: 49.80208px;
-    font-size: 16px; } }
+      font-size: 0.90312rem; } }
     @media screen and (max-width: 1100px) {
       .wrap.join .content .title_join h1 {
         margin: 30px auto 20px; }
@@ -1324,7 +1119,8 @@ h6 {
       .wrap.join .content .title_join p.join {
         margin-top: 5px;
         padding-top: 5px;
-        font-size: 16px; }
+        font-size: 16px;
+        display: none; }
         .wrap.join .content .title_join p.join:before {
           left: -25px;
           top: -5px;
@@ -1390,15 +1186,19 @@ h6 {
       .wrap.join .content .progress {
         bottom: 7px;
         padding-left: 10px; }
-        .wrap.join .content .progress .btnBox {
-          margin-bottom: 15px; }
+        .wrap.join .content .progress .button {
+          margin-bottom: 15px;
+          height: 60px;
+          line-height: 60px; }
         .wrap.join .content .progress .line {
           margin-left: 30px;
           margin-right: 20px; }
         .wrap.join .content .progress .imgBox {
           -webkit-transform: scale(0.9);
           -ms-transform: scale(0.9);
-          transform: scale(0.9); } }
+          transform: scale(0.9); }
+      .wrap.join .content .v-select .open-indicator:before {
+        margin-top: 2px; } }
     @media screen and (max-width: 413px) {
       .wrap.join .content .title_join h1 {
         margin: 15px auto 10px; }
@@ -1410,7 +1210,7 @@ h6 {
           font-size: 1.0625rem; }
         .wrap.join .content .infoBox .step3 .inputBox .item {
           margin-bottom: 0; }
-      .wrap.join .content .progress .btnBox {
+      .wrap.join .content .progress .button {
         margin-bottom: 0; } }
     @media screen and (max-width: 374px) {
       .wrap.join .content .title_join h1 {
@@ -1453,8 +1253,10 @@ h6 {
               bottom: -5px; }
       .wrap.join .content .progress {
         bottom: 2px; }
-        .wrap.join .content .progress .btnBox {
-          bottom: -5px; }
+        .wrap.join .content .progress .button {
+          bottom: -5px;
+          height: 50px;
+          line-height: 50px; }
         .wrap.join .content .progress .row .line {
           width: 130px;
           height: 3px;
@@ -1468,7 +1270,7 @@ h6 {
     @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
       .wrap.join .content .infoBox {
         margin-top: 50px; }
-      .wrap.join .content .progress .btnBox {
+      .wrap.join .content .progress .button {
         margin-bottom: 20px; } }
 
 .v-select .open-indicator:before {

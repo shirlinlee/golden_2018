@@ -147,11 +147,13 @@
         transform-origin: center center;
         transition: transform 0.25s ease-out;
     }
-
-    &:hover {
-        &:after {
-            transform: scaleX(1);
-            transform-origin: center center;
+    @media screen and (min-width: 769px){
+        &:hover {
+            
+            &:after {
+                transform: scaleX(1);
+                transform-origin: center center;
+            }
         }
     }
 }

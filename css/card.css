@@ -21,11 +21,12 @@ h6 {
 .btn a {
   background-color: #01aa4f;
   color: #fff;
-  z-index: 55; }
+  z-index: 405;
+  margin: inherit; }
 
 .card {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 70px);
   background: #01aa4f;
   font-family: 'Source Sans Pro', sans-serif; }
   .card img {
@@ -38,7 +39,7 @@ h6 {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -51,11 +52,11 @@ h6 {
     .card .content .bg2 {
       position: absolute;
       width: 100%;
-      height: 100vh; }
+      height: 100%; }
     .card .content .bg1 {
       background: url(../img/index_bg_02.jpg) center center no-repeat;
       background-size: cover;
-      background-position: center 50%; }
+      background-position: center 70%; }
     .card .content .bg2 {
       background: url(../img/namecard_bg.jpg) center center no-repeat;
       background-size: cover; }
@@ -82,7 +83,8 @@ h6 {
         z-index: 5; }
     .card .content .title {
       margin: 0 auto;
-      z-index: 1; }
+      z-index: 1;
+      text-align: center; }
       .card .content .title h1 {
         margin-top: 50px;
         opacity: 0;
@@ -93,8 +95,16 @@ h6 {
         transition: transform .5s ease, opacity .5s ease, -webkit-transform .5s ease; }
         .card .content .title h1 img {
           max-width: 465px; }
+        @media screen and (max-width: 1440px) {
+          .card .content .title h1 {
+            margin-top: 20px; }
+            .card .content .title h1 img {
+              max-width: 435px; } }
+        @media screen and (max-width: 1440px) and (max-height: 750px) {
+          .card .content .title h1 img {
+            max-width: 390px; } }
       .card .content .title p {
-        font-family: 'Noto Sans', sans-serif;
+        font-family: 'Noto Sans', Microsoft JhengHei, sans-serif;
         text-align: center; }
         .card .content .title p.word {
           line-height: 1.5;
@@ -109,6 +119,9 @@ h6 {
           -webkit-transition-delay: .15s;
           -o-transition-delay: .15s;
           transition-delay: .15s; }
+          @media screen and (max-width: 1440px) and (max-height: 750px) {
+            .card .content .title p.word {
+              margin: 0 0 20px; } }
         .card .content .title p.join {
           margin-top: -20px; }
           .card .content .title p.join span {
@@ -180,6 +193,7 @@ h6 {
       transition: opacity 1s ease, transform 1s ease;
       transition: opacity 1s ease, transform 1s ease, -webkit-transform 1s ease; }
       .card .content .step2 .cardBox {
+        background-color: white;
         position: relative;
         display: -webkit-box;
         display: -webkit-flex;
@@ -191,8 +205,9 @@ h6 {
         -ms-flex-direction: row;
         flex-direction: row;
         width: 700px;
-        height: 370px;
+        height: 385px;
         border-radius: 10px;
+        margin-top: 15px;
         -webkit-box-shadow: 20.6px 34.3px 39.6px 6.4px rgba(4, 0, 0, 0.34);
         box-shadow: 20.6px 34.3px 39.6px 6.4px rgba(4, 0, 0, 0.34); }
         .card .content .step2 .cardBox .left {
@@ -245,9 +260,7 @@ h6 {
           border-radius: 0 10px 10px 0;
           background: url(../img/namecard_draw_01.png) bottom right no-repeat;
           background-size: 40%;
-          background-color: white;
-          position: relative;
-          z-index: 2; }
+          position: relative; }
           .card .content .step2 .cardBox .right span.icon-ic_delete {
             cursor: pointer;
             z-index: 1; }
@@ -397,14 +410,14 @@ h6 {
               .card .content .step2 .cardBox .right .dreamBox .career ul {
                 position: absolute;
                 width: 100%;
-                max-height: 250px;
+                max-height: 210px;
                 border: solid 1px #01aa4f;
                 background-color: white;
-                font-family: 'Noto Sans', sans-serif;
+                font-family: 'Noto Sans', Microsoft JhengHei, sans-serif;
                 font-size: 1.0625rem;
                 overflow-y: auto;
                 padding: 5px 0;
-                z-index: 3; }
+                z-index: 400; }
                 .card .content .step2 .cardBox .right .dreamBox .career ul li {
                   width: 100%; }
                   .card .content .step2 .cardBox .right .dreamBox .career ul li a {
@@ -434,7 +447,7 @@ h6 {
               display: -webkit-flex;
               display: -ms-flexbox;
               display: flex;
-              font-family: 'Noto Sans', sans-serif;
+              font-family: 'Noto Sans', Microsoft JhengHei, sans-serif;
               color: #01aa4f; }
               .card .content .step2 .cardBox .right .btnBox .random img {
                 width: 39px; }
@@ -458,9 +471,10 @@ h6 {
         -webkit-transition-delay: .6s;
         -o-transition-delay: .6s;
         transition-delay: .6s;
-        z-index: 0; }
+        z-index: -1; }
       .card .content .step2 .btn {
-        margin-top: -35px; }
+        margin-top: -30px;
+        position: relative; }
         .card .content .step2 .btn a {
           opacity: 0;
           -webkit-transition: opacity .5s ease 1.3s;
@@ -468,7 +482,7 @@ h6 {
           transition: opacity .5s ease 1.3s; }
         .card .content .step2 .btn .hand {
           position: absolute;
-          margin-top: -46px;
+          margin-top: -50px;
           pointer-events: none;
           z-index: 30;
           width: 680px;
@@ -509,6 +523,14 @@ h6 {
           -ms-flex-pack: center;
           justify-content: center;
           margin-top: 75px; }
+          @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            .card .content .step3 .handBox .hand {
+              -webkit-transform: translate(-12%, 0);
+              -ms-transform: translate(-12%, 0);
+              transform: translate(-12%, 0); } }
+          @media screen and (max-width: 1440px) and (max-height: 750px) {
+            .card .content .step3 .handBox .hand {
+              margin-top: 55px; } }
           .card .content .step3 .handBox .hand .lefthand {
             position: absolute;
             display: -webkit-box;
@@ -540,7 +562,10 @@ h6 {
               -webkit-flex: 70;
               -ms-flex: 70;
               flex: 70;
-              background: rgba(255, 255, 255, 0.8);
+              -webkit-transition: background .5s 1s ease;
+              -o-transition: background .5s 1s ease;
+              transition: background .5s 1s ease;
+              background: white;
               border-radius: 10px 0 0 10px; }
               .card .content .step3 .handBox .hand .lefthand .left .main {
                 position: relative;
@@ -572,7 +597,10 @@ h6 {
               -webkit-flex: 30;
               -ms-flex: 30;
               flex: 30;
-              background: rgba(255, 255, 0, 0.8);
+              -webkit-transition: background .5s 1s ease;
+              -o-transition: background .5s 1s ease;
+              transition: background .5s 1s ease;
+              background: yellow;
               border-radius: 0 10px 10px 0;
               -webkit-box-orient: vertical;
               -webkit-box-direction: normal;
@@ -587,18 +615,25 @@ h6 {
                 position: absolute;
                 top: 15%;
                 width: 100px;
-                height: 100px; }
+                height: 100px;
+                left: 50%;
+                -webkit-transform: translate(-50%, 0);
+                -ms-transform: translate(-50%, 0);
+                transform: translate(-50%, 0); }
                 .card .content .step3 .handBox .hand .lefthand .right .picture img {
                   border-radius: 50%;
                   overflow: hidden; }
               .card .content .step3 .handBox .hand .lefthand .right .name {
                 text-align: center;
+                line-height: 1.2;
                 position: absolute;
                 color: #01aa4f;
                 bottom: 15%;
                 font-size: 1.7425rem;
                 font-weight: 500;
-                letter-spacing: 1.4px; }
+                letter-spacing: 1px;
+                width: 100%;
+                left: 0; }
           .card .content .step3 .handBox .hand .righthand {
             position: absolute;
             display: -webkit-box;
@@ -636,9 +671,10 @@ h6 {
               margin-left: 35px;
               color: white; }
               .card .content .step3 .handBox .hand .righthand .main .career {
+                color: yellow;
                 position: relative;
                 font-size: 1.43438rem;
-                font-family: 'Noto Sans', sans-serif;
+                font-family: 'Noto Sans', Microsoft JhengHei, sans-serif;
                 letter-spacing: 1px;
                 word-break: keep-all; }
                 .card .content .step3 .handBox .hand .righthand .main .career:after {
@@ -686,7 +722,7 @@ h6 {
               top: 1px;
               padding-right: 15px;
               color: #fff43c; }
-          @media screen and (min-width: 768px) {
+          @media screen and (min-width: 769px) {
             .card .content .step3 .handBox .btn:hover a .icon-ic_f:before {
               color: #01aa4f; } }
     .card .content .step1 .btn {
@@ -729,6 +765,10 @@ h6 {
       -webkit-transform: translate(-40%, -15%);
       -ms-transform: translate(-40%, -15%);
       transform: translate(-40%, -15%); }
+      .card .content.step3Show .step3 .handBox .hand .lefthand .left {
+        background-color: rgba(255, 255, 255, 0.8); }
+      .card .content.step3Show .step3 .handBox .hand .lefthand .right {
+        background: rgba(255, 255, 0, 0.8); }
     .card .content.step3Show .step3 .handBox .hand .righthand {
       -webkit-transform: translate(30%, 35%);
       -ms-transform: translate(30%, 35%);
@@ -759,9 +799,20 @@ h6 {
         max-width: 448px;
         max-height: 274.75px; }
       .card .content.step3Show .step3 .handBox .hand .btn {
-        -webkit-transform: translate(0, 500%);
-        -ms-transform: translate(0, 500%);
-        transform: translate(0, 500%); } }
+        -webkit-transform: translate(0, 520%);
+        -ms-transform: translate(0, 520%);
+        transform: translate(0, 520%); } }
+    @media screen and (max-width: 1440px) {
+      .card .content .step3 .handBox .hand .lefthand {
+        max-width: 368.64px;
+        max-height: 226.08px; }
+      .card .content .step3 .handBox .hand .righthand {
+        max-width: 368.64px;
+        max-height: 226.08px; }
+      .card .content.step3Show .step3 .handBox .hand .btn {
+        -webkit-transform: translate(0, 450%);
+        -ms-transform: translate(0, 450%);
+        transform: translate(0, 450%); } }
     @media screen and (max-width: 1366px) {
       .card .content .title {
         margin: 0 auto; }
@@ -820,9 +871,9 @@ h6 {
         -ms-transform: translate(30%, 30%);
         transform: translate(30%, 30%); }
       .card .content .step3 .handBox.show .hand .btn {
-        -webkit-transform: translate(0, 500%);
-        -ms-transform: translate(0, 500%);
-        transform: translate(0, 500%); }
+        -webkit-transform: translate(0, 520%);
+        -ms-transform: translate(0, 520%);
+        transform: translate(0, 520%); }
       .card .content.step3Show .step3 .handBox .hand .lefthand {
         -webkit-transform: translate(-40%, -10%);
         -ms-transform: translate(-40%, -10%);
@@ -858,7 +909,7 @@ h6 {
         margin-top: 40px; }
         .card .content .step3 .handBox .hand .lefthand {
           width: 40%;
-          height: 45%;
+          height: 60%;
           max-height: 225px;
           border-radius: 5px; }
           .card .content .step3 .handBox .hand .lefthand .left {
@@ -875,7 +926,7 @@ h6 {
               top: 8%; }
         .card .content .step3 .handBox .hand .righthand {
           width: 40%;
-          height: 45%;
+          height: 60%;
           max-height: 225px;
           border-radius: 5px; }
           .card .content .step3 .handBox .hand .righthand .main {
@@ -912,7 +963,7 @@ h6 {
       .card .content .title {
         width: 85%; }
         .card .content .title h1 {
-          margin-top: 20px; }
+          margin-top: 15px; }
         .card .content .title p.word {
           margin: 5px 0 10px; }
       .card .content .step1 {
@@ -949,7 +1000,8 @@ h6 {
             -ms-flex-align: end;
             align-items: flex-end;
             width: 100%;
-            padding: 0; }
+            padding: 0;
+            min-height: 50px; }
             .card .content .step2 .cardBox .left .imgBox img {
               width: 20%;
               margin-bottom: -6.66667%; }
@@ -960,11 +1012,13 @@ h6 {
           -webkit-flex: 80;
           -ms-flex: 80;
           flex: 80;
-          border-radius: 0 0 30px 30px; }
+          border-radius: 0 0 30px 30px;
+          display: inline-block; }
           .card .content .step2 .cardBox .right .dreamBox {
             margin-bottom: 1%; }
             .card .content .step2 .cardBox .right .dreamBox .career ul {
-              font-size: 14px; }
+              font-size: 14px;
+              z-index: 407; }
           .card .content .step2 .cardBox .right .btnBox {
             padding-left: 0px; }
             .card .content .step2 .cardBox .right .btnBox .random {
@@ -975,7 +1029,7 @@ h6 {
         -webkit-flex: 2;
         -ms-flex: 2;
         flex: 2;
-        margin-top: 20px;
+        margin-top: 10px;
         margin-bottom: 30px; }
         .card .content .step2 .btn a {
           -webkit-transition-delay: .85s;
@@ -1098,6 +1152,9 @@ h6 {
         -webkit-transform: translateY(545%);
         -ms-transform: translateY(545%);
         transform: translateY(545%); } }
+    @media only screen and (max-width: 375px) {
+      .card .content .card .content .step2 .btn a {
+        margin-top: 0; } }
     @media screen and (max-width: 374px) {
       .card .content .title {
         width: 80%; }
@@ -1120,7 +1177,8 @@ h6 {
         -webkit-flex-direction: column;
         -ms-flex-direction: column;
         flex-direction: column;
-        width: 90%; }
+        width: 90%;
+        display: inline-block; }
         .card .content .step2 .cardBox .left {
           -webkit-box-flex: 20;
           -webkit-flex: 20;
@@ -1153,6 +1211,9 @@ h6 {
             padding: 2% 7%; }
           .card .content .step2 .cardBox .right .dreamBox {
             margin-bottom: 1%; }
+            .card .content .step2 .cardBox .right .dreamBox .career ul {
+              font-size: 14px;
+              z-index: 407; }
           .card .content .step2 .cardBox .right .btnBox .random {
             margin-top: 10px; }
             .card .content .step2 .cardBox .right .btnBox .random img {
@@ -1164,7 +1225,7 @@ h6 {
         -webkit-flex: 1;
         -ms-flex: 1;
         flex: 1;
-        margin-top: 20px; }
+        margin-top: 5px; }
         .card .content .step2 .btn .hand {
           margin-top: -54px; }
       .card .content .step3 .handBox .hand {
@@ -1173,7 +1234,7 @@ h6 {
           width: 80%;
           height: 40%;
           max-height: 150px;
-          min-height: inherit;
+          min-height: 135px;
           border-radius: 5px; }
           .card .content .step3 .handBox .hand .lefthand .left {
             border-radius: 5px 0 0 5px; }
@@ -1201,7 +1262,7 @@ h6 {
           width: 80%;
           height: 40%;
           max-height: 150px;
-          min-height: inherit;
+          min-height: 135px;
           border-radius: 5px; }
           .card .content .step3 .handBox .hand .righthand .main {
             margin-left: 15px;
@@ -1232,9 +1293,9 @@ h6 {
         -ms-transform: translate(9%, 35%);
         transform: translate(9%, 35%); }
       .card .content.step3Show .step3 .handBox .hand .btn {
-        -webkit-transform: translateY(430%);
-        -ms-transform: translateY(430%);
-        transform: translateY(430%); } }
+        -webkit-transform: translateY(370%);
+        -ms-transform: translateY(370%);
+        transform: translateY(370%); } }
     @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
       .card .content .step2 .cardBox {
         -webkit-box-flex: initial;
@@ -1268,9 +1329,9 @@ h6 {
         -ms-transform: translate(6%, 48%);
         transform: translate(6%, 48%); }
       .card .content.step3Show .step3 .handBox .hand .btn {
-        -webkit-transform: translateY(485%);
-        -ms-transform: translateY(485%);
-        transform: translateY(485%); } }
+        -webkit-transform: translateY(555%);
+        -ms-transform: translateY(555%);
+        transform: translateY(555%); } }
 
 form .share_pic img {
   width: inherit;

@@ -23,6 +23,10 @@ body {
     font-size: 16px;
 }
 
+.abs{
+    position: absolute;
+}
+
 * {
     outline: none;
     box-sizing: border-box;
@@ -35,7 +39,7 @@ body {
 }
 
 .paddingTop {
-    padding-top: 90px;
+    padding-top: 70px;
 }
 
 /*loading*/
@@ -175,7 +179,7 @@ nav li:hover {
 }
 
 nav li a {
-    color: #2f2f2f;
+    color: #333333;
     font-family: 'NotoSans';
     font-size: 15px;
     line-height: 71px;
@@ -224,7 +228,9 @@ nav ul .icon-ic_fb:before {
     display: block;
 }
 .videoBox {
-    height: 100vh;
+    height: 110vh;
+    overflow: hidden;
+    margin-top: -10vh;
 }
 
 .videoBox-close,.videoBox-close .bar {
@@ -272,6 +278,7 @@ body footer {
 footer .footer_left {
     display: inline-block;
     margin-left: 50px;
+    z-index: 2;
 }
 
 footer .footer_left span {
@@ -287,6 +294,7 @@ footer .footer_left span {
 footer .footer_right {
     display: inline;
     margin-right: 50px;
+    z-index: 2;
 }
 
 footer .footer_right span {
@@ -295,10 +303,12 @@ footer .footer_right span {
     letter-spacing: 0.6px;
     color: #ffffff;
 }
+footer .footer_right span a {
+    color: #ffffff;
+}
 
 footer .footer_right .icon-ic_fb:before {
     content: "\e904";
-    color: #01883f;
     font-size: 18px;
     color: #ffffff;
     display: inline-block;
@@ -381,6 +391,9 @@ footer .footer_right span:nth-child(4) {
     }
     .button.green_line:hover font {
         color: #fff;
+    }
+    a:hover{
+        text-decoration: none;
     }
 }
 
@@ -615,7 +628,7 @@ footer .footer_right span:nth-child(4) {
     }
 
     .paddingTop{
-        padding-top: 70px;
+        padding-top: 60px;
     }
 
 
@@ -678,6 +691,7 @@ footer .footer_right span:nth-child(4) {
     }
 
     .button {
+        max-width: 220px;
         width: 220px;
         height: 60px;
         font-size: 17px;
@@ -710,6 +724,7 @@ footer .footer_right span:nth-child(4) {
 /* iphone6.7.8 */
 @media only screen and (max-width: 375px) {
     .button {
+        max-width: 200px;
         width: 200px;
         height: 50px;
         font-size: 16px;
@@ -788,7 +803,7 @@ footer .footer_right span:nth-child(4) {
 
 .swal2-popup .swal2-styled:focus {
     outline: 0;
-    box-shadow: 0;
+    box-shadow: none;
 }
 
 .go_top{
@@ -911,9 +926,10 @@ background-color: transparent;
         width: 50%; 
     }
     .go_top {
-        transform: scale(.5);
-        transform-origin: right center;
         right: 0;
+        position: absolute;
+        top: inherit;
+        bottom: 50px;
     }
 }
 

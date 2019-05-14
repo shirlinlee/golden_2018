@@ -6,8 +6,10 @@
 
     &.typed{
         transform: translate(0, 0) scale(.9);
+        opacity: .6;
     }
 }
+
 .wrap.join {
     // background: #999;
     img {
@@ -19,6 +21,7 @@
     // background: url(../img/index_bg_05.jpg) center center no-repeat;
 
     .content {
+        z-index: 5;
         position: absolute;
         top: 55%;
         left: 50%;
@@ -28,13 +31,20 @@
         // flex-direction: column;
         width: 100%;
         max-width: 750px;
-        padding-bottom: 250px;
+        padding-bottom: 230px;
         background-size: cover;
         @media only screen and (max-width: 516px)  {
+            top: 52%;
+        }
+        @media only screen and (max-width: 414px)  {
             padding-bottom: 180px;
+            top: 49%;
+
         }
         @media only screen and (max-width: 320px)  {
             padding-bottom: 140px;
+            // top: 43%;
+
         }
 
 
@@ -46,16 +56,22 @@
             padding-right: 20px;
 
             h1 {
-                width: 355px;
+                width: 100%;
+                max-width: 355px;
                 margin: 50px auto 30px;
                 opacity: 0;
                 transform: translateY(-50px);
                 transition: opacity .5s ease, transform .5s ease;
+                @media only screen and (max-width: 1440px)  {
+                    max-width: 325px;
+                    margin: 40px auto 20px;
+                }
+
             }
 
             p {
                 color: white;
-                font-family: 'Noto Sans', sans-serif;
+                font-family: 'Noto Sans',Microsoft JhengHei, sans-serif;
                 font-size: 16px;
                 line-height: 2;
                 letter-spacing: 1.5px;
@@ -113,6 +129,9 @@
             transform: translateY(-50px);
             transition: opacity .5s ease .45s, transform .5s ease .45s;
             z-index: 5;
+            @media only screen and (max-width: 1440px)  {
+                margin-top: 20px;
+            }
 
             .step1,
             .step2,
@@ -239,9 +258,9 @@
                         label {
                             $outer: 20px;
                             $border: 1px;
-                            display: block;
+                            display: inline-block;
                             padding-left: $outer + 10px;
-                            margin-left: 30px;
+                            margin-left: 20px;
                             line-height: 2.5;
                             white-space: pre-wrap;
                             word-wrap: break-word;
@@ -299,20 +318,15 @@
             transform: translate(-50%,0);
             flex-direction: column;
             align-items: center;
-            font-family: 'Noto Sans', sans-serif;
+            font-family: 'Noto Sans',Microsoft JhengHei, sans-serif;
             bottom: 42px;
             color: white;
 
-            .btnBox {
-                @include btn(250px, 70px, transparent, #fff43c, 20px);
-                margin-bottom: 30px;
-                opacity: 0;
-                transform: translateY(-50px);
-                transition: opacity .5s ease .6s, transform .5s ease .6s;
+            .button {
+                color: #fff43c;
+                border: 1px solid #fff43c;
+                margin-bottom: 15px;
 
-                a {
-                    border: 1px solid #fff43c;
-                }
             }
 
             .row {
@@ -505,7 +519,7 @@
 
             .progress {
 
-                .btnBox,
+                .button,
                 .row {
                     opacity: 1;
                     transform: translateY(0);
@@ -521,7 +535,7 @@
                         .checkBox {
                             label {
                                 label {
-                                    margin-left: 0;
+                                    margin-left: 10px;
                                 }
                             }
                         }
@@ -563,14 +577,14 @@
                 }
 
                 .progress {
-                    .btnBox {
-                        a {
-                            width: 250px * $scale;
-                            height: 70px * $scale;
-                            line-height: 70px * $scale;
-                            font-size: 16px;
-                        }
-                    }
+                    // .btnBox {
+                    //     a {
+                    //         width: 250px * $scale;
+                    //         height: 70px * $scale;
+                    //         line-height: 70px * $scale;
+                    //         font-size: 16px;
+                    //     }
+                    // }
                 }
             }
         }
@@ -654,6 +668,7 @@
                         margin-top: 5px;
                         padding-top: 5px;
                         font-size: 16px;
+                        display: none;
 
                         &:before {
                             left: -25px;
@@ -750,8 +765,10 @@
                 bottom: 7px;
                 padding-left: 10px;
 
-                .btnBox {
+                .button {
                     margin-bottom: 15px;
+                    height: 60px;
+                    line-height: 60px;
                 }
 
                 .line {
@@ -762,6 +779,10 @@
                 .imgBox {
                     transform: scale(.9);
                 }
+            }
+
+            .v-select .open-indicator:before{
+                margin-top: 2px;
             }
         }
 
@@ -805,7 +826,7 @@
             }
 
             .progress {
-                .btnBox {
+                .button {
                     margin-bottom: 0;
                 }
             }
@@ -900,8 +921,10 @@
             .progress {
                 bottom: 2px;
 
-                .btnBox {
+                .button {
                     bottom: -5px;
+                    height: 50px;
+                    line-height: 50px;
                 }
 
                 .row {
@@ -930,7 +953,7 @@
             }
 
             .progress {
-                .btnBox {
+                .button {
                     margin-bottom: 20px;
                 }
             }

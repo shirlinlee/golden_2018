@@ -130,6 +130,7 @@ body, html {
   position: relative;
   display: inline-block;
   padding: 0 25px;
+  font-family: 'NotoSans-Black',Microsoft JhengHei;
 }
 
 @media only screen and (max-width: 1024px) {

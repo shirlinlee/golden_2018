@@ -23,17 +23,17 @@ block wrapContent
     // add class '.step2Show' 
     // add class '.step3Show' 
     .content
-        .share_pic('v-show'='false', style='position: absolute; z-index: -9999;')
+        .share_pic(v-show='false', style='position: absolute; z-index: -9999;')
             canvas(id='share_canvas', width='600', height='315')
             //-換成分享圖的背景
-            +png('share')(id='basic_img',alt='5687',width='600',height='315')
-            img(v-bind:src="pic_for_canvas",id='user_img')
+            img(id='basic_img',src="img/share.png",alt='5687',width='600',height='315')
+            img(id='user_img',v-bind:src="pic_for_canvas")
             
         .bg1('v-if'='step == 1')
         .bg2('v-if'='step != 1')
-            +png('dot_1')(class='dot_rt')
-            +png('dot_2')(class='dot_rb')
-            +png('dot_1')(class='dot_left')
+            +svg('dot_1')(class='dot_rt')
+            +svg('dot_2')(class='dot_rb')
+            +svg('dot_1')(class='dot_left')
         .title
             h1 
                 +svg('title_namecard')
@@ -46,7 +46,7 @@ block wrapContent
                 span #讓夢想與工作一起前進
         .step1(v-show="step == 1")
             .btn
-                a(href='', class='button', '@click.prevent'='chkFB()') 
+                a(class='button', href='', @click.prevent='chkFB()') 
                     font
                         span.icon-ic_f 立即製作
         .step2(v-show="step == 2")
@@ -57,30 +57,30 @@ block wrapContent
                     .imgBox
                         img(':src'='pic')
                     +svg_in('namecard_cloud')(class='left_cloud')
-                .right
+                .right.HH
                     .inputBox
                         .name
-                            input(type="text", 'v-model'='name', placeholder='姓名')
-                            span.icon-ic_delete('v-show'='name != ""', '@click.prevent'='name = ""')
+                            input(type="text", v-model='name', placeholder='姓名')
+                            span.icon-ic_delete(v-show='name != ""', @click.prevent='name = ""')
                         .dreamBox
                             .dream
-                                input(type="text", 'v-model'='dream', ':maxLength'='(isRandom) ? "7" : "4"', placeholder='輸入夢想')
-                                span.icon-ic_delete('v-show'='dream != ""', '@click.prevent'='dream = ""')
-                            .career(':class'='{ "down" : isOpen }', 'v-if'='!isRandom')
-                                input(type="text", 'v-model'='title', '@click.prevent'='isOpen = !isOpen', readonly)
+                                input(type="text", v-model='dream', :maxLength='(isRandom) ? "7" : "4"', placeholder='輸入夢想')
+                                span.icon-ic_delete(v-show='dream != ""', @click.prevent='careerHandler')
+                            .career(:class='{ "down" : isOpen }', v-if='!isRandom')
+                                input(type="text", v-model='title', @click.prevent='isOpen = !isOpen', readonly)
                                 ul('v-show'='isOpen')
                                     - var careerList = ['王者', '狂人', '達人', '霸主', '扛壩子', '無']
                                     each career in careerList
                                         li
-                                            a(href='', '@click.prevent'='title = "'+career+'", isOpen = false') #{career}
+                                            a(href='', @click.prevent='title = "'+career+'", isOpen = false') #{career}
                         .btnBox
-                            a.random(href='','@click.prevent'='random()') 
+                            a.random(href='',@click.prevent='random()') 
                                 +svg_in('ic_random')
                                 span 夢想神預測
             .btn
                 .hand
                     +png('namecard_hand')
-                a(href='', class='button', '@click.prevent'='next(3)') 
+                a(class='button', href='', @click.prevent='next(3)') 
                     font 看夢想名片
                         
         .step3(v-show="step == 3")
@@ -90,7 +90,7 @@ block wrapContent
                         .left
                             .main
                                 .word
-                                    p.card_title 高登超級新人王
+                                    p.card_title {{ finalCathay }}
                                     p.email cathaylife@cathaylife.com
                                 .logo
                                     +png('namecard_img_golden')(id='share_logo')
@@ -103,6 +103,6 @@ block wrapContent
                             .career(':class'='afterWidth') {{ finalDream }}
                             .email younggolden@dream.com
                     .btn
-                        a(href='', class='button', '@click.prevent'='shareFB()') 
+                        a(class='button', href='', @click.prevent='shareFB()') 
                             font
                                 span.icon-ic_f 分享結果

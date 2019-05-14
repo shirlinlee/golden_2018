@@ -19,12 +19,12 @@
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/ivy.css">
     <!-- js-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.1/isMobile.min.js?v=1544075227380"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js?v=1544075227380"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js?v=1544075227380"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js?v=1544075227380"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js?v=1544075227380"></script>
-        <script src="https://www.googletagmanager.com/gtag/js?id=UA-129178589-1?v=1544075227380"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.1/isMobile.min.js?v=1545811874783"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js?v=1545811874783"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js?v=1545811874783"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js?v=1545811874783"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js?v=1545811874783"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=UA-129178589-1?v=1545811874783"></script>
   </head>
   <body>
     <header></header>
@@ -34,10 +34,10 @@
       <!-- add class '.step3Show' -->
       <div class="content">
         <div class="share_pic" v-show="false" style="position: absolute; z-index: -9999;">
-          <canvas id="share_canvas" width="600" height="315"></canvas><img src="img/share.png" id="basic_img" alt="5687" width="600" height="315"><img v-bind:src="pic_for_canvas" id="user_img">
+          <canvas id="share_canvas" width="600" height="315"></canvas><img id="basic_img" src="img/share.png" alt="5687" width="600" height="315"><img id="user_img" v-bind:src="pic_for_canvas">
         </div>
         <div class="bg1" v-if="step == 1"></div>
-        <div class="bg2" v-if="step != 1"><img class="dot_rt" src="img/dot_1.png"><img class="dot_rb" src="img/dot_2.png"><img class="dot_left" src="img/dot_1.png">
+        <div class="bg2" v-if="step != 1"><img class="dot_rt" src="img/dot_1.svg"><img class="dot_rb" src="img/dot_2.svg"><img class="dot_left" src="img/dot_1.svg">
         </div>
         <div class="title">
           <h1> <img src="img/title_namecard.svg">
@@ -55,14 +55,14 @@
             <div class="left">
               <div class="imgBox"><img :src="pic"></div><img class="left_cloud" src="img/svg/namecard_cloud.svg">
             </div>
-            <div class="right">
+            <div class="right HH">
               <div class="inputBox">
                 <div class="name">
                   <input type="text" v-model="name" placeholder="姓名"><span class="icon-ic_delete" v-show="name != &quot;&quot;" @click.prevent="name = &quot;&quot;"></span>
                 </div>
                 <div class="dreamBox">
                   <div class="dream">
-                    <input type="text" v-model="dream" :maxLength="(isRandom) ? &quot;7&quot; : &quot;4&quot;" placeholder="輸入夢想"><span class="icon-ic_delete" v-show="dream != &quot;&quot;" @click.prevent="dream = &quot;&quot;"></span>
+                    <input type="text" v-model="dream" :maxLength="(isRandom) ? &quot;7&quot; : &quot;4&quot;" placeholder="輸入夢想"><span class="icon-ic_delete" v-show="dream != &quot;&quot;" @click.prevent="careerHandler"></span>
                   </div>
                   <div class="career" :class="{ &quot;down&quot; : isOpen }" v-if="!isRandom">
                     <input type="text" v-model="title" @click.prevent="isOpen = !isOpen" readonly>
@@ -92,7 +92,7 @@
                 <div class="left">
                   <div class="main">
                     <div class="word">
-                      <p class="card_title">高登超級新人王</p>
+                      <p class="card_title">{{ finalCathay }}</p>
                       <p class="email">cathaylife@cathaylife.com</p>
                     </div>
                     <div class="logo"><img src="img/namecard_img_golden.png" id="share_logo">
@@ -116,7 +116,7 @@
         </div>
       </div>
     </div>
-        <script src="bundle/init.js?v=1544075227381"></script>
-        <script src="bundle/card.js?v=1544075227381"></script>
+        <script src="bundle/init.js?v=1545811874784"></script>
+        <script src="bundle/card.js?v=1545811874784"></script>
   </body>
 </html>

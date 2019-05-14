@@ -12,7 +12,7 @@
             },
             edu: '',
             eduOptions: {
-                list: ['博士', '碩士', '大學', '高中', '高職', '國中', '國小'],
+                list: ['碩士以上', '大學', '專科', '高中職'],
             },
             birth: '',
             place: '',
@@ -22,8 +22,9 @@
             areaData: [],
             maxHeight: '250px',
             chkmsg: [],
-            isFocus:'',
-            isDone: false
+            isFocus: '',
+            isDone: false,
+            slogan: '先讓我們了解你吧！請填寫基本資料'
         },
         computed: {
             availableCities() {
@@ -43,7 +44,7 @@
         },
         beforeMount: function () {
             // 先從後端取上班地點及單位
-            $.get( domain+ '/golden/api/store_list.ashx', (result) => {
+            $.get(domain + '/goldenplan/api/store_list.ashx', (result) => {
                 $.each(result, (key, obj) => {
                     // 整理下拉所需的資料進 areaData
                     this.areaData.push({
@@ -57,6 +58,7 @@
             window.onload = function () {
                 document.querySelector('.wrap.join .content').classList.add('in');
             }
+            // this.sendMail();  //測試mail是否成功寄出
         },
         methods: {
             next() {
@@ -68,7 +70,7 @@
 
                 // 先清空錯誤訊息
                 this.chkmsg = [];
-                
+
 
                 // 資料驗証規則寫在這
                 if (this.step == 1) {
@@ -89,11 +91,13 @@
 
                     if (this.chkmsg.length == 0) {
                         this.step = 2;
+                        this.slogan = '國泰據點分布全台，請選擇希望上班地點';
                     } else {
                         // 開 popup 提示訊息
-                        console.log(this.chkmsg);
+                        // console.log(this.chkmsg);
+                        // gtag('event', 'click', { event_category:'golden_click', event_action: 'go_goden_qa1' });
                         swal({
-                            text: this.chkmsg+'為必填欄位',
+                            text: this.chkmsg + '為必填欄位',
                             type: 'error',
                             confirmButtonColor: '#00a83c',
                         });
@@ -112,11 +116,12 @@
 
                     if (this.chkmsg.length == 0) {
                         this.step = 3;
+                        this.slogan = '最後別忘了告訴我們你的聯繫方式';
                     } else {
                         // 開 popup 提示訊息
                         console.log(this.chkmsg);
                         swal({
-                            text: this.chkmsg+'為必填欄位',
+                            text: this.chkmsg + '為必填欄位',
                             type: 'error',
                             confirmButtonColor: '#00a83c',
                         });
@@ -148,61 +153,73 @@
                     if (!read) {
                         this.chkmsg.push('同意相關規定');
                     }
-                   
+
 
                     if (this.chkmsg.length == 0) {
                         // this.step = 1;
 
                         console.log(
-                           this.place.country,
-                           this.birthday
+                            this.place.country,
+                            this.birthday
                         );
 
                         var $this = this;
                         // AJAX 送資料
                         $.ajax({
                             type: 'POST',
-                            url: domain+ '/golden/api/post_join.ashx',
-                            data: { 
+                            url: domain + '/goldenplan/api/post_join.ashx',
+                            data: {
                                 'name': this.name,
-                                'sex':this.gender,
-                                'email':this.email,
-                                'phone':this.phone,
-                                'birthday':this.birthday,
-                                'education':this.edu,
-                                'work_place':this.place.country,
-                                'store':this.dept
+                                'sex': this.gender,
+                                'email': this.email,
+                                'phone': this.phone,
+                                'birthday': this.birthday,
+                                'education': this.edu,
+                                'work_place': this.place.country,
+                                'store': this.dept
                             },
-                            complete: function(res){
-                                console.log(res);
-                                swal({
-                                    text: '您的資料已成功送出',
-                                    type: 'success',
-                                    confirmButtonColor: '#00a83c',
-                                }).then((result)=> { 
-                                    $this.isDone = true;
-                                    $this.step =1;
+                            complete: function (res) {
+                                // console.log(res);
+                                if (res.responseJSON.OK === 'OK') {
+                                    swal({
+                                        text: '您的資料已成功送出',
+                                        type: 'success',
+                                        confirmButtonColor: '#00a83c',
+                                    }).then((result) => {
+                                        $this.isDone = true;
+                                        $this.step = 1;
 
-                                    $this.name='';
-                                    $this.gender='';
-                                    $this.email='';
-                                    $this.phone='';
-                                    $this.birth='';
-                                    $this.edu='';
-                                    $this.place='';
-                                    $this.dept='';
-                                    $this.chkmsg=[];
+                                        $this.name = '';
+                                        $this.gender = '';
+                                        $this.email = '';
+                                        $this.phone = '';
+                                        $this.birth = '';
+                                        $this.edu = '';
+                                        $this.place = '';
+                                        $this.dept = '';
+                                        $this.chkmsg = [];
+                                        $this.slogan = '先讓我們了解你吧！請填寫基本資料';
 
-                                });
+                                    });
+
+                                    $this.sendMail();
+
+                                } else {
+                                    swal({
+                                        text: '您的資料未成功送出，信箱已被重複註冊',
+                                        type: 'error',
+                                        confirmButtonColor: '#00a83c',
+                                    });
+                                }
                             }
                         });
-                        
+
 
                     } else {
                         // 開 popup 提示訊息
                         console.log(this.chkmsg);
                         swal({
-                            text: this.chkmsg+'為必填欄位',
+                            text: this.chkmsg + '為必填欄位',
                             type: 'error',
                             confirmButtonColor: '#00a83c',
                         });
@@ -236,11 +253,29 @@
                     };
                 };
             },
-            labelF(ele){
+            labelF(ele) {
                 this.isFocus = ele;
             },
-            labelB(ele){
+            labelB(ele) {
                 this.isFocus = '';
+            },
+            sendMail() {
+                var mail_users = ['jessica3@cathaylife.com.tw', 'chshen@cathaylife.com.tw', 'elvis@cathaylife.com.tw', 'sanzo_ko@webgene.com.tw']
+                var i;
+                for (i = 0; i < mail_users.length; i++) {
+                    // console.log(mail_users[i]);
+                    $.ajax({
+                        type: 'POST',
+                        url: 'https: //www.cathaylife.com.tw/oc/OCWeb/servlet/HttpDispatcher/OCApiTxBean/execute?ACTION_NAME=OCI3_0200&METHOD_NAME=getNPSCampaign',
+                        data: {
+                            'EMAIL': mail_users[i],
+                        },
+                        complete: function (res) {
+                            console.log(res);
+                        }
+                    });
+                }
+
             }
         },
         destroyed: function () {

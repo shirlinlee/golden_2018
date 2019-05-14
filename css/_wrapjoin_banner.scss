@@ -13,6 +13,10 @@
     background: $cathay;
     background: url(../img/index_bg_05.jpg) center center no-repeat;
     background-size: cover;
+    @media screen and (max-width: 516px) {
+        background-position: left center;
+    
+    }
 
     .box {
         position: relative;
